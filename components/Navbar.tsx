@@ -3,13 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const navigation = [
-  { name: "Projets", href: "#projets" },
-  { name: "Stack", href: "#stack" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
-];
+import { useLang } from "@/context/LangContext";
 
 const WaveUnderline = () => (
   <motion.div
@@ -34,14 +28,21 @@ const WaveUnderline = () => (
 );
 
 const Navbar: React.FC = () => {
+  const { language, setLanguage } = useLang();
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const navigation = [
+    { id: "projets", label: language === "fr" ? "Projets" : "Projects", href: "#projets" },
+    { id: "stack", label: "Stack", href: "#stack" },
+    { id: "experience", label: language === "fr" ? "Expérience" : "Experience", href: "#experience" },
+    { id: "contact", label: "Contact", href: "#contact" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
       let foundActiveSection: string | null = null;
 
       navigation.forEach((item) => {
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
         if (section) {
           const rect = section.getBoundingClientRect();
           if (rect.top <= 150 && rect.bottom >= 150) {
-            foundActiveSection = item.name;
+            foundActiveSection = item.id;
           }
         }
       });
@@ -66,10 +67,7 @@ const Navbar: React.FC = () => {
       className={`
         fixed top-0 left-0 w-full backdrop-blur-md text-black z-50 
         transition-all duration-300 font-['DM_Sans']
-        ${isScrolled 
-          ? "md:bg-white/5 bg-white/95" 
-          : "md:bg-transparent bg-white/80"
-        }
+        ${isScrolled ? "md:bg-white/5 bg-white/95" : "md:bg-transparent bg-white/80"}
         py-4 px-6 md:shadow-none shadow-sm
       `}
       initial={{ opacity: 0 }}
@@ -77,26 +75,43 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="max-w-6xl mx-auto flex justify-center items-center relative">
-        {/* Desktop Menu */}
+        {/* Desktop Menu - Tout centré */}
         <div className="hidden md:flex gap-12 items-center">
           {navigation.map((item) => (
             <motion.a
-              key={item.name}
+              key={item.id}
               href={item.href}
               className={`
                 relative text-lg transition-colors duration-300 
                 cursor-pointer hover:text-black
-                ${activeSection === item.name ? "text-black" : "text-gray-600"}
+                ${activeSection === item.id ? "text-black" : "text-gray-600"}
               `}
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              {item.name}
-              {activeSection === item.name && <WaveUnderline />}
+              {item.label}
+              {activeSection === item.id && <WaveUnderline />}
             </motion.a>
           ))}
+        </div>
+
+        {/* Lang Switch - Placé à droite */}
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 flex gap-2 items-center">
+          <button
+            onClick={() => setLanguage("fr")}
+            className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
+          >
+            FR 🇫🇷
+          </button>
+          <span className="text-gray-400">|</span>
+          <button
+            onClick={() => setLanguage("en")}
+            className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
+          >
+            EN 🇬🇧
+          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -145,7 +160,7 @@ const Navbar: React.FC = () => {
             >
               {navigation.map((item, index) => (
                 <motion.div
-                  key={item.name}
+                  key={item.id}
                   className="relative w-4/5"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -157,11 +172,11 @@ const Navbar: React.FC = () => {
                       relative text-lg transition-colors duration-300 
                       rounded-lg block text-center py-2 px-8
                       hover:bg-white/10
-                      ${activeSection === item.name ? "text-black bg-white/20" : "text-gray-600"}
+                      ${activeSection === item.id ? "text-black bg-white/20" : "text-gray-600"}
                     `}
                   >
-                    {item.name}
-                    {activeSection === item.name && <WaveUnderline />}
+                    {item.label}
+                    {activeSection === item.id && <WaveUnderline />}
                   </motion.a>
                 </motion.div>
               ))}

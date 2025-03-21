@@ -1,23 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import { 
-  BiLogoGithub, 
   BiLogoLinkedin, 
-  BiLogoTwitter,
   BiEnvelope,
   BiCopyright,
   BiChevronUp,
   BiBookAlt
 } from "react-icons/bi";
-import './Footer.css';
+import "./Footer.css";
 
 const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
+
   const socialLinks = [
-    { Icon: BiLogoGithub, href: "https://github.com/yourusername", label: "GitHub", color: "#3B82F6" },
     { Icon: BiLogoLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn", color: "#60A5FA" },
-    { Icon: BiLogoTwitter, href: "https://twitter.com/yourusername", label: "Twitter", color: "#93C5FD" },
     { Icon: BiEnvelope, href: "mailto:your@email.com", label: "Email", color: "#2563EB" },
   ];
 
@@ -26,15 +23,14 @@ const Footer: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            entry.target.classList.add("animate-in");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = footerRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
+    footerRef.current?.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -61,9 +57,10 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="social-item animate-on-scroll fade-up"
                     style={{ 
-                      '--delay': `${index * 0.1}s`,
-                      '--hover-color': color 
+                      "--delay": `${index * 0.1}s`,
+                      "--hover-color": color 
                     } as React.CSSProperties}
+                    aria-label={`Lien vers ${label}`}
                   >
                     <Icon size={20} />
                     <span>{label}</span>
@@ -81,9 +78,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Bouton retour en haut accessible */}
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="scroll-top"
+        aria-label="Retour en haut de la page"
       >
         <BiChevronUp size={20} />
       </button>

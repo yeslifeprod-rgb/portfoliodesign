@@ -1,30 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiVercel,
-  SiFigma,
-  SiTailwindcss,
-  SiNestjs,
-  SiPrisma,
-  SiMysql,
-  SiJavascript,
-  SiLua,
+  SiReact, SiNextdotjs, SiTypescript, SiVercel, SiFigma,
+  SiTailwindcss, SiNestjs, SiPrisma, SiMysql,
+  SiJavascript, SiLua,
 } from "react-icons/si";
+import { useLang } from "@/context/LangContext";
 
 export const Projects = () => {
-  const testimonials = [
+  const { language } = useLang();
+
+  const testimonials = useMemo(() => [
     {
       id: "projects",
-      name: "Portfolio personnel",
+      name: language === "fr" ? "Portfolio personnel" : "Personal Portfolio",
       designation: "React, Next.js & TypeScript",
       quote:
-        "Ce portfolio a été créé avec React, Next.js et TypeScript, déployé sur Vercel. Il présente mes projets, mon parcours et mes compétences.",
+        language === "fr"
+          ? "Ce portfolio a été créé avec React, Next.js et TypeScript, déployé sur Vercel. Il présente mes projets, mon parcours et mes compétences."
+          : "This portfolio was created with React, Next.js and TypeScript, deployed on Vercel. It presents my projects, background, and skills.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FPortfolio.png&w=3840&q=90",
       icons: [
         { Icon: SiReact, color: "#61DAFB" },
@@ -36,9 +33,14 @@ export const Projects = () => {
     {
       id: "project-2",
       name: "Eduka",
-      designation: "Application de covoiturage extra-scolaire",
+      designation:
+        language === "fr"
+          ? "Application de covoiturage extra-scolaire"
+          : "After-school carpooling app",
       quote:
-        "Notre objectif est de développer une application conviviale pour le covoiturage des activités extra-scolaires des enfants.",
+        language === "fr"
+          ? "Notre objectif est de développer une application conviviale pour le covoiturage des activités extra-scolaires des enfants."
+          : "Our goal is to develop a user-friendly app for carpooling children to after-school activities.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FEduka.png&w=3840&q=90",
       icons: [
         { Icon: SiFigma, color: "#F24E1E" },
@@ -54,9 +56,14 @@ export const Projects = () => {
     {
       id: "project-3",
       name: "Serveur GTA V / FIVEM",
-      designation: "GTA V modifié pour un jeu de rôle",
+      designation:
+        language === "fr"
+          ? "GTA V modifié pour un jeu de rôle"
+          : "GTA V modified for roleplay",
       quote:
-        "GTA RP est une version modifiée de Grand Theft Auto V qui permet aux joueurs de jouer des rôles en ligne dans un monde fictif.",
+        language === "fr"
+          ? "GTA RP est une version modifiée de Grand Theft Auto V qui permet aux joueurs de jouer des rôles en ligne dans un monde fictif."
+          : "GTA RP is a modified version of Grand Theft Auto V that allows players to roleplay online in a fictional world.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1656787346245-528afaaecb86%3Fq%3D80%26w%3D3000%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=3840&q=90",
       icons: [
         { Icon: SiJavascript, color: "#F7DF1E" },
@@ -64,17 +71,12 @@ export const Projects = () => {
         { Icon: SiMysql, color: "#4479A1" },
       ],
     },
-  ];
+  ], [language]);
 
   const [active, setActive] = useState(0);
 
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  const handleNext = () => setActive((prev) => (prev + 1) % testimonials.length);
+  const handlePrev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
     const interval = setInterval(handleNext, 5000);
@@ -86,15 +88,25 @@ export const Projects = () => {
       id="projets"
       className="mx-auto max-w-6xl px-8 sm:px-12 md:px-20 py-40 font-['DM_Sans']"
     >
-      {/* Titre centré */}
-      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
-        🗂️ Projets
-      </h2>
+      <motion.h2
+        className="text-4xl sm:text-5xl font-bold text-center mb-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        🗂️ {language === "fr" ? "Projets" : "Projects"}
+      </motion.h2>
 
-      {/* Grille responsive */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        {/* Image du projet */}
-        <div className="relative h-72 sm:h-80 w-full">
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative h-72 sm:h-80 w-full"
+        >
           <AnimatePresence>
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -119,10 +131,16 @@ export const Projects = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
-        {/* Texte + Icônes */}
-        <div className="flex flex-col text-center md:text-left">
+        {/* Texte */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-col text-center md:text-left"
+        >
           <motion.div
             key={testimonials[active].id}
             initial={{ y: 20, opacity: 0 }}
@@ -136,7 +154,6 @@ export const Projects = () => {
               {testimonials[active].quote}
             </p>
 
-            {/* Icônes des technos */}
             <div className="mt-6 flex justify-center md:justify-start space-x-4">
               {testimonials[active].icons.map(({ Icon, color }, i) => (
                 <Icon key={i} style={{ color }} className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -144,7 +161,6 @@ export const Projects = () => {
             </div>
           </motion.div>
 
-          {/* Boutons de navigation */}
           <div className="flex gap-6 pt-10 justify-center md:justify-start">
             <button
               onClick={handlePrev}
@@ -159,7 +175,7 @@ export const Projects = () => {
               <FaArrowRight className="h-5 w-5 text-gray-700 group-hover:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

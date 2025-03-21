@@ -4,6 +4,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
+import { useLang } from "@/context/LangContext";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -12,6 +13,8 @@ const fadeInUp = {
 };
 
 const ContactSection: React.FC = () => {
+  const { language } = useLang();
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -19,9 +22,15 @@ const ContactSection: React.FC = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Le nom est requis"),
-      email: Yup.string().email("Email invalide").required("L'email est requis"),
-      message: Yup.string().min(10, "Message trop court").required("Le message est requis"),
+      name: Yup.string().required(
+        language === "fr" ? "Le nom est requis" : "Name is required"
+      ),
+      email: Yup.string()
+        .email(language === "fr" ? "Email invalide" : "Invalid email")
+        .required(language === "fr" ? "L'email est requis" : "Email is required"),
+      message: Yup.string()
+        .min(10, language === "fr" ? "Message trop court" : "Message too short")
+        .required(language === "fr" ? "Le message est requis" : "Message is required"),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -32,14 +41,14 @@ const ContactSection: React.FC = () => {
         });
 
         if (response.ok) {
-          alert("Message envoyé avec succès !");
+          alert(language === "fr" ? "Message envoyé avec succès !" : "Message sent successfully!");
           resetForm();
         } else {
-          alert("Erreur lors de l'envoi, réessayez.");
+          alert(language === "fr" ? "Erreur lors de l'envoi, réessayez." : "Error sending message. Try again.");
         }
       } catch (error) {
         console.error("Erreur :", error);
-        alert("Erreur lors de l'envoi du message.");
+        alert(language === "fr" ? "Erreur lors de l'envoi du message." : "Error sending message.");
       }
     },
   });
@@ -52,10 +61,13 @@ const ContactSection: React.FC = () => {
         animate="animate"
       >
         <motion.h2 className="text-3xl font-bold text-blue-600 uppercase mb-4" variants={fadeInUp}>
-         ✉️ Contact
+         ✉️ {language === "fr" ? "Contact" : "Contact"}
         </motion.h2>
+
         <motion.p className="text-gray-700 mb-6" variants={fadeInUp}>
-          Vous avez une question ou un projet ? Envoyez-moi un message.
+          {language === "fr"
+            ? "Vous avez une question ou un projet ? Envoyez-moi un message."
+            : "Got a question or project? Send me a message."}
         </motion.p>
 
         <motion.form 
@@ -67,7 +79,7 @@ const ContactSection: React.FC = () => {
             <input
               type="text"
               name="name"
-              placeholder="Votre nom"
+              placeholder={language === "fr" ? "Votre nom" : "Your name"}
               value={formik.values.name}
               onChange={formik.handleChange}
               className="w-full p-3 rounded-md bg-gray-100 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
@@ -81,7 +93,7 @@ const ContactSection: React.FC = () => {
             <input
               type="email"
               name="email"
-              placeholder="Votre email"
+              placeholder={language === "fr" ? "Votre email" : "Your email"}
               value={formik.values.email}
               onChange={formik.handleChange}
               className="w-full p-3 rounded-md bg-gray-100 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
@@ -94,7 +106,7 @@ const ContactSection: React.FC = () => {
           <motion.div variants={fadeInUp}>
             <textarea
               name="message"
-              placeholder="Votre message..."
+              placeholder={language === "fr" ? "Votre message..." : "Your message..."}
               value={formik.values.message}
               onChange={formik.handleChange}
               rows={4}
@@ -112,7 +124,7 @@ const ContactSection: React.FC = () => {
             whileTap={{ scale: 0.98 }}
             variants={fadeInUp}
           >
-            Envoyer
+            {language === "fr" ? "Envoyer" : "Send"}
           </motion.button>
         </motion.form>
       </motion.div>

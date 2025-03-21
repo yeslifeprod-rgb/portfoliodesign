@@ -2,11 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLang } from "@/context/LangContext";
 import { GridBackgroundDemo } from "@/components/Grid";
 import Navbar from "@/components/Navbar";
 
-
 const Hero = () => {
+  const { language } = useLang();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -56,16 +57,18 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 text-lg text-gray-700 max-w-xl leading-relaxed tracking-wide"
             >
-              Je m'appelle <strong>Ilyes Ghardi</strong>, développeur fullstack de 24 ans, 
-              passionné par la création d’expériences interactives modernes et élégantes.
-
+              {language === "fr" ? (
+                <>
+                  Je m'appelle <strong>Ilyes Ghardi</strong>, concepteur d'applications web et mobile, passionné par la création d’expériences interactives modernes et fluides, alliant performance et design innovant.
+                </>
+              ) : (
+                <>
+                  My name is <strong>Ilyes Ghardi</strong>, a web and mobile application designer passionate about crafting modern, seamless interactive experiences that combine performance and innovative design.
+                </>
+              )}
             </motion.p>
-           
           </div>
-
-         
         </motion.section>
-      
       </GridBackgroundDemo>
     </div>
   );
