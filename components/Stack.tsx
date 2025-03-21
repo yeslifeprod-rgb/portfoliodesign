@@ -40,10 +40,10 @@ const Stack: React.FC = () => {
   return (
     <section
       id="stack"
-      className="bg-white text-gray-900 px-6 sm:px-10 md:px-20 py-32"
+      className="bg-white text-gray-900 px-6 sm:px-10 md:px-20 py-32 "
     >
       {/* Titre centré */}
-      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 font-['DM_Sans']">
+      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 ">
       🧠 Stack
       </h2>
 

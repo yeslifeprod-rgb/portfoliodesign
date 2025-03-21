@@ -70,7 +70,7 @@ const ExperienceSection = () => {
           transition={{ duration: 1 }}
           className="text-center mb-16 md:mb-32"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-['DM_Sans'] text-gray-900">
           💻 Expériences
           </h2>
         </motion.div>
