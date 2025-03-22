@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { 
-  BiLogoLinkedin, 
+import {
+  BiLogoLinkedin,
   BiEnvelope,
   BiCopyright,
   BiChevronUp,
@@ -31,7 +31,6 @@ const Footer: React.FC = () => {
     );
 
     footerRef.current?.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
 
@@ -47,6 +46,7 @@ const Footer: React.FC = () => {
               </h3>
               <p className="school-text">Éducation de qualité pour tous.</p>
             </div>
+
             <div className="school-section animate-on-scroll fade-up delay-2">
               <div className="social-grid">
                 {socialLinks.map(({ Icon, href, label, color }, index) => (
@@ -56,9 +56,9 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-item animate-on-scroll fade-up"
-                    style={{ 
+                    style={{
                       "--delay": `${index * 0.1}s`,
-                      "--hover-color": color 
+                      "--hover-color": color,
                     } as React.CSSProperties}
                     aria-label={`Lien vers ${label}`}
                   >
@@ -69,17 +69,19 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
+
           <div className="footer-divider animate-on-scroll fade-up delay-4" />
+
           <div className="footer-bottom animate-on-scroll fade-up delay-5">
             <p className="copyright-text">
-              <BiCopyright className="inline-block" /> {new Date().getFullYear()} 
+              <BiCopyright className="inline-block" /> {new Date().getFullYear()}{" "}
               <span className="highlight">Tous droits réservés</span>
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bouton retour en haut accessible */}
+      {/* ✅ Bouton masqué sur mobile via media query */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="scroll-top"

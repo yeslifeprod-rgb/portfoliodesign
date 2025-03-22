@@ -1,5 +1,3 @@
-/* Footer.css */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 .school-footer {
@@ -40,19 +38,19 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0F172A; /* Bleu très foncé pour meilleur contraste */
+  color: #0F172A;
   margin-bottom: 0.75rem;
 }
 
 .book-icon {
-  color: #2563EB; /* Bleu plus vif */
+  color: #2563EB;
   animation: float 3s ease-in-out infinite;
 }
 
 .school-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
-  color: #334155; /* Gris bleuté pour le texte */
+  color: #334155;
   line-height: 1.5;
 }
 
@@ -72,7 +70,7 @@
   color: #334155;
   transition: all 0.3s ease;
   border-radius: 6px;
-  background: #F8FAFC; /* Fond légèrement bleuté */
+  background: #F8FAFC;
   border: 1px solid rgba(37, 99, 235, 0.2);
   animation-delay: var(--delay);
 }
@@ -97,7 +95,7 @@
   height: 2px;
   background: linear-gradient(to right, transparent, #2563EB, transparent);
   margin: 1.5rem 0;
-  opacity: 0.4; /* Opacité augmentée */
+  opacity: 0.4;
 }
 
 .footer-bottom {
@@ -119,6 +117,7 @@
   border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
+/* 🔵 BOUTON RETOUR EN HAUT */
 .scroll-top {
   position: fixed;
   bottom: 1.5rem;
@@ -134,12 +133,20 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   border: none;
+  z-index: 999;
 }
 
 .scroll-top:hover {
   transform: translateY(-3px);
-  background: #1D4ED8; /* Bleu plus foncé au hover */
+  background: #1D4ED8;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* ✅ Cache le bouton sur mobile */
+@media (max-width: 639px) {
+  .scroll-top {
+    display: none !important;
+  }
 }
 
 /* Animations */
@@ -169,18 +176,4 @@
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
-}
-
-@media (max-width: 768px) {
-  .school-title {
-    font-size: 1.5rem;
-  }
-  
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .school-section {
-    padding: 0.75rem;
-  }
 }

@@ -79,17 +79,17 @@ export const Projects = () => {
   const handlePrev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
-    const interval = setInterval(handleNext, 5000);
+    const interval = setInterval(handleNext, 7000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div
       id="projets"
-      className="mx-auto max-w-6xl px-8 sm:px-12 md:px-20 py-40 font-['DM_Sans']"
+      className="mx-auto max-w-6xl px-4 sm:px-6 md:px-20 py-20 font-['DM_Sans']"
     >
       <motion.h2
-        className="text-4xl sm:text-5xl font-bold text-center mb-16"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -98,14 +98,14 @@ export const Projects = () => {
         🗂️ {language === "fr" ? "Projets" : "Projects"}
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative h-72 sm:h-80 w-full"
+          className="relative w-full h-64 sm:h-80 md:h-96"
         >
           <AnimatePresence>
             {testimonials.map((testimonial, index) => (
@@ -139,7 +139,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex flex-col text-center md:text-left"
+          className="flex flex-col items-center md:items-start text-center md:text-left"
         >
           <motion.div
             key={testimonials[active].id}
@@ -148,20 +148,20 @@ export const Projects = () => {
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <h3 className="text-2xl font-semibold">{testimonials[active].name}</h3>
-            <p className="text-lg text-gray-700">{testimonials[active].designation}</p>
-            <p className="mt-6 text-base text-gray-700 leading-relaxed">
+            <h3 className="text-xl sm:text-2xl font-semibold">{testimonials[active].name}</h3>
+            <p className="text-base sm:text-lg text-gray-700">{testimonials[active].designation}</p>
+            <p className="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
               {testimonials[active].quote}
             </p>
 
-            <div className="mt-6 flex justify-center md:justify-start space-x-4">
+            <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
               {testimonials[active].icons.map(({ Icon, color }, i) => (
                 <Icon key={i} style={{ color }} className="h-6 w-6 sm:h-7 sm:w-7" />
               ))}
             </div>
           </motion.div>
 
-          <div className="flex gap-6 pt-10 justify-center md:justify-start">
+          <div className="flex gap-6 pt-8 justify-center md:justify-start">
             <button
               onClick={handlePrev}
               className="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-300 transition-colors"

@@ -74,9 +74,26 @@ const Navbar: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="max-w-6xl mx-auto flex justify-center items-center relative">
+      <div className="max-w-6xl mx-auto flex justify-between items-center relative">
+        {/* Lang Switch */}
+        <div className="flex gap-2 items-center">
+          <button
+            onClick={() => setLanguage("fr")}
+            className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
+          >
+            🇫🇷 FR
+          </button>
+          <span className="text-gray-400">|</span>
+          <button
+            onClick={() => setLanguage("en")}
+            className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
+          >
+            🇬🇧 EN
+          </button>
+        </div>
+
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-12 items-center">
+        <div className="hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-12 items-center">
           {navigation.map((item) => (
             <motion.a
               key={item.id}
@@ -97,28 +114,9 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Lang Switch - always on right */}
-        <div className="absolute right-14 md:right-6 top-1/2 -translate-y-1/2 flex gap-2 items-center">
-          <button
-            onClick={() => setLanguage("fr")}
-            className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
-            aria-label="Passer en français"
-          >
-            FR 🇫🇷
-          </button>
-          <span className="text-gray-400">|</span>
-          <button
-            onClick={() => setLanguage("en")}
-            className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
-            aria-label="Switch to English"
-          >
-            EN 🇬🇧
-          </button>
-        </div>
-
-        {/* Mobile Menu Button */}
+        {/* Burger Button */}
         <button
-          className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-600 hover:text-black transition-colors"
+          className="md:hidden p-2 text-gray-600 hover:text-black transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu mobile"
         >
@@ -131,7 +129,7 @@ const Navbar: React.FC = () => {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X size={32} className="stroke-[1.5]" />
+                <X size={28} className="stroke-[1.5]" />
               </motion.div>
             ) : (
               <motion.div
@@ -141,7 +139,7 @@ const Navbar: React.FC = () => {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu size={32} className="stroke-[1.5]" />
+                <Menu size={28} className="stroke-[1.5]" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -153,8 +151,8 @@ const Navbar: React.FC = () => {
             <motion.div
               className="
                 absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md
-                shadow-sm rounded-b-2xl overflow-hidden
-                flex flex-col items-center gap-4 py-6 md:hidden
+                shadow-sm rounded-b-2xl overflow-y-auto max-h-[80vh]
+                flex flex-col items-center gap-3 py-3 md:hidden
               "
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -164,7 +162,7 @@ const Navbar: React.FC = () => {
               {navigation.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  className="relative w-4/5"
+                  className="relative w-[90%]"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -172,8 +170,8 @@ const Navbar: React.FC = () => {
                   <motion.a
                     href={item.href}
                     className={`
-                      relative text-lg transition-colors duration-300 
-                      rounded-lg block text-center py-2 px-8
+                      relative text-base transition-colors duration-300 
+                      rounded-lg block text-center py-2 px-4
                       hover:bg-white/10
                       ${activeSection === item.id ? "text-black bg-white/20" : "text-gray-600"}
                     `}
