@@ -22,9 +22,7 @@ const ContactSection: React.FC = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(
-        language === "fr" ? "Le nom est requis" : "Name is required"
-      ),
+      name: Yup.string().required(language === "fr" ? "Le nom est requis" : "Name is required"),
       email: Yup.string()
         .email(language === "fr" ? "Email invalide" : "Invalid email")
         .required(language === "fr" ? "L'email est requis" : "Email is required"),

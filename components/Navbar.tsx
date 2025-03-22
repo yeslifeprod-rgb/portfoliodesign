@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="max-w-6xl mx-auto flex justify-center items-center relative">
-        {/* Desktop Menu - Tout centré */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex gap-12 items-center">
           {navigation.map((item) => (
             <motion.a
@@ -97,11 +97,12 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Lang Switch - Placé à droite */}
-        <div className="absolute right-6 top-1/2 -translate-y-1/2 flex gap-2 items-center">
+        {/* Lang Switch - always on right */}
+        <div className="absolute right-14 md:right-6 top-1/2 -translate-y-1/2 flex gap-2 items-center">
           <button
             onClick={() => setLanguage("fr")}
             className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
+            aria-label="Passer en français"
           >
             FR 🇫🇷
           </button>
@@ -109,15 +110,17 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setLanguage("en")}
             className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
+            aria-label="Switch to English"
           >
             EN 🇬🇧
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-600 hover:text-black transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Menu mobile"
         >
           <AnimatePresence mode="wait">
             {isMobileMenuOpen ? (
@@ -144,7 +147,7 @@ const Navbar: React.FC = () => {
           </AnimatePresence>
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
