@@ -32,7 +32,7 @@ const ContactSection: React.FC = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await fetch("/api/contact", {
+        const response = await fetch("/api/route", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(values),
