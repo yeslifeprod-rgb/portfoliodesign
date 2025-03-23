@@ -19,3 +19,13 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// Exemple avec app/layout.tsx
+import { DM_Sans } from 'next/font/google';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});

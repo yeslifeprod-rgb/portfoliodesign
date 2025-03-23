@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { motion } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 
-const WaveUnderline = () => (
+const WaveUnderline = React.memo(() => (
   <motion.div
     className="absolute -bottom-1 left-0 right-0 h-[8px] overflow-hidden w-[37px] mx-auto"
     initial={{ opacity: 0 }}
@@ -25,26 +24,38 @@ const WaveUnderline = () => (
       />
     </svg>
   </motion.div>
-);
+));
 
 const Navbar: React.FC = () => {
   const { language, setLanguage } = useLang();
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
 
-  const navigation = [
+  const navigation = useMemo(() => [
     { id: "projets", label: language === "fr" ? "Projets" : "Projects", href: "#projets" },
     { id: "stack", label: "Stack", href: "#stack" },
     { id: "experience", label: language === "fr" ? "Expérience" : "Experience", href: "#experience" },
     { id: "contact", label: "Contact", href: "#contact" },
-  ];
+  ], [language]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      let foundActiveSection: string | null = null;
+      const currentY = window.scrollY;
+      setIsScrolled(currentY > 50);
 
+      // Show/hide navbar on scroll direction
+      if (currentY > lastScrollY.current && currentY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY.current = currentY;
+
+      // Active section detection
+      let foundActiveSection: string | null = null;
       navigation.forEach((item) => {
         const section = document.querySelector(item.href);
         if (section) {
@@ -54,32 +65,35 @@ const Navbar: React.FC = () => {
           }
         }
       });
-
-      setActiveSection(foundActiveSection);
+      if (foundActiveSection !== activeSection) {
+        setActiveSection(foundActiveSection);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navigation, activeSection]);
 
   return (
     <motion.nav
       className={`
-        fixed top-0 left-0 w-full backdrop-blur-md text-black z-50 
+        fixed top-0 left-0 w-full z-50 backdrop-blur-md text-black 
         transition-all duration-300 font-['DM_Sans']
         ${isScrolled ? "md:bg-white/5 bg-white/95" : "md:bg-transparent bg-white/80"}
         py-4 px-6 md:shadow-none shadow-sm
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
       `}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center relative">
-        {/* Lang Switch */}
+      <div className="max-w-6xl mx-auto flex items-center justify-between relative">
+        {/* Lang switch */}
         <div className="flex gap-2 items-center">
           <button
             onClick={() => setLanguage("fr")}
             className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
+            aria-label="Passer en français"
           >
             🇫🇷 FR
           </button>
@@ -87,15 +101,16 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setLanguage("en")}
             className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
+            aria-label="Switch to English"
           >
             🇬🇧 EN
           </button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-12 items-center">
+        {/* Nav desktop */}
+        <div className="hidden md:flex gap-12 items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navigation.map((item) => (
-            <motion.a
+            <a
               key={item.id}
               href={item.href}
               className={`
@@ -103,87 +118,28 @@ const Navbar: React.FC = () => {
                 cursor-pointer hover:text-black
                 ${activeSection === item.id ? "text-black" : "text-gray-600"}
               `}
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               {item.label}
               {activeSection === item.id && <WaveUnderline />}
-            </motion.a>
+            </a>
           ))}
         </div>
+      </div>
 
-        {/* Burger Button */}
-        <button
-          className="md:hidden p-2 text-gray-600 hover:text-black transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menu mobile"
-        >
-          <AnimatePresence mode="wait">
-            {isMobileMenuOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X size={28} className="stroke-[1.5]" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu size={28} className="stroke-[1.5]" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </button>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="
-                absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md
-                shadow-sm rounded-b-2xl overflow-y-auto max-h-[80vh]
-                flex flex-col items-center gap-3 py-3 md:hidden
-              "
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              {navigation.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  className="relative w-[90%]"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <motion.a
-                    href={item.href}
-                    className={`
-                      relative text-base transition-colors duration-300 
-                      rounded-lg block text-center py-2 px-4
-                      hover:bg-white/10
-                      ${activeSection === item.id ? "text-black bg-white/20" : "text-gray-600"}
-                    `}
-                  >
-                    {item.label}
-                    {activeSection === item.id && <WaveUnderline />}
-                  </motion.a>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+      {/* Mobile nav visible directement */}
+      <div className="flex md:hidden mt-4 justify-around w-full">
+        {navigation.map((item) => (
+          <a
+            key={item.id}
+            href={item.href}
+            className={`relative text-sm font-semibold px-2 py-1 transition-colors duration-200 ${
+              activeSection === item.id ? "text-blue-600" : "text-gray-600"
+            }`}
+          >
+            {item.label}
+            {activeSection === item.id && <WaveUnderline />}
+          </a>
+        ))}
       </div>
     </motion.nav>
   );

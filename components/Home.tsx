@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLang } from "@/context/LangContext";
 import { GridBackgroundDemo } from "@/components/Grid";
 import Navbar from "@/components/Navbar";
+import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 
 const Hero = () => {
   const { language } = useLang();
@@ -13,62 +13,61 @@ const Hero = () => {
 
   return (
     <div className="relative">
-      {/* Navbar fixée en haut */}
       <Navbar />
 
       <GridBackgroundDemo>
-        <motion.section
-          ref={sectionRef}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 pt-16 font-['DM_Sans']"
-        >
-          {/* Vidéo à gauche */}
-          <div className="md:w-1/3 flex justify-center">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-56 h-56 object-cover rounded-full"
-              >
-                <source src="/assets/animation.mp4" type="video/mp4" />
-                Votre navigateur ne supporte pas la vidéo.
-              </video>
+        <LazyMotion features={domAnimation}>
+          <m.section
+            ref={sectionRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-4 pt-24 sm:pt-32 font-['DM_Sans']"
+          >
+            {/* Vidéo */}
+            <div className="w-full md:w-1/3 flex justify-center">
+              <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-40 h-40 sm:w-56 sm:h-56 object-cover rounded-full"
+                  poster="/assets/preview.jpg" // ✅ Poster optionnel
+                >
+                  <source src="/assets/animation.mp4" type="video/mp4" />
+                  Votre navigateur ne supporte pas la vidéo.
+                </video>
+              </div>
             </div>
-          </div>
 
-          {/* Texte à droite */}
-          <div className="md:w-2/3 text-center md:text-left px-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg"
-            >
-              Ilyes <br /> Ghardi
-            </motion.h1>
+            {/* Texte */}
+            <div className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
+              {/* ✅ Pas d’animation sur le h1 pour optimiser le LCP */}
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg">
+                Ilyes <br /> Ghardi
+              </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 text-lg text-gray-700 max-w-xl leading-relaxed tracking-wide"
-            >
-              {language === "fr" ? (
-                <>
-                  Je m'appelle <strong>Ilyes Ghardi</strong>, concepteur d'applications web et mobile, passionné par la création d’expériences interactives modernes et fluides, alliant performance et design innovant.
-                </>
-              ) : (
-                <>
-                  My name is <strong>Ilyes Ghardi</strong>, a web and mobile application designer passionate about crafting modern, seamless interactive experiences that combine performance and innovative design.
-                </>
-              )}
-            </motion.p>
-          </div>
-        </motion.section>
+              {/* Animation légère autorisée sur le paragraphe */}
+              <m.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-700 max-w-xl mx-auto md:mx-0 leading-relaxed tracking-wide"
+              >
+                {language === "fr" ? (
+                  <>
+                    Je m'appelle <strong>Ilyes Ghardi</strong>, concepteur d'applications web et mobile, passionné par la création d’expériences interactives modernes et fluides, alliant performance et design innovant.
+                  </>
+                ) : (
+                  <>
+                    My name is <strong>Ilyes Ghardi</strong>, a web and mobile application designer passionate about crafting modern, seamless interactive experiences that combine performance and innovative design.
+                  </>
+                )}
+              </m.p>
+            </div>
+          </m.section>
+        </LazyMotion>
       </GridBackgroundDemo>
     </div>
   );

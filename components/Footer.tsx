@@ -8,7 +8,8 @@ import {
   BiChevronUp,
   BiBookAlt
 } from "react-icons/bi";
-import "./Footer.css";
+
+import "./Footer.css"; // garde ton style séparé ici
 
 const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -19,6 +20,10 @@ const Footer: React.FC = () => {
   ];
 
   useEffect(() => {
+    if (!footerRef.current) return;
+
+    const elements = footerRef.current.querySelectorAll(".animate-on-scroll");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,7 +35,7 @@ const Footer: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    footerRef.current?.querySelectorAll(".animate-on-scroll").forEach((el) => observer.observe(el));
+    elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -39,6 +44,7 @@ const Footer: React.FC = () => {
       <div className="grid-pattern">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Section 1 */}
             <div className="school-section animate-on-scroll fade-up">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
@@ -47,6 +53,7 @@ const Footer: React.FC = () => {
               <p className="school-text">Éducation de qualité pour tous.</p>
             </div>
 
+            {/* Section 2 */}
             <div className="school-section animate-on-scroll fade-up delay-2">
               <div className="social-grid">
                 {socialLinks.map(({ Icon, href, label, color }, index) => (
@@ -56,10 +63,12 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-item animate-on-scroll fade-up"
-                    style={{
-                      "--delay": `${index * 0.1}s`,
-                      "--hover-color": color,
-                    } as React.CSSProperties}
+                    style={
+                      {
+                        "--delay": `${index * 0.1}s`,
+                        "--hover-color": color,
+                      } as React.CSSProperties
+                    }
                     aria-label={`Lien vers ${label}`}
                   >
                     <Icon size={20} />
@@ -70,8 +79,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
+          {/* Séparateur */}
           <div className="footer-divider animate-on-scroll fade-up delay-4" />
 
+          {/* Bas de page */}
           <div className="footer-bottom animate-on-scroll fade-up delay-5">
             <p className="copyright-text">
               <BiCopyright className="inline-block" /> {new Date().getFullYear()}{" "}
@@ -81,7 +92,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* ✅ Bouton masqué sur mobile via media query */}
+      {/* Scroll vers le haut (masqué sur mobile via CSS) */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="scroll-top"

@@ -1,4 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
+// pages/api/contact.ts
+import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -9,12 +10,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ message: "Tous les champs sont requis." });
+    return res.status(400).json({ message: "Champs manquants" });
   }
 
   try {
     const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE, // ex: "gmail"
+      service: "gmail", // ou "hotmail", "outlook", etc.
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -22,20 +23,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM || `"${name}" <${email}>`,
-      to: process.env.EMAIL_TO,
-      subject: process.env.EMAIL_SUBJECT || "Nouveau message de contact",
-      text: `Nom: ${name}\nEmail: ${email}\nMessage:\n${message}`,
-      html: `
-        <p><strong>Nom:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_RECEIVER, // Où tu veux recevoir le message
+      subject: "Nouveau message via portfolio",
+      text: message,
+      html: `<p><strong>Nom :</strong> ${name}</p><p><strong>Email :</strong> ${email}</p><p><strong>Message :</strong><br>${message}</p>`,
     });
 
-    res.status(200).json({ message: "Message envoyé avec succès !" });
+    res.status(200).json({ message: "Message envoyé" });
   } catch (error) {
     console.error("Erreur d'envoi :", error);
-    res.status(500).json({ message: "Erreur lors de l'envoi du message." });
+    res.status(500).json({ message: "Erreur serveur" });
   }
 }
