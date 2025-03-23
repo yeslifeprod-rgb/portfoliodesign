@@ -5,7 +5,7 @@ import Experiences from "@/components/Experiences";
 
 import Stack from "@/components/Stack";
 import HomeSection from "@/components/Home";
-import ParallaxSection from "@/components/ParallaxSection";
+
 
 
 import { Grid } from "lucide-react";
@@ -24,7 +24,7 @@ export default function Home() {
           <HomeSection />
    
 
-        {/* Section Parallax */}
+     
   
 
           <ButtonCV />
