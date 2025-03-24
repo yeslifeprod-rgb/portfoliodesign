@@ -4,10 +4,10 @@ import React from "react";
 
 const ButtonCV: React.FC = () => {
   const handleDownload = () => {
-    const cvPath = "/cv-ilyes-ghardi.pdf"; // Assurez-vous que ce fichier est bien dans "public/"
+    const cvPath = "assets/cv-ilyes-ghardi.png"; // Assurez-vous que ce fichier est bien dans "public/"
     const link = document.createElement("a");
     link.href = cvPath;
-    link.download = "CV-Ilyes-Ghardi.pdf"; // Nom du fichier lors du téléchargement
+    link.download = "CV-Ilyes-Ghardi.png"; // Nom du fichier lors du téléchargement
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -55,15 +55,16 @@ const Hero = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-700 max-w-xl mx-auto md:mx-0 leading-relaxed tracking-wide"
               >
-                {language === "fr" ? (
-                  <>
-                    Je m'appelle <strong>Ilyes Ghardi</strong>, concepteur d'applications web et mobile, passionné par la création d’expériences interactives modernes et fluides, alliant performance et design innovant.
-                  </>
-                ) : (
-                  <>
-                    My name is <strong>Ilyes Ghardi</strong>, a web and mobile application designer passionate about crafting modern, seamless interactive experiences that combine performance and innovative design.
-                  </>
-                )}
+               {language === "fr" ? (
+  <>
+    Je suis <strong>Ilyes Ghardi</strong>, développeur full stack web et mobile passionné par la création d’expériences interactives fluides, modernes et performantes, au design innovant.
+  </>
+) : (
+  <>
+    I'm <strong>Ilyes Ghardi</strong>, a full stack web and mobile developer passionate about crafting seamless, modern, and high-performance interactive experiences with innovative design.
+  </>
+)}
+
               </m.p>
             </div>
           </m.section>

@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   const socialLinks = [
-    { Icon: BiLogoLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn", color: "#60A5FA" },
-    { Icon: BiEnvelope, href: "mailto:your@email.com", label: "Email", color: "#2563EB" },
+    { Icon: BiLogoLinkedin, href: "https://www.linkedin.com/in/ilyes-g-46b0982b8/", label: "LinkedIn", color: "#60A5FA" },
+    { Icon: BiEnvelope, href: "yeslife.prod@gmail.com", label: "Email", color: "#2563EB" },
   ];
 
   useEffect(() => {
