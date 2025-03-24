@@ -9,7 +9,7 @@ import {
   BiBookAlt
 } from "react-icons/bi";
 
-import "./Footer.css"; // garde ton style séparé ici
+import "./Footer.css"; 
 
 const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -48,9 +48,9 @@ const Footer: React.FC = () => {
             <div className="school-section animate-on-scroll fade-up">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
-                Université School
+                Portfolio Ilyes Ghardi
               </h3>
-              <p className="school-text">Éducation de qualité pour tous.</p>
+              <p className="school-text">Développeur Full-Stack</p>
             </div>
 
             {/* Section 2 */}

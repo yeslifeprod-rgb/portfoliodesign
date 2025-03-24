@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
@@ -22,6 +22,10 @@ export const Projects = () => {
         language === "fr"
           ? "Ce portfolio a été créé avec React, Next.js et TypeScript, déployé sur Vercel. Il présente mes projets, mon parcours et mes compétences."
           : "This portfolio was created with React, Next.js and TypeScript, deployed on Vercel. It presents my projects, background, and skills.",
+      details:
+        language === "fr"
+          ? "J'ai utilisé Next.js, Framer Motion, un système multilingue FR/EN, avec un hébergement sur Vercel."
+          : "I used Next.js, Framer Motion, a FR/EN multilingual system, and deployed it on Vercel.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FPortfolio.png&w=3840&q=90",
       icons: [
         { Icon: SiReact, color: "#61DAFB" },
@@ -41,6 +45,10 @@ export const Projects = () => {
         language === "fr"
           ? "Notre objectif est de développer une application conviviale pour le covoiturage des activités extra-scolaires des enfants."
           : "Our goal is to develop a user-friendly app for carpooling children to after-school activities.",
+      details:
+        language === "fr"
+          ? "Développée en React + NestJS avec Prisma, cette app facilite l'organisation des trajets extrascolaires entre parents."
+          : "Built using React + NestJS with Prisma, this app simplifies carpooling for after-school activities.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FEduka.png&w=3840&q=90",
       icons: [
         { Icon: SiFigma, color: "#F24E1E" },
@@ -64,6 +72,10 @@ export const Projects = () => {
         language === "fr"
           ? "GTA RP est une version modifiée de Grand Theft Auto V qui permet aux joueurs de jouer des rôles en ligne dans un monde fictif."
           : "GTA RP is a modified version of Grand Theft Auto V that allows players to roleplay online in a fictional world.",
+      details:
+        language === "fr"
+          ? "Création d'un serveur complet (scripts, base de données, MLO), avec développement personnalisé en Lua et JS."
+          : "Full server creation (scripts, DB, MLO) with custom Lua and JS development.",
       src: "https://ilyesportfolio-v.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1656787346245-528afaaecb86%3Fq%3D80%26w%3D3000%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=3840&q=90",
       icons: [
         { Icon: SiJavascript, color: "#F7DF1E" },
@@ -74,20 +86,44 @@ export const Projects = () => {
   ], [language]);
 
   const [active, setActive] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoPlay = () => {
+    if (!intervalRef.current) {
+      intervalRef.current = setInterval(() => {
+        setActive((prev) => (prev + 1) % testimonials.length);
+      }, 3000);
+    }
+  };
+
+  const stopAutoPlay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, []);
+
+  const handleDetailsClick = () => {
+    stopAutoPlay();
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    startAutoPlay();
+  };
 
   const handleNext = () => setActive((prev) => (prev + 1) % testimonials.length);
   const handlePrev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
-  useEffect(() => {
-    const interval = setInterval(handleNext, 7000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div
-      id="projets"
-      className="mx-auto max-w-6xl px-4 sm:px-6 md:px-20 py-20 font-['DM_Sans']"
-    >
+    <div id="projets" className="mx-auto max-w-6xl px-4 sm:px-6 md:px-20 py-20 font-['DM_Sans']">
       <motion.h2
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 40 }}
@@ -123,9 +159,6 @@ export const Projects = () => {
                 <img
                   src={testimonial.src}
                   alt={testimonial.name}
-                  width={500}
-                  height={500}
-                  draggable={false}
                   className="h-full w-full rounded-xl object-cover shadow-lg"
                 />
               </motion.div>
@@ -159,6 +192,15 @@ export const Projects = () => {
                 <Icon key={i} style={{ color }} className="h-6 w-6 sm:h-7 sm:w-7" />
               ))}
             </div>
+
+            <div className="mt-6">
+              <button
+                onClick={handleDetailsClick}
+                className="px-5 py-2 rounded-md bg-black text-white hover:bg-gray-800 transition"
+              >
+                {language === "fr" ? "Détails" : "Details"}
+              </button>
+            </div>
           </motion.div>
 
           <div className="flex gap-6 pt-8 justify-center md:justify-start">
@@ -177,6 +219,37 @@ export const Projects = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* MODAL */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center"
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 60, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <h2 className="text-xl font-bold mb-4">{testimonials[active].name}</h2>
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+                {testimonials[active].details}
+              </p>
+              <button
+                onClick={handleCloseModal}
+                className="mt-2 px-5 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 transition"
+              >
+                {language === "fr" ? "Fermer" : "Close"}
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

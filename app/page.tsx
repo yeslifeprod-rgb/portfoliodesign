@@ -8,9 +8,10 @@ import HomeSection from "@/components/Home";
 
 
 
-import { Grid } from "lucide-react";
+
 import { Projects } from "@/components/Projects";
 import ButtonCV from "@/components/ButtonCV";
+
 
 
 export default function Home() {
@@ -52,9 +53,9 @@ export default function Home() {
           <Contact />
       
 
-        {/* Section Grid */}
 
-          <Grid />
+
+
 
 
 
