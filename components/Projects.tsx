@@ -49,7 +49,7 @@ export const Projects = () => {
         language === "fr"
           ? "Développée en React + NestJS avec Prisma, cette app facilite l'organisation des trajets extrascolaires entre parents."
           : "Built using React + NestJS with Prisma, this app simplifies carpooling for after-school activities.",
-      src: "https://ilyesportfolio-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FEduka.png&w=3840&q=90",
+      src: "https://ilyesportfolioz-v.vercel.app/_next/image?url=%2Ficons%2Fprojects%2FEduka.png&w=3840&q=90",
       icons: [
         { Icon: SiFigma, color: "#F24E1E" },
         { Icon: SiTailwindcss, color: "#38BDF8" },
