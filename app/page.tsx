@@ -26,9 +26,9 @@ export default function Home() {
    
 
      
-  
+      <ButtonCV/>
 
-          <ButtonCV />
+    
       {/* Section Projets */}
   
       <Projects />
@@ -57,7 +57,7 @@ export default function Home() {
       </main>
 
      {/* Section Footer */}
-      <Footer />
+     <Footer />
     </>
   );
 }

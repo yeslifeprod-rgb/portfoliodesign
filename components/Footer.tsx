@@ -1,105 +1,97 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { useLang } from "@/context/LangContext";
 import {
   BiLogoLinkedin,
   BiEnvelope,
-  BiCopyright,
-  BiChevronUp,
-  BiBookAlt
+  BiBookAlt,
 } from "react-icons/bi";
-
-import "./Footer.css"; 
+import "./Footer.css";
 
 const Footer: React.FC = () => {
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  const socialLinks = [
-    { Icon: BiLogoLinkedin, href: "https://www.linkedin.com/in/ilyes-g-46b0982b8/", label: "LinkedIn", color: "#60A5FA" },
-    { Icon: BiEnvelope, href: "yeslife.prod@gmail.com", label: "Email", color: "#2563EB" },
-  ];
-
-  useEffect(() => {
-    if (!footerRef.current) return;
-
-    const elements = footerRef.current.querySelectorAll(".animate-on-scroll");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  const { language } = useLang();
+  const year = new Date().getFullYear();
 
   return (
-    <footer ref={footerRef} className="school-footer">
+    <footer className="school-footer">
       <div className="grid-pattern">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Section 1 */}
-            <div className="school-section animate-on-scroll fade-up">
+            <div className="school-section">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
                 Portfolio Ilyes Ghardi
               </h3>
-              <p className="school-text">Développeur Full-Stack</p>
+              <p className="school-text">
+                {language === "fr" ? (
+                  <>Développeur Full-Stack</>
+                ) : (
+                  <>Full-Stack Developer</>
+                )}
+              </p>
             </div>
 
             {/* Section 2 */}
-            <div className="school-section animate-on-scroll fade-up delay-2">
+            <div className="school-section">
               <div className="social-grid">
-                {socialLinks.map(({ Icon, href, label, color }, index) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-item animate-on-scroll fade-up"
-                    style={
-                      {
-                        "--delay": `${index * 0.1}s`,
-                        "--hover-color": color,
-                      } as React.CSSProperties
-                    }
-                    aria-label={`Lien vers ${label}`}
-                  >
-                    <Icon size={20} />
-                    <span>{label}</span>
-                  </a>
-                ))}
+                <a
+                  href="https://www.linkedin.com/in/ilyes-g-46b0982b8/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-item"
+                  aria-label={
+                    language === "fr"
+                      ? "Lien vers LinkedIn"
+                      : "Link to LinkedIn"
+                  }
+                  style={
+                    { "--hover-color": "#60A5FA" } as React.CSSProperties
+                  }
+                >
+                  <BiLogoLinkedin size={20} />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="mailto:ilyesghardi@outlook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-item"
+                  aria-label={
+                    language === "fr" ? "Lien vers Email" : "Link to Email"
+                  }
+                  style={
+                    { "--hover-color": "#2563EB" } as React.CSSProperties
+                  }
+                >
+                  <BiEnvelope size={20} />
+                  <span>Email</span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Séparateur */}
-          <div className="footer-divider animate-on-scroll fade-up delay-4" />
+          {/* Barre animée */}
+          <div className="w-full h-[1px] bg-gray-300 mt-8 mb-4 animate-pulse" />
 
           {/* Bas de page */}
-          <div className="footer-bottom animate-on-scroll fade-up delay-5">
-            <p className="copyright-text">
-              <BiCopyright className="inline-block" /> {new Date().getFullYear()}{" "}
-              <span className="highlight">Tous droits réservés</span>
+          <div className="text-center text-sm text-gray-600">
+            <p className="flex justify-center items-center gap-1">
+              {language === "fr" ? (
+                <>
+                  © {year} <strong>Portfolio Ilyes Ghardi</strong> — Tous droits réservés • Fait avec{" "}
+                </>
+              ) : (
+                <>
+                  © {year} <strong>Ilyes Ghardi</strong> — All rights reserved • Made with{" "}
+                </>
+              )}
+              <span className="animate-ping-slow text-red-500 text-base">❤️</span>
             </p>
           </div>
         </div>
       </div>
-
-      {/* Scroll vers le haut (masqué sur mobile via CSS) */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="scroll-top"
-        aria-label="Retour en haut de la page"
-      >
-        <BiChevronUp size={20} />
-      </button>
     </footer>
   );
 };
