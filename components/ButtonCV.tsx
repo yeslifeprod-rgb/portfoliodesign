@@ -30,7 +30,7 @@ const ButtonCV: React.FC = () => {
       Et toi... es-tu digne d’y accéder ?
       <br />
       <span className="text-red-600 animate-pulse">
-        Ah, et ne parle pas comme Jimmy. Pas deux fois.🤫
+        Ah, et ne parle pas comme Jimmy deux fois.🤫
       </span>
     </>
   );

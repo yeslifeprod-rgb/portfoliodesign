@@ -12,7 +12,7 @@ export default function Home() {
         <title>Ilyes – Développeur Fullstack à Lille</title>
         <meta
           name="description"
-          content="Ilyes, développeur fullstack basé à Lille. Création de sites performants avec React, Next.js, NestJS, TypeScript. Disponible en freelance ou en remote."
+          content="Ilyes, développeur fullstack basé à Lille. Création de sites performants avec React, Next.js, NestJS, TypeScript."
         />
         <meta
           name="keywords"
@@ -21,7 +21,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Ilyes" />
 
-        {/* Open Graph / Facebook */}
+        {/* Open Graph */}
         <meta property="og:title" content="Ilyes – Développeur Fullstack à Lille" />
         <meta
           property="og:description"
@@ -47,15 +47,15 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Ilyes",
-              "jobTitle": "Développeur Web Fullstack",
-              "url": "https://ilyesportfolio-v.vercel.app",
-              "address": {
+              name: "Ilyes",
+              jobTitle: "Développeur Web Fullstack",
+              url: "https://ilyesportfolio-v.vercel.app",
+              address: {
                 "@type": "PostalAddress",
-                "addressLocality": "Lille",
-                "addressCountry": "FR"
+                addressLocality: "Lille",
+                addressCountry: "FR",
               },
-              "knowsAbout": [
+              knowsAbout: [
                 "Développement web",
                 "React",
                 "Next.js",
@@ -63,8 +63,8 @@ export default function Home() {
                 "TypeScript",
                 "Tailwind CSS",
                 "Supabase",
-                "Prisma"
-              ]
+                "Prisma",
+              ],
             }),
           }}
         />
@@ -74,14 +74,12 @@ export default function Home() {
         <section className="px-4 py-12 max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">Ilyes – Développeur Fullstack à Lille</h1>
           <p className="text-lg mb-6">
-            Je développe des sites web et applications performantes, modernes et responsive avec React, Next.js et TypeScript.
+            Je développe des sites web et applications performantes, modernes et responsives avec React, Next.js et TypeScript.
           </p>
           <p className="text-lg mb-6">
-            Basé à Lille, je travaille en freelance ou en équipe, en local ou à distance, pour créer des plateformes solides, esthétiques et bien codées.
+            Basé à Lille, je travaille en équipe, en local ou à distance, pour créer des plateformes solides, esthétiques et bien codées.
           </p>
-          <p className="text-lg mb-10">
-            Vous avez un projet ? Parlons-en.
-          </p>
+          <p className="text-lg mb-10">Vous avez un projet ? Parlons-en.</p>
         </section>
 
         <Projects />
