@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import Experiences from "@/components/Experiences";
+
 
 import Stack from "@/components/Stack";
 import HomeSection from "@/components/Home";
@@ -11,6 +11,7 @@ import HomeSection from "@/components/Home";
 
 import { Projects } from "@/components/Projects";
 import ButtonCV from "@/components/ButtonCV";
+import Experiences from "@/components/Experiences";
 
 
 
