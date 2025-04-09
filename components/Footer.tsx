@@ -2,11 +2,7 @@
 
 import React from "react";
 import { useLang } from "@/context/LangContext";
-import {
-  BiLogoLinkedin,
-  BiEnvelope,
-  BiBookAlt,
-} from "react-icons/bi";
+import { BiLogoLinkedin, BiEnvelope, BiBookAlt } from "react-icons/bi";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
@@ -22,13 +18,16 @@ const Footer: React.FC = () => {
             <div className="school-section">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
-                Portfolio Ilyes Ghardi
+                Portfolio Ilyes{" "}
+                <span aria-hidden="true" data-nosnippet>
+                  Ghardi
+                </span>
               </h3>
               <p className="school-text">
                 {language === "fr" ? (
-                  <>Développeur Full-Stack</>
+                  <>Développeur fullstack à Lille</>
                 ) : (
-                  <>Full-Stack Developer</>
+                  <>Fullstack developer based in Lille</>
                 )}
               </p>
             </div>
@@ -80,11 +79,19 @@ const Footer: React.FC = () => {
             <p className="flex justify-center items-center gap-1">
               {language === "fr" ? (
                 <>
-                  © {year} <strong>Portfolio Ilyes Ghardi</strong> — Tous droits réservés • Fait avec{" "}
+                  © {year} Portfolio Ilyes{" "}
+                  <span aria-hidden="true" data-nosnippet>
+                    Ghardi
+                  </span>{" "}
+                  — Tous droits réservés • Fait avec{" "}
                 </>
               ) : (
                 <>
-                  © {year} <strong>Ilyes Ghardi</strong> — All rights reserved • Made with{" "}
+                  © {year} Ilyes{" "}
+                  <span aria-hidden="true" data-nosnippet>
+                    Ghardi
+                  </span>{" "}
+                  — All rights reserved • Made with{" "}
                 </>
               )}
               <span className="animate-ping-slow text-red-500 text-base">❤️</span>

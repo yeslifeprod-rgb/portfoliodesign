@@ -5,7 +5,6 @@ import { useLang } from "@/context/LangContext";
 import { GridBackgroundDemo } from "@/components/Grid";
 import Navbar from "@/components/Navbar";
 import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
-import ButtonCV from "./ButtonCV";
 
 const Hero = () => {
   const { language } = useLang();
@@ -45,7 +44,8 @@ const Hero = () => {
             {/* 🧠 Texte */}
             <div className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg">
-                Ilyes <br /> Ghardi
+                Ilyes <br />
+                <span aria-hidden="true" data-nosnippet>Ghardi</span>
               </h1>
 
               <m.p
@@ -56,16 +56,14 @@ const Hero = () => {
               >
                 {language === "fr" ? (
                   <>
-                    Je suis <strong>Ilyes Ghardi</strong>, développeur full stack web et mobile passionné par la création d’expériences interactives fluides, modernes et performantes, au design innovant.
+                    Je suis Ilyes, développeur full stack web et mobile à Lille. Je conçois des expériences interactives fluides, modernes et performantes, au design innovant.
                   </>
                 ) : (
                   <>
-                    I'm <strong>Ilyes Ghardi</strong>, a full stack web and mobile developer passionate about crafting seamless, modern, and high-performance interactive experiences with innovative design.
+                    I'm Ilyes, a full stack web and mobile developer based in Lille. I build seamless, modern, and high-performance interactive experiences with innovative design.
                   </>
                 )}
               </m.p>
-
-         
             </div>
           </m.section>
         </LazyMotion>
