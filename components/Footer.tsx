@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="school-footer">
       <div className="grid-pattern">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Section 1 */}
+        <div className="container">
+          <div className="footer-grid">
+            {/* Bloc 1 */}
             <div className="school-section">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
@@ -24,15 +24,13 @@ const Footer: React.FC = () => {
                 </span>
               </h3>
               <p className="school-text">
-                {language === "fr" ? (
-                  <>Développeur fullstack à Lille</>
-                ) : (
-                  <>Fullstack developer based in Lille</>
-                )}
+                {language === "fr"
+                  ? "Développeur fullstack à Lille"
+                  : "Fullstack developer based in Lille"}
               </p>
             </div>
 
-            {/* Section 2 */}
+            {/* Bloc 2 */}
             <div className="school-section">
               <div className="social-grid">
                 <a
@@ -40,14 +38,6 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
-                  aria-label={
-                    language === "fr"
-                      ? "Lien vers LinkedIn"
-                      : "Link to LinkedIn"
-                  }
-                  style={
-                    { "--hover-color": "#60A5FA" } as React.CSSProperties
-                  }
                 >
                   <BiLogoLinkedin size={20} />
                   <span>LinkedIn</span>
@@ -57,12 +47,6 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
-                  aria-label={
-                    language === "fr" ? "Lien vers Email" : "Link to Email"
-                  }
-                  style={
-                    { "--hover-color": "#2563EB" } as React.CSSProperties
-                  }
                 >
                   <BiEnvelope size={20} />
                   <span>Email</span>
@@ -71,30 +55,18 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Barre animée */}
-          <div className="w-full h-[1px] bg-gray-300 mt-8 mb-4 animate-pulse" />
-
-          {/* Bas de page */}
-          <div className="text-center text-sm text-gray-600">
-            <p className="flex justify-center items-center gap-1">
+          {/* Bas de page simple */}
+          <div className="footer-bottom">
+            <p>
               {language === "fr" ? (
                 <>
-                  © {year} Portfolio Ilyes{" "}
-                  <span aria-hidden="true" data-nosnippet>
-                    Ghardi
-                  </span>{" "}
-                  — Tous droits réservés • Fait avec{" "}
+                  © {year} Portfolio Ilyes Ghardi — Tous droits réservés • Fait avec ❤
                 </>
               ) : (
                 <>
-                  © {year} Ilyes{" "}
-                  <span aria-hidden="true" data-nosnippet>
-                    Ghardi
-                  </span>{" "}
-                  — All rights reserved • Made with{" "}
+                  © {year} Ilyes Ghardi — All rights reserved • Made with ❤
                 </>
               )}
-              <span className="animate-ping-slow text-red-500 text-base">❤️</span>
             </p>
           </div>
         </div>

@@ -21,7 +21,7 @@ const ButtonCV: React.FC = () => {
 
   const messageFr = (
     <>
-      🕶️ Si tu vois ce bouton... ne clique surtout pas si tu ne fais pas partie de la Famille.
+      Si tu vois ce bouton... ne clique surtout pas si tu ne fais pas partie de la Famille.
       <br />
       Ce fichier appartient à une personne de confiance.
       <br />
@@ -37,7 +37,7 @@ const ButtonCV: React.FC = () => {
 
   const messageEn = (
     <>
-      🕶️ If you see this button... don't click unless you're part of the Family.
+      If you see this button... don't click unless you're part of the Family.
       <br />
       This file belongs to someone trusted.
       <br />

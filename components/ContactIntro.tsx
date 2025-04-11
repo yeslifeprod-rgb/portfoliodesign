@@ -9,7 +9,7 @@ export const ContactIntro = ({ language }: { language: string }) => {
         <p className="text-gray-700 mb-6">
           {language === "fr"
             ? "Vous avez une question ou un projet ? Envoyez-moi un message."
-            : "Got a question or project? Send me a message."}
+            : "Got a question or project ? Send me a message."}
         </p>
       </>
     );
