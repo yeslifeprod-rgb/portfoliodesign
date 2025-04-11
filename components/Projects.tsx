@@ -18,7 +18,7 @@ export function Projects() {
           ? "ALT - Application de covoiturage extra-scolaire"
           : "ALT - Carpooling App for Kids' Activities",
       src: "/assets/Eduka.webp",
-      stack: ["Figma", "React", "Tailwind", "TypeScript", "Nest", "Git","Vercel","Prisma","Mysql"],
+      stack: ["Figma", "React", "Tailwind", "TypeScript", "Nest", "Git","Vercel","Prisma","Mysql","Cypress","Jest","Ionic","MongoDB","Docker"],
     },
     {
       quote:
@@ -27,8 +27,8 @@ export function Projects() {
           : "This portfolio was entirely designed and developed by me, without using a generic template. It reflects my creativity and identity. Built with React, Next.js, and TypeScript, and deployed on Vercel, it showcases my projects, background, and skills. A Nodemailer integration allows direct contact via the form.",
       name: "Portfolio personnel",
       designation: language === "fr" ? "Design de portfolio" : "Portfolio Design",
-      src: "/assets/portfolio.png",
-      stack: ["React", "NextJS", "Tailwind", "TypeScript","Git","Vercel"],
+      src: "/assets/Portfolio.png",
+      stack: ["Figma","React", "NextJS", "Tailwind", "TypeScript","Git","Vercel"],
     },
     {
       quote:
@@ -38,7 +38,7 @@ export function Projects() {
       name: "Serveur GTA V / FIVEM",
       designation: language === "fr" ? "Projet solo" : "Solo project",
       src: "/assets/Gta.webp",
-      stack: ["Vue", "Lua", "Tailwind","Mysql"],
+      stack: ["Figma","Vue", "Lua", "Tailwind","Mysql"],
     },
   ];
 

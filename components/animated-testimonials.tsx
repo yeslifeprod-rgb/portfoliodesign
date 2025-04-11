@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// Icons principaux
 import {
   SiReact,
   SiNextdotjs,
@@ -19,6 +20,11 @@ import {
   SiVercel,
   SiMysql,
   SiGit,
+  SiDocker,
+  SiCypress,
+  SiJest,
+  SiIonic,
+  SiMongodb,
 } from "react-icons/si";
 
 import { MdEmail } from "react-icons/md";
@@ -48,6 +54,11 @@ const stackIcons: Record<string, React.ReactNode> = {
   Nodemailer: <MdEmail size={24} title="Nodemailer" className="text-[#009dff]" />,
   Git: <SiGit size={24} title="Git" className="text-[#F1502F]" />,
   YouTrack: <FaTasks size={24} title="YouTrack" className="text-[#000000]" />,
+  Docker: <SiDocker size={24} title="Docker" className="text-[#2496ED]" />,
+  Cypress: <SiCypress size={24} title="Cypress" className="text-[#17202C]" />,
+  Jest: <SiJest size={24} title="Jest" className="text-[#C21325]" />,
+  Ionic: <SiIonic size={24} title="Ionic" className="text-[#3880FF]" />,
+  MongoDB: <SiMongodb size={24} title="MongoDB" className="text-[#47A248]" />,
 };
 
 export const AnimatedTestimonials = ({
@@ -71,7 +82,7 @@ export const AnimatedTestimonials = ({
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 15000); // 🔁 15 sec par slide
+      const interval = setInterval(handleNext, 15000); // ⏱️ 15 secondes
       return () => clearInterval(interval);
     }
   }, [autoplay]);
@@ -81,13 +92,13 @@ export const AnimatedTestimonials = ({
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 font-sans antialiased">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-center">
-        {/* Image responsive */}
+        {/* Image */}
         <div className="relative h-64 w-full sm:h-72 md:h-80 lg:h-[24rem]">
           <AnimatePresence>
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.src}
-                initial={{ opacity: "0", scale: 0.9, z: -100, rotate: randomRotateY() }}
+                initial={{ opacity: 0, scale: 0.9, z: -100, rotate: randomRotateY() }}
                 animate={{
                   opacity: isActive(index) ? 1 : 0.7,
                   scale: isActive(index) ? 1 : 0.95,
@@ -96,7 +107,7 @@ export const AnimatedTestimonials = ({
                   zIndex: isActive(index) ? 40 : testimonials.length + 2 - index,
                   y: isActive(index) ? [0, -80, 0] : 0,
                 }}
-                exit={{ opacity: "0", scale: 0.9, z: 100, rotate: randomRotateY() }}
+                exit={{ opacity: 0, scale: 0.9, z: 100, rotate: randomRotateY() }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0 origin-bottom"
               >
@@ -113,7 +124,7 @@ export const AnimatedTestimonials = ({
           </AnimatePresence>
         </div>
 
-        {/* Texte responsive */}
+        {/* Texte */}
         <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
@@ -138,7 +149,7 @@ export const AnimatedTestimonials = ({
                   transition={{
                     duration: 0.6,
                     ease: "easeOut",
-                    delay: 0.06 * index, // ⚠️ ralentissement global ici
+                    delay: 0.06 * index,
                   }}
                   className="inline-block"
                 >
@@ -147,7 +158,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
 
-            {/* Stack */}
+            {/* Stack icons */}
             {testimonials[active].stack && (
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 {testimonials[active].stack!.map((tech) => (
