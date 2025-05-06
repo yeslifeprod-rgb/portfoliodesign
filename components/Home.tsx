@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg">
                 Ilyes <br />
-                <span aria-hidden="true" data-nosnippet>Ghardi</span>
+                <span aria-hidden="true" data-nosnippet>Le DEv</span>
               </h1>
 
               <m.p

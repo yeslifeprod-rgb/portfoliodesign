@@ -2,11 +2,12 @@
 
 import React from "react";
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVuedotjs,
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
   SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiPostgresql, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiAdobephotoshop, SiFigma, SiIonic
 } from "react-icons/si";
 import { FaPenFancy } from "react-icons/fa";
+import { RiSupabaseLine } from "react-icons/ri"; 
 import { motion } from "framer-motion";
 
 interface StackItem {
@@ -19,9 +20,9 @@ const stacks: StackItem[] = [
   { Icon: SiReact, name: "React", color: "#61DAFB" },
   { Icon: SiNextdotjs, name: "Next.js", color: "#000000" },
   { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-  { Icon: SiVuedotjs, name: "Vue.js", color: "#42B883" },
+  { Icon: RiSupabaseLine, name: "Supabase", color: "#3ECF8E" }, 
   { Icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
-  { Icon: SiIonic, name: "Ionic", color: "#3880FF" }, 
+  { Icon: SiIonic, name: "Ionic", color: "#3880FF" },
   { Icon: SiNodedotjs, name: "Node.js", color: "#339933" },
   { Icon: SiNestjs, name: "NestJS", color: "#E0234E" },
   { Icon: SiPrisma, name: "Prisma", color: "#2D3748" },
@@ -42,7 +43,6 @@ const Stack: React.FC = () => {
       id="stack"
       className="bg-white text-gray-900 px-6 sm:px-10 md:px-20 py-32"
     >
-      {/* Animation sur le titre */}
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

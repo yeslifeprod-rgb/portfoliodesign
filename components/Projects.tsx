@@ -17,8 +17,11 @@ export function Projects() {
         language === "fr"
           ? "ALT - Application de covoiturage extra-scolaire"
           : "ALT - Carpooling App for Kids' Activities",
-      src: "/assets/Eduka.webp",
-      stack: ["Figma", "React", "Tailwind", "TypeScript", "Nest", "Git","Vercel","Prisma","Mysql","Cypress","Jest","Ionic","MongoDB","Docker"],
+      srcs: ["/assets/Eduka.webp","/assets/eduka/Eduka1.png","/assets/eduka/eduka5.png"],
+      stack: [
+        "Figma", "React", "Tailwind", "TypeScript", "Nest", "Git",
+        "Vercel", "Prisma", "Mysql", "Cypress", "Jest", "Ionic", "MongoDB", "Docker",
+      ],
     },
     {
       quote:
@@ -27,8 +30,8 @@ export function Projects() {
           : "This portfolio was entirely designed and developed by me, without using a generic template. It reflects my creativity and identity. Built with React, Next.js, and TypeScript, and deployed on Vercel, it showcases my projects, background, and skills. A Nodemailer integration allows direct contact via the form.",
       name: "Portfolio personnel",
       designation: language === "fr" ? "Design de portfolio" : "Portfolio Design",
-      src: "/assets/Portfolio.png",
-      stack: ["Figma","React", "NextJS", "Tailwind", "TypeScript","Git","Vercel"],
+      srcs: ["/assets/portfolio/portfolio.png"], 
+      stack: ["Figma", "React", "NextJS", "Tailwind", "TypeScript", "Git", "Vercel"],
     },
     {
       quote:
@@ -37,8 +40,8 @@ export function Projects() {
           : "I designed and managed a GTA V RP server using the FiveM platform. My goal was to create and customize scripts (in Lua and Vue.js), integrate them into the server, and ensure proper database operations. This project allowed me to combine back-end logic with user immersion in a fictional world.",
       name: "Serveur GTA V / FIVEM",
       designation: language === "fr" ? "Projet solo" : "Solo project",
-      src: "/assets/Gta.webp",
-      stack: ["Figma","Vue", "Lua", "Tailwind","Mysql"],
+      srcs: ["/assets/Gta.webp"],
+      stack: ["Figma", "Vue", "Lua", "Tailwind", "Mysql"],
     },
   ];
 

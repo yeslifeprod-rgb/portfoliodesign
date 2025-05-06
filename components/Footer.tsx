@@ -19,9 +19,6 @@ const Footer: React.FC = () => {
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
                 Portfolio Ilyes{" "}
-                <span aria-hidden="true" data-nosnippet>
-                  Ghardi
-                </span>
               </h3>
               <p className="school-text">
                 {language === "fr"
@@ -60,11 +57,11 @@ const Footer: React.FC = () => {
             <p>
               {language === "fr" ? (
                 <>
-                  © {year} Portfolio Ilyes Ghardi — Tous droits réservés • Fait avec ❤
+                  © {year} Portfolio Ilyes — Tous droits réservés • Fait avec ❤
                 </>
               ) : (
                 <>
-                  © {year} Ilyes Ghardi — All rights reserved • Made with ❤
+                  © {year} Ilyes — All rights reserved • Made with ❤
                 </>
               )}
             </p>
