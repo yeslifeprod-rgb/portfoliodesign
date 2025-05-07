@@ -17,7 +17,7 @@ export function Projects() {
         language === "fr"
           ? "ALT - Application de covoiturage extra-scolaire"
           : "ALT - Carpooling App for Kids' Activities",
-      srcs: ["/assets/eduka/eduka.webp","/assets/eduka/eduka1.png","/assets/eduka/eduka5.png"],
+      srcs: ["/assets/eduka/Eduka.webp","/assets/eduka/eduka1.png","/assets/eduka/eduka5.png"],
       stack: [
         "Figma", "React", "Tailwind", "TypeScript", "Nest", "Git",
         "Vercel", "Prisma", "Mysql", "Cypress", "Jest", "Ionic", "MongoDB", "Docker",
