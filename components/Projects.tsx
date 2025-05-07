@@ -19,7 +19,7 @@ export function Projects() {
           : "ALT - Carpooling App for Kids' Activities",
       srcs: [
         "/assets/eduka/Eduka.webp",
-        "/assets/eduka/Eduka1.png",
+        "/assets/eduka/eduka1.png",
         "/assets/eduka/eduka5.png"
       ],
       stack: [
