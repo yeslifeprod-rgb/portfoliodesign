@@ -11,8 +11,9 @@ const ButtonCV: React.FC = () => {
 
   const handleDownload = () => {
     const isFr = language === "fr";
-    const fileName = isFr ? "cv-ilyes-ghardi-fr.pdf" : "cv-ilyes-ghardi-en.pdf";
-    const downloadName = isFr ? "CV-Ilyes-Ghardi-FR.pdf" : "CV-Ilyes-Ghardi-EN.pdf";
+    const fileName = isFr ? "cv-ilyesledev-fr.pdf" : "cv-ilyesledev-en.pdf";
+    const downloadName = isFr ? "CV-Ilyesledev-FR.pdf" : "CV-Ilyesledev-EN.pdf";
+    
 
     const link = document.createElement("a");
     link.href = `assets/${fileName}`;

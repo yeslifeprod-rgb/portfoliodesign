@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="mailto:ilyesghardi@outlook.com"
+                  href="mailto:yeslife.prod@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
