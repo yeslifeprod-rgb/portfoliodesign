@@ -40,7 +40,7 @@ export function Projects() {
           : "I designed and managed a GTA V RP server using the FiveM platform. My goal was to create and customize scripts (in Lua and Vue.js), integrate them into the server, and ensure proper database operations. This project allowed me to combine back-end logic with user immersion in a fictional world.",
       name: "Serveur GTA V / FIVEM",
       designation: language === "fr" ? "Projet solo" : "Solo project",
-      srcs: ["/assets/Gta.webp"],
+      srcs: ["/assets/gta/Gta.webp"],
       stack: ["Figma", "Vue", "Lua", "Tailwind", "Mysql"],
     },
   ];
