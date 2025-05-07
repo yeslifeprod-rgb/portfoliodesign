@@ -17,7 +17,11 @@ export function Projects() {
         language === "fr"
           ? "ALT - Application de covoiturage extra-scolaire"
           : "ALT - Carpooling App for Kids' Activities",
-      srcs: ["/assets/eduka/Eduka.webp","/assets/eduka/eduka1.png","/assets/eduka/eduka5.png"],
+      srcs: [
+        "/assets/eduka/Eduka.webp",
+        "/assets/eduka/Eduka1.png",
+        "/assets/eduka/eduka5.png"
+      ],
       stack: [
         "Figma", "React", "Tailwind", "TypeScript", "Nest", "Git",
         "Vercel", "Prisma", "Mysql", "Cypress", "Jest", "Ionic", "MongoDB", "Docker",
@@ -30,7 +34,7 @@ export function Projects() {
           : "This portfolio was entirely designed and developed by me, without using a generic template. It reflects my creativity and identity. Built with React, Next.js, and TypeScript, and deployed on Vercel, it showcases my projects, background, and skills. A Nodemailer integration allows direct contact via the form.",
       name: "Portfolio personnel",
       designation: language === "fr" ? "Design de portfolio" : "Portfolio Design",
-      srcs: ["/assets/portfolio/portfolio.png"], 
+      srcs: ["/assets/portfolio/portfolio.png"],
       stack: ["Figma", "React", "NextJS", "Tailwind", "TypeScript", "Git", "Vercel"],
     },
     {
@@ -48,10 +52,14 @@ export function Projects() {
   return (
     <section
       id="projets"
-      className="bg-white text-gray-900 px-6 sm:px-10 md:px-20 py-32 scroll-mt-20"
+      aria-labelledby="projects-heading"
+      className="bg-white text-gray-900 px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20"
     >
-      <div className="mx-auto max-w-6xl text-center">
-        <h2 className="text-3xl font-bold mb-10 font-sans">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2
+          id="projects-heading"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold font-sans mb-8 sm:mb-10"
+        >
           {language === "fr" ? "🗂️ Projets" : "🗂️ Projects"}
         </h2>
         <AnimatedTestimonials testimonials={testimonials} autoplay />
