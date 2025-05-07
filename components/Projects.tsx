@@ -34,7 +34,7 @@ export function Projects() {
           : "This portfolio was entirely designed and developed by me, without using a generic template. It reflects my creativity and identity. Built with React, Next.js, and TypeScript, and deployed on Vercel, it showcases my projects, background, and skills. A Nodemailer integration allows direct contact via the form.",
       name: "Portfolio personnel",
       designation: language === "fr" ? "Design de portfolio" : "Portfolio Design",
-      srcs: ["/assets/portfolio/portfolio.png"],
+      srcs: ["/assets/portfolio/portfolio.png","/assets/portfolio/seo.png"],
       stack: ["Figma", "React", "NextJS", "Tailwind", "TypeScript", "Git", "Vercel"],
     },
     {
