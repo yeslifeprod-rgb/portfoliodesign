@@ -8,67 +8,60 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Ilyes – Développeur Fullstack à Lille</title>
-        <meta
-          name="description"
-          content="Développeur fullstack à Lille, je conçois des sites modernes et performants avec React, Next.js, NestJS et TypeScript."
-        />
-        <meta
-          name="keywords"
-          content="développeur à Lille, développeur fullstack Lille, développeur web Lille, React, Next.js, NestJS, TypeScript, Prisma, Tailwind CSS, Supabase"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Ilyes – Développeur à Lille" />
+    <Head>
+  <title>Ilyes – Développeur Fullstack à Lille</title>
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Ilyes – Développeur Fullstack à Lille" />
-        <meta
-          property="og:description"
-          content="Portfolio de Ilyes, développeur fullstack à Lille : React, Next.js, NestJS, TypeScript, Tailwind CSS."
-        />
-        <meta property="og:url" content="https://ilyesportfolio-v.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://ilyesportfolio-v.vercel.app/assets/og-cover.jpg" />
+  <meta name="description" content="Développeur fullstack à Lille, je conçois des sites modernes, rapides et sécurisés avec React, Next.js, NestJS, TypeScript, Prisma, Tailwind CSS et Supabase." />
+  <meta name="google-site-verification" content="kgXGXSCBALyhZrVYXeTpJwwSY-47qe5eC1aN1kgtr88" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Ilyes – Développeur à Lille" />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ilyes – Développeur Fullstack à Lille" />
-        <meta name="twitter:description" content="Découvrez le travail de Ilyes, développeur web à Lille." />
-        <meta name="twitter:image" content="https://ilyesportfolio-v.vercel.app/assets/og-cover.jpg" />
+  {/* Open Graph */}
+  <meta property="og:title" content="Ilyes – Développeur Fullstack à Lille" />
+  <meta property="og:description" content="Portfolio de Ilyes, développeur fullstack à Lille : React, Next.js, NestJS, TypeScript, Tailwind CSS." />
+  <meta property="og:url" content="https://ilyesledev.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ilyesledev.com/assets/og-cover.jpg" />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://ilyesportfolio-v.vercel.app/" />
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ilyes – Développeur Fullstack à Lille" />
+  <meta name="twitter:description" content="Découvrez le travail de Ilyes, développeur web à Lille." />
+  <meta name="twitter:image" content="https://ilyesledev.com/assets/og-cover.jpg" />
 
-        {/* JSON-LD Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Ilyes",
-              jobTitle: "Développeur Web Fullstack",
-              url: "https://ilyesportfolio-v.vercel.app",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Lille",
-                addressCountry: "FR",
-              },
-              knowsAbout: [
-                "Développement web",
-                "React",
-                "Next.js",
-                "NestJS",
-                "TypeScript",
-                "Tailwind CSS",
-                "Supabase",
-                "Prisma",
-              ],
-            }),
-          }}
-        />
-      </Head>
+  {/* Canonical */}
+  <link rel="canonical" href="https://ilyesledev.com/" />
+
+  {/* JSON-LD Schema */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Ilyes",
+        jobTitle: "Développeur Web Fullstack",
+        url: "https://ilyesledev.com",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Lille",
+          addressCountry: "FR",
+        },
+        knowsAbout: [
+          "Développement web",
+          "React",
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "Tailwind CSS",
+          "Supabase",
+          "Prisma",
+        ],
+      }),
+    }}
+  />
+</Head>
+
 
       <main>
         <section className="px-4 py-12 max-w-4xl mx-auto">
