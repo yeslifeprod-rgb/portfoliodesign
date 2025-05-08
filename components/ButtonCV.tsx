@@ -11,25 +11,24 @@ const ButtonCV: React.FC = () => {
 
   const handleDownload = () => {
     const isFr = language === "fr";
-    const fileName = isFr ? "cv-ilyesledev-fr.pdf" : "cv-ilyesledev-en.pdf";
+    const fileName = isFr ? "/cv/cv-ilyesledev-fr.pdf" : "/cv/cv-ilyesledev-en.pdf";
     const downloadName = isFr ? "CV-Ilyesledev-FR.pdf" : "CV-Ilyesledev-EN.pdf";
-    
 
     const link = document.createElement("a");
-    link.href = `assets/${fileName}`;
+    link.href = fileName;
     link.download = downloadName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const text =
-    language === "fr"
-      ? "Un clic, un fichier. Peut-être le début de quelque chose."
-      : "One click, one file. Maybe the start of something.";
+  const text = language === "fr"
+    ? "Un clic, un fichier. Peut-être le début de quelque chose."
+    : "One click, one file. Maybe the start of something.";
 
-  const buttonText =
-    language === "fr" ? "📄 Télécharger le CV" : "📄 Download Resume";
+  const buttonText = language === "fr"
+    ? "📄 Télécharger le CV"
+    : "📄 Download Resume";
 
   return (
     <div
