@@ -1,17 +1,16 @@
 module.exports = {
-    siteUrl: "https://ilyesportfolio-v.vercel.app",
-    generateRobotsTxt: true,
-    changefreq: "monthly",
-    priority: 0.7,
-    alternateRefs: [
-      {
-        href: "https://ilyesportfolio-v.vercel.app/fr",
-        hreflang: "fr",
-      },
-      {
-        href: "https://ilyesportfolio-v.vercel.app/en",
-        hreflang: "en",
-      },
-    ],
-  };
-  
+  siteUrl: "https://ilyesledev.com",
+  generateRobotsTxt: true,
+  changefreq: "monthly",
+  priority: 0.7,
+  alternateRefs: [
+    {
+      href: "https://ilyesledev.com/fr",
+      hreflang: "fr",
+    },
+    {
+      href: "https://ilyesledev.com/en",
+      hreflang: "en",
+    },
+  ],
+};
