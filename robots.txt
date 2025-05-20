@@ -1,2 +1,5 @@
 User-agent: *
 Disallow: /assets/cv/
+Allow: /
+
+Sitemap: https://ilyesledev.com/sitemap.xml
