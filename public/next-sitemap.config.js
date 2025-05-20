@@ -5,11 +5,11 @@ module.exports = {
   priority: 0.7,
   alternateRefs: [
     {
-      href: "https://ilyesledev.com/fr",
+      href: "https://ilyesledev.com",
       hreflang: "fr",
     },
     {
-      href: "https://ilyesledev.com/en",
+      href: "https://ilyesledev.com",
       hreflang: "en",
     },
   ],
