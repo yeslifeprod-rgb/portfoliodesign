@@ -12,8 +12,8 @@ const ButtonCV: React.FC = () => {
   // Lien Dropbox direct pour FR et EN (avec ?dl=1 pour forcer le téléchargement)
   const fileUrl =
     language === "fr"
-      ? "https://www.dropbox.com/scl/fi/p4tudkl7vq6skli37yf3t/CV-Benhouss-FR.pdf?rlkey=yramuqmun5svgxh2ww7o47ncg&st=5yz5l59y&dl=1"
-      : "https://www.dropbox.com/scl/fi/XXXXX/CV-Ghardi-Ilyes-EN.pdf?rlkey=XXXXXX&st=XXXXXX&dl=1"; // ← remplace par ton vrai lien EN
+      ? "https://www.dropbox.com/scl/fi/nwk7keginv4ph9z2c4ab3/CV-Benhouss-FR.pdf?rlkey=0y8xi2s5vd4q1bmjbktk7irru&st=i4rl0g87&dl=1"
+      : "https://www.dropbox.com/scl/fi/8jclx6bhrea321f3l6xny/CV-Benhouss-EN.pdf?rlkey=43m4aeeaqkhusiix713ey8boz&st=2djhuhde&dl=1"; // ← remplace par ton vrai lien EN
 
   const buttonText =
     language === "fr" ? "📄 Télécharger le CV" : "📄 Download Resume";
