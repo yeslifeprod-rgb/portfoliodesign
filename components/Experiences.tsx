@@ -60,7 +60,7 @@ const ExperienceSection = () => {
             "Unit and integration testing",
             "🎓 Earned the professional title of Application Developer Designer (Level 6 - RNCP Bac +4)",
           ],
-      skills: ["React", "NestJS", "Prisma", "MySQL", "TypeScript", "Bcrypt", "MongoDB", "Git", "JWT", "API REST","UML","SGBD"],
+      skills: ["React", "NestJS", "Prisma", "MySQL", "TypeScript", "Bcrypt", "MongoDB", "Git", "JWT", "API REST","UML"],
     },
     {
       id: 2,
