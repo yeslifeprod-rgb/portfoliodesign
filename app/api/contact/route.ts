@@ -11,16 +11,18 @@ export async function POST(req: Request) {
 
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false, // STARTTLS
       auth: {
-        user: process.env.EMAIL_FROM,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.EMAIL_FROM,     // exemple : yeslife@outlook.fr
+        pass: process.env.EMAIL_PASSWORD, // mot de passe de ton compte Outlook
       },
     });
 
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_TO,
+      from: `"${name}" <${email}>`, // expéditeur visible
+      to: process.env.EMAIL_TO,     // ton adresse outlook
       subject: "📬 Nouveau message depuis le portfolio",
       html: `
         <p><strong>Nom :</strong> ${name}</p>
