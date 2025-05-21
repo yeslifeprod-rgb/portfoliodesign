@@ -2,7 +2,8 @@
 
 import React from "react";
 import { useLang } from "@/context/LangContext";
-import { BiLogoLinkedin, BiEnvelope, BiBookAlt } from "react-icons/bi";
+import { BiEnvelope, BiBookAlt } from "react-icons/bi";
+import { SiGitlab } from "react-icons/si";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
             <div className="school-section">
               <h3 className="school-title">
                 <BiBookAlt className="book-icon" />
-                Portfolio Ilyes{" "}
+                Portfolio Benhouss
               </h3>
               <p className="school-text">
                 {language === "fr"
@@ -30,15 +31,18 @@ const Footer: React.FC = () => {
             {/* Bloc 2 */}
             <div className="school-section">
               <div className="social-grid">
+                {/* GitLab officiel en couleur */}
                 <a
-                  href="https://www.linkedin.com/in/ilyes-g-46b0982b8/"
+                  href="https://gitlab.com/yeslife.prod"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
                 >
-                  <BiLogoLinkedin size={20} />
-                  <span>LinkedIn</span>
+                  <SiGitlab size={20} color="#FC6D26" /> {/* Couleur officielle */}
+                  <span>GitLab</span>
                 </a>
+
+                {/* Email */}
                 <a
                   href="mailto:yeslife.prod@gmail.com"
                   target="_blank"
@@ -52,16 +56,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Bas de page simple */}
+          {/* Bas de page */}
           <div className="footer-bottom">
             <p>
               {language === "fr" ? (
                 <>
-                  © {year} Portfolio Ilyes — Tous droits réservés • Fait avec ❤
+                  © {year} Benhouss — Tous droits réservés • Fait avec ❤
                 </>
               ) : (
                 <>
-                  © {year} Ilyes — All rights reserved • Made with ❤
+                  © {year} Benhouss — All rights reserved • Made with ❤
                 </>
               )}
             </p>

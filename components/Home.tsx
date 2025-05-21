@@ -44,8 +44,7 @@ const Hero = () => {
             {/* 🧠 Texte */}
             <div className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg">
-                Ilyes <br />
-                <span aria-hidden="true" data-nosnippet>Le DEv</span>
+                Benhouss
               </h1>
 
               <m.p
@@ -56,11 +55,11 @@ const Hero = () => {
               >
                 {language === "fr" ? (
                   <>
-                    Je suis Ilyes, développeur full stack web et mobile à Lille. Je conçois des expériences interactives fluides, modernes et performantes, au design innovant.
+                    Je suis Benhouss, développeur full stack web et mobile à Lille. Je conçois des expériences interactives fluides, modernes et performantes, au design innovant.
                   </>
                 ) : (
                   <>
-                    I'm Ilyes, a full stack web and mobile developer based in Lille. I build seamless, modern, and high-performance interactive experiences with innovative design.
+                    I'm Benhouss, a full stack web and mobile developer based in Lille. I build seamless, modern, and high-performance interactive experiences with innovative design.
                   </>
                 )}
               </m.p>

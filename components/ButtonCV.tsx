@@ -9,26 +9,19 @@ const ButtonCV: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
-  const handleDownload = () => {
-    const isFr = language === "fr";
-    const fileName = isFr ? "/assets/cv/cv-ilyesledev-fr.png" : "/assets/cv/cv-ilyesledev-en.png";
-    const downloadName = isFr ? "CV-Ilyesledev-FR.pdf" : "CV-Ilyesledev-EN.pdf";
+  // Lien Dropbox direct pour FR et EN (avec ?dl=1 pour forcer le téléchargement)
+  const fileUrl =
+    language === "fr"
+      ? "https://www.dropbox.com/scl/fi/p4tudkl7vq6skli37yf3t/CV-Benhouss-FR.pdf?rlkey=yramuqmun5svgxh2ww7o47ncg&st=5yz5l59y&dl=1"
+      : "https://www.dropbox.com/scl/fi/XXXXX/CV-Ghardi-Ilyes-EN.pdf?rlkey=XXXXXX&st=XXXXXX&dl=1"; // ← remplace par ton vrai lien EN
 
-    const link = document.createElement("a");
-    link.href = fileName;
-    link.download = downloadName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const buttonText =
+    language === "fr" ? "📄 Télécharger le CV" : "📄 Download Resume";
 
-  const text = language === "fr"
-    ? "Un clic, un fichier. Peut-être le début de quelque chose."
-    : "One click, one file. Maybe the start of something.";
-
-  const buttonText = language === "fr"
-    ? "📄 Télécharger le CV"
-    : "📄 Download Resume";
+  const text =
+    language === "fr"
+      ? "Un clic, un fichier. Peut-être le début de quelque chose."
+      : "One click, one file. Maybe the start of something.";
 
   return (
     <div
@@ -44,8 +37,11 @@ const ButtonCV: React.FC = () => {
         {text}
       </motion.p>
 
-      <motion.button
-        onClick={handleDownload}
+      <motion.a
+        href={fileUrl}
+        download
+        target="_blank"
+        rel="noopener noreferrer"
         className="relative inline-flex items-center justify-center px-6 py-3 text-white bg-blue-600 rounded-full text-base sm:text-lg font-medium shadow-md hover:bg-blue-700 transition duration-300"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -53,7 +49,7 @@ const ButtonCV: React.FC = () => {
       >
         {buttonText}
         <span className="absolute inset-0 rounded-full bg-blue-400/20 blur-xl opacity-40 z-0 animate-pulse" />
-      </motion.button>
+      </motion.a>
     </div>
   );
 };
