@@ -47,6 +47,18 @@ export function Projects() {
       srcs: ["/assets/gta/Gta.webp"],
       stack: ["Figma", "Vue", "Lua", "Tailwind", "Mysql"],
     },
+    {
+      quote:
+        language === "fr"
+          ? "NoteShare est une application de prise de notes collaborative que je développe actuellement. Elle permet d’écrire, partager et collaborer en temps réel dans une interface moderne et intuitive. J’y intègre des fonctionnalités avancées comme les rôles utilisateurs, l’ajout de vidéos et un système de partage sécurisé. Un projet personnel ambitieux pensé comme un vrai SaaS."
+          : "NoteShare is a collaborative note-taking app I'm currently developing. It allows users to write, share, and collaborate in real time through a modern, intuitive interface. I’m adding advanced features like user roles, video embeds, and secure sharing. A personal, ambitious project designed like a real SaaS.",
+      name: "NoteShare",
+      designation: language === "fr" ? "Projet personnel (en cours)" : "Personal project (in progress)",
+      srcs: ["/assets/noteshare/1.png","/assets/noteshare/2.png"],
+      stack: ["NextJS", "Supabase", "TypeScript", "Tailwind", "shadcn/ui"],
+    }
+    
+    
   ];
 
   return (
