@@ -15,14 +15,14 @@ export async function POST(req: Request) {
       port: 587,
       secure: false, // STARTTLS
       auth: {
-        user: process.env.EMAIL_FROM,     // exemple : yeslife@outlook.fr
-        pass: process.env.EMAIL_PASSWORD, // mot de passe de ton compte Outlook
+        user: process.env.EMAIL_FROM,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
 
     await transporter.sendMail({
-      from: `"${name}" <${email}>`, // expéditeur visible
-      to: process.env.EMAIL_TO,     // ton adresse outlook
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_TO,
       subject: "📬 Nouveau message depuis le portfolio",
       html: `
         <p><strong>Nom :</strong> ${name}</p>
@@ -32,8 +32,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ message: "Message envoyé avec succès" }, { status: 200 });
-  } catch (error) {
-    console.error("Erreur d'envoi :", error);
+  } catch (error: any) {
+    console.error("Erreur d'envoi complète :", error.response || error.message || error);
     return NextResponse.json({ message: "Erreur serveur" }, { status: 500 });
   }
 }
