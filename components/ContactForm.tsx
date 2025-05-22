@@ -6,6 +6,12 @@ import * as Yup from "yup";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+};
+
 const ContactForm: React.FC = () => {
   const { language } = useLang();
   const [loading, setLoading] = useState(false);
