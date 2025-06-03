@@ -6,9 +6,11 @@ import { BiEnvelope, BiBookAlt } from "react-icons/bi";
 import { SiGitlab } from "react-icons/si";
 import "./Footer.css";
 
+// ✅ Calculé une seule fois au chargement → plus de warning
+const currentYear = new Date().getFullYear();
+
 const Footer: React.FC = () => {
   const { language } = useLang();
-  const year = new Date().getFullYear();
 
   return (
     <footer className="school-footer">
@@ -31,18 +33,16 @@ const Footer: React.FC = () => {
             {/* Bloc 2 */}
             <div className="school-section">
               <div className="social-grid">
-                {/* GitLab officiel en couleur */}
                 <a
                   href="https://gitlab.com/yeslife.prod"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
                 >
-                  <SiGitlab size={20} color="#FC6D26" /> {/* Couleur officielle */}
+                  <SiGitlab size={20} color="#FC6D26" />
                   <span>GitLab</span>
                 </a>
 
-                {/* Email */}
                 <a
                   href="mailto:yeslife.prod@gmail.com"
                   target="_blank"
@@ -56,16 +56,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Bas de page */}
+          {/* ✅ Footer bas sans API dépréciée */}
           <div className="footer-bottom">
             <p>
               {language === "fr" ? (
                 <>
-                  © {year} Benhouss — Tous droits réservés • Fait avec ❤
+                  © {currentYear} Benhouss — Tous droits réservés • Fait avec ❤
                 </>
               ) : (
                 <>
-                  © {year} Benhouss — All rights reserved • Made with ❤
+                  © {currentYear} Benhouss — All rights reserved • Made with ❤
                 </>
               )}
             </p>
