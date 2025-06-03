@@ -33,7 +33,6 @@ const Hero = () => {
                   muted
                   playsInline
                   className="w-40 h-40 sm:w-56 sm:h-56 object-cover rounded-full"
-                  poster="/assets/preview.jpg"
                 >
                   <source src="/assets/animation.mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la vidéo.
