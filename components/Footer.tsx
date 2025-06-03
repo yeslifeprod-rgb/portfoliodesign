@@ -56,7 +56,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* ✅ Footer bas sans API dépréciée */}
           <div className="footer-bottom">
             <p>
               {language === "fr" ? (
