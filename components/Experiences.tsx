@@ -261,7 +261,6 @@ const ExperienceSection = () => {
                 style={{ top: `calc(${progress * 100}% - 10px)` }}
               >
                 <img
-                  src="/icons/magic_orb.gif"
                   alt="progress orb"
                   className="w-full h-full animate-pulse"
                 />
