@@ -55,11 +55,15 @@ const Hero = () => {
               >
                 {language === "fr" ? (
                   <>
-                    Je suis Benhouss, développeur full stack web et mobile à Lille. Je conçois des expériences interactives fluides, modernes et performantes, au design innovant.
+                    Je suis Benhouss, développeur full stack web et mobile à
+                    Lille. Je conçois des expériences interactives fluides,
+                    modernes et performantes, au design innovant.
                   </>
                 ) : (
                   <>
-                    I'm Benhouss, a full stack web and mobile developer based in Lille. I build seamless, modern, and high-performance interactive experiences with innovative design.
+                    I'm Benhouss, a full stack web and mobile developer based in
+                    Lille. I build seamless, modern, and high-performance
+                    interactive experiences with innovative design.
                   </>
                 )}
               </m.p>
