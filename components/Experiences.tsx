@@ -56,6 +56,80 @@ const ExperienceSection = () => {
         id: 1,
         title:
           language === "fr"
+            ? "Stagiaire Développeur Fullstack"
+            : "Full Stack Developer Intern",
+        company:
+          "Num4 Plateforme musicale où les artistes vendent leurs morceaux exclusifs- Plaine Images",
+        years: "2025",
+        description:
+          language === "fr"
+            ? [
+                [
+                  "Développement fullstack de l'application web en Next.js",
+                  "Refonte de l'application mobile avec Flutter (iOS & Android)",
+                  "Conception et développement d'une landing page performante en Next.js",
+                  "Collaboration directe avec le fondateur et le CTO sur l'UX/UI",
+                  "Participation aux décisions produit (parcours utilisateur, design)",
+                ],
+              ]
+            : [
+                "Fullstack development of the web application using Next.js",
+                "Redesign of the mobile app with Flutter (iOS & Android)",
+                "Designed and developed a high-performance landing page in Next.js",
+                "Worked closely with the founder and CTO on UX/UI",
+                "Contributed to product decisions (user journey, interface design)",
+              ],
+        skills: [
+          "Next.js",
+          "Flutter",
+          "TypeScript",
+          "React",
+          "Figma",
+          "AWS",
+          "CI/CD",
+          "Mobile",
+          "UX/UI",
+          "Github",
+        ],
+      },
+      {
+        id: 2,
+        title:
+          language === "fr"
+            ? "Projet personnel | NoteShare (SaaS sécurisé)"
+            : "Personal Project | NoteShare (Secure SaaS)",
+        company: "",
+        years: "2025",
+        description:
+          language === "fr"
+            ? [
+                "App de prise de notes avec partage, tags, flashcards et chiffrement RGPD",
+                "Auth sécurisée (access/refresh tokens)",
+                "Données gérées via Prisma + Supabase",
+                "Chiffrement via crypto.js",
+                "UI moderne (shadcn/ui, animations, filtres, vues)",
+              ]
+            : [
+                "Note-taking app with sharing, tags, flashcards and GDPR-compliant encryption",
+                "Secure authentication (access/refresh tokens)",
+                "Data managed via Prisma + Supabase",
+                "Encryption via crypto.js",
+                "Modern UI (shadcn/ui, animations, filters, views)",
+              ],
+        skills: [
+          "Next.js",
+          "Prisma",
+          "Supabase",
+          "shadcn/ui",
+          "TypeScript",
+          "Node.js",
+          "Crypto.js",
+        ],
+      },
+      {
+        id: 3,
+        title:
+          language === "fr"
             ? "Concepteur Développeur d'Applications"
             : "Application Developer Designer",
         company: "ALT Incubateur",
@@ -95,7 +169,7 @@ const ExperienceSection = () => {
         ],
       },
       {
-        id: 2,
+        id: 4,
         title:
           language === "fr"
             ? "1Formation – 1Job Nurserie (6 semaines)"
@@ -125,7 +199,7 @@ const ExperienceSection = () => {
         skills: ["HTML", "CSS", "Javascript", "UX/UI", "Wordpress"],
       },
       {
-        id: 3,
+        id: 5,
         title:
           language === "fr"
             ? "Formation découverte des métiers du numérique"

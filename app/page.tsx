@@ -2,18 +2,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 
-
 import Stack from "@/components/Stack";
 import HomeSection from "@/components/Home";
 
-
-
-
 import { Projects } from "@/components/Projects";
 import ButtonCV from "@/components/ButtonCV";
+import ExperienceSection from "@/components/Experiences";
 import Experiences from "@/components/Experiences";
-
-
 
 export default function Home() {
   return (
@@ -22,43 +17,30 @@ export default function Home() {
 
       <main className="flex flex-col items-center space-y-16 p-6">
         {/* Section Accueil */}
-    
-          <HomeSection />
-   
 
-     
-      <ButtonCV/>
+        <HomeSection />
 
-    
-      {/* Section Projets */}
-  
-      <Projects />
+        <ButtonCV />
+
+        {/* Section Projets */}
+
+        <Projects />
 
         {/* Section Stack (Compétences) */}
-       
-        
-          <Stack />
-      
+
+        <Stack />
 
         {/* Section Expériences */}
-      
-          <Experiences />
-        
 
-  
-
+        <Experiences />
 
         {/* Section Contact */}
-      
-         
-          <Contact />
-      
 
-
+        <Contact />
       </main>
 
-     {/* Section Footer */}
-     <Footer />
+      {/* Section Footer */}
+      <Footer />
     </>
   );
 }

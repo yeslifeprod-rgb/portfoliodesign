@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useLang } from "@/context/LangContext";
+import { StatefulButton } from "./ui/StatefulButton";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -14,7 +15,7 @@ const fadeInUp = {
 
 const ContactForm: React.FC = () => {
   const { language } = useLang();
-  const [loading, setLoading] = useState(false);
+  const [buttonStatus, setButtonStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [messageSent, setMessageSent] = useState(false);
   const [confettiLib, setConfettiLib] = useState<any>(null);
 
@@ -52,7 +53,7 @@ const ContactForm: React.FC = () => {
         .required(language === "fr" ? "Le message est requis" : "Message is required"),
     }),
     onSubmit: async (values, { resetForm }) => {
-      setLoading(true);
+      setButtonStatus("loading");
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
@@ -61,18 +62,22 @@ const ContactForm: React.FC = () => {
         });
 
         if (response.ok) {
+          setButtonStatus("success");
           triggerConfetti();
           setMessageSent(true);
           resetForm();
         } else {
-          alert(language === "fr" ? "Erreur lors de l'envoi, réessayez." : "Error sending message. Try again.");
+          setButtonStatus("error");
+          console.error("Erreur lors de l'envoi du message");
         }
       } catch (error) {
+        setButtonStatus("error");
         console.error("Erreur :", error);
-        alert(language === "fr" ? "Erreur lors de l'envoi du message." : "Error sending message.");
       } finally {
-        setLoading(false);
-        setTimeout(() => setMessageSent(false), 2500);
+        setTimeout(() => {
+          setButtonStatus("idle");
+          setMessageSent(false);
+        }, 2500);
       }
     },
   });
@@ -122,20 +127,15 @@ const ContactForm: React.FC = () => {
           <p className="text-red-500 text-sm">{formik.errors.message}</p>
         )}
 
-        <button
+        <StatefulButton
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition-all flex items-center justify-center"
-          disabled={loading}
+          status={buttonStatus}
+          loadingText={language === "fr" ? "Envoi..." : "Sending..."}
+          successText={language === "fr" ? "Envoyé !" : "Sent!"}
+          errorText={language === "fr" ? "Erreur !" : "Error!"}
         >
-          {loading ? (
-            <span className="flex items-center gap-2">
-              <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              {language === "fr" ? "Envoi..." : "Sending..."}
-            </span>
-          ) : (
-            <span>{language === "fr" ? "Envoyer" : "Send"}</span>
-          )}
-        </button>
+          {language === "fr" ? "Envoyer" : "Send"}
+        </StatefulButton>
       </form>
 
       <AnimatePresence>
