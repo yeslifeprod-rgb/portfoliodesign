@@ -12,7 +12,7 @@ const ButtonCV: React.FC = () => {
   // Lien Dropbox direct pour FR et EN (avec ?dl=1 pour forcer le téléchargement)
   const fileUrl =
     language === "fr"
-      ? "https://www.dropbox.com/scl/fi/nwk7keginv4ph9z2c4ab3/CV-Benhouss-FR.pdf?rlkey=0y8xi2s5vd4q1bmjbktk7irru&st=i4rl0g87&dl=1"
+      ? "https://www.dropbox.com/scl/fi/u8lagan4i2pd30f4pkz2m/CV-Benhouss-FR.pdf?rlkey=9pwi0nvo9ig4oi4oiv0grcf15&st=zoi1c9be&dl=1"
       : "https://www.dropbox.com/scl/fi/8jclx6bhrea321f3l6xny/CV-Benhouss-EN.pdf?rlkey=43m4aeeaqkhusiix713ey8boz&st=2djhuhde&dl=1"; // ← remplace par ton vrai lien EN
 
   const buttonText =
