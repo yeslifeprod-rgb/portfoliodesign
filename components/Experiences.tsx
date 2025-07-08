@@ -59,18 +59,18 @@ const ExperienceSection = () => {
             ? "Stagiaire Développeur Fullstack"
             : "Full Stack Developer Intern",
         company:
-          "Num4 Plateforme musicale où les artistes vendent leurs morceaux exclusifs- Plaine Images",
+          language === "fr"
+            ? "Num4 | Plateforme musicale où les artistes vendent leurs morceaux exclusifs - Plaine Images"
+            : "Num4 | Music platform where artists sell their exclusive tracks - Plaine Images",
         years: "2025",
         description:
           language === "fr"
             ? [
-                [
-                  "Développement fullstack de l'application web en Next.js",
-                  "Refonte de l'application mobile avec Flutter (iOS & Android)",
-                  "Conception et développement d'une landing page performante en Next.js",
-                  "Collaboration directe avec le fondateur et le CTO sur l'UX/UI",
-                  "Participation aux décisions produit (parcours utilisateur, design)",
-                ],
+                "Développement fullstack de l'application web en Next.js",
+                "Refonte de l'application mobile avec Flutter (iOS & Android)",
+                "Conception et développement d'une landing page performante en Next.js",
+                "Collaboration directe avec le fondateur et le CTO sur l'UX/UI",
+                "Participation aux décisions produit (parcours utilisateur, design)",
               ]
             : [
                 "Fullstack development of the web application using Next.js",
@@ -85,6 +85,13 @@ const ExperienceSection = () => {
           "TypeScript",
           "React",
           "Figma",
+          "Tailwind",
+          "Vercel",
+          "Prisma",
+          "MLD",
+          "MCD",
+          "MPD",
+          "UML",
           "AWS",
           "CI/CD",
           "Mobile",
@@ -96,21 +103,21 @@ const ExperienceSection = () => {
         id: 2,
         title:
           language === "fr"
-            ? "Projet personnel | NoteShare (SaaS sécurisé)"
-            : "Personal Project | NoteShare (Secure SaaS)",
-        company: "",
+            ? "NoteShare (Application éducative sécurisée)"
+            : "NoteShare (Secure Educational App)",
+        company: language === "fr" ? "Projet personnel" : "Personal Project",
         years: "2025",
         description:
           language === "fr"
             ? [
-                "App de prise de notes avec partage, tags, flashcards et chiffrement RGPD",
+                "Application éducative de prise de notes avec fonctionnalités de révision et de partage",
                 "Auth sécurisée (access/refresh tokens)",
                 "Données gérées via Prisma + Supabase",
                 "Chiffrement via crypto.js",
                 "UI moderne (shadcn/ui, animations, filtres, vues)",
               ]
             : [
-                "Note-taking app with sharing, tags, flashcards and GDPR-compliant encryption",
+                "Educational note-taking application with revision and sharing features",
                 "Secure authentication (access/refresh tokens)",
                 "Data managed via Prisma + Supabase",
                 "Encryption via crypto.js",
@@ -120,6 +127,7 @@ const ExperienceSection = () => {
           "Next.js",
           "Prisma",
           "Supabase",
+          "Bcrypt",
           "shadcn/ui",
           "TypeScript",
           "Node.js",
