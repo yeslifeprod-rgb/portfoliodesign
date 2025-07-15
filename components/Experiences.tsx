@@ -17,8 +17,9 @@ const AnimatePresence = dynamic(
 const ExperienceSection = () => {
   const { language } = useLang();
   const { ref: inViewRef, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
     triggerOnce: true,
+    rootMargin: '50px 0px',
   });
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -304,8 +305,8 @@ const ExperienceSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-16 md:mb-32"
         >
           <h2 className="text-3xl md:text-4xl text-gray-900">
@@ -313,7 +314,7 @@ const ExperienceSection = () => {
           </h2>
         </MotionDiv>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-6 md:gap-8 lg:gap-16 items-start">
           {/* Vidéo */}
           <div className="lg:sticky lg:top-24 h-fit max-w-[280px] mx-auto mb-12 lg:mb-0">
             <div className="relative rounded-lg overflow-hidden shadow-lg">
@@ -324,7 +325,8 @@ const ExperienceSection = () => {
                 loop
                 muted
                 playsInline
-                preload="none"
+                preload="metadata"
+                loading="lazy"
                 style={{ maxHeight: "350px" }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent" />
@@ -333,7 +335,7 @@ const ExperienceSection = () => {
 
           {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-gray-200 z-0 overflow-hidden">
+            <div className="absolute left-2 md:left-4 top-0 bottom-0 w-[2px] bg-gray-200 z-0 overflow-hidden">
               <div
                 className="absolute top-0 left-0 w-full bg-blue-600 transition-all duration-200"
                 style={{ height: `${progress * 100}%` }}
@@ -351,17 +353,21 @@ const ExperienceSection = () => {
 
             <div
               ref={timelineRef}
-              className="relative space-y-16 md:space-y-32 pl-12 md:pl-[64px] lg:pl-[100px] z-10"
+              className="relative space-y-12 md:space-y-20 lg:space-y-32 pl-8 md:pl-[64px] lg:pl-[100px] z-10"
             >
               {experiences.map((exp, index) => (
                 <MotionDiv
                   key={exp.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 1, delay: index * 0.3 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    ease: "easeOut"
+                  }}
                   className="relative group"
                 >
-                  <div className="absolute left-[-8px] md:left-[-36px] lg:left-[-108px] top-3">
+                  <div className="absolute left-[-4px] md:left-[-36px] lg:left-[-108px] top-3">
                     <div className="relative">
                       <div className="w-4 h-4 rounded-full border-4 border-blue-500 bg-white transition-transform duration-300 group-hover:scale-125" />
                       <div className="absolute -inset-2 rounded-full border border-blue-200 opacity-0 group-hover:animate-ping" />
@@ -378,17 +384,27 @@ const ExperienceSection = () => {
                       </h3>
                       <p className="text-blue-600 mt-1">{exp.company}</p>
                     </div>
-                    <ul className="space-y-3 md:space-y-4">
-                      {exp.description.map((point, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start space-x-3 md:space-x-4 text-gray-600 text-sm md:text-base"
-                        >
-                          <span className="w-[3px] h-[3px] bg-blue-400 rounded-full mt-2.5 flex-shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <MotionDiv
+                      initial={{ opacity: 0 }}
+                      animate={inView ? { opacity: 1 } : {}}
+                      transition={{ 
+                        duration: 0.4, 
+                        delay: index * 0.1 + 0.2,
+                        ease: "easeOut"
+                      }}
+                    >
+                      <ul className="space-y-3 md:space-y-4">
+                        {exp.description.map((point, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start space-x-3 md:space-x-4 text-gray-600 text-sm md:text-base leading-relaxed"
+                          >
+                            <span className="w-[3px] h-[3px] bg-blue-400 rounded-full mt-2.5 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </MotionDiv>
                     <div className="flex flex-wrap gap-2 md:gap-3">
                       {exp.skills.map((skill) => (
                         <span
