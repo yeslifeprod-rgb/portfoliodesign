@@ -1,15 +1,15 @@
 module.exports = {
-  siteUrl: "https://ilyesledev.com",
+  siteUrl: "https://www.benhouss.site",
   generateRobotsTxt: true,
   changefreq: "monthly",
   priority: 0.7,
   alternateRefs: [
     {
-      href: "https://ilyesledev.com",
+      href: "https://www.benhouss.site",
       hreflang: "fr",
     },
     {
-      href: "https://ilyesledev.com",
+      href: "https://www.benhouss.site/en",
       hreflang: "en",
     },
   ],

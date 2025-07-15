@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLang } from "@/context/LangContext";
 import { GridBackgroundDemo } from "@/components/Grid";
 import Navbar from "@/components/Navbar";
@@ -10,22 +10,43 @@ const Hero = () => {
   const { language } = useLang();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setParallaxOffset(scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="relative">
       <Navbar />
 
-      <GridBackgroundDemo>
-        <LazyMotion features={domAnimation}>
+      <div 
+        style={{
+          transform: `translateY(${parallaxOffset * 0.2}px)`,
+        }}
+      >
+        <GridBackgroundDemo>
+          <LazyMotion features={domAnimation}>
           <m.section
             ref={sectionRef}
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-4 pt-24 sm:pt-32 font-['DM_Sans']"
+            style={{
+              transform: `translateY(${-parallaxOffset * 0.8}px) scale(${1 + parallaxOffset * 0.0002})`,
+            }}
+            role="banner"
+            aria-label="Section d'accueil - Présentation de Benhouss"
           >
             {/* 🎬 Vidéo */}
-            <div className="w-full md:w-1/3 flex justify-center">
+            <figure className="w-full md:w-1/3 flex justify-center" role="img" aria-label="Animation de présentation de Benhouss">
               <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
                 <video
                   autoPlay
@@ -33,15 +54,16 @@ const Hero = () => {
                   muted
                   playsInline
                   className="w-40 h-40 sm:w-56 sm:h-56 object-cover rounded-full"
+                  aria-label="Vidéo d'animation de présentation"
                 >
                   <source src="/assets/animation.mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la vidéo.
                 </video>
               </div>
-            </div>
+            </figure>
 
             {/* 🧠 Texte */}
-            <div className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
+            <header className="w-full md:w-2/3 text-center md:text-left px-2 sm:px-6">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-gray-900 leading-tight tracking-wide drop-shadow-lg">
                 Benhouss
               </h1>
@@ -66,10 +88,11 @@ const Hero = () => {
                   </>
                 )}
               </m.p>
-            </div>
+            </header>
           </m.section>
-        </LazyMotion>
-      </GridBackgroundDemo>
+          </LazyMotion>
+        </GridBackgroundDemo>
+      </div>
     </div>
   );
 };

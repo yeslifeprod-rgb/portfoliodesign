@@ -27,6 +27,11 @@ const ButtonCV: React.FC = () => {
     <div
       ref={ref}
       className="flex flex-col items-center gap-8 mt-32 px-4 text-center font-sans"
+      style={{
+        transform: 'translate3d(0, 0, 0)',
+        position: 'relative',
+        zIndex: 20,
+      }}
     >
       <motion.p
         className="text-zinc-500 text-lg sm:text-xl font-normal tracking-tight max-w-xl"

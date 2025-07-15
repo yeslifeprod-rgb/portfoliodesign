@@ -33,12 +33,23 @@ const Navbar: React.FC = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollY = useRef(0);
 
-  const navigation = useMemo(() => [
-    { id: "projets", label: language === "fr" ? "Projets" : "Projects", href: "#projets" },
-    { id: "stack", label: "Stack", href: "#stack" },
-    { id: "experience", label: language === "fr" ? "Expérience" : "Experience", href: "#experience" },
-    { id: "contact", label: "Contact", href: "#contact" },
-  ], [language]);
+  const navigation = useMemo(
+    () => [
+      {
+        id: "projets",
+        label: language === "fr" ? "Projets" : "Projects",
+        href: "#projets",
+      },
+      { id: "stack", label: "Stack", href: "#stack" },
+      {
+        id: "experience",
+        label: language === "fr" ? "Expérience" : "Experience",
+        href: "#experience",
+      },
+      { id: "contact", label: "Contact", href: "#contact" },
+    ],
+    [language]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +90,11 @@ const Navbar: React.FC = () => {
       className={`
         fixed top-0 left-0 w-full z-50 backdrop-blur-md text-black 
         transition-all duration-300 font-['DM_Sans']
-        ${isScrolled ? "md:bg-white/5 bg-white/95" : "md:bg-transparent bg-white/80"}
+        ${
+          isScrolled
+            ? "md:bg-white/5 bg-white/95"
+            : "md:bg-transparent bg-white/80"
+        }
         py-4 px-6 md:shadow-none shadow-sm
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}
       `}
@@ -92,7 +107,9 @@ const Navbar: React.FC = () => {
         <div className="flex gap-2 items-center">
           <button
             onClick={() => setLanguage("fr")}
-            className={`text-sm font-bold ${language === "fr" ? "text-blue-600" : "text-gray-500"}`}
+            className={`text-sm font-bold ${
+              language === "fr" ? "text-blue-600" : "text-gray-500"
+            }`}
             aria-label="Passer en français"
           >
             🇫🇷 FR
@@ -100,7 +117,9 @@ const Navbar: React.FC = () => {
           <span className="text-gray-400">|</span>
           <button
             onClick={() => setLanguage("en")}
-            className={`text-sm font-bold ${language === "en" ? "text-blue-600" : "text-gray-500"}`}
+            className={`text-sm font-bold ${
+              language === "en" ? "text-blue-600" : "text-gray-500"
+            }`}
             aria-label="Switch to English"
           >
             🇬🇧 EN
