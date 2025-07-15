@@ -326,7 +326,6 @@ const ExperienceSection = () => {
                 muted
                 playsInline
                 preload="metadata"
-                loading="lazy"
                 style={{ maxHeight: "350px" }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent" />
