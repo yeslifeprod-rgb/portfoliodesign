@@ -1,7 +1,5 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-  # ou pour la nouvelle archi App Router : ".next" reste ok
 
 [[plugins]]
   package = "@netlify/next"
