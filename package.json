@@ -10,7 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@netlify/next": "^1.4.9",
+    "@netlify/plugin-nextjs": "^5.13.5",
     "@tabler/icons-react": "^3.31.0",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
