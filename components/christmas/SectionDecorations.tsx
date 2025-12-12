@@ -50,7 +50,7 @@ export const FullSectionDecorations: React.FC = () => {
   return (
     <>
       <SectionDecorations position="top-left" decoration="snowman" />
-      <SectionDecorations position="top-right" decoration="reindeer" />
+      <SectionDecorations position="top-right" decoration="tree" />
       <SectionDecorations position="bottom-left" decoration="gift" />
       <SectionDecorations position="bottom-right" decoration="tree" />
     </>
