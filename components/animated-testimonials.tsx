@@ -20,7 +20,7 @@ const stackIcons: Record<string, React.ReactNode> = {
   NextJS: <SiNextdotjs size={24} className="text-black" />,
   Tailwind: <SiTailwindcss size={24} className="text-[#38B2AC]" />,
   TypeScript: <SiTypescript size={24} className="text-[#3178C6]" />,
-  Vue: <SiVuedotjs size={24} className="text-[#42b883]" />, // ✅ Vue ajouté ici
+  Vue: <SiVuedotjs size={24} className="text-[#42b883]" />,
   Lua: <SiLua size={24} className="text-[#000080]" />,
   NodeJS: <SiNodedotjs size={24} className="text-[#339933]" />,
   Supabase: <RiSupabaseLine size={24} className="text-[#3ECF8E]" />,
@@ -31,7 +31,7 @@ const stackIcons: Record<string, React.ReactNode> = {
   Mysql: <SiMysql size={24} className="text-[#00758F]" />,
   Nodemailer: <MdEmail size={24} className="text-[#009dff]" />,
   Git: <SiGit size={24} className="text-[#F1502F]" />,
-  YouTrack: <FaTasks size={24} className="text-[#000000]" />,
+  YouTrack: <FaTasks size={24} className="text-black" />,
   Docker: <SiDocker size={24} className="text-[#2496ED]" />,
   Cypress: <SiCypress size={24} className="text-[#17202C]" />,
   Jest: <SiJest size={24} className="text-[#C21325]" />,
@@ -153,7 +153,7 @@ export const AnimatedTestimonials = ({
                       className={`w-2.5 h-2.5 rounded-full ${
                         idx === imageIndex ? "bg-black" : "bg-gray-300"
                       }`}
-                      aria-label={`Voir l’image ${idx + 1}`}
+                      aria-label={`Voir l'image ${idx + 1}`}
                     />
                   ))}
                 </div>

@@ -60,11 +60,11 @@ const Footer: React.FC = () => {
             <p>
               {language === "fr" ? (
                 <>
-                  © {currentYear} Benhouss — Tous droits réservés • Fait avec ❤
+                  © {currentYear} Benhouss — Tous droits réservés • Fait avec ❤️
                 </>
               ) : (
                 <>
-                  © {currentYear} Benhouss — All rights reserved • Made with ❤
+                  © {currentYear} Benhouss — All rights reserved • Made with ❤️
                 </>
               )}
             </p>

@@ -87,22 +87,22 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className={`
-        fixed top-0 left-0 w-full z-50 backdrop-blur-md text-black 
-        transition-all duration-300 font-['DM_Sans']
-        ${
-          isScrolled
-            ? "md:bg-white/5 bg-white/95"
-            : "md:bg-transparent bg-white/80"
-        }
-        py-4 px-6 md:shadow-none shadow-sm
-        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-      `}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      <div className="max-w-6xl mx-auto flex items-center justify-between relative">
+        className={`
+          fixed top-0 left-0 w-full z-50 backdrop-blur-md text-black
+          transition-all duration-300 font-['DM_Sans']
+          ${
+            isScrolled
+              ? "md:bg-white/5 bg-white/95"
+              : "md:bg-transparent bg-white/80"
+          }
+          py-4 px-6 md:shadow-none shadow-sm
+          ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+        `}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="max-w-6xl mx-auto flex items-center justify-between relative">
         {/* Lang switch */}
         <div className="flex gap-2 items-center">
           <button
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
               key={item.id}
               href={item.href}
               className={`
-                relative text-lg transition-colors duration-300 
+                relative text-lg transition-colors duration-300
                 cursor-pointer hover:text-black
                 ${activeSection === item.id ? "text-black" : "text-gray-600"}
               `}

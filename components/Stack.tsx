@@ -3,11 +3,11 @@
 import React from "react";
 import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
-  SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiPostgresql, SiMysql,
+  SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiAdobephotoshop, SiFigma, SiIonic
 } from "react-icons/si";
 import { FaPenFancy } from "react-icons/fa";
-import { RiSupabaseLine } from "react-icons/ri"; 
+import { RiSupabaseLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 
 interface StackItem {
@@ -41,7 +41,7 @@ const Stack: React.FC = () => {
   return (
     <section
       id="stack"
-      className="bg-white text-gray-900 px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24 lg:py-32"
+      className="relative bg-white text-gray-900 px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24 lg:py-32 overflow-hidden"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}

@@ -4,6 +4,44 @@ import { useMemo, useRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { useLang } from "@/context/LangContext";
 import dynamic from "next/dynamic";
+import {
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
+  SiNodedotjs, SiNestjs, SiPrisma, SiMysql,
+  SiDocker, SiGit, SiJest, SiCypress, SiFigma,
+  SiFlutter, SiVercel, SiGithub, SiNotion,
+  SiIonic, SiHtml5, SiCss3, SiJavascript, SiWordpress,
+  SiXcode, SiAmazonwebservices
+} from "react-icons/si";
+import { RiSupabaseLine } from "react-icons/ri";
+
+// Mapping des skills vers leurs icônes et couleurs
+const skillIcons: Record<string, { icon: React.ElementType; color: string }> = {
+  "React": { icon: SiReact, color: "#61DAFB" },
+  "Next.js": { icon: SiNextdotjs, color: "#000000" },
+  "TypeScript": { icon: SiTypescript, color: "#3178C6" },
+  "Tailwind": { icon: SiTailwindcss, color: "#06B6D4" },
+  "Node.js": { icon: SiNodedotjs, color: "#339933" },
+  "NestJS": { icon: SiNestjs, color: "#E0234E" },
+  "Prisma": { icon: SiPrisma, color: "#2D3748" },
+  "MySQL": { icon: SiMysql, color: "#4479A1" },
+  "Docker": { icon: SiDocker, color: "#2496ED" },
+  "Git": { icon: SiGit, color: "#F05032" },
+  "Jest": { icon: SiJest, color: "#C21325" },
+  "Cypress": { icon: SiCypress, color: "#17202C" },
+  "Figma": { icon: SiFigma, color: "#F24E1E" },
+  "Flutter": { icon: SiFlutter, color: "#02569B" },
+  "Vercel": { icon: SiVercel, color: "#000000" },
+  "Github": { icon: SiGithub, color: "#181717" },
+  "Notion": { icon: SiNotion, color: "#000000" },
+  "Ionic": { icon: SiIonic, color: "#3880FF" },
+  "HTML": { icon: SiHtml5, color: "#E34F26" },
+  "CSS": { icon: SiCss3, color: "#1572B6" },
+  "Javascript": { icon: SiJavascript, color: "#F7DF1E" },
+  "Wordpress": { icon: SiWordpress, color: "#21759B" },
+  "Supabase": { icon: RiSupabaseLine, color: "#3ECF8E" },
+  "Xcode": { icon: SiXcode, color: "#147EFB" },
+  "AWS": { icon: SiAmazonwebservices, color: "#FF9900" },
+};
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -19,7 +57,7 @@ const ExperienceSection = () => {
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
-    rootMargin: '50px 0px',
+    rootMargin: "50px 0px",
   });
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -67,18 +105,18 @@ const ExperienceSection = () => {
         description:
           language === "fr"
             ? [
-                "Développement fullstack de l'application web en Next.js",
-                "Refonte de l'application mobile avec Flutter (iOS & Android)",
-                "Conception et développement d'une landing page performante en Next.js",
-                "Collaboration directe avec le fondateur et le CTO sur l'UX/UI",
-                "Participation aux décisions produit (parcours utilisateur, design)",
+                "Développement front et back en Next.js pour livrer une application web réactive et performante, améliorant l'accès aux contenus exclusifs",
+                "Intervention sur la fonctionnalité de paiement iOS avec intégration de RevenueCat pour la gestion des achats in-app, synchronisation back-end (Postgres) et intégration front-end (Flutter/Next.js)",
+                "Utilisation de Xcode pour tester et simuler l'application sur différents appareils iOS afin d'assurer sa stabilité et sa compatibilité",
+                "Conception d'une landing page performante pour optimiser l'acquisition et la clarté du parcours utilisateur",
+                "Collaboration directe avec le fondateur et le CTO, participation aux réflexions produit (UX/UI, parcours utilisateur) pour garantir une cohérence entre design et implémentation",
               ]
             : [
-                "Fullstack development of the web application using Next.js",
-                "Redesign of the mobile app with Flutter (iOS & Android)",
-                "Designed and developed a high-performance landing page in Next.js",
-                "Worked closely with the founder and CTO on UX/UI",
-                "Contributed to product decisions (user journey, interface design)",
+                "Developed front-end and back-end with Next.js to deliver a responsive, high-performance web app, improving access to exclusive content",
+                "Implemented iOS payment functionality with RevenueCat integration for in-app purchases, back-end synchronization (Postgres) and front-end integration (Flutter/Next.js)",
+                "Used Xcode to test and simulate the app on various iOS devices to ensure stability and compatibility",
+                "Designed a high-performance landing page to optimize acquisition and user journey clarity",
+                "Collaborated directly with the founder and CTO, participated in product discussions (UX/UI, user journey) to ensure consistency between design and implementation",
               ],
         skills: [
           "Next.js",
@@ -98,6 +136,10 @@ const ExperienceSection = () => {
           "Mobile",
           "UX/UI",
           "Github",
+          "Xcode",
+          "Ios",
+          "RevenueCat",
+          "Notion",
         ],
       },
       {
@@ -111,18 +153,14 @@ const ExperienceSection = () => {
         description:
           language === "fr"
             ? [
-                "Application éducative de prise de notes avec fonctionnalités de révision et de partage",
-                "Auth sécurisée (access/refresh tokens)",
-                "Données gérées via Prisma + Supabase",
-                "Chiffrement via crypto.js",
-                "UI moderne (shadcn/ui, animations, filtres, vues)",
+                "Développement d'une application de prise de notes sécurisée avec gestion des accès via access et refresh tokens et chiffrement des données sensibles (crypto.js, bcrypt) pour garantir la confidentialité",
+                "Architecture et persistance avec Prisma et Supabase pour assurer une scalabilité et une gestion structurée des données",
+                "Conception d'une interface moderne avec shadcn/ui offrant vue liste/grille et filtres par tags pour améliorer l'efficacité des utilisateurs",
               ]
             : [
-                "Educational note-taking application with revision and sharing features",
-                "Secure authentication (access/refresh tokens)",
-                "Data managed via Prisma + Supabase",
-                "Encryption via crypto.js",
-                "Modern UI (shadcn/ui, animations, filters, views)",
+                "Developed a secure note-taking app with access management via access and refresh tokens and encryption of sensitive data (crypto.js, bcrypt) to ensure confidentiality",
+                "Architecture and persistence with Prisma and Supabase to ensure scalability and structured data management",
+                "Designed a modern interface with shadcn/ui featuring list/grid views and tag filters to improve user efficiency",
               ],
         skills: [
           "Next.js",
@@ -146,21 +184,21 @@ const ExperienceSection = () => {
         description:
           language === "fr"
             ? [
-                "Développement frontend avec React.js et TypeScript",
-                "Création d'une API REST avec NestJS",
-                "Gestion de base de données avec Prisma et MySQL",
-                "Implémentation de l'authentification JWT",
-                "Développement de fonctionnalités en temps réel",
-                "Tests unitaires et d'intégration",
-                "🎓 Obtention du titre professionnel de Concepteur Développeur d’Applications (RNCP Bac +4)",
+                "Conception de la maquette et développement Front-end en React JS et mobile en Ionic pour une application open source de gestion extra-scolaire, assurant une expérience responsive sur différents devices",
+                "Structuration de la base de données et développement Back-end en Node JS avec Prisma, JWT et bcrypt pour sécuriser l'authentification et les opérations CRUD",
+                "Transition d'une architecture multicouche vers une architecture microservices avec NestJS et MySQL et intégration d'API pour améliorer la maintenabilité et la performance",
+                "Mise en conteneur du back-end Node.js avec Docker pour assurer un environnement stable, reproductible et facile à déployer en équipe",
+                "Travail en méthodologie Agile Scrum avec YouTrack pour le workflow et la priorisation des tâches, sprints, daily meetings et rétrospectives pour assurer des livraisons itératives et une amélioration continue",
+                "Rédaction et exécution de tests automatisés avec Cypress et Jest pour renforcer la qualité du code et la fiabilité des livraisons",
+                "🎓 Obtention du titre professionnel de Concepteur Développeur d'Applications (RNCP Bac +4)",
               ]
             : [
-                "Frontend development with React.js and TypeScript",
-                "Built a REST API using NestJS",
-                "Database management with Prisma and MySQL",
-                "Implemented JWT authentication",
-                "Real-time feature development",
-                "Unit and integration testing",
+                "Designed mockups and developed Front-end with React JS and mobile with Ionic for an open source extracurricular management app, ensuring a responsive experience across devices",
+                "Structured the database and developed Back-end with Node JS, Prisma, JWT and bcrypt to secure authentication and CRUD operations",
+                "Transitioned from a multi-layer architecture to a microservices architecture with NestJS and MySQL, integrating APIs to improve maintainability and performance",
+                "Containerized the Node.js back-end with Docker to ensure a stable, reproducible and easy-to-deploy environment for the team",
+                "Worked in Agile Scrum methodology with YouTrack for workflow and task prioritization, sprints, daily meetings and retrospectives to ensure iterative deliveries and continuous improvement",
+                "Wrote and executed automated tests with Cypress and Jest to strengthen code quality and delivery reliability",
                 "🎓 Earned the professional title of Application Developer Designer (Level 6 - RNCP Bac +4)",
               ],
         skills: [
@@ -170,8 +208,13 @@ const ExperienceSection = () => {
           "MySQL",
           "TypeScript",
           "Bcrypt",
-          "MongoDB",
-          "Git",
+          "Ionic",
+          "Node.js",
+          "Docker",
+          "Agile/Scrum",
+          "YouTrack",
+          "Cypress",
+          "Jest",
           "JWT",
           "API REST",
           "UML",
@@ -359,10 +402,10 @@ const ExperienceSection = () => {
                   key={exp.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ 
-                    duration: 0.6, 
+                  transition={{
+                    duration: 0.6,
                     delay: index * 0.1,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   className="relative group"
                 >
@@ -386,10 +429,10 @@ const ExperienceSection = () => {
                     <MotionDiv
                       initial={{ opacity: 0 }}
                       animate={inView ? { opacity: 1 } : {}}
-                      transition={{ 
-                        duration: 0.4, 
+                      transition={{
+                        duration: 0.4,
                         delay: index * 0.1 + 0.2,
-                        ease: "easeOut"
+                        ease: "easeOut",
                       }}
                     >
                       <ul className="space-y-3 md:space-y-4">
@@ -405,14 +448,19 @@ const ExperienceSection = () => {
                       </ul>
                     </MotionDiv>
                     <div className="flex flex-wrap gap-2 md:gap-3">
-                      {exp.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-2 md:px-3 py-1 text-xs md:text-sm text-blue-600 border border-blue-200 rounded-full font-light hover:bg-blue-50 hover:border-blue-300 transition-colors duration-300"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                      {exp.skills.map((skill) => {
+                        const skillData = skillIcons[skill];
+                        const Icon = skillData?.icon;
+                        return (
+                          <span
+                            key={skill}
+                            className="px-2 md:px-3 py-1 text-xs md:text-sm text-blue-600 border border-blue-200 rounded-full font-light hover:bg-blue-50 hover:border-blue-300 transition-colors duration-300 flex items-center gap-1.5"
+                          >
+                            {Icon && <Icon style={{ color: skillData.color }} className="w-3.5 h-3.5" />}
+                            {skill}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
                 </MotionDiv>
