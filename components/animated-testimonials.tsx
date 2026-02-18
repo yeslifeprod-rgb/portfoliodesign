@@ -1,9 +1,10 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconChevronDown, IconChevronUp, IconCode, IconLayout, IconListCheck, IconPhoto } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useLang } from "@/context/LangContext";
 
 import {
   SiReact, SiNextdotjs, SiTailwindcss, SiTypescript,
@@ -45,6 +46,19 @@ type Testimonial = {
   designation: string;
   srcs: string[];
   stack?: string[];
+  gallery?: string[];
+  codeSnippets?: {
+    title: string;
+    description: string;
+    code: string;
+    language: string;
+  }[];
+  architecture?: {
+    description: string;
+    image?: string;
+    points: string[];
+  };
+  features?: string[];
 };
 
 export const AnimatedTestimonials = ({
@@ -57,6 +71,9 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const [isNext, setIsNext] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState("overview");
+  const { language } = useLang();
 
   const current = testimonials[active];
   const hasMultipleImages = current.srcs.length > 1;
@@ -65,12 +82,16 @@ export const AnimatedTestimonials = ({
     setIsNext(true);
     setActive((prev) => (prev + 1) % testimonials.length);
     setImageIndex(0);
+    setIsExpanded(false);
+    setActiveTab("overview");
   };
 
   const handlePrev = () => {
     setIsNext(false);
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     setImageIndex(0);
+    setIsExpanded(false);
+    setActiveTab("overview");
   };
 
   const nextImage = () => {
@@ -204,6 +225,18 @@ export const AnimatedTestimonials = ({
               )}
             </motion.figure>
 
+            {/* Bouton Voir plus / Voir moins */}
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
+            >
+              {isExpanded ? <IconChevronUp size={20} /> : <IconChevronDown size={20} />}
+              {isExpanded
+                ? (language === "fr" ? "Voir moins" : "See less")
+                : (language === "fr" ? "Voir plus" : "See more")
+              }
+            </button>
+
             {/* Flèches navigation centrées mobile */}
             <div className="flex justify-center sm:justify-start gap-4 pt-10">
               <button
@@ -223,6 +256,181 @@ export const AnimatedTestimonials = ({
             </div>
           </div>
         </div>
+
+        {/* Section expansible */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="mt-8 border-t border-gray-200 pt-8">
+                {/* Onglets */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    { id: "overview", label: language === "fr" ? "Aperçu" : "Overview", icon: <IconPhoto size={18} /> },
+                    { id: "code", label: "Code", icon: <IconCode size={18} /> },
+                    { id: "architecture", label: "Architecture", icon: <IconLayout size={18} /> },
+                    { id: "features", label: language === "fr" ? "Fonctionnalités" : "Features", icon: <IconListCheck size={18} /> },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                        activeTab === tab.id
+                          ? "bg-blue-600 text-white shadow-md"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      {tab.icon}
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Contenu des onglets */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {activeTab === "overview" && current.gallery && (
+                      <div>
+                        <h4 className="text-xl font-bold mb-4">
+                          {language === "fr" ? "Galerie" : "Gallery"}
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {current.gallery.map((img, idx) => (
+                            <div key={idx} className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+                              <Image
+                                src={img}
+                                alt={`${current.name} screenshot ${idx + 1}`}
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {activeTab === "code" && (
+                      <div>
+                        <h4 className="text-xl font-bold mb-4">
+                          {language === "fr" ? "Extraits de code" : "Code Snippets"}
+                        </h4>
+                        {current.codeSnippets && current.codeSnippets.length > 0 ? (
+                          <div className="space-y-6">
+                            {current.codeSnippets.map((snippet, idx) => (
+                              <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+                                <div className="bg-gray-100 px-4 py-3 border-b border-gray-200">
+                                  <h5 className="font-semibold text-lg">{snippet.title}</h5>
+                                  <p className="text-sm text-gray-600 mt-1">{snippet.description}</p>
+                                </div>
+                                <div className="bg-gray-900 text-gray-100 p-4 overflow-x-auto">
+                                  <pre className="text-sm">
+                                    <code>{snippet.code}</code>
+                                  </pre>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-gray-500 italic">
+                            {language === "fr"
+                              ? "Aucun extrait de code disponible."
+                              : "No code snippets available."}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {activeTab === "architecture" && (
+                      <div>
+                        <h4 className="text-xl font-bold mb-4">
+                          {language === "fr" ? "Architecture technique" : "Technical Architecture"}
+                        </h4>
+                        {current.architecture ? (
+                          <>
+                            <p className="text-gray-700 text-base leading-relaxed mb-6">
+                              {current.architecture.description}
+                            </p>
+                            {current.architecture.image && (
+                              <div className="relative h-96 rounded-lg overflow-hidden shadow-lg mb-6">
+                                <Image
+                                  src={current.architecture.image}
+                                  alt="Architecture diagram"
+                                  fill
+                                  className="object-contain bg-gray-50"
+                                />
+                              </div>
+                            )}
+                            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                              <h5 className="font-semibold text-lg mb-3">
+                                {language === "fr" ? "Points clés :" : "Key Points:"}
+                              </h5>
+                              <ul className="space-y-2">
+                                {current.architecture.points.map((point, idx) => (
+                                  <li key={idx} className="flex items-start">
+                                    <span className="text-blue-600 mr-2">•</span>
+                                    <span className="text-gray-700">{point}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </>
+                        ) : (
+                          <p className="text-gray-500 italic">
+                            {language === "fr"
+                              ? "Aucune information d'architecture disponible."
+                              : "No architecture information available."}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {activeTab === "features" && (
+                      <div>
+                        <h4 className="text-xl font-bold mb-4">
+                          {language === "fr" ? "Fonctionnalités principales" : "Main Features"}
+                        </h4>
+                        {current.features && current.features.length > 0 ? (
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {current.features.map((feature, idx) => (
+                              <div
+                                key={idx}
+                                className="bg-gradient-to-br from-blue-50 to-purple-50 p-5 rounded-lg border border-blue-100 hover:shadow-md transition-shadow"
+                              >
+                                <div className="flex items-start">
+                                  <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-3">
+                                    {idx + 1}
+                                  </div>
+                                  <p className="text-gray-800 leading-relaxed">{feature}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-gray-500 italic">
+                            {language === "fr"
+                              ? "Aucune fonctionnalité listée."
+                              : "No features listed."}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

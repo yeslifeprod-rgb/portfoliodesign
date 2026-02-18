@@ -8,11 +8,10 @@ import HomeSection from "@/components/Home";
 import { Projects } from "@/components/Projects";
 import ButtonCV from "@/components/ButtonCV";
 import Experiences from "@/components/Experiences";
-import { ChristmasWrapper } from "@/components/christmas/ChristmasWrapper";
 
 export default function Home() {
   return (
-    <ChristmasWrapper>
+    <>
       <Navbar />
 
       <main className="flex flex-col items-center space-y-16 p-6">
@@ -41,6 +40,6 @@ export default function Home() {
 
       {/* Section Footer */}
       <Footer />
-    </ChristmasWrapper>
+    </>
   );
 }

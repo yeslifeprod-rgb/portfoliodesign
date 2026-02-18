@@ -5,12 +5,9 @@ import { useLang } from "@/context/LangContext";
 import { GridBackgroundDemo } from "@/components/Grid";
 import Navbar from "@/components/Navbar";
 import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
-import { useChristmasTheme } from "@/hooks/useChristmasTheme";
-import { ChristmasGarland } from "./christmas/ChristmasGarland";
 
 const Hero = () => {
   const { language } = useLang();
-  const isChristmas = useChristmasTheme();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -28,7 +25,6 @@ const Hero = () => {
   return (
     <div className="relative">
       <Navbar />
-      {isChristmas && <ChristmasGarland />}
 
       <div
         style={{
