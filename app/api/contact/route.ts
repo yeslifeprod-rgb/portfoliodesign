@@ -53,9 +53,8 @@ export async function POST(req: Request) {
       { message: "Message envoyé avec succès" },
       { status: 200 }
     );
-  } catch {
-    // Ne pas exposer l'erreur dans la console
-    console.error("Erreur lors de l'envoi du message.");
+  } catch (err) {
+    console.error("Erreur nodemailer:", err);
     return NextResponse.json({ message: "Erreur serveur" }, { status: 500 });
   }
 }

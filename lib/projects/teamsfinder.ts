@@ -12,9 +12,9 @@ export function getTeamsFinderProject(language: string): Project {
       language === "fr"
         ? "Projet personnel — Plateforme de matchmaking gaming"
         : "Personal project — Gaming matchmaking platform",
-    srcs: ["/assets/teamsfinder/teamsfinder.png"],
+    srcs: ["/assets/teamsfinder/teamsfinder.gif"],
     stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase"],
-    gallery: ["/assets/teamsfinder/teamsfinder.png"],
+    gallery: ["/assets/teamsfinder/teamsfinder.gif"],
     features: language === "fr" ? [
       "Recherche de coéquipiers par jeu et niveau",
       "Système de profils joueurs",
@@ -27,15 +27,14 @@ export function getTeamsFinderProject(language: string): Project {
       "Built-in messaging",
     ],
     metrics: language === "fr" ? [
-      { label: "Utilisateurs", value: "6 inscrits" },
-      { label: "Revenu", value: "1 vente" },
+      { label: "Utilisateurs", value: "20 inscrits" },
+      { label: "Revenu", value: " 2 ventes" },
       { label: "Matchmaking", value: "Algorithmique" },
-      { label: "WebSocket", value: "Real-time" },
+
     ] : [
-      { label: "Users", value: "6 registered" },
-      { label: "Revenue", value: "1 sale" },
+      { label: "Users", value: "20 registered" },
+      { label: "Revenue", value: "2 sales" },
       { label: "Matchmaking", value: "Algorithmic" },
-      { label: "WebSocket", value: "Real-time" },
     ],
     businessCase: language === "fr" ? {
       problem: "Gamers sans outil efficace pour trouver des coéquipiers",

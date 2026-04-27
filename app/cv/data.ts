@@ -1,8 +1,9 @@
 import {
   SiCypress, SiDocker, SiFigma, SiGit, SiIonic, SiJest,
-  SiNextdotjs, SiNodedotjs, SiPrisma, SiReact, SiSupabase,
-  SiTailwindcss, SiTypescript,
+  SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPrisma, SiReact, SiSupabase,
+  SiTailwindcss, SiTypescript, SiVuedotjs,
 } from "react-icons/si";
+import { TbHierarchy, TbDatabase } from "react-icons/tb";
 import type { IconType } from "react-icons";
 
 export type Tech = { name: string; icon: IconType; color: string };
@@ -11,6 +12,8 @@ export const STACK: Record<string, Tech[]> = {
   Frontend: [
     { name: "Next.js",    icon: SiNextdotjs,  color: "#171717" },
     { name: "React",      icon: SiReact,       color: "#61DAFB" },
+    { name: "Nuxt",       icon: SiNuxtdotjs,  color: "#00DC82" },
+    { name: "Vue.js",     icon: SiVuedotjs,   color: "#4FC08D" },
     { name: "TypeScript", icon: SiTypescript,  color: "#3178C6" },
     { name: "Tailwind",   icon: SiTailwindcss, color: "#06B6D4" },
     { name: "Ionic",      icon: SiIonic,       color: "#3880FF" },
@@ -19,6 +22,8 @@ export const STACK: Record<string, Tech[]> = {
     { name: "Node.js",  icon: SiNodedotjs, color: "#339933" },
     { name: "Prisma",   icon: SiPrisma,    color: "#0ea5e9" },
     { name: "Supabase", icon: SiSupabase,  color: "#3ECF8E" },
+    { name: "UML",      icon: TbHierarchy, color: "#3178C6" },
+    { name: "Merise",   icon: TbDatabase,  color: "#e11421" },
   ],
   Outils: [
     { name: "Docker",  icon: SiDocker,  color: "#2496ED" },
@@ -88,4 +93,8 @@ export const LANGUES = [
   { flag: "🇬🇧", lang: "Anglais",  level: "B1" },
 ];
 
-export const LOISIRS = ["🎵 Musique", "🎮 Jeux vidéo", "⚽ Football"];
+export const LOISIRS = [
+  { emoji: "🎵", label: "Musique", color: "#8b5cf6" },
+  { emoji: "🎮", label: "Jeux vidéo", color: "#3b82f6" },
+  { emoji: "⚽", label: "Football", color: "#22c55e" },
+];
