@@ -1,6 +1,6 @@
 import {
   SiCypress, SiDocker, SiFigma, SiGit, SiIonic, SiJest,
-  SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPrisma, SiReact, SiSupabase,
+  SiNextdotjs, SiNodedotjs, SiNuxt, SiPrisma, SiReact, SiSupabase,
   SiTailwindcss, SiTypescript, SiVuedotjs,
 } from "react-icons/si";
 import { TbHierarchy, TbDatabase } from "react-icons/tb";
@@ -12,7 +12,7 @@ export const STACK: Record<string, Tech[]> = {
   Frontend: [
     { name: "Next.js",    icon: SiNextdotjs,  color: "#171717" },
     { name: "React",      icon: SiReact,       color: "#61DAFB" },
-    { name: "Nuxt",       icon: SiNuxtdotjs,  color: "#00DC82" },
+    { name: "Nuxt",       icon: SiNuxt,        color: "#00DC82" },
     { name: "Vue.js",     icon: SiVuedotjs,   color: "#4FC08D" },
     { name: "TypeScript", icon: SiTypescript,  color: "#3178C6" },
     { name: "Tailwind",   icon: SiTailwindcss, color: "#06B6D4" },

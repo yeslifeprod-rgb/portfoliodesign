@@ -59,30 +59,6 @@ export function getExperiences(language: string): Experience[] {
     {
       id: 2,
       number: "02",
-      type: "projet-perso",
-      title:
-        language === "fr"
-          ? "NoteShare (App éducative sécurisée)"
-          : "NoteShare (Secure Educational App)",
-      company: language === "fr" ? "Projet personnel" : "Personal Project",
-      years: "2025",
-      description:
-        language === "fr"
-          ? [
-              "Application de prise de notes sécurisée avec access/refresh tokens et chiffrement (crypto.js, bcrypt)",
-              "Architecture avec Prisma et Supabase pour scalabilité et gestion structurée",
-              "Interface moderne shadcn/ui avec vue liste/grille et filtres par tags",
-            ]
-          : [
-              "Secure note-taking app with access/refresh tokens and encryption (crypto.js, bcrypt)",
-              "Architecture with Prisma and Supabase for scalability",
-              "Modern shadcn/ui interface with list/grid views and tag filters",
-            ],
-      skills: ["Next.js", "Prisma", "Supabase", "TypeScript", "Node.js"],
-    },
-    {
-      id: 3,
-      number: "03",
       type: "immersion-professionnelle",
       title:
         language === "fr"
@@ -118,8 +94,8 @@ export function getExperiences(language: string): Experience[] {
       },
     },
     {
-      id: 4,
-      number: "04",
+      id: 3,
+      number: "03",
       type: "formation",
       title:
         language === "fr"

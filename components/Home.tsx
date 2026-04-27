@@ -67,17 +67,12 @@ const Hero = () => {
             className="text-foreground"
           />
 
-          {/* First name */}
-          <BlurFade delay={0.2} inView>
-            <p className="text-sm text-muted-foreground/50 tracking-[0.3em] uppercase font-medium -mt-2">
-              Ilyes
-            </p>
-          </BlurFade>
+     
 
           {/* Subtitle — word-by-word stagger */}
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 max-w-md">
             {(language === "fr"
-              ? ["Développeur", "Full Stack", "Web"]
+              ? ["Développeur", "Full Stack", "d'applications web et mobiles"]
               : ["Full Stack", "Web", "Developer"]
             ).map((word, i) => (
               <BlurFade key={word + i} delay={0.25 + i * 0.07} inView>
@@ -104,8 +99,8 @@ const Hero = () => {
               animateOnHover={false}
             >
               {language === "fr"
-                ? "Next.js · TypeScript · Node.js · Applications en production"
-                : "Next.js · TypeScript · Node.js · Apps shipped to production"}
+                ? "Next.js · TypeScript · Node.js"
+                : "Next.js · TypeScript · Node.js"}
             </HyperText>
           </BlurFade>
 

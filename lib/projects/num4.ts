@@ -12,8 +12,8 @@ export function getNum4Project(language: string): Project {
       language === "fr"
         ? "Startup musicale — Plaine Images, Roubaix"
         : "Music startup — Plaine Images, Lille",
-    srcs: ["/assets/num4/num4.gif", "/assets/num4/num4.png"],
-    gallery: ["/assets/num4/num4.gif", "/assets/num4/num4.png"],
+    srcs: ["/assets/num4/num4.gif"],
+    gallery: ["/assets/num4/num4.gif"],
     liveUrl: "https://num4-lp.vercel.app/",
     stack: [
       "Next.js",
