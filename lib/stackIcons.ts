@@ -1,0 +1,45 @@
+import {
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
+  SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
+  SiDocker, SiGit, SiJest, SiCypress, SiFigma, SiIonic,
+  SiVercel, SiVuedotjs, SiLua, SiFlutter, SiGithub, SiNotion,
+  SiHtml5, SiCss, SiJavascript, SiWordpress, SiXcode,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { RiSupabaseLine } from "react-icons/ri";
+import type { IconType } from "react-icons";
+
+export const stackIcons: Record<string, { Icon: IconType; color: string }> = {
+  "React":       { Icon: SiReact,        color: "#61DAFB" },
+  "Next.js":     { Icon: SiNextdotjs,    color: "currentColor" },
+  "NextJS":      { Icon: SiNextdotjs,    color: "currentColor" },
+  "TypeScript":  { Icon: SiTypescript,   color: "#3178C6" },
+  "Tailwind":    { Icon: SiTailwindcss,  color: "#06B6D4" },
+  "Node.js":     { Icon: SiNodedotjs,    color: "#339933" },
+  "Nest":        { Icon: SiNestjs,       color: "#E0234E" },
+  "NestJS":      { Icon: SiNestjs,       color: "#E0234E" },
+  "Prisma":      { Icon: SiPrisma,       color: "currentColor" },
+  "MongoDB":     { Icon: SiMongodb,      color: "#47A248" },
+  "Mysql":       { Icon: SiMysql,        color: "#4479A1" },
+  "MySQL":       { Icon: SiMysql,        color: "#4479A1" },
+  "Docker":      { Icon: SiDocker,       color: "#2496ED" },
+  "Git":         { Icon: SiGit,          color: "#F05032" },
+  "Jest":        { Icon: SiJest,         color: "#C21325" },
+  "Cypress":     { Icon: SiCypress,      color: "#69D3A7" },
+  "Figma":       { Icon: SiFigma,        color: "#F24E1E" },
+  "Ionic":       { Icon: SiIonic,        color: "#3880FF" },
+  "Vercel":      { Icon: SiVercel,       color: "currentColor" },
+  "Vue":         { Icon: SiVuedotjs,     color: "#4FC08D" },
+  "Lua":         { Icon: SiLua,          color: "#2C2D72" },
+  "Supabase":    { Icon: RiSupabaseLine, color: "#3ECF8E" },
+  "shadcn/ui":   { Icon: SiReact,        color: "currentColor" },
+  "Flutter":     { Icon: SiFlutter,      color: "#02569B" },
+  "Github":      { Icon: SiGithub,       color: "currentColor" },
+  "Notion":      { Icon: SiNotion,       color: "#ABABAB" },
+  "HTML":        { Icon: SiHtml5,        color: "#E34F26" },
+  "CSS":         { Icon: SiCss,         color: "#1572B6" },
+  "Javascript":  { Icon: SiJavascript,   color: "#F7DF1E" },
+  "Wordpress":   { Icon: SiWordpress,    color: "#21759B" },
+  "Xcode":       { Icon: SiXcode,        color: "#147EFB" },
+  "AWS":         { Icon: FaAws, color: "#FF9900" },
+};

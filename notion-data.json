@@ -1,0 +1,285 @@
+{
+  "database": {
+    "title": "🤖 Portfolio Development - Kanban avec Agents IA",
+    "description": "Gestion des tâches de développement portfolio avec agents IA spécialisés",
+    "properties": {
+      "Titre": { "type": "title" },
+      "Status": {
+        "type": "select",
+        "options": [
+          "📝 Backlog",
+          "🎯 Sprint Planning",
+          "🚧 En Cours",
+          "👤 Assigné aux Agents",
+          "🧪 Testing",
+          "✅ Terminé"
+        ]
+      },
+      "Priorité": {
+        "type": "select",
+        "options": [
+          "🔥 P0 - CRITICAL",
+          "🟡 P1 - HIGH",
+          "🟢 P2 - MEDIUM",
+          "🔵 P3 - LOW"
+        ]
+      },
+      "Sprint": {
+        "type": "select",
+        "options": ["Sprint 1", "Sprint 2", "Sprint 3", "Backlog"]
+      },
+      "Agent Assigné": {
+        "type": "select",
+        "options": [
+          "🎨 UI/UX Designer",
+          "💻 Frontend Developer",
+          "🔍 SEO Specialist",
+          "Manuel"
+        ]
+      },
+      "Estimation (h)": { "type": "number" },
+      "Tags": {
+        "type": "multi_select",
+        "options": [
+          "Bug", "Feature", "SEO", "Performance",
+          "Accessibility", "Design", "UX", "Assets",
+          "API", "Configuration", "Content", "i18n"
+        ]
+      },
+      "Description": { "type": "rich_text" },
+      "Critères d'acceptation": { "type": "rich_text" },
+      "Dépendances": { "type": "rich_text" },
+      "Type de tâche": {
+        "type": "select",
+        "options": [
+          "Asset Creation", "Configuration", "Content Development",
+          "Error Handling", "SEO Enhancement", "Internationalization",
+          "UX Enhancement", "Accessibility Audit", "Performance Optimization",
+          "Advanced SEO"
+        ]
+      },
+      "Date création": { "type": "date" },
+      "Date fin prévue": { "type": "date" }
+    }
+  },
+
+  "agents": [
+    {
+      "name": "🎨 UI/UX Designer",
+      "description": "Agent spécialisé en accessibilité, ergonomie et design system",
+      "skills": [
+        "Audit accessibilité WCAG 2.1 AA",
+        "Design responsive et mobile-first",
+        "Optimisation UX et parcours utilisateur",
+        "Cohérence design system",
+        "Tests utilisateur et ergonomie",
+        "Contraste couleurs et lisibilité"
+      ],
+      "skillFile": "ui-ux-designer.skill",
+      "responsabilités": [
+        "Audit complet accessibilité",
+        "Amélioration navigation clavier",
+        "Optimisation contraste couleurs",
+        "Design des états de chargement",
+        "Révision responsive design",
+        "Tests lecteur d'écran"
+      ]
+    },
+    {
+      "name": "💻 Frontend Developer",
+      "description": "Agent React/Next.js pour développement et optimisation performance",
+      "skills": [
+        "React/Next.js 15 développement",
+        "TypeScript strict mode",
+        "Performance et optimisation bundle",
+        "Gestion d'état moderne",
+        "API intégration",
+        "Tests unitaires et e2e"
+      ],
+      "skillFile": "frontend-developer.skill",
+      "responsabilités": [
+        "Error boundaries React",
+        "Optimisation performance bundle",
+        "Complétion extraits de code projets",
+        "Lazy loading des composants",
+        "Nettoyage TypeScript",
+        "Intégrations API"
+      ]
+    },
+    {
+      "name": "🔍 SEO Specialist",
+      "description": "Agent optimisation référencement et données structurées",
+      "skills": [
+        "SEO technique avancé",
+        "Meta tags et Open Graph",
+        "Données structurées Schema.org",
+        "Core Web Vitals optimisation",
+        "Audit SEO complet",
+        "Performance monitoring"
+      ],
+      "skillFile": "seo-specialist.skill",
+      "responsabilités": [
+        "Meta tags par projet",
+        "Données structurées avancées",
+        "Optimisation images et assets",
+        "Audit SEO technique",
+        "Configuration sitemap",
+        "Rich snippets"
+      ]
+    }
+  ],
+
+  "tasks": [
+    {
+      "title": "🖼️ [CRITICAL] Créer og-image.png",
+      "status": "📝 Backlog",
+      "priority": "🔥 P0 - CRITICAL",
+      "sprint": "Sprint 1",
+      "agent": "Manuel",
+      "estimation": 1,
+      "tags": ["SEO", "Assets", "Social Media"],
+      "description": "Image Open Graph manquante bloque le partage sur réseaux sociaux. Essentiel pour le SEO et la viralité du portfolio.",
+      "acceptanceCriteria": "• Fichier public/og-image.png créé (1200x630px)\n• Respect de la charte graphique portfolio\n• Tests sur Twitter/LinkedIn/Facebook\n• Optimisation taille fichier (<100kb)",
+      "dependencies": "Aucune",
+      "taskType": "Asset Creation"
+    },
+    {
+      "title": "🔑 [CRITICAL] Configurer token GitHub",
+      "status": "📝 Backlog",
+      "priority": "🔥 P0 - CRITICAL",
+      "sprint": "Sprint 1",
+      "agent": "💻 Frontend Developer",
+      "estimation": 0.5,
+      "tags": ["Bug", "API", "Configuration"],
+      "description": "API GitHub rate-limitée sans authentification, bloque le composant GitActivity et affiche des erreurs.",
+      "acceptanceCriteria": "• Variable GITHUB_TOKEN configurée dans .env\n• Composant GitActivity fonctionnel\n• Tests API avec authentification\n• Documentation configuration mise à jour",
+      "dependencies": "Aucune",
+      "taskType": "Configuration"
+    },
+    {
+      "title": "📝 [HIGH] Compléter extraits de code projets",
+      "status": "📝 Backlog",
+      "priority": "🟡 P1 - HIGH",
+      "sprint": "Sprint 1",
+      "agent": "💻 Frontend Developer",
+      "estimation": 4,
+      "tags": ["Feature", "Content", "Portfolio"],
+      "description": "Remplacer tous les placeholders 'Documentation en cours' par du vrai code pour crédibiliser le portfolio.",
+      "acceptanceCriteria": "• Tous les projets ont des snippets de code réels\n• Code syntaxiquement correct et commenté\n• Diversité des technologies montrées\n• Tests de rendu des code blocks",
+      "dependencies": "Aucune",
+      "taskType": "Content Development"
+    },
+    {
+      "title": "🛡️ [HIGH] Error boundaries React",
+      "status": "📝 Backlog",
+      "priority": "🟡 P1 - HIGH",
+      "sprint": "Sprint 1",
+      "agent": "💻 Frontend Developer",
+      "estimation": 1.5,
+      "tags": ["Bug", "Performance", "UX"],
+      "description": "Prévenir les crashes complets de l'application avec une gestion d'erreur gracieuse.",
+      "acceptanceCriteria": "• Error boundary sur composants critiques\n• Pages d'erreur gracieuses et utiles\n• Logging des erreurs pour monitoring\n• Tests de cas d'échec",
+      "dependencies": "Aucune",
+      "taskType": "Error Handling"
+    },
+    {
+      "title": "🏷️ [MEDIUM] Meta tags par projet",
+      "status": "📝 Backlog",
+      "priority": "🟢 P2 - MEDIUM",
+      "sprint": "Sprint 2",
+      "agent": "🔍 SEO Specialist",
+      "estimation": 2,
+      "tags": ["SEO", "Feature", "Social Media"],
+      "description": "SEO individualisé pour chaque page projet avec Open Graph et Twitter Cards spécifiques.",
+      "acceptanceCriteria": "• generateMetadata() implémenté pour chaque projet\n• Open Graph images spécifiques par projet\n• Twitter Cards optimisées\n• Tests partage réseaux sociaux",
+      "dependencies": "🖼️ [CRITICAL] Créer og-image.png",
+      "taskType": "SEO Enhancement"
+    },
+    {
+      "title": "🌐 [MEDIUM] Page d'erreur multilingue",
+      "status": "📝 Backlog",
+      "priority": "🟢 P2 - MEDIUM",
+      "sprint": "Sprint 2",
+      "agent": "💻 Frontend Developer",
+      "estimation": 1,
+      "tags": ["Feature", "i18n", "UX"],
+      "description": "Support français/anglais pour les pages d'erreur en cohérence avec le reste du site.",
+      "acceptanceCriteria": "• error.tsx gère le contexte linguistique\n• Messages d'erreur traduits FR/EN\n• Navigation de retour appropriée\n• Cohérence avec le design system",
+      "dependencies": "🛡️ [HIGH] Error boundaries React",
+      "taskType": "Internationalization"
+    },
+    {
+      "title": "⏳ [MEDIUM] États de chargement",
+      "status": "📝 Backlog",
+      "priority": "🟢 P2 - MEDIUM",
+      "sprint": "Sprint 2",
+      "agent": "🎨 UI/UX Designer",
+      "estimation": 3,
+      "tags": ["UX", "Performance", "Design"],
+      "description": "Indicateurs visuels pendant les chargements pour améliorer la perception de performance.",
+      "acceptanceCriteria": "• Skeletons sur tous les composants async\n• Spinners appropriés et cohérents\n• Animations de transition fluides\n• États d'erreur visuellement distincts",
+      "dependencies": "Aucune",
+      "taskType": "UX Enhancement"
+    },
+    {
+      "title": "♿ [LOW] Audit accessibilité complet",
+      "status": "📝 Backlog",
+      "priority": "🔵 P3 - LOW",
+      "sprint": "Sprint 3",
+      "agent": "🎨 UI/UX Designer",
+      "estimation": 4,
+      "tags": ["Accessibility", "Audit", "WCAG"],
+      "description": "Conformité WCAG AA complète pour une accessibilité universelle du portfolio.",
+      "acceptanceCriteria": "• Audit axe-core passé à 100%\n• Navigation clavier complète\n• ARIA labels appropriés sur tous les éléments\n• Tests lecteur d'écran validés",
+      "dependencies": "⏳ [MEDIUM] États de chargement",
+      "taskType": "Accessibility Audit"
+    },
+    {
+      "title": "🚀 [LOW] Optimisation performance",
+      "status": "📝 Backlog",
+      "priority": "🔵 P3 - LOW",
+      "sprint": "Sprint 3",
+      "agent": "💻 Frontend Developer",
+      "estimation": 3,
+      "tags": ["Performance", "Optimization", "Core Web Vitals"],
+      "description": "Améliorer Core Web Vitals pour un excellent score Lighthouse et une UX optimale.",
+      "acceptanceCriteria": "• Lighthouse score >90 sur toutes les métriques\n• Bundle analysis et optimisation\n• Lazy loading intelligent implémenté\n• Images optimisées (WebP, tailles appropriées)",
+      "dependencies": "📝 [HIGH] Compléter extraits de code projets",
+      "taskType": "Performance Optimization"
+    },
+    {
+      "title": "📊 [LOW] Données structurées avancées",
+      "status": "📝 Backlog",
+      "priority": "🔵 P3 - LOW",
+      "sprint": "Sprint 3",
+      "agent": "🔍 SEO Specialist",
+      "estimation": 2,
+      "tags": ["SEO", "Schema", "Rich Snippets"],
+      "description": "Rich snippets pour projets avec Schema.org pour améliorer la visibilité search.",
+      "acceptanceCriteria": "• Schema.org Project/Work implémentés\n• Tests Google Rich Results validés\n• Breadcrumbs structurés\n• FAQ schema si applicable",
+      "dependencies": "🏷️ [MEDIUM] Meta tags par projet",
+      "taskType": "Advanced SEO"
+    }
+  ],
+
+  "workflow": {
+    "briefTemplates": {
+      "frontendDeveloper": {
+        "contexteTechnique": "Stack: Next.js 15, TypeScript, Tailwind CSS",
+        "patternsExistants": "Consulter composants existants pour cohérence",
+        "criteresTechniques": ["TypeScript strict mode", "Tests si applicable", "Performance optimisée", "Mobile responsive"],
+        "contraintes": ["Respecter conventions existantes", "Pas nouvelles dépendances sans validation", "Documentation inline"]
+      },
+      "seoSpecialist": {
+        "analyseActuelle": "Score SEO à analyser, problèmes identifiés",
+        "metriquesCibles": "Core Web Vitals, Lighthouse SEO >90, Structured data",
+        "contraintes": ["Multilingue FR/EN", "Préserver performances", "Mobile-first"]
+      },
+      "uiUxDesigner": {
+        "etatActuel": "Problèmes UX identifiés, feedback utilisateur",
+        "standards": "WCAG 2.1 AA minimum, Mobile-first, Design system cohérent",
+        "livrables": ["Recommandations actionables", "Mockups si nécessaire", "Guide implémentation"]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ]
+    },
+    "unframer": {
+      "type": "http",
+      "url": "https://mcp.unframer.co/mcp?id=d830893f4ce02529bea174afab4700dad153198fa47581f2dc44ca43e38ef99f&secret=lE1AUTOsouX4ivYku4KU1SzeLXx6IEos"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
+}

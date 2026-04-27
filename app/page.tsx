@@ -1,45 +1,21 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Contact from "@/components/Contact";
-
-import Stack from "@/components/Stack";
 import HomeSection from "@/components/Home";
-
+import About from "@/components/About";
 import { Projects } from "@/components/Projects";
-import ButtonCV from "@/components/ButtonCV";
+import Stack from "@/components/Stack";
 import Experiences from "@/components/Experiences";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-
-      <main className="flex flex-col items-center space-y-16 p-6">
-        {/* Section Accueil */}
-
-        <HomeSection />
-
-        <ButtonCV />
-
-        {/* Section Projets */}
-
-        <Projects />
-
-        {/* Section Stack (Compétences) */}
-
-        <Stack />
-
-        {/* Section Expériences */}
-
-        <Experiences />
-
-        {/* Section Contact */}
-
-        <Contact />
-      </main>
-
-      {/* Section Footer */}
-      <Footer />
-    </>
+    <main id="main-content" className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      <HomeSection />
+      <About />
+      <Projects />
+      <Stack />
+      <Experiences />
+      <Testimonials />
+      <Contact />
+    </main>
   );
 }

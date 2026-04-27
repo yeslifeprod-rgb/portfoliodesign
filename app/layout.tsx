@@ -1,38 +1,109 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import { LangProvider } from "@/context/LangContext";
-import { DM_Sans } from 'next/font/google';
+import Navbar from "@/components/Navbar";
+import HtmlLangUpdater from "@/components/HtmlLangUpdater";
+import { KonamiEasterEgg } from "@/components/KonamiEasterEgg";
+import { Inter, Roboto, Azeret_Mono } from "next/font/google";
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans",
 });
 
-export const metadata = {
-  title: "Benhouss - Développeur Full Stack Lille | React, Next.js, Nuxt.js | Développeur Web Lille",
-  description: "Développeur Full Stack à Lille spécialisé en React, Next.js, Nuxt.js, Node.js, Docker et Supabase. Développement web moderne, création d'applications performantes et responsive. Développeur React Lille disponible pour vos projets.",
-  keywords: "développeur full stack lille, développeur react lille, développeur web lille, développeur nextjs lille, développeur nuxt lille, développeur javascript lille, next.js lille, nuxt.js lille, react lille, docker lille, supabase lille, développeur freelance lille, création site web lille, développement web lille, TypeScript lille, Node.js lille, Lille, Nord, France",
-  author: "Benhouss",
-  robots: "index, follow",
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-serif",
+});
+
+const azeretMono = Azeret_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-mono",
+});
+
+const SITE_URL = "https://www.benhouss.site";
+const SITE_NAME = "Benhouss";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Benhouss — Développeur Full Stack Lille | React, Next.js, Node.js",
+    template: "%s | Benhouss",
+  },
+  description:
+    "Développeur Full Stack à Lille spécialisé en React, Next.js, Nuxt.js, Node.js et TypeScript. Création d'applications web et mobile performantes. Disponible en freelance et CDI.",
+  keywords: [
+    "développeur full stack lille",
+    "développeur react lille",
+    "développeur next.js",
+    "développeur web lille",
+    "développeur freelance lille",
+    "react",
+    "next.js",
+    "nuxt.js",
+    "node.js",
+    "typescript",
+    "tailwind css",
+    "docker",
+    "supabase",
+  ],
+  authors: [{ name: "Benhouss", url: SITE_URL }],
+  creator: "Benhouss",
+  publisher: "Benhouss",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Benhouss - Développeur Full Stack Lille | React, Next.js, Nuxt.js",
-    description: "Développeur Full Stack à Lille spécialisé en React, Next.js, Nuxt.js, Node.js, Docker et Supabase. Développement web moderne et création d'applications performantes.",
-    type: "website",
+    title: "Benhouss — Développeur Full Stack Lille",
+    description:
+      "Développeur Full Stack à Lille. React, Next.js, Node.js, TypeScript. Applications web et mobile performantes.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "fr_FR",
-    siteName: "Portfolio Benhouss - Développeur Web Lille",
+    alternateLocale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Benhouss — Développeur Full Stack Lille",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benhouss - Développeur React Lille | Next.js, Nuxt.js",
-    description: "Développeur Full Stack à Lille spécialisé en React, Next.js, Nuxt.js, Docker, Supabase. Développement web moderne.",
+    title: "Benhouss — Développeur Full Stack Lille",
+    description:
+      "Développeur Full Stack à Lille. React, Next.js, Node.js, TypeScript. Disponible en freelance.",
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.benhouss.site",
+    canonical: SITE_URL,
     languages: {
-      'fr-FR': 'https://www.benhouss.site',
-      'en-US': 'https://www.benhouss.site/en',
+      "fr-FR": SITE_URL,
+      "en-US": `${SITE_URL}/en`,
     },
   },
+  verification: {
+    google: "45cdcd59b8daf8eb",
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -41,47 +112,86 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#2563EB" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`,
+          }}
+        />
+        {/* JSON-LD: Person */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Benhouss",
-              "jobTitle": "Développeur Full Stack",
-              "description": "Développeur Full Stack expérimenté spécialisé en React, Node.js, React Native et TypeScript",
-              "url": "https://www.benhouss.site",
-              "sameAs": [
-                "https://linkedin.com/in/votre-profil",
-                "https://github.com/votre-username"
+              name: "Benhouss",
+              jobTitle: "Développeur Full Stack Next.js",
+              description:
+                "Développeur Full Stack à Lille spécialisé en React, Next.js, Node.js et TypeScript. Création d'applications web et mobile performantes.",
+              url: "https://www.benhouss.site",
+              image: "https://www.benhouss.site/assets/avatar.png",
+              sameAs: [
+                "https://github.com/Yesdevjr",
+                "https://linkedin.com/in/benhouss",
+                "https://gitlab.com/yeslife.prod",
               ],
-              "address": {
+              address: {
                 "@type": "PostalAddress",
-                "addressLocality": "Lille",
-                "addressCountry": "FR"
+                addressLocality: "Lille",
+                addressRegion: "Hauts-de-France",
+                addressCountry: "FR",
               },
-              "knowsAbout": [
+              knowsAbout: [
                 "React",
+                "Next.js",
+                "Nuxt.js",
+                "Vue.js",
                 "Node.js",
-                "React Native",
+                "NestJS",
                 "TypeScript",
-                "JavaScript",
-                "Full Stack Development",
-                "Web Development",
-                "Mobile Development"
-              ]
-            })
+                "Tailwind CSS",
+                "Docker",
+                "Supabase",
+                "MongoDB",
+                "MySQL",
+                "Prisma",
+              ],
+            }),
+          }}
+        />
+        {/* JSON-LD: WebSite (for Google Sitelinks Search Box) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Benhouss",
+              url: "https://www.benhouss.site",
+              description:
+                "Portfolio de Benhouss, développeur Full Stack à Lille.",
+              inLanguage: ["fr-FR", "en-US"],
+            }),
           }}
         />
       </head>
-      <body className={dmSans.className}>
-        <LangProvider>{children}</LangProvider>
+      <body className={`${inter.variable} ${roboto.variable} ${azeretMono.variable} ${inter.className}`}>
+        <LangProvider>
+          <HtmlLangUpdater />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg"
+          >
+            Skip to content
+          </a>
+          <KonamiEasterEgg />
+          <Navbar />
+          {children}
+        </LangProvider>
       </body>
     </html>
   );
