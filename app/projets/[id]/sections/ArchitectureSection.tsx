@@ -22,8 +22,8 @@ export function ArchitectureSection({ architecture, language, onZoom }: Props) {
         <SectionHeading>Architecture</SectionHeading>
 
         {/* Static content only — description comes from lib/projects, never from user input */}
-        <p
-          className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-12 font-medium"
+        <div
+          className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-12 font-medium space-y-4 [&_strong]:text-foreground [&_strong]:font-bold"
           dangerouslySetInnerHTML={{ __html: architecture.description }}
         />
 

@@ -9,22 +9,25 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const stats = [
   {
     icon: GraduationCap,
-    label: { fr: "Titre RNCP Niv. 6 (Bac+4)", en: "RNCP Level 6 (Bachelor+4)" },
+    label: { fr: "Titre RNCP niv. 6 (Bac+4)", en: "RNCP Level 6 (Bachelor+4)" },
   },
   {
     icon: Briefcase,
     label: {
-      fr: "2+ ans d'expériences ",
-      en: "2+ years experiences",
+      fr: "2+ ans d’expérience",
+      en: "2+ years of experience",
     },
   },
   {
     icon: Rocket,
-    label: { fr: "Apps en production", en: "Apps in production" },
+    label: { fr: "Applications en production", en: "Apps in production" },
   },
   {
     icon: CheckCircle,
-    label: { fr: "Dispo — Lille · Remote", en: "Available — Lille · Remote" },
+    label: {
+      fr: "Disponible — Lille · Remote",
+      en: "Available — Lille · Remote",
+    },
     green: true,
   },
 ];
@@ -41,7 +44,6 @@ const About: React.FC = () => {
         {/* ── Header ── */}
         <BlurFade inView delay={0}>
           <div className="mb-16 md:mb-20">
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-4 py-1.5 mb-5 backdrop-blur-sm">
               <span className="w-4 h-[2px] rounded-full bg-primary" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
@@ -49,7 +51,6 @@ const About: React.FC = () => {
               </span>
             </div>
 
-            {/* Title */}
             <h2
               className="font-serif italic text-4xl sm:text-5xl md:text-6xl font-bold text-foreground"
               style={{ letterSpacing: "-0.015em" }}
@@ -62,14 +63,14 @@ const About: React.FC = () => {
           </div>
         </BlurFade>
 
-        {/* ── Two-column layout ── */}
+        {/* ── Layout ── */}
         <div className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-start">
-          {/* Left: Avatar */}
+          {/* Avatar */}
           <BlurFade inView delay={0.1}>
-            <div className="relative w-[200px] h-[200px] mx-auto md:mx-0 rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-primary/5">
+            <div className="relative w-[200px] h-[200px] mx-auto md:mx-0 rounded-2xl overflow-hidden border border-border/50 shadow-lg">
               <Image
                 src="/assets/avatar2.png"
-                alt="Ilyes Benhouss"
+                alt="Benhouss"
                 fill
                 className="object-cover"
                 sizes="200px"
@@ -77,44 +78,52 @@ const About: React.FC = () => {
             </div>
           </BlurFade>
 
-          {/* Right: Bio */}
+          {/* Bio */}
           <div className="space-y-5">
             <BlurFade inView delay={0.15}>
               <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Je m'appel Ilyes, Développeur Full Stack basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés de fondateur et de CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
-                  : "My name is Ilyes,  Full Stack Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
+                  ? "Je m'appelle Ilyes, Concepteur Développeur d'Applications (Bac+4) et développeur full stack basé à Lille. Mon expérience en startup aux côtés d'un fondateur et d'un CTO m'a forgé une solide culture produit et technique."
+                  : "My name is Ilyes, an Application Designer Developer (Bachelor+4) and full stack developer based in Lille, France. My startup experience alongside a founder and a CTO has forged a strong product and technical culture."}
               </p>
             </BlurFade>
 
             <BlurFade inView delay={0.2}>
               <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Je ne construis pas juste du code — je livre des applications en production. Next.js, TypeScript et Node.js sont mes outils du quotidien."
-                  : "I don't just write code — I ship production applications. Next.js, TypeScript and Node.js are my daily tools."}
+                  ? "Je ne me contente pas d'écrire des lignes de code — je conçois et livre des applications web et mobiles de A à Z : architecture, UX/UI, développement, tests et déploiement."
+                  : "I don't just write lines of code — I design and deliver web and mobile applications end-to-end: architecture, UX/UI, development, testing, and deployment."}
               </p>
             </BlurFade>
 
             <BlurFade inView delay={0.25}>
-              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Disponible maintenant en CDI ou freelance — Lille ou full remote. Je cherche une équipe ambitieuse où je peux avoir un impact concret."
-                  : "Available now for permanent or freelance roles — Lille or fully remote. Looking for an ambitious team where I can make a real impact."}
+                  ? "Spécialisé en Next.js, TypeScript et Node.js, je conçois des architectures robustes et je produis un code maintenable, scalable et performant pour accompagner la croissance de vos projets."
+                  : "Specializing in Next.js, TypeScript, and Node.js, I design robust architectures and write maintainable, scalable, and performant code to support the growth of your projects."}
+              </p>
+            </BlurFade>
+
+            <BlurFade inView delay={0.3}>
+              <p className="text-sm text-muted-foreground">
+                {language === "fr"
+                  ? "Disponible en CDI ou freelance — Lille ou full remote."
+                  : "Available for full-time or freelance — Lille or fully remote."}
               </p>
             </BlurFade>
           </div>
         </div>
 
-        {/* ── Stats row ── */}
-        <BlurFade inView delay={0.3}>
-          <div className="mt-14 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start">
+        {/* Stats */}
+        <BlurFade inView delay={0.35}>
+          <div className="mt-12 flex flex-wrap gap-4 justify-center md:justify-start">
             {stats.map((stat) => (
               <div
                 key={stat.label.en}
                 className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border/40 bg-card/50"
               >
                 <stat.icon
-                  className={`w-4.5 h-4.5 shrink-0 ${
+                  className={`w-4 h-4 ${
                     stat.green ? "text-emerald-500" : "text-muted-foreground"
                   }`}
                 />
