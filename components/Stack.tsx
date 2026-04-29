@@ -171,16 +171,7 @@ const Stack: React.FC = () => {
             transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
           >
             {language === "fr" ? "" : "My "}
-            <span className="relative inline-block text-primary">
-              Stack
-              <motion.span
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-red-400 to-primary rounded-full origin-left"
-              />
-            </span>
+            <span className="text-primary">Stack</span>
           </motion.h2>
           <motion.div
             className="mt-3 flex items-center justify-center gap-2"

@@ -22,7 +22,6 @@ import {
 } from "./sections";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 interface Props {
   id: string;
@@ -32,6 +31,7 @@ export default function ProjectPageClient({ id }: Props) {
   const { language } = useLang();
   const project = getProjectById(id, language);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const projectGradient = "linear-gradient(148deg, #0b05e7 0%, #1d4ed8 40%, #4bdfff 100%)";
 
   type TabId = "design" | "frontend" | "backend" | "deployment";
   const hasCategorized = project?.codeSnippets?.some(s => s.category) ?? false;
@@ -56,14 +56,15 @@ export default function ProjectPageClient({ id }: Props) {
 
       {/* Navigation */}
       <nav className="fixed top-8 left-8 z-50">
-        <Button asChild variant="primary" className="rounded-full hover:bg-primary/90 transition-all duration-500 shadow-sm">
-          <Link href="/#projets" className="group flex items-center gap-3">
-            <IconArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="text-[10px] font-black uppercase tracking-widest">
-              {language === "fr" ? "Retour" : "Back"}
-            </span>
-          </Link>
-        </Button>
+        <Link
+          href="/#projets"
+          className="group relative overflow-hidden flex items-center gap-2.5 px-4 py-2 rounded-full text-white text-[10px] font-black uppercase tracking-widest shadow-[0_4px_16px_rgba(11,5,231,0.3)] hover:shadow-[0_6px_24px_rgba(75,223,255,0.4)] transition-all duration-300"
+          style={{ background: projectGradient }}
+        >
+          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+          <IconArrowLeft size={14} className="relative z-10 group-hover:-translate-x-1 transition-transform duration-300" />
+          <span className="relative z-10">{language === "fr" ? "Retour" : "Back"}</span>
+        </Link>
       </nav>
 
       {/* Image Zoom overlay */}
@@ -106,7 +107,7 @@ export default function ProjectPageClient({ id }: Props) {
             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground mb-4">
               {project.designation}
             </p>
-            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12 text-foreground">
               {project.name}
             </h1>
 
@@ -158,7 +159,7 @@ export default function ProjectPageClient({ id }: Props) {
         {project.codeSnippets && project.codeSnippets.length > 0 && (
           <div className="mb-32">
             <div className="flex items-center gap-8 mb-12">
-              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-foreground">
+              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-black">
                 {language === "fr" ? "Implémentation technique" : "Technical Implementation"}
               </h2>
               <div className="flex-1 h-[1px] bg-border" />
@@ -169,17 +170,21 @@ export default function ProjectPageClient({ id }: Props) {
                 <div className="flex justify-start mb-8 overflow-x-auto pb-1">
                   <div className="flex p-1 bg-card rounded-full border border-border gap-0.5 shrink-0">
                     {tabs.map(tab => (
-                      <Button
+                      <button
                         key={tab.id}
-                        variant={activeTab === tab.id ? "primary" : "ghost"}
-                        size="sm"
                         onClick={() => setActiveTab(tab.id)}
-                        className={`rounded-full text-[10px] font-black uppercase tracking-widest px-6 whitespace-nowrap ${
-                          activeTab === tab.id ? "shadow-lg" : ""
+                        className={`group relative overflow-hidden rounded-full text-[10px] font-black uppercase tracking-widest px-6 py-2 whitespace-nowrap transition-all duration-300 ${
+                          activeTab === tab.id
+                            ? "text-white shadow-[0_4px_16px_rgba(4,3,231,0.3)]"
+                            : "text-muted-foreground hover:text-foreground"
                         }`}
+                        style={activeTab === tab.id ? { background: projectGradient } : {}}
                       >
-                        {tab.label}
-                      </Button>
+                        {activeTab === tab.id && (
+                          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+                        )}
+                        <span className="relative z-10">{tab.label}</span>
+                      </button>
                     ))}
                   </div>
                 </div>

@@ -33,7 +33,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({ project, index, isHovere
       >
         <motion.div
           className="relative py-6 px-4 sm:px-6 border-b border-border/30"
-          animate={{ backgroundColor: isHovered ? "rgba(220,38,38,0.04)" : "transparent" }}
+          animate={{ backgroundColor: isHovered ? "rgba(71,215,255,0.04)" : "transparent" }}
           transition={{ duration: 0.3 }}
         >
           <motion.div
@@ -92,7 +92,7 @@ export const ProjectRow: React.FC<ProjectRowProps> = ({ project, index, isHovere
                 style={{ width: 120, height: 72 }}
                 animate={{
                   scale: isHovered ? 1.05 : 1,
-                  borderColor: isHovered ? "rgba(220,38,38,0.35)" : "rgba(var(--border),0.5)",
+                  borderColor: isHovered ? "rgba(71,215,255,0.35)" : "rgba(var(--border),0.5)",
                   boxShadow: isHovered ? "0 8px 24px rgba(0,0,0,0.12)" : "0 1px 4px rgba(0,0,0,0.06)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}

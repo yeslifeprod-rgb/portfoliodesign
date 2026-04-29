@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #020817;
+    --card: #ffffff;
+    --card-foreground: #020817;
+    --popover: #ffffff;
+    --popover-foreground: #020817;
+    --primary: #0b05e7;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #0b05e7;
+    --color-brand-blue: #0b05e7;
+    --color-brand-cyan: #4bdfff;
+    --gradient-btn:     linear-gradient(148deg, #0b05e7 0%, #1d4ed8 40%, #4bdfff 100%);
+    --gradient-btn-rev: linear-gradient(148deg, #4bdfff 0%, #1d4ed8 60%, #0b05e7 100%);
+    --gradient-bar:     linear-gradient(to right, #0b05e7, #4bdfff, #0b05e7);
+    --font-sans: Inter, system-ui, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.375rem;
+    --shadow-x: 0px;
+    --shadow-y: 4px;
+    --shadow-blur: 10px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.1;
+    --shadow-color: 0, 0%, 0%;
+    --shadow-2xs: 0px 4px 10px 0px hsl(0, 0%, 0% / 0.05);
+    --shadow-xs: 0px 4px 10px 0px hsl(0, 0%, 0% / 0.05);
+    --shadow-sm:
+      0px 4px 10px 0px hsl(0, 0%, 0% / 0.1),
+      0px 1px 2px -1px hsl(0, 0%, 0% / 0.1);
+    --shadow:
+      0px 4px 10px 0px hsl(0, 0%, 0% / 0.1),
+      0px 1px 2px -1px hsl(0, 0%, 0% / 0.1);
+    --shadow-md:
+      0px 4px 10px 0px hsl(0, 0%, 0% / 0.1),
+      0px 2px 4px -1px hsl(0, 0%, 0% / 0.1);
+    --shadow-lg:
+      0px 4px 10px 0px hsl(0, 0%, 0% / 0.1),
+      0px 4px 6px -1px hsl(0, 0%, 0% / 0.1);
+    --shadow-xl:
+      0px 4px 10px 0px hsl(0, 0%, 0% / 0.1),
+      0px 8px 10px -1px hsl(0, 0%, 0% / 0.1);
+    --shadow-2xl: 0px 4px 10px 0px hsl(0, 0%, 0% / 0.25);
+    --tracking-normal: -0.015em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: #020817;
+    --foreground: #f8fafc;
+    --card: #020817;
+    --card-foreground: #f8fafc;
+    --popover: #020817;
+    --popover-foreground: #f8fafc;
+    --primary: #4bdfff;
+    --primary-foreground: #020817;
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #f8fafc;
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #4bdfff;
+    --color-brand-blue: #818cf8;
+    --color-brand-cyan: #4bdfff;
+    --gradient-btn:     linear-gradient(148deg, #818cf8 0%, #38bdf8 50%, #4bdfff 100%);
+    --gradient-btn-rev: linear-gradient(148deg, #4bdfff 0%, #38bdf8 50%, #818cf8 100%);
+    --gradient-bar:     linear-gradient(to right, #818cf8, #4bdfff, #818cf8);
+    --font-sans: Inter, system-ui, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.375rem;
+    --shadow-x: 0px;
+    --shadow-y: 8px;
+    --shadow-blur: 15px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.5;
+    --shadow-color: 0, 0%, 0%;
+    --shadow-2xs: 0px 8px 15px 0px hsl(0, 0%, 0% / 0.25);
+    --shadow-xs: 0px 8px 15px 0px hsl(0, 0%, 0% / 0.25);
+    --shadow-sm:
+      0px 8px 15px 0px hsl(0, 0%, 0% / 0.5),
+      0px 1px 2px -1px hsl(0, 0%, 0% / 0.5);
+    --shadow:
+      0px 8px 15px 0px hsl(0, 0%, 0% / 0.5),
+      0px 1px 2px -1px hsl(0, 0%, 0% / 0.5);
+    --shadow-md:
+      0px 8px 15px 0px hsl(0, 0%, 0% / 0.5),
+      0px 2px 4px -1px hsl(0, 0%, 0% / 0.5);
+    --shadow-lg:
+      0px 8px 15px 0px hsl(0, 0%, 0% / 0.5),
+      0px 4px 6px -1px hsl(0, 0%, 0% / 0.5);
+    --shadow-xl:
+      0px 8px 15px 0px hsl(0, 0%, 0% / 0.5),
+      0px 8px 10px -1px hsl(0, 0%, 0% / 0.5);
+    --shadow-2xl: 0px 8px 15px 0px hsl(0, 0%, 0% / 1.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+}

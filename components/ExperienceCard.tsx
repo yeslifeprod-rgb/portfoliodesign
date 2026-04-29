@@ -43,7 +43,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ exp, index, lang
 
   const gradientX = useSpring(mouseX, { stiffness: prefersReducedMotion ? 1000 : 300, damping: prefersReducedMotion ? 100 : 30 });
   const gradientY = useSpring(mouseY, { stiffness: prefersReducedMotion ? 1000 : 300, damping: prefersReducedMotion ? 100 : 30 });
-  const gradientBg = useMotionTemplate`radial-gradient(400px circle at ${gradientX}px ${gradientY}px, rgba(220,38,38,0.06), transparent 70%)`;
+  const gradientBg = useMotionTemplate`radial-gradient(400px circle at ${gradientX}px ${gradientY}px, rgba(71,215,255,0.07), transparent 70%)`;
 
   const badgeCfg = typeBadgeConfig[exp.type];
 

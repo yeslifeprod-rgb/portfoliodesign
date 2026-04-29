@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { motion } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 import { getAllProjects } from "@/lib/projects";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -41,15 +40,8 @@ export function Projects() {
               style={{ letterSpacing: "-0.015em" }}
             >
               {language === "fr" ? "Mes " : "Selected "}
-              <span className="relative inline-block text-primary">
+              <span className="text-primary">
                 {language === "fr" ? "Projets" : "Works"}
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                  className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-red-400 to-primary rounded-full origin-left"
-                />
               </span>
             </h2>
 

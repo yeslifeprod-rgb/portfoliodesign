@@ -16,7 +16,7 @@ export function LiveUrlButton({ liveUrl, language }: Props) {
       <div className="mb-32 flex">
         <Button
           asChild
-          variant="primary"
+          variant="gradient"
           className="rounded-full px-8 py-6 text-sm font-black uppercase tracking-widest group"
         >
           <Link href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">

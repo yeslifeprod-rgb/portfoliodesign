@@ -27,24 +27,23 @@ export function getNum4Project(language: string): Project {
       "Xcode",
       "RevenueCat",
       "Figma",
+      "i18n",
     ],
     features:
       language === "fr"
         ? [
             "Landing page d'acquisition optimisée pour la conversion",
+            "Mise en place de l'i18n pour le support multi-langues (Anglais/Français)",
             "Intégration des paiements iOS avec RevenueCat",
             "Développement frontend/backend Next.js",
             "Collaboration directe avec le fondateur et le CTO",
-            "Application mobile Flutter avec publication App Store",
-            "Infrastructure cloud déployée sur AWS et Vercel",
           ]
         : [
             "Acquisition landing page optimized for conversion",
+            "Implementation of i18n for multi-language support (English/French)",
             "iOS payment integration with RevenueCat",
             "Next.js frontend/backend development",
             "Direct collaboration with founder and CTO",
-            "Flutter mobile app with App Store publication",
-            "Cloud infrastructure deployed on AWS and Vercel",
           ],
     metrics:
       language === "fr"
@@ -75,6 +74,28 @@ export function getNum4Project(language: string): Project {
             role: "UX/UI redesign, Next.js development, iOS payment integration (RevenueCat) and Xcode testing.",
             result:
               "SEO optimization, traffic increase and conversion rate improvement.",
+          },
+    architecture:
+      language === "fr"
+        ? {
+            description:
+              "Mise en place d'un tunnel de paiement complexe reliant l'écosystème Apple App Store au backend Next.js via RevenueCat.",
+            points: [
+              "Intégration du SDK Flutter RevenueCat pour la gestion des achats",
+              "Configuration de l'App Store Connect (SKU, Sandbox testers)",
+              "Développement de webhooks Next.js pour la validation asynchrone",
+              "Synchronisation des droits d'accès utilisateur en temps réel",
+            ],
+          }
+        : {
+            description:
+              "Implementation of a complex payment tunnel connecting the Apple App Store ecosystem to the Next.js backend via RevenueCat.",
+            points: [
+              "RevenueCat Flutter SDK integration for purchase management",
+              "App Store Connect configuration (SKUs, Sandbox testers)",
+              "Next.js webhooks development for asynchronous validation",
+              "Real-time user access rights synchronization",
+            ],
           },
     gridSize: "md:col-span-2 lg:col-span-1",
   };

@@ -31,7 +31,7 @@ const Field: React.FC<FieldProps> = ({ icon: Icon, label, error, touched, index,
       <div
         className={`relative rounded-xl border transition-all duration-300 overflow-hidden group
           ${focused
-            ? "border-primary/60 bg-card shadow-[0_0_0_3px_rgba(220,38,38,0.08)]"
+            ? "border-primary/60 bg-card shadow-[0_0_0_3px_rgba(23,17,234,0.12)]"
             : hasError
               ? "border-destructive/50 bg-card"
               : "border-border bg-card/60 hover:border-border/80"
@@ -88,6 +88,10 @@ const Field: React.FC<FieldProps> = ({ icon: Icon, label, error, touched, index,
 type Status = "idle" | "loading" | "success" | "error";
 
 const SubmitButton: React.FC<{ status: Status; lang: string }> = ({ status, lang }) => {
+  const idleBackground = "linear-gradient(148deg, #0b05e7 0%, #1d4ed8 40%, #4bdfff 100%)";
+  const idleShadow = "0 10px 30px rgba(11, 5, 231, 0.24)";
+  const idleHoverShadow = "0 14px 36px rgba(29, 78, 216, 0.3)";
+
   const labels = {
     idle:    lang === "fr" ? "Envoyer le message" : "Send message",
     loading: lang === "fr" ? "Envoi en cours…"  : "Sending…",
@@ -103,20 +107,25 @@ const SubmitButton: React.FC<{ status: Status; lang: string }> = ({ status, lang
   };
 
   const colors = {
-    idle:    "from-primary to-red-700 hover:from-red-500 hover:to-primary",
-    loading: "from-primary/80 to-red-700/80",
+    idle:    "",
+    loading: "",
     success: "from-emerald-600 to-emerald-500",
-    error:   "from-destructive to-red-800",
+    error:   "",
   };
 
   return (
     <motion.button
       type="submit"
       disabled={status === "loading" || status === "success"}
-      className={`group relative w-full flex items-center justify-center py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r transition-all duration-300 overflow-hidden
-        ${colors[status]}
+      className={`group relative w-full flex items-center justify-center py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-300 overflow-hidden
+        ${status === "success" ? "bg-gradient-to-r " + colors[status] : ""}
         disabled:opacity-80 disabled:cursor-not-allowed
-        shadow-[0_4px_20px_rgba(220,38,38,0.25)] hover:shadow-[0_6px_28px_rgba(220,38,38,0.35)]`}
+        before:absolute before:inset-0 before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/[0.06]`}
+      style={status !== "success" ? {
+        background: idleBackground,
+        boxShadow: idleShadow,
+      } : undefined}
+      whileHover={status === "idle" ? { y: -1, boxShadow: idleHoverShadow } : undefined}
       whileTap={{ scale: status === "idle" ? 0.98 : 1 }}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -128,7 +137,7 @@ const SubmitButton: React.FC<{ status: Status; lang: string }> = ({ status, lang
       <AnimatePresence mode="wait">
         <motion.span
           key={status}
-          className="flex items-center"
+          className="relative z-10 flex items-center"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
@@ -166,7 +175,7 @@ const ContactForm: React.FC = () => {
         particleCount: 160,
         spread: 90,
         origin: { y: 0.6 },
-        colors: ["#dc2626", "#ef4444", "#f87171", "#ffffff"],
+        colors: ["#0b05e7", "#2563eb", "#4bdfff", "#ffffff"],
         scalar: 1.2,
       });
     }
@@ -207,7 +216,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className="relative w-full">
       {/* BorderBeam on the card */}
-      <BorderBeam size={280} duration={8} colorFrom="#dc2626" colorTo="#7f1d1d" />
+      <BorderBeam size={280} duration={8} colorFrom="#0b05e7" colorTo="#4bdfff" />
 
       <form onSubmit={formik.handleSubmit} className="space-y-3 pt-1">
 

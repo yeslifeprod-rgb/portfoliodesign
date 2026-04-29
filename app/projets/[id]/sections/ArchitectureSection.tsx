@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { FadeIn, SectionHeading } from "./_shared";
 import type { Project } from "@/lib/projects";
+import { IAPBridgeSchema } from "../IAPBridgeSchema";
+import { usePathname } from "next/navigation";
 
 interface Props {
   architecture: NonNullable<Project["architecture"]>;
@@ -11,15 +13,21 @@ interface Props {
 }
 
 export function ArchitectureSection({ architecture, language, onZoom }: Props) {
+  const pathname = usePathname();
+  const isNum4 = pathname.includes("num4");
+
   return (
     <FadeIn delay={0.2}>
       <div className="mb-32">
         <SectionHeading>Architecture</SectionHeading>
 
+        {/* Static content only — description comes from lib/projects, never from user input */}
         <p
           className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-12 font-medium"
           dangerouslySetInnerHTML={{ __html: architecture.description }}
         />
+
+        {isNum4 && <IAPBridgeSchema language={language} />}
 
         {architecture.image && (
           <div

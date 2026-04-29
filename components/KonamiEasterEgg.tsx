@@ -24,7 +24,7 @@ export const KonamiEasterEgg = () => {
     const duration = 3000;
     const end = Date.now() + duration;
 
-    const colors = ["#dc2626", "#f97316", "#facc15", "#22c55e", "#3b82f6", "#a855f7"];
+    const colors = ["#0403e7", "#2563eb", "#0ea5e9", "#47deff", "#06b6d4", "#38bdf8"];
 
     const frame = () => {
       confetti({

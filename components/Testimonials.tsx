@@ -81,7 +81,7 @@ const TestimonialCard: React.FC<{
     stiffness: prefersReducedMotion ? 1000 : 300,
     damping: prefersReducedMotion ? 100 : 30,
   });
-  const gradientBg = useMotionTemplate`radial-gradient(350px circle at ${gradientX}px ${gradientY}px, rgba(220,38,38,0.07), transparent 70%)`;
+  const gradientBg = useMotionTemplate`radial-gradient(350px circle at ${gradientX}px ${gradientY}px, rgba(23,17,234,0.08), transparent 70%)`;
 
   const lang = language as "fr" | "en";
   const text = testimonial.text[lang];
@@ -129,7 +129,7 @@ const TestimonialCard: React.FC<{
 
         {/* Top accent line */}
         <motion.div
-          className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"
+          className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -239,7 +239,7 @@ const Testimonials = () => {
       className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
     >
       {/* Subtle radial gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.03),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(23,17,234,0.05),transparent_60%)]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8">
         {/* ── Header ── */}

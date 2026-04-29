@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const image = project.srcs?.[0];
 
   return {
-    title: project.name,
+    title: `${project.name} — Benhouss`,
     description,
     openGraph: {
       title: `${project.name} — Benhouss`,

@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
-import { HyperText } from "@/components/ui/hyper-text";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { getExperiences } from "@/lib/data/experiences";
 
@@ -48,18 +47,15 @@ const Experiences = () => {
             style={{ letterSpacing: "-0.015em" }}
           >
             {language === "fr" ? "Mon " : "My "}
-            <span className="relative inline-block text-primary">
-              <HyperText as="span" className="text-primary font-bold" startOnView duration={1000} animateOnHover>
-                {language === "fr" ? "Parcours" : "Journey"}
-              </HyperText>
-              <motion.span
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-red-400 to-primary rounded-full origin-left"
-              />
-            </span>
+            <motion.span
+              className="text-primary inline-block"
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.23, 1, 0.32, 1] }}
+            >
+              {language === "fr" ? "Parcours" : "Journey"}
+            </motion.span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">

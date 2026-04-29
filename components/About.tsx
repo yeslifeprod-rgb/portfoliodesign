@@ -5,17 +5,11 @@ import Image from "next/image";
 import { GraduationCap, Briefcase, Rocket, CheckCircle } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 import { BlurFade } from "@/components/ui/blur-fade";
-import dynamic from "next/dynamic";
-
-const ContributionGraph = dynamic(
-  () => import("@/components/ContributionGraph"),
-  { ssr: false },
-);
 
 const stats = [
   {
     icon: GraduationCap,
-    label: { fr: "CDA Bac+4", en: "CDA Bac+4" },
+    label: { fr: "Titre RNCP Niv. 6 (Bac+4)", en: "RNCP Level 6 (Bachelor+4)" },
   },
   {
     icon: Briefcase,
@@ -30,7 +24,7 @@ const stats = [
   },
   {
     icon: CheckCircle,
-    label: { fr: "Disponible", en: "Available" },
+    label: { fr: "Dispo — Lille · Remote", en: "Available — Lille · Remote" },
     green: true,
   },
 ];
@@ -88,8 +82,8 @@ const About: React.FC = () => {
             <BlurFade inView delay={0.15}>
               <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Développeur Full Stack basé à Lille, certifié CDA (Bac+4). J'ai travaillé en startup aux côtés d'un fondateur et CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
-                  : "Full Stack Developer based in Lille, France, with a CDA certification (Bachelor+4). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
+                  ? "Je m'appel Ilyes, Développeur Full Stack basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés de fondateur et de CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
+                  : "My name is Ilyes,  Full Stack Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
               </p>
             </BlurFade>
 
@@ -104,8 +98,8 @@ const About: React.FC = () => {
             <BlurFade inView delay={0.25}>
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                 {language === "fr"
-                  ? "Disponible en CDI ou freelance, je cherche une équipe ambitieuse où je peux avoir un impact concret."
-                  : "Available for permanent or freelance roles, I'm looking for an ambitious team where I can make a real impact."}
+                  ? "Disponible maintenant en CDI ou freelance — Lille ou full remote. Je cherche une équipe ambitieuse où je peux avoir un impact concret."
+                  : "Available now for permanent or freelance roles — Lille or fully remote. Looking for an ambitious team where I can make a real impact."}
               </p>
             </BlurFade>
           </div>

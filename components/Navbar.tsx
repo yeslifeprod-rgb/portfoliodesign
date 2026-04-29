@@ -73,7 +73,7 @@ const ScrollProgress: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] h-[2px] bg-transparent">
       <motion.div
-        className="h-full bg-gradient-to-r from-primary via-primary to-primary/50 origin-left"
+        className="h-full gradient-bar origin-left"
         style={{ scaleX: progress }}
         initial={{ scaleX: 0 }}
       />
