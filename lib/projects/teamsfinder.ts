@@ -13,7 +13,7 @@ export function getTeamsFinderProject(language: string): Project {
         ? "Projet personnel — Plateforme de matchmaking gaming"
         : "Personal project — Gaming matchmaking platform",
     srcs: ["/assets/teamsfinder/teamsfinder.gif"],
-    stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase", "Ionic"],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase", "Ionic", "Stripe"],
     gallery: ["/assets/teamsfinder/teamsfinder.gif"],
     features: language === "fr" ? [
       "Recherche de coéquipiers par jeu et niveau",
@@ -79,115 +79,6 @@ The platform is deeply linked to Discord to engage the community. Webhooks autom
               "Security: Row Level Security (RLS) on Supabase to protect players' private data.",
             ],
     },
-    codeSnippets: [
-      {
-        title: language === "fr" ? "Algorithme de Matchmaking" : "Matchmaking Algorithm",
-        description:
-          language === "fr"
-            ? "Logique de backend (Edge Function) pour trouver des coéquipiers compatibles basés sur le jeu, le rang, la langue et la disponibilité."
-            : "Backend logic (Edge Function) to find compatible teammates based on game, rank, language, and availability.",
-        language: "typescript",
-        category: "backend",
-        code: `// Supabase Edge Function / API Route
-export async function findMatch(userId: string, gameId: string) {
-  // 1. Fetch user profile and preferences
-  const { data: user } = await supabase
-    .from('profiles')
-    .select('rank, language, schedule')
-    .eq('id', userId)
-    .single();
-
-  // 2. Query potential teammates with exact game match
-  //    and rank proximity (e.g. +/- 1 rank level)
-  const { data: candidates } = await supabase
-    .from('profiles')
-    .select('id, rank, language, reliability_score')
-    .eq('game_id', gameId)
-    .neq('id', userId)
-    .gte('rank', user.rank - 1)
-    .lte('rank', user.rank + 1)
-    .in('language', [user.language, 'en'])
-    .order('reliability_score', { ascending: false })
-    .limit(10);
-
-  // 3. Filter by overlapping schedules
-  const matchedUsers = candidates.filter(candidate => 
-    hasScheduleOverlap(user.schedule, candidate.schedule)
-  );
-
-  return matchedUsers;
-}`,
-      },
-      {
-        title: "Discord Webhook Integration",
-        description:
-          language === "fr"
-            ? "Service backend pour pousser automatiquement les annonces de recherche de groupe (LFG) sur le serveur Discord."
-            : "Backend service to automatically push Looking For Group (LFG) announcements to the Discord server.",
-        language: "typescript",
-        category: "backend",
-        code: `export async function broadcastToDiscord(announcement: LfgPost) {
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-  
-  const embed = {
-    title: \`🎮 Nouveau groupe pour \${announcement.game}\`,
-    description: announcement.description,
-    color: 0x5865F2, // Discord Blue
-    fields: [
-      { name: "Rang Requis", value: announcement.minRank, inline: true },
-      { name: "Places", value: \`\${announcement.playersNeeded}/5\`, inline: true },
-      { name: "Langue", value: announcement.language, inline: true }
-    ],
-    timestamp: new Date().toISOString()
-  };
-
-  await fetch(webhookUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ embeds: [embed] })
-  });
-}`,
-      },
-      {
-        title: language === "fr" ? "Abonnements Temps Réel" : "Real-time Subscriptions",
-        description:
-          language === "fr"
-            ? "Écoute des nouveaux messages et des notifications de matchmaking côté client avec le SDK Supabase."
-            : "Listening for new messages and matchmaking notifications on the client side using the Supabase SDK.",
-        language: "typescript",
-        category: "frontend",
-        code: `import { useEffect } from 'react';
-import { supabase } from '@/lib/supabaseClient';
-
-export function useMatchmakingNotifications(userId: string) {
-  useEffect(() => {
-    // Subscribe to new match events
-    const channel = supabase
-      .channel('match_notifications')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'matches',
-          filter: \`user_id=eq.\${userId}\`
-        },
-        (payload) => {
-          showNotification(
-            "Nouveau Match !", 
-            \`Un joueur correspondant à vos critères a été trouvé.\`
-          );
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [userId]);
-}`,
-      }
-    ],
     gridSize: "md:col-span-2 lg:col-span-1",
     liveUrl: "https://www.theteamsfinder.com/en",
   };
