@@ -83,8 +83,8 @@ const About: React.FC = () => {
             <BlurFade inView delay={0.15}>
               <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Je m'appelle Ilyes, Concepteur Développeur d'Applications (Bac+4) et développeur full stack basé à Lille. Mon expérience en startup aux côtés d'un fondateur et d'un CTO m'a forgé une solide culture produit et technique."
-                  : "My name is Ilyes, an Application Designer Developer (Bachelor+4) and full stack developer based in Lille, France. My startup experience alongside a founder and a CTO has forged a strong product and technical culture."}
+                  ? "Je m'appelle Ilyes, Concepteur Développeur d'Applications web et mobiles (Bac+4)  basé à Lille."
+                  : "My name is Ilyes, an Application Designer Developer (Bachelor+4) and web & mobile developer based in Lille, France."}
               </p>
             </BlurFade>
 
@@ -99,8 +99,8 @@ const About: React.FC = () => {
             <BlurFade inView delay={0.25}>
               <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {language === "fr"
-                  ? "Spécialisé en Next.js, TypeScript et Node.js, je conçois des architectures robustes et je produis un code maintenable, scalable et performant pour accompagner la croissance de vos projets."
-                  : "Specializing in Next.js, TypeScript, and Node.js, I design robust architectures and write maintainable, scalable, and performant code to support the growth of your projects."}
+                  ? "Avec Next.js, TypeScript et Node.js/NestJS, je conçois des architectures robustes et je produis un code maintenable, scalable et performant pour accompagner la croissance de vos projets."
+                  : "With Next.js, TypeScript, and Node.js/NestJS, I design robust architectures and write maintainable, scalable, and performant code to support the growth of your projects."}
               </p>
             </BlurFade>
 
