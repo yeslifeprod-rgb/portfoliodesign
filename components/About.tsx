@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Rocket, CheckCircle } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 
@@ -39,13 +38,7 @@ const About: React.FC = () => {
     >
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8">
         {/* ── Header ── */}
-        <motion.div
-          className="mb-16 md:mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+        <div className="mb-16 md:mb-20">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-4 py-1.5 mb-5 backdrop-blur-sm">
             <span className="w-4 h-[2px] rounded-full bg-primary" />
@@ -64,18 +57,12 @@ const About: React.FC = () => {
               {language === "fr" ? "suis-je" : "am I"}
             </span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-start">
           {/* Left: Avatar */}
-          <motion.div
-            className="relative w-[200px] h-[200px] mx-auto md:mx-0 rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-primary/5"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div className="relative w-[200px] h-[200px] mx-auto md:mx-0 rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-primary/5">
             <Image
               src="/assets/avatar2.png"
               alt="Ilyes Benhouss"
@@ -83,64 +70,36 @@ const About: React.FC = () => {
               className="object-cover"
               sizes="200px"
             />
-          </motion.div>
+          </div>
 
           {/* Right: Bio */}
           <div className="space-y-5">
-            <motion.p
-              className="text-base sm:text-lg leading-relaxed text-foreground"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
+            <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
                 ? "Développeur Full Stack basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés d'un fondateur et CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
                 : "Full Stack Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
-            </motion.p>
+            </p>
 
-            <motion.p
-              className="text-base sm:text-lg leading-relaxed text-foreground"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
                 ? "Je ne construis pas juste du code — je livre des applications en production. Next.js, TypeScript et Node.js sont mes outils du quotidien."
                 : "I don't just write code — I ship production applications. Next.js, TypeScript and Node.js are my daily tools."}
-            </motion.p>
+            </p>
 
-            <motion.p
-              className="text-base sm:text-lg leading-relaxed text-muted-foreground"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-            >
+            <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
               {language === "fr"
                 ? "Disponible maintenant en CDI ou freelance — Lille ou full remote. Je cherche une équipe ambitieuse où je peux avoir un impact concret."
                 : "Available now for permanent or freelance roles — Lille or fully remote. Looking for an ambitious team where I can make a real impact."}
-            </motion.p>
+            </p>
           </div>
         </div>
 
         {/* ── Stats row ── */}
-        <motion.div
-          className="mt-14 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          {stats.map((stat, i) => (
-            <motion.div
+        <div className="mt-14 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start">
+          {stats.map((stat) => (
+            <div
               key={stat.label.en}
               className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border/40 bg-card/50"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.35 + i * 0.05 }}
             >
               <stat.icon
                 className={`w-4.5 h-4.5 shrink-0 ${
@@ -150,9 +109,9 @@ const About: React.FC = () => {
               <span className="text-sm font-medium text-foreground whitespace-nowrap">
                 {stat.label[language]}
               </span>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
