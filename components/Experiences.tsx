@@ -14,7 +14,7 @@ const Experiences = () => {
   return (
     <section
       id="experience"
-      className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-background py-24 sm:py-32 overflow-hidden"
     >
       <InteractiveGridPattern
         width={50}

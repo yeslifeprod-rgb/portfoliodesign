@@ -236,7 +236,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-background py-24 sm:py-32 overflow-hidden"
     >
       {/* Fondu depuis Experiences section */}
       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-t from-transparent via-background/50 to-background pointer-events-none z-20" />

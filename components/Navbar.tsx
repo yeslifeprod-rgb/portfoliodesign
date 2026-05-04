@@ -12,12 +12,12 @@ import { navLinks } from "@/lib/navigation";
 const SECTION_IDS = ["home", "about", "projets", "stack", "experience", "contact"];
 
 const NAV_ICONS: Record<string, React.ElementType> = {
-  "/#home": Home,
-  "/#about": User,
-  "/#projets": FolderOpen,
-  "/#stack": Layers,
-  "/#experience": Briefcase,
-  "/#contact": Mail,
+  "#home": Home,
+  "#about": User,
+  "#projets": FolderOpen,
+  "#stack": Layers,
+  "#experience": Briefcase,
+  "#contact": Mail,
 };
 
 /* ─── useActiveSection ────────────────────────────────── */
@@ -131,7 +131,7 @@ const FloatingNav: React.FC<{
       <div className="flex items-center gap-1 px-1.5 py-1.5 rounded-full bg-card/80 dark:bg-card/90 backdrop-blur-2xl border border-black/[0.08] dark:border-white/10 shadow-[0_0_0_1px_rgba(0,0,0,0.03),0_2px_4px_rgba(0,0,0,0.04),0_12px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_2px_4px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.4)] ring-1 ring-inset ring-white/10 dark:ring-white/[0.04]">
         {/* Nav links — labels on desktop, icons on mobile */}
         {navigation.map((item) => {
-          const sectionId = item.href.replace("/#", "");
+          const sectionId = item.href.replace("#", "");
           const isActive = activeSection === sectionId;
           const Icon = NAV_ICONS[item.href] ?? Home;
 

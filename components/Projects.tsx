@@ -20,7 +20,7 @@ export function Projects() {
   return (
     <section
       id="projets"
-      className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-background py-24 sm:py-32 overflow-hidden"
     >
       <DotPattern width={28} height={28} cr={0.8} className="opacity-[0.03] dark:opacity-[0.05]" />
 
