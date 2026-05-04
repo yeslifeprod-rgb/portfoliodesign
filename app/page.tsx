@@ -5,7 +5,6 @@ import Stack from "@/components/Stack";
 import Experiences from "@/components/Experiences";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
-import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function Home() {
   return (
@@ -14,30 +13,12 @@ export default function Home() {
       className="flex flex-col min-h-screen w-full overflow-x-hidden bg-background text-foreground"
     >
       <HomeSection />
-      
-      <ScrollAnimation>
-        <About />
-      </ScrollAnimation>
-      
-      <ScrollAnimation>
-        <Projects />
-      </ScrollAnimation>
-      
-      <ScrollAnimation>
-        <Stack />
-      </ScrollAnimation>
-      
-      <ScrollAnimation>
-        <Experiences />
-      </ScrollAnimation>
-      
-      <ScrollAnimation>
-        <Testimonials />
-      </ScrollAnimation>
-      
-      <ScrollAnimation>
-        <Contact />
-      </ScrollAnimation>
+      <About />
+      <Projects />
+      <Stack />
+      <Experiences />
+      <Testimonials />
+      <Contact />
     </main>
   );
 }
