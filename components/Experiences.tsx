@@ -71,6 +71,9 @@ const Experiences = () => {
           ))}
         </div>
       </div>
+
+      {/* Fondu vers Testimonials section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none z-20" />
     </section>
   );
 };

@@ -238,6 +238,9 @@ const Testimonials = () => {
       id="testimonials"
       className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
     >
+      {/* Fondu depuis Experiences section */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-t from-transparent via-background/50 to-background pointer-events-none z-20" />
+
       {/* Subtle radial gradient background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(23,17,234,0.05),transparent_60%)]" />
 
