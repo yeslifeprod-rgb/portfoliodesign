@@ -193,7 +193,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="/#projets"
+                  href="#projets"
                   className="group relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4bdfff] focus-visible:ring-offset-2"
                   style={{
                     background: heroPrimaryGradient,
@@ -220,7 +220,7 @@ const Hero = () => {
 
               <motion.div>
                 <Link
-                  href="/#contact"
+                  href="#contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   style={{
                     border: "1px solid color-mix(in srgb, var(--foreground) 12%, transparent)",

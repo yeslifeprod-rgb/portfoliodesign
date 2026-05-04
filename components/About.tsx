@@ -34,7 +34,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative bg-background py-24 sm:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-background py-24 sm:py-32 overflow-hidden"
     >
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8">
         {/* ── Header ── */}
