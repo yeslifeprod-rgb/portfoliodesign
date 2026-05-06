@@ -28,6 +28,8 @@ export function getEdukaMeta(language: string) {
       language === "fr"
         ? [
             "Système d'authentification sécurisé avec vérification d'email",
+            "Conformité RGPD avec chiffrement des données sensibles (noms, prénoms, etc.)",
+            "Logique métier stricte : un parent doit avoir au moins un enfant inscrit dans une école de référence",
             "Création et gestion de groupes pour organiser les covoiturages",
             "Calendrier interactif pour planifier les trajets",
             "Notifications en temps réel pour les parents et responsables",
@@ -38,6 +40,8 @@ export function getEdukaMeta(language: string) {
           ]
         : [
             "Secure authentication system with email verification",
+            "GDPR compliance with encryption of sensitive data (names, etc.)",
+            "Strict business logic: a parent must have at least one child enrolled in a reference school",
             "Create and manage groups to organize carpools",
             "Interactive calendar to plan rides",
             "Real-time notifications for parents and managers",
