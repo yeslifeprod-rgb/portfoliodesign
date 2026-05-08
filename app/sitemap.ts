@@ -6,33 +6,58 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: new Date("2025-05-08"),
       changeFrequency: "monthly",
       priority: 1,
     },
+    // Pages services dédiées par keyword
     {
-      url: `${SITE_URL}/#projets`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      url: `${SITE_URL}/services/nextjs-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/#stack`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/services/nestjs`,
+      lastModified: new Date("2025-05-08"),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.9,
     },
     {
-      url: `${SITE_URL}/#experience`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/services/ionic-lille`,
+      lastModified: new Date("2025-05-08"),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.85,
     },
     {
-      url: `${SITE_URL}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.8,
+      url: `${SITE_URL}/services/concepteur-application-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/services/developpeur-frontend-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/services/developpeur-cdi-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/services/developpeur-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/services/developpeur-freelance-lille`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
   ];
 }

@@ -38,21 +38,64 @@ export const metadata: Metadata = {
     template: "%s | Benhouss",
   },
   description:
-    "Développeur Full Stack à Lille spécialisé en React, Next.js, Nuxt.js, Node.js et TypeScript. Création d'applications web et mobile performantes. Disponible en freelance et CDI.",
+    "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niv. 6). Spécialisé React, Next.js, NestJS, Ionic, Node.js, TypeScript. Création d'applications web et mobile. Freelance & CDI — Lille ou remote.",
   keywords: [
+    // ── Identité & localisation ──
+    "développeur Lille",
     "développeur full stack lille",
-    "développeur react lille",
-    "développeur next.js",
     "développeur web lille",
     "développeur freelance lille",
-    "react",
-    "next.js",
-    "nuxt.js",
-    "node.js",
-    "typescript",
-    "tailwind css",
-    "docker",
-    "supabase",
+    "développeur full stack freelance",
+    "développeur CDI Lille",
+    "développeur full stack CDI Lille",
+    "recruter développeur Lille",
+    "développeur disponible CDI Hauts-de-France",
+    "développeur web freelance Lille",
+    "applications web et mobile Lille",
+    "RNCP niveau 6 développeur",
+    "concepteur développeur d'applications",
+    "concepteur développeur d'applications Lille",
+    // ── Frontend ──
+    "développeur react lille",
+    "développeur react",
+    "développeur next.js",
+    "développeur next.js lille",
+    "développeur typescript",
+    "développeur TypeScript Lille",
+    "développeur tailwind css",
+    "développeur Ionic",
+    "développeur Ionic Lille",
+    "développeur mobile Lille",
+    "développeur application mobile",
+    "développeur front end Lille",
+    "développeur frontend Lille",
+    "développeur vue.js",
+    "développeur nuxt",
+    "framer motion développeur",
+    // ── Backend & BDD ──
+    "développeur NestJS",
+    "développeur NestJS Lille",
+    "développeur node.js",
+    "développeur node.js Lille",
+    "développeur prisma",
+    "développeur mysql",
+    "développeur mongodb",
+    "développeur supabase",
+    "intégration stripe développeur",
+    "développeur backend Lille",
+    // ── DevOps & Outils ──
+    "développeur docker",
+    "déploiement vercel",
+    "tests jest cypress développeur",
+    "développeur git github",
+    // ── Design & Gestion ──
+    "intégration figma développeur",
+    "méthode agile scrum développeur",
+    // ── Noms bruts (recherches directes) ──
+    "react", "next.js", "nestjs", "ionic", "nuxt.js", "vue.js",
+    "node.js", "typescript", "tailwind css", "prisma",
+    "mysql", "mongodb", "supabase", "stripe", "docker",
+    "vercel", "jest", "cypress", "figma", "framer motion",
   ],
   authors: [{ name: "Benhouss", url: SITE_URL }],
   creator: "Benhouss",
@@ -69,36 +112,24 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Benhouss — Développeur Full Stack Lille",
+    title: "Benhouss — Concepteur Développeur d'Applications Full Stack Lille",
     description:
-      "Développeur Full Stack à Lille. React, Next.js, Node.js, TypeScript. Applications web et mobile performantes.",
+      "Développeur Full Stack à Lille. React, Next.js, NestJS, Ionic, Node.js, TypeScript. RNCP Niv. 6. Freelance & CDI.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "fr_FR",
-    alternateLocale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Benhouss — Développeur Full Stack Lille",
-      },
-    ],
+    // Pas d'alternateLocale — aucune version /en n'existe
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benhouss — Développeur Full Stack Lille",
+    title: "Benhouss — Concepteur Développeur d'Applications Full Stack Lille",
     description:
-      "Développeur Full Stack à Lille. React, Next.js, Node.js, TypeScript. Disponible en freelance.",
-    images: ["/og-image.png"],
+      "Développeur Full Stack à Lille. Next.js, NestJS, Ionic, React, TypeScript. RNCP Niv. 6. Freelance & CDI.",
+    // Pas d'images statiques — l'OG est générée par opengraph-image.tsx
   },
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "fr-FR": SITE_URL,
-      "en-US": `${SITE_URL}/en`,
-    },
   },
   verification: {
     google: "45cdcd59b8daf8eb",
@@ -121,60 +152,142 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`,
           }}
         />
-        {/* JSON-LD: Person */}
+        {/* JSON-LD: @graph — Person, LocalBusiness, WebSite, FAQPage */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Benhouss",
-              jobTitle: "Développeur Full Stack Next.js",
-              description:
-                "Développeur Full Stack à Lille spécialisé en React, Next.js, Node.js et TypeScript. Création d'applications web et mobile performantes.",
-              url: "https://www.benhouss.site",
-              image: "https://www.benhouss.site/assets/avatar.png",
-              sameAs: [
-                "https://github.com/Yesdevjr",
-                "https://linkedin.com/in/benhouss",
-                "https://gitlab.com/yeslife.prod",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://www.benhouss.site/#person",
+                  name: "Benhouss",
+                  alternateName: "Ilyes Ghardi",
+                  jobTitle: "Concepteur Développeur d'Applications Full Stack",
+                  description:
+                    "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Spécialisé Next.js, NestJS, Ionic, React, Node.js, TypeScript. Disponible en freelance et CDI.",
+                  url: "https://www.benhouss.site",
+                  image: "https://www.benhouss.site/assets/avatar.png",
+                  sameAs: [
+                    "https://github.com/Yesdevjr",
+                    "https://linkedin.com/in/benhouss",
+                    "https://gitlab.com/yeslife.prod",
+                  ],
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Lille",
+                    addressRegion: "Hauts-de-France",
+                    postalCode: "59000",
+                    addressCountry: "FR",
+                  },
+                  hasCredential: {
+                    "@type": "EducationalOccupationalCredential",
+                    name: "Titre RNCP Niveau 6 — Concepteur Développeur d'Applications",
+                    credentialCategory: "degree",
+                  },
+                  knowsAbout: [
+                    "React", "Next.js", "TypeScript", "Tailwind CSS",
+                    "Ionic", "Framer Motion", "Vue.js", "Nuxt.js",
+                    "Node.js", "NestJS", "Prisma", "MySQL",
+                    "MongoDB", "Supabase", "Stripe",
+                    "Git", "Vercel", "Docker", "Jest", "Cypress",
+                    "Figma", "Excalidraw", "Agile Scrum", "Microservices", "REST API",
+                  ],
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.benhouss.site/#business",
+                  name: "Benhouss — Développeur Full Stack Lille",
+                  url: "https://www.benhouss.site",
+                  image: "https://www.benhouss.site/assets/avatar.png",
+                  priceRange: "€€",
+                  areaServed: [
+                    { "@type": "City", name: "Lille" },
+                    { "@type": "AdministrativeArea", name: "Hauts-de-France" },
+                    { "@type": "Country", name: "France" },
+                  ],
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Lille",
+                    addressRegion: "Hauts-de-France",
+                    postalCode: "59000",
+                    addressCountry: "FR",
+                  },
+                  founder: { "@id": "https://www.benhouss.site/#person" },
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Services de développement web & mobile",
+                    itemListElement: [
+                      { "@type": "Offer", name: "Développement Next.js à Lille", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Développement NestJS — APIs REST & Microservices" },
+                      { "@type": "Offer", name: "Développement Application Mobile Ionic", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Conception et développement d'applications Full Stack", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Développement Front End React/Next.js", areaServed: "Lille" },
+                    ],
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.benhouss.site/#website",
+                  name: "Benhouss — Développeur Full Stack Lille",
+                  url: "https://www.benhouss.site",
+                  inLanguage: "fr-FR",
+                  description: "Portfolio de Benhouss, concepteur développeur d'applications Full Stack à Lille.",
+                  author: { "@id": "https://www.benhouss.site/#person" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://www.benhouss.site/?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://www.benhouss.site/#faq",
+                  mainEntity: [
+                    {
+                      "@type": "Question",
+                      name: "Êtes-vous disponible en freelance à Lille ?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Oui, disponible en freelance et CDI, basé à Lille (59) avec possibilité de full remote.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Quelles technologies maîtrisez-vous ?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Next.js, React, NestJS, Ionic, Node.js, TypeScript, Prisma, MySQL, MongoDB, Docker, Tailwind CSS, Framer Motion, Vercel, Git, Jest, Cypress, Figma.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Êtes-vous certifié Concepteur Développeur d'Applications ?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Oui, titulaire du titre RNCP Niveau 6 — Concepteur Développeur d'Applications (Bac+4), obtenu à l'ALT Incubateur de Lille.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Développez-vous des applications mobiles avec Ionic ?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Oui, j'ai développé des applications mobiles cross-platform avec Ionic et React, notamment pour une application open source de gestion extra-scolaire.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Êtes-vous disponible pour un CDI à Lille ?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Oui, ouvert aux opportunités CDI à Lille ou full remote. 2+ ans d'expérience, je cherche une équipe ambitieuse.",
+                      },
+                    },
+                  ],
+                },
               ],
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Lille",
-                addressRegion: "Hauts-de-France",
-                addressCountry: "FR",
-              },
-              knowsAbout: [
-                "React",
-                "Next.js",
-                "Nuxt.js",
-                "Vue.js",
-                "Node.js",
-                "NestJS",
-                "TypeScript",
-                "Tailwind CSS",
-                "Docker",
-                "Supabase",
-                "MongoDB",
-                "MySQL",
-                "Prisma",
-              ],
-            }),
-          }}
-        />
-        {/* JSON-LD: WebSite (for Google Sitelinks Search Box) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Benhouss",
-              url: "https://www.benhouss.site",
-              description:
-                "Portfolio de Benhouss, développeur Full Stack à Lille.",
-              inLanguage: ["fr-FR", "en-US"],
             }),
           }}
         />
