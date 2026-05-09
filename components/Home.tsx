@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <div className="relative">
       {/* SEO — h1 indexable, visuellement masqué car BenhoussHandwriting le remplace */}
-      <h1 className="sr-only">
+      <h1 id="hero-heading" className="sr-only">
         Benhouss — Développeur Full Stack Web &amp; Mobile, Lille
       </h1>
 
@@ -90,7 +90,7 @@ const Hero = () => {
 
         <section
           className="relative z-10 min-h-screen flex flex-col items-center justify-center gap-5 px-6"
-          role="banner"
+          aria-labelledby="hero-heading"
         >
           {/* Avatar — float + glow gradient en un seul motion.div pour éviter double repaint GPU */}
           <BlurFade delay={0.1} inView>
@@ -218,30 +218,28 @@ const Hero = () => {
                 </Link>
               </motion.div>
 
-              <motion.div>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  style={{
-                    border: "1px solid color-mix(in srgb, var(--foreground) 12%, transparent)",
-                    background: "transparent",
-                    color: "var(--primary)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "color-mix(in srgb, var(--primary) 22%, transparent)";
-                    e.currentTarget.style.background = "color-mix(in srgb, var(--primary) 4%, transparent)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "color-mix(in srgb, var(--foreground) 12%, transparent)";
-                    e.currentTarget.style.background = "transparent";
-                  }}
-                >
-                  <span>
-                    {language === "fr" ? "Me contacter" : "Get in touch"}
-                  </span>
-                  <ArrowRight className="w-4 h-4 opacity-60" />
-                </Link>
-              </motion.div>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                style={{
+                  border: "1px solid color-mix(in srgb, var(--foreground) 12%, transparent)",
+                  background: "transparent",
+                  color: "var(--primary)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "color-mix(in srgb, var(--primary) 22%, transparent)";
+                  e.currentTarget.style.background = "color-mix(in srgb, var(--primary) 4%, transparent)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "color-mix(in srgb, var(--foreground) 12%, transparent)";
+                  e.currentTarget.style.background = "transparent";
+                }}
+              >
+                <span>
+                  {language === "fr" ? "Me contacter" : "Get in touch"}
+                </span>
+                <ArrowRight className="w-4 h-4 opacity-60" />
+              </Link>
             </div>
           </BlurFade>
         </section>
