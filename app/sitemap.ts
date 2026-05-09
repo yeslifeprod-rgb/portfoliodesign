@@ -59,5 +59,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/services/developpeur-remote-france`,
+      lastModified: new Date("2025-05-08"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }
