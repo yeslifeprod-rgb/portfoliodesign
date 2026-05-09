@@ -48,15 +48,15 @@ export function getNum4Project(language: string): Project {
     metrics:
       language === "fr"
         ? [
-            { label: "Environnement", value: "Startup" },
-            { label: "Paiements iOS", value: "Intégrés" },
-            { label: "Landing page", value: "Déployée" },
+            { label: "Artistes actifs", value: "350+" },
+            { label: "Reversés aux créateurs", value: "€2.5M" },
+            { label: "Morceaux monétisés", value: "15K+" },
             { label: "Collaboration", value: "CTO direct" },
           ]
         : [
-            { label: "Environment", value: "Startup" },
-            { label: "iOS Payments", value: "Integrated" },
-            { label: "Landing Page", value: "Shipped" },
+            { label: "Active artists", value: "350+" },
+            { label: "Paid to creators", value: "€2.5M" },
+            { label: "Monetized tracks", value: "15K+" },
             { label: "Collaboration", value: "Direct CTO" },
           ],
     businessCase:
@@ -66,14 +66,14 @@ export function getNum4Project(language: string): Project {
               "Refonte complète de la landing page d'une startup musicale et intégration des paiements sur application mobile iOS.",
             role: "Refonte UX/UI, développement Next.js, intégration des paiements iOS (RevenueCat) et tests sur Xcode.",
             result:
-              "Optimisation du SEO, augmentation du trafic et amélioration du taux de conversion.",
+              "Plateforme utilisée par 350+ artistes actifs, €2.5M reversés aux créateurs, 15 000+ morceaux monétisés.",
           }
         : {
             problem:
               "Complete redesign of a music startup's landing page and integration of payments on iOS mobile application.",
             role: "UX/UI redesign, Next.js development, iOS payment integration (RevenueCat) and Xcode testing.",
             result:
-              "SEO optimization, traffic increase and conversion rate improvement.",
+              "Platform used by 350+ active artists, €2.5M paid to creators, 15K+ monetized tracks.",
           },
     architecture:
       language === "fr"
