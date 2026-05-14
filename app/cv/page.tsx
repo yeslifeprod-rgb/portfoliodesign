@@ -1,7 +1,6 @@
 "use client";
 
 import { Download, ExternalLink } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -109,7 +108,7 @@ export default function CVPage() {
 
                 <motion.a
                   href="/cv/CV-GHARDI-ILYES.pdf"
-                  download="CV-Benhouss.png"
+                  download="CV-Benhouss.pdf"
                   className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold text-white transition-all duration-300"
                   style={{
                     background: "var(--primary)",
@@ -166,18 +165,11 @@ export default function CVPage() {
                   </div>
                 </motion.div>
 
-                <div className="h-full p-4 flex items-center justify-center">
-                  <Image
-                    src="/cv/CV-GHARDI-ILYES.png"
-                    alt="CV Benhouss - Développeur Full Stack Web & Mobile"
-                    width={650} // Plus grand
-                    height={920} // Plus grand
-                    className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
-                    style={{
-                      filter:
-                        "drop-shadow(0 10px 25px color-mix(in srgb, var(--primary) 20%, transparent))",
-                    }}
-                    priority
+                <div className="h-full">
+                  <iframe
+                    src="/cv/CV-GHARDI-ILYES.pdf"
+                    title="CV Benhouss - Développeur Full Stack Web & Mobile"
+                    className="w-full h-full rounded-[1.5rem]"
                   />
                 </div>
               </div>
