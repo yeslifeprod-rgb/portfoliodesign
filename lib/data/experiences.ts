@@ -14,6 +14,7 @@ export interface Experience {
   description: string[];
   skills: string[];
   projectLink?: { href: string; label: string };
+  images?: string[];
 }
 
 export function getExperiences(language: string): Experience[] {
@@ -24,7 +25,7 @@ export function getExperiences(language: string): Experience[] {
       type: "stage",
       title:
         language === "fr"
-          ? "Stagiaire Développeur Fullstack"
+          ? "Stagiaire Développeur Full-stack"
           : "Full Stack Developer Intern",
       company:
         language === "fr"
@@ -62,7 +63,7 @@ export function getExperiences(language: string): Experience[] {
       type: "immersion-professionnelle",
       title:
         language === "fr"
-          ? "Concepteur Développeur d'Applications"
+          ? "Concepteur Développeur d'Applications web & mobile"
           : "Application Developer Designer",
       company: "ALT Incubateur",
       years: "2023 — 2024",
@@ -94,8 +95,8 @@ export function getExperiences(language: string): Experience[] {
       },
     },
     {
-      id: 3,
-      number: "03",
+      id: 4,
+      number: "04",
       type: "formation",
       title:
         language === "fr"
@@ -113,7 +114,7 @@ export function getExperiences(language: string): Experience[] {
               "Frontend, backend development and agile methodologies",
               "Digital careers discovery: development, cybersecurity, design",
             ],
-      skills: ["HTML", "CSS", "Javascript", "Wordpress"],
+      skills: ["HTML", "CSS", "JavaScript", "Wordpress"],
     },
   ];
 }

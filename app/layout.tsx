@@ -4,13 +4,22 @@ import { LangProvider } from "@/context/LangContext";
 import Navbar from "@/components/Navbar";
 import HtmlLangUpdater from "@/components/HtmlLangUpdater";
 import { KonamiEasterEgg } from "@/components/KonamiEasterEgg";
-import { Inter, Roboto, Azeret_Mono } from "next/font/google";
+import { Inter, Roboto, Azeret_Mono, DM_Sans } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-sans",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-display",
 });
 
 const roboto = Roboto({
@@ -92,7 +101,7 @@ export const metadata: Metadata = {
     "développeur frontend Lille",
     "développeur vue.js",
     "développeur nuxt",
-    "framer motion développeur",
+    "développeur shadcn/ui",
     // ── Backend & BDD ──
     "développeur NestJS",
     "développeur NestJS Lille",
@@ -116,7 +125,7 @@ export const metadata: Metadata = {
     "react", "next.js", "nestjs", "ionic", "nuxt.js", "vue.js",
     "node.js", "typescript", "tailwind css", "prisma",
     "mysql", "mongodb", "supabase", "stripe", "docker",
-    "vercel", "jest", "cypress", "figma", "framer motion",
+    "vercel", "jest", "cypress", "figma", "shadcn/ui",
   ],
   authors: [{ name: "Benhouss", url: SITE_URL }],
   creator: "Benhouss",
@@ -184,7 +193,6 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://www.benhouss.site/#person",
                   name: "Benhouss",
-                  alternateName: "Ilyes Ghardi",
                   jobTitle: "Concepteur Développeur d'Applications Full Stack",
                   description:
                     "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Spécialisé Next.js, NestJS, Ionic, React, Node.js, TypeScript. Disponible en freelance et CDI.",
@@ -209,7 +217,7 @@ export default function RootLayout({
                   },
                   knowsAbout: [
                     "React", "Next.js", "TypeScript", "Tailwind CSS",
-                    "Ionic", "Framer Motion", "Vue.js", "Nuxt.js",
+                    "Ionic", "shadcn/ui", "Vue.js", "Nuxt.js",
                     "Node.js", "NestJS", "Prisma", "MySQL",
                     "MongoDB", "Supabase", "Stripe",
                     "Git", "Vercel", "Docker", "Jest", "Cypress",
@@ -262,7 +270,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${roboto.variable} ${azeretMono.variable} ${inter.className}`}>
+      <body className={`${inter.variable} ${roboto.variable} ${azeretMono.variable} ${dmSans.variable} ${inter.className}`}>
         <LangProvider>
           <HtmlLangUpdater />
           <a
@@ -279,5 +287,4 @@ export default function RootLayout({
     </html>
   );
 }
-
 

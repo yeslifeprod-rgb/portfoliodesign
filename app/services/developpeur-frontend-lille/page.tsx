@@ -62,7 +62,7 @@ export default function DeveloppeurFrontendLillePage() {
               },
               {
                 title: "Animations & interactions",
-                desc: "Framer Motion, CSS animations, transitions fluides, micro-interactions pour améliorer l'UX.",
+                desc: "shadcn/ui, CSS animations, transitions fluides, micro-interactions pour améliorer l'UX.",
               },
               {
                 title: "Optimisation & SEO technique",
@@ -81,7 +81,7 @@ export default function DeveloppeurFrontendLillePage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Stack Front End</h2>
           <div className="flex flex-wrap gap-2">
-            {["React 18", "Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI", "shadcn/ui", "Figma", "Storybook"].map((t) => (
+            {["React 18", "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "Figma", "Storybook"].map((t) => (
               <span key={t} className="px-3 py-1.5 rounded-full text-sm font-medium bg-secondary text-secondary-foreground">{t}</span>
             ))}
           </div>

@@ -47,10 +47,10 @@ export function ArchitectureSection({ architecture, language, onZoom }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {architecture.points.map((point, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
-                <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex-shrink-0 flex items-center justify-center text-[10px] font-black">
+                <span className="w-5 h-5 rounded-full bg-primary text-white flex-shrink-0 flex items-center justify-center text-[10px] font-black">
                   {i + 1}
                 </span>
-                <p className="text-[12px] text-muted-foreground leading-relaxed">{point}</p>
+                <p className="text-[12px] text-muted-foreground dark:text-white leading-relaxed">{point}</p>
               </div>
             ))}
           </div>

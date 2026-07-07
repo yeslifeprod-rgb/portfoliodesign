@@ -18,10 +18,14 @@ export const useLang = () => {
 };
 
 export const LangProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "fr";
-    return (localStorage.getItem("lang") as Lang) ?? "fr";
-  });
+  const [language, setLanguage] = useState<Lang>("fr");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("lang") as Lang;
+    if (saved && saved !== "fr") {
+      setLanguage(saved);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("lang", language);

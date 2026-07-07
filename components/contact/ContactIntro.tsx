@@ -34,11 +34,7 @@ export function ContactIntro({
             <span key={i}>
               {i === 1 && (
                 <span
-                  className="inline-block bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(148deg, #0b05e7 0%, #2563eb 38%, #67e8f9 72%, #ffffff 100%)",
-                  }}
+                  className="inline-block bg-clip-text text-transparent bg-[linear-gradient(148deg,#0b05e7_0%,#2563eb_38%,#67e8f9_72%,#ffffff_100%)] dark:bg-[linear-gradient(148deg,#1d4ed8_0%,#3b82f6_38%,#93c5fd_72%,#dbeafe_100%)]"
                 >
                   {line}
                 </span>

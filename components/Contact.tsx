@@ -3,7 +3,7 @@
 import { useLang } from "@/context/LangContext";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { motion } from "framer-motion";
-import { Linkedin, Gitlab } from "lucide-react";
+import { Linkedin, Gitlab, Github } from "lucide-react";
 import { ContactIntro } from "@/components/contact/ContactIntro";
 import { ContactFormPanel } from "@/components/contact/ContactFormPanel";
 import type { ContactCopy, SocialItem } from "@/components/contact/types";
@@ -34,6 +34,11 @@ const Contact = () => {
   };
 
   const socials = [
+    {
+      label: "GitHub",
+      href: "https://github.com/yeslifeprod-rgb",
+      icon: Github,
+    },
     {
       label: "GitLab",
       href: "https://gitlab.com/yeslife.prod",

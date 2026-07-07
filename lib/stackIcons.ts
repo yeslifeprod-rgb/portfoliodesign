@@ -3,7 +3,8 @@ import {
   SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiFigma, SiIonic,
   SiVercel, SiVuedotjs, SiLua, SiFlutter, SiGithub, SiNotion,
-  SiHtml5, SiCss, SiJavascript, SiWordpress, SiXcode,
+  SiHtml5, SiCss, SiJavascript, SiWordpress, SiXcode, SiGraphql,
+  SiNetlify, SiRailway,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { RiSupabaseLine } from "react-icons/ri";
@@ -42,4 +43,13 @@ export const stackIcons: Record<string, { Icon: IconType; color: string }> = {
   "Wordpress":   { Icon: SiWordpress,    color: "#21759B" },
   "Xcode":       { Icon: SiXcode,        color: "#147EFB" },
   "AWS":         { Icon: FaAws, color: "#FF9900" },
+  "aws":         { Icon: FaAws, color: "#FF9900" },
+  "Netlify":     { Icon: SiNetlify,      color: "#00AD9F" },
+  "netlify":     { Icon: SiNetlify,      color: "#00AD9F" },
+  "Railway":     { Icon: SiRailway,      color: "#0B0D0E" },
+  "Railway.com": { Icon: SiRailway,      color: "#0B0D0E" },
+  "railway.com": { Icon: SiRailway,      color: "#0B0D0E" },
+  "vercel":      { Icon: SiVercel,       color: "currentColor" },
+  "GraphQL":     { Icon: SiGraphql,      color: "#E10098" },
+  "REST API":    { Icon: SiNodedotjs,    color: "#339933" },
 };

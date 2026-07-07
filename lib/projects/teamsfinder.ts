@@ -14,7 +14,15 @@ export function getTeamsFinderProject(language: string): Project {
         : "Personal project — Gaming matchmaking platform",
     srcs: ["/assets/teamsfinder/teamsfinder.gif"],
     stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase", "Ionic", "Stripe"],
-    gallery: ["/assets/teamsfinder/teamsfinder.gif"],
+    gallery: [
+      "/assets/teamsfinder/teamsfinder.gif",
+      "/assets/teamsfinder/playstore/screenshot1.png",
+      "/assets/teamsfinder/playstore/screenshot2.png",
+    ],
+    playstoreImages: [
+      "/assets/teamsfinder/playstore/screenshot1.png",
+      "/assets/teamsfinder/playstore/screenshot2.png",
+    ],
     features: language === "fr" ? [
       "Recherche de coéquipiers par jeu et niveau",
       "Système de profils joueurs",
@@ -27,23 +35,23 @@ export function getTeamsFinderProject(language: string): Project {
       "Built-in messaging",
     ],
     metrics: language === "fr" ? [
-      { label: "Utilisateurs", value: "20 inscrits" },
+      { label: "Utilisateurs", value: "+50 inscrits" },
       { label: "Revenu", value: " 2 ventes" },
       { label: "Matchmaking", value: "Algorithmique" },
 
     ] : [
-      { label: "Users", value: "20 registered" },
+      { label: "Users", value: "+50 registered" },
       { label: "Revenue", value: "2 sales" },
       { label: "Matchmaking", value: "Algorithmic" },
     ],
     businessCase: language === "fr" ? {
       problem: "Les joueurs manquaient d'un outil fiable pour trouver des coéquipiers de leur niveau.",
       role: "Créateur et développeur full stack du projet (Web & Mobile).",
-      result: "Plateforme live avec matchmaking algorithmique, événements (calendrier d’appels, notifications), blog, annonces et game review. Intégration Discord (accès aux channels exclusifs, webhooks d'annonces). Déjà 20 utilisateurs.",
+      result: "Plateforme live avec matchmaking algorithmique, événements (calendrier d’appels, notifications), blog, annonces et game review. Intégration Discord (accès aux channels exclusifs, webhooks d'annonces). Déjà +50 utilisateurs.",
     } : {
       problem: "Gamers lacked a reliable tool to find teammates of their skill level.",
       role: "Creator and full stack developer of the project (Web & Mobile).",
-      result: "Live platform with algorithmic matchmaking, events (call calendar, notifications), blog, announcements, and game review. Discord integration (exclusive channel access, announcement webhooks). Already 20 users.",
+      result: "Live platform with algorithmic matchmaking, events (call calendar, notifications), blog, announcements, and game review. Discord integration (exclusive channel access, announcement webhooks). Already +50 users.",
     },
     architecture: {
       description:

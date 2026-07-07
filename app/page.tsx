@@ -32,7 +32,7 @@ export default function Home() {
           {
             "@type": "Question",
             name: "Quelles technologies maîtrisez-vous ?",
-            acceptedAnswer: { "@type": "Answer", text: "Next.js, React, NestJS, Ionic, Node.js, TypeScript, Prisma, MySQL, MongoDB, Docker, Tailwind CSS, Framer Motion, Vercel, Git, Jest, Cypress, Figma." },
+            acceptedAnswer: { "@type": "Answer", text: "Next.js, React, NestJS, Ionic, Node.js, TypeScript, Prisma, MySQL, MongoDB, Docker, Tailwind CSS, shadcn/ui, Vercel, Git, Jest, Cypress, Figma." },
           },
           {
             "@type": "Question",

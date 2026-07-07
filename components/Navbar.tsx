@@ -163,6 +163,7 @@ const FloatingNav: React.FC<{
 
               {/* Desktop: text label */}
               <span
+                suppressHydrationWarning
                 className={`relative z-10 hidden md:inline ${
                   isActive
                     ? "text-primary"

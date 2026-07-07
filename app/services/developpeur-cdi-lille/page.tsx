@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const STACK: { category: string; items: string[] }[] = [
   {
     category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Ionic", "Framer Motion", "Vue.js", "Nuxt"],
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Ionic", "shadcn/ui", "Vue.js", "Nuxt"],
   },
   {
     category: "Backend & BDD",
@@ -342,7 +342,7 @@ export default function DeveloppeurCDILillePage() {
               "Développeur Full Stack disponible en CDI à Lille ou full remote. React, Next.js, NestJS, Ionic, Node.js, TypeScript. 2+ ans d'expérience.",
           },
           knowsAbout: [
-            "React", "Next.js", "TypeScript", "Tailwind CSS", "Ionic", "Framer Motion",
+            "React", "Next.js", "TypeScript", "Tailwind CSS", "Ionic", "shadcn/ui",
             "Vue.js", "Nuxt", "Node.js", "NestJS", "Prisma", "MySQL", "MongoDB",
             "Supabase", "Stripe", "Git", "Vercel", "Docker", "Jest", "Cypress",
             "Figma", "Agile Scrum",

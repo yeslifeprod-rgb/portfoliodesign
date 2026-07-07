@@ -7,3 +7,4 @@ export { FeaturesGrid }        from "./FeaturesGrid";
 export { DeploymentSection }   from "./DeploymentSection";
 export { DesignSection }       from "./DesignSection";
 export { LiveUrlButton }       from "./LiveUrlButton";
+export { PlayStoreSection }    from "./PlayStoreSection";

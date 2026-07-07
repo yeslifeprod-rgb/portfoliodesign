@@ -6,10 +6,11 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
   SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiFigma, SiIonic,
-  SiVercel, SiFramer, SiVuedotjs, SiNuxt, SiStripe,
-  SiNotion, SiTrello, SiJetbrains,
+  SiVercel, SiShadcnui, SiVuedotjs, SiNuxt, SiStripe,
+  SiNotion, SiTrello, SiJetbrains, SiGraphql,
+  SiNetlify, SiRailway,
 } from "react-icons/si";
-import { FaPenFancy } from "react-icons/fa";
+import { FaPenFancy, FaAws } from "react-icons/fa";
 import { RiSupabaseLine } from "react-icons/ri";
 import { Brain, Bot, Workflow } from "lucide-react";
 import { useLang } from "@/context/LangContext";
@@ -38,7 +39,7 @@ const stack: Category[] = [
       { Icon: SiTypescript,  name: "TypeScript",    color: "#3178C6" },
       { Icon: SiTailwindcss, name: "Tailwind",      color: "#06B6D4" },
       { Icon: SiIonic,       name: "Ionic",         color: "#3880FF" },
-      { Icon: SiFramer,      name: "Framer Motion", color: "#BB4B96" },
+      { Icon: SiShadcnui,    name: "shadcn/ui",     color: "#000000" },
       { Icon: SiVuedotjs, name: "Vue.js", color: "#4FC08D" },
       { Icon: SiNuxt,     name: "Nuxt",   color: "#00DC82" },
     ],
@@ -49,6 +50,7 @@ const stack: Category[] = [
     items: [
       { Icon: SiNodedotjs,    name: "Node.js",  color: "#339933" },
       { Icon: SiNestjs,       name: "NestJS",   color: "#E0234E" },
+      { Icon: SiGraphql,      name: "GraphQL",  color: "#E10098" },
       { Icon: SiPrisma,       name: "Prisma",   color: "#5A67D8" },
       { Icon: SiMysql,        name: "MySQL",    color: "#4479A1" },
       { Icon: SiMongodb,      name: "MongoDB",  color: "#47A248" },
@@ -61,7 +63,10 @@ const stack: Category[] = [
     accentColor: "#F05032",
     items: [
       { Icon: SiGit,     name: "Git",     color: "#F05032" },
+      { Icon: FaAws,     name: "AWS",     color: "#FF9900" },
       { Icon: SiVercel,  name: "Vercel",  color: "#888888" },
+      { Icon: SiNetlify, name: "Netlify", color: "#00AD9F" },
+      { Icon: SiRailway, name: "Railway.com", color: "#0B0D0E" },
       { Icon: SiDocker,  name: "Docker",  color: "#2496ED" },
       { Icon: SiJest,    name: "Jest",    color: "#C21325" },
       { Icon: SiCypress, name: "Cypress", color: "#69D3A7" },
