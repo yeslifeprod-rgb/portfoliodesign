@@ -10,14 +10,14 @@ export function getPortfolioProject(language: string): Project {
     name: "Portfolio personnel",
     designation: language === "fr" ? "Design de portfolio" : "Portfolio Design",
     srcs: ["/assets/portfolio/portfolio.png", "/assets/portfolio/seo.png"],
-    stack: ["Figma", "React", "NextJS", "Tailwind", "TypeScript", "Git", "Vercel"],
+    stack: ["Figma", "React", "NextJS", "Tailwind", "TypeScript", "shadcn/ui", "Git", "Vercel"],
     gallery: [
       "/assets/portfolio/portfolio.png",
       "/assets/portfolio/seo.png",
     ],
     features: language === "fr" ? [
       "Design unique et moderne créé sur Figma",
-      "Animations fluides avec Framer Motion",
+      "Composants réutilisables et interactifs avec shadcn/ui",
       "Formulaire de contact fonctionnel avec Nodemailer",
       "SEO optimisé avec Next.js 15",
       "Performance optimale (score 100 Lighthouse)",
@@ -26,7 +26,7 @@ export function getPortfolioProject(language: string): Project {
       "Déploiement automatique sur Vercel",
     ] : [
       "Unique and modern design created on Figma",
-      "Smooth animations with Framer Motion",
+      "Reusable and interactive components with shadcn/ui",
       "Functional contact form with Nodemailer",
       "SEO optimized with Next.js 15",
       "Optimal performance (100 Lighthouse score)",
@@ -88,19 +88,19 @@ export function getPortfolioProject(language: string): Project {
     ],
     architecture: {
       description: language === "fr"
-        ? "Ce portfolio utilise Next.js 15 avec App Router pour un routing moderne et performant. Le design est entièrement personnalisé avec Tailwind CSS, sans dépendance à des templates. Les animations sont gérées par Framer Motion pour une expérience fluide."
-        : "This portfolio uses Next.js 15 with App Router for modern and performant routing. The design is fully customized with Tailwind CSS, without relying on templates. Animations are handled by Framer Motion for a smooth experience.",
+        ? "Ce portfolio utilise Next.js 15 avec App Router pour un routing moderne et performant. Le design est entièrement personnalisé avec Tailwind CSS, sans dépendance à des templates. L'intégration de shadcn/ui offre une expérience utilisateur moderne."
+        : "This portfolio uses Next.js 15 with App Router for modern and performant routing. The design is fully customized with Tailwind CSS, without relying on templates. Integration of shadcn/ui provides a modern user experience.",
       points: language === "fr" ? [
         "Next.js 15 avec App Router pour le SSR et SSG",
         "Tailwind CSS pour un design responsive et moderne",
-        "Framer Motion pour les animations fluides",
+        "shadcn/ui pour des composants accessibles et modernes",
         "TypeScript pour la sécurité du code",
         "Optimisation SEO avec next-sitemap",
         "Déploiement sur Vercel avec CI/CD automatique",
       ] : [
         "Next.js 15 with App Router for SSR and SSG",
         "Tailwind CSS for responsive and modern design",
-        "Framer Motion for smooth animations",
+        "shadcn/ui for accessible and modern components",
         "TypeScript for code safety",
         "SEO optimization with next-sitemap",
         "Deployment on Vercel with automatic CI/CD",

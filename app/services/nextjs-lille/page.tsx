@@ -55,7 +55,7 @@ export default function NextjsLillePage() {
               },
               {
                 title: "Interfaces React + TypeScript",
-                desc: "Composants réutilisables, accessibles et maintenables. Tailwind CSS, Framer Motion, shadcn/ui.",
+                desc: "Composants réutilisables, accessibles et maintenables. Tailwind CSS, shadcn/ui.",
               },
               {
                 title: "API Routes & intégrations",
@@ -86,7 +86,7 @@ export default function NextjsLillePage() {
             complets : de la conception à la mise en production. Mon stack habituel :
           </p>
           <div className="flex flex-wrap gap-2">
-            {["Next.js 15", "React 18", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Vercel", "Framer Motion"].map((t) => (
+            {["Next.js 15", "React 18", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Vercel", "shadcn/ui"].map((t) => (
               <span
                 key={t}
                 className="px-3 py-1.5 rounded-full text-sm font-medium bg-secondary text-secondary-foreground"

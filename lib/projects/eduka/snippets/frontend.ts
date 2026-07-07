@@ -4,13 +4,13 @@ export function getEdukaFrontendSnippets(language: string) {
     {
       title:
         language === "fr"
-          ? "Pourquoi un routing basé sur les rôles dès le départ"
-          : "Why role-based routing from day one",
+          ? "Routing basé sur les rôles — Zéro fuite d'accès en prod"
+          : "Role-based routing — Zero access leaks in prod",
       description:
         language === "fr"
-          ? "Problème : 3 types d'utilisateurs (parents, écoles, enseignants) avec des parcours totalement différents. Un parent ne doit jamais voir le dashboard admin d'une école. Choix : routing conditionnel avec guards par rôle intégrés à react-router-dom. Résultat : zéro fuite d'accès signalée en prod, onboarding simplifié pour chaque profil."
-          : "Problem: 3 user types (parents, schools, teachers) with completely different journeys. A parent should never see a school's admin dashboard. Choice: conditional routing with role-based guards built into react-router-dom. Result: zero access leaks reported in prod, simplified onboarding per profile.",
-      code: "// Role-based routing implementation\nimport { Navigate } from 'react-router-dom';\n\nconst ProtectedRoute = ({ children, allowedRoles }) => {\n  const { user } = useAuth();\n  \n  if (!allowedRoles.includes(user.role)) {\n    return <Navigate to=\"/unauthorized\" />;\n  }\n  \n  return children;\n};",
+          ? "Problème : 3 types d'utilisateurs (parents, écoles, enseignants) avec des parcours totalement différents. Un parent ne doit jamais voir le dashboard admin d'une école. Solution : routing conditionnel avec guards par rôle intégrés à react-router-dom. Chaque route privée vérifie le rôle via le token JWT avant le rendu. Résultat : zéro fuite d'accès signalée en production, onboarding simplifié pour chaque profil."
+          : "Problem: 3 user types (parents, schools, teachers) with completely different journeys. A parent should never see a school's admin dashboard. Solution: conditional routing with role-based guards built into react-router-dom. Each private route checks the role via the JWT token before rendering. Result: zero access leaks reported in production, simplified onboarding per profile.",
+      code: "",
       language: "typescript",
       category: "frontend" as const,
       image: "/assets/eduka/front-end/frontend-architecture.png",
@@ -20,13 +20,13 @@ export function getEdukaFrontendSnippets(language: string) {
     {
       title:
         language === "fr"
-          ? "Pourquoi une suppression en 3 étapes pour protéger les données enfants"
-          : "Why a 3-step deletion flow to protect children's data",
+          ? "Suppression en 3 étapes — Protection RGPD des données enfants"
+          : "3-step deletion flow — GDPR protection for children's data",
       description:
         language === "fr"
-          ? "Problème : les données d'enfants sont sensibles (RGPD). Une suppression accidentelle de profil parent supprime aussi les données de trajet des enfants. Choix : flux en 3 écrans (formulaire, confirmation modale, feedback visuel) pour forcer l'intention. Résultat : zéro suppression accidentelle signalée, conformité RGPD respectée."
-          : "Problem: children's data is sensitive (GDPR). An accidental parent profile deletion also removes children's ride data. Choice: 3-screen flow (form, confirmation modal, visual feedback) to force intent. Result: zero accidental deletions reported, GDPR compliance maintained.",
-      code: "// 3-step deletion flow\nconst DeleteAccountFlow = () => {\n  const [step, setStep] = useState(1);\n  \n  const handleDelete = async () => {\n    // Step 1: Form with warnings\n    // Step 2: Confirmation modal\n    // Step 3: Visual feedback\n    await deleteAccount();\n  };\n  \n  return <DeletionWizard step={step} onNext={setStep} />;\n};",
+          ? "Problème : les données d'enfants sont sensibles (RGPD). Une suppression accidentelle de profil parent supprime aussi toutes les annonces et activités associées aux enfants. Solution : flux en 3 écrans (formulaire, confirmation modale, feedback visuel) pour forcer l'intention de l'utilisateur avant toute suppression. Résultat : zéro suppression accidentelle signalée, conformité RGPD respectée sur les données sensibles."
+          : "Problem: children's data is sensitive (GDPR). An accidental parent profile deletion also removes all announcements and activities linked to the children. Solution: 3-screen flow (form, confirmation modal, visual feedback) to force user intent before any deletion. Result: zero accidental deletions reported, GDPR compliance maintained on sensitive data.",
+      code: "",
       language: "typescript",
       category: "frontend" as const,
       image: "/assets/eduka/front-end/wireframe-front-end.png",
@@ -36,13 +36,25 @@ export function getEdukaFrontendSnippets(language: string) {
     {
       title:
         language === "fr"
-          ? "Pourquoi React + Vite plutôt que Next.js pour ce projet"
-          : "Why React + Vite instead of Next.js for this project",
+          ? "Architecture et choix techniques front-end"
+          : "Architecture and front-end technical choices",
       description:
         language === "fr"
-          ? "Problème : l'app est un SPA privé (derrière authentification), pas un site public. Le SSR de Next.js n'apporte rien ici et complexifie le déploiement. Choix : React + Vite pour le HMR instantané en dev, Tailwind pour la vélocité UI dans une équipe de 4, Formik + Yup pour la validation car les formulaires d'inscription parent-enfant sont complexes. Résultat : temps de build 3x plus rapide qu'un CRA, onboarding dev simplifié."
-          : "Problem: the app is a private SPA (behind auth), not a public site. Next.js SSR adds no value here and complicates deployment. Choice: React + Vite for instant HMR in dev, Tailwind for UI velocity in a 4-person team, Formik + Yup for validation because parent-child registration forms are complex. Result: build time 3x faster than CRA, simplified dev onboarding.",
-      code: "// vite.config.ts\nimport { defineConfig } from 'vite';\nimport react from '@vitejs/plugin-react';\n\nexport default defineConfig({\n  plugins: [react()],\n  build: {\n    target: 'es2020',\n    rollupOptions: {\n      output: { manualChunks: { vendor: ['react', 'react-dom'] } }\n    }\n  }\n});",
+          ? `Dans le cadre du développement de notre application web, nous devions créer une interface moderne, rapide et simple à maintenir. Nous avons rencontré plusieurs problématiques, notamment la gestion des formulaires, la validation des données et le risque de création de profils incomplets.
+
+Pour répondre à ces besoins, nous avons utilisé React.js et Vite pour les performances, Tailwind CSS et Material UI pour l’interface utilisateur, ainsi que TypeScript pour sécuriser le code. Formik et Yup ont permis de simplifier la gestion et la validation des formulaires, tandis qu’Axios a été utilisé pour les échanges avec le serveur.
+
+Dès l’inscription, nous avons imposé l’ajout obligatoire d’un enfant à un profil afin de garantir qu’un parent soit toujours associé à un enfant. Si aucune information n’est renseignée, un message d’erreur empêche la poursuite de l’inscription.
+
+Enfin, les modals et formulaires ont été créés sous forme de composants réutilisables afin de faciliter la maintenance, la réutilisation du code et le travail en équipe.`
+          : `As part of the development of our web application, we needed to create a modern, fast, and easy-to-maintain interface. We encountered several challenges, including form management, data validation, and the risk of creating incomplete profiles.
+
+To meet these needs, we used React.js and Vite for performance, Tailwind CSS and Material UI for the user interface, and TypeScript to secure the code. Formik and Yup simplified form management and validation, while Axios was used for server communication.
+
+From registration, we made adding a child to a profile mandatory to ensure a parent is always linked to a child. If no information is provided, an error message prevents the registration from proceeding.
+
+Finally, modals and forms were built as reusable components to facilitate maintenance, code reuse, and teamwork.`,
+      code: "",
       language: "typescript",
       category: "frontend" as const,
       image: "/assets/eduka/front-end/Front-end.png",
@@ -52,13 +64,13 @@ export function getEdukaFrontendSnippets(language: string) {
     {
       title:
         language === "fr"
-          ? "Comment le typage strict a éliminé une classe entière de bugs"
-          : "How strict typing eliminated an entire class of bugs",
+          ? "Typage TypeScript strict — Contrats partagés avec l'API REST"
+          : "Strict TypeScript typing — Shared contracts with the REST API",
       description:
         language === "fr"
-          ? "Problème : en JS vanilla, un champ 'birthday' envoyé comme string au lieu de Date causait des erreurs silencieuses dans le calcul d'âge des enfants. Choix : interfaces TypeScript strictes partagées entre front et back. Résultat : les erreurs de format sont détectées à la compilation, pas en production. Les 4 devs de l'équipe travaillent avec le même contrat de données."
-          : "Problem: in vanilla JS, a 'birthday' field sent as string instead of Date caused silent errors in children's age calculation. Choice: strict TypeScript interfaces shared between front and back. Result: format errors caught at compile time, not in production. All 4 team devs work with the same data contract.",
-      code: "// Shared TypeScript interfaces\ninterface Child {\n  id: string;\n  name: string;\n  birthday: Date;\n  disciplines: Discipline[];\n}\n\ninterface ParentProfile {\n  id: string;\n  email: string;\n  children: Child[];\n}\n\n// Type-safe age calculation\nconst calculateAge = (birthday: Date): number => {\n  return Math.floor((Date.now() - birthday.getTime()) / 31557600000);\n};",
+          ? "Problème : en JS vanilla, un champ 'birthday' envoyé comme string au lieu de Date causait des erreurs silencieuses dans le calcul d'âge des enfants. Solution : interfaces TypeScript strictes partagées entre le front React et le back NestJS. Les DTOs de l'API REST et les types front sont alignés pour éviter toute désynchronisation. Résultat : les erreurs de format sont détectées à la compilation, pas en production."
+          : "Problem: in vanilla JS, a 'birthday' field sent as string instead of Date caused silent errors in children's age calculation. Solution: strict TypeScript interfaces shared between the React frontend and NestJS backend. REST API DTOs and frontend types are aligned to prevent any desynchronization. Result: format errors caught at compile time, not in production.",
+      code: "",
       language: "typescript",
       category: "frontend" as const,
       image: "/assets/eduka/front-end/Front-end-TypeScript.png",
@@ -68,13 +80,13 @@ export function getEdukaFrontendSnippets(language: string) {
     {
       title:
         language === "fr"
-          ? "Pourquoi limiter à 3 disciplines et gérer ça côté front"
-          : "Why cap at 3 disciplines and handle it client-side",
+          ? "Limite de 3 disciplines — Validation front + back pour la cohérence"
+          : "Cap at 3 disciplines — Front + back validation for consistency",
       description:
         language === "fr"
-          ? "Problème : sans limite, certains parents sélectionnaient 8+ disciplines, rendant le matching covoiturage impossible (trop de combinaisons). Choix : limite de 3 disciplines avec feedback immédiat côté front (pas d'attente serveur). La validation est dupliquée côté back pour la sécurité. Résultat : les groupes de covoiturage sont plus cohérents, le taux de matching a augmenté."
-          : "Problem: without a limit, some parents selected 8+ disciplines, making carpool matching impossible (too many combinations). Choice: cap at 3 disciplines with instant client-side feedback (no server wait). Validation is duplicated server-side for security. Result: carpool groups are more cohesive, matching rate increased.",
-      code: "// Discipline selection with validation\nconst DisciplineSelector = ({ selected, onChange }) => {\n  const MAX_DISCIPLINES = 3;\n  \n  const handleSelect = (discipline) => {\n    if (selected.length >= MAX_DISCIPLINES && !selected.includes(discipline)) {\n      toast.error(`Maximum ${MAX_DISCIPLINES} disciplines allowed`);\n      return;\n    }\n    \n    const updated = selected.includes(discipline)\n      ? selected.filter(d => d !== discipline)\n      : [...selected, discipline];\n    \n    onChange(updated);\n  };\n  \n  return <DisciplineGrid onSelect={handleSelect} />;\n};",
+          ? "Problème : sans limite, certains parents sélectionnaient 8+ disciplines, rendant la mise en relation et le filtrage des activités trop complexes (trop de combinaisons). Solution : limite de 3 disciplines avec feedback immédiat côté front (sans attente serveur). La validation est dupliquée côté API REST NestJS pour la sécurité — le front ne peut jamais bypasser la règle métier. Résultat : les groupes d'activités sont plus cohérents, la pertinence des annonces proposées a augmenté."
+          : "Problem: without a limit, some parents selected 8+ disciplines, making activity filtering and matching too complex (too many combinations). Solution: cap at 3 disciplines with instant client-side feedback (no server wait). Validation is duplicated on the NestJS REST API for security — the frontend can never bypass the business rule. Result: activity groups are more cohesive, relevance of suggested announcements improved.",
+      code: "",
       language: "typescript",
       category: "frontend" as const,
       image: "/assets/eduka/front-end/Front-end-modal.png",

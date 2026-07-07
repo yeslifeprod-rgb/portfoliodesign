@@ -39,5 +39,11 @@ export type Project = {
   metrics?: { label: string; value: string }[];
   gridSize?: string;
   liveUrl?: string;
+  gitlabUrl?: string;
+  githubUrls?: {
+    front: string;
+    back: string;
+  };
+  playstoreImages?: string[];
   businessCase?: { problem: string; role: string; result: string };
 };

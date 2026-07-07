@@ -1,8 +1,16 @@
 import type { MetadataRoute } from "next";
+import { getAllProjects } from "@/lib/projects";
 
 const SITE_URL = "https://www.benhouss.site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const projectEntries = getAllProjects("fr").map((project) => ({
+    url: `${SITE_URL}/projets/${project.id}`,
+    lastModified: new Date("2026-06-03"),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     {
       url: SITE_URL,
@@ -65,5 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    ...projectEntries,
   ];
 }

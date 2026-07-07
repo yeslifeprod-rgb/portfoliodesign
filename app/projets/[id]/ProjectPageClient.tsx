@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { useLang } from "@/context/LangContext";
 import { getProjectById } from "@/lib/projects";
@@ -19,6 +19,7 @@ import {
   DeploymentSection,
   DesignSection,
   LiveUrlButton,
+  PlayStoreSection,
 } from "./sections";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
@@ -31,7 +32,17 @@ export default function ProjectPageClient({ id }: Props) {
   const { language } = useLang();
   const project = getProjectById(id, language);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const [githubChoiceOpen, setGithubChoiceOpen] = useState(false);
   const projectGradient = "linear-gradient(148deg, #0b05e7 0%, #1d4ed8 40%, #4bdfff 100%)";
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setGithubChoiceOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   type TabId = "design" | "frontend" | "backend" | "deployment";
   const hasCategorized = project?.codeSnippets?.some(s => s.category) ?? false;
@@ -155,11 +166,19 @@ export default function ProjectPageClient({ id }: Props) {
 
         {project.features && <FeaturesGrid features={project.features} language={language} />}
 
+        {project.playstoreImages && project.playstoreImages.length > 0 && (
+          <PlayStoreSection
+            images={project.playstoreImages}
+            language={language}
+            onZoom={setZoomedImage}
+          />
+        )}
+
         {/* ── Code Snippets / Design / Deployment — tabbed ── */}
         {project.codeSnippets && project.codeSnippets.length > 0 && (
           <div className="mb-32">
             <div className="flex items-center gap-8 mb-12">
-              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-black">
+              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-foreground">
                 {language === "fr" ? "Implémentation technique" : "Technical Implementation"}
               </h2>
               <div className="flex-1 h-[1px] bg-border" />
@@ -224,6 +243,51 @@ export default function ProjectPageClient({ id }: Props) {
         )}
 
         {project.liveUrl && <LiveUrlButton liveUrl={project.liveUrl} language={language} />}
+
+        {project.githubUrls && (
+          <div className="mb-16 flex justify-center">
+            <div className="relative">
+              <button
+                onClick={() => setGithubChoiceOpen((v) => !v)}
+                className="group relative inline-flex items-center gap-3 rounded-xl border border-border bg-background px-5 py-3 text-foreground shadow-sm transition-all duration-200 hover:border-primary/30 hover:shadow-md"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-foreground" aria-hidden="true">
+                  <path d="M12 .5C5.7.5.5 5.8.5 12.2c0 5.1 3.2 9.5 7.8 11 .6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.4-1.2-1.8-1.2-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.5.8 1.5 1.4 0 1.6 2.6 1.1 2.6 1.1.1-.8.4-1.1.8-1.4-2.5-.3-5.1-1.2-5.1-5.2 0-1.2.4-2.1 1.2-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.2 1.2.9-.2 1.9-.3 2.8-.3s1.9.1 2.8.3c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.6.1 2.9.8.8 1.2 1.7 1.2 2.9 0 4-2.6 4.8-5.1 5.2.4.3.8.9.8 1.8v2.6c0 .3.2.7.8.6 4.6-1.5 7.8-5.9 7.8-11C23.5 5.8 18.3.5 12 .5z"/>
+                </svg>
+                <span className="text-sm font-medium">{language === "fr" ? "Voir sur GitHub" : "View on GitHub"}</span>
+              </button>
+              {githubChoiceOpen && (
+                <div className="absolute left-1/2 top-full z-20 mt-3 w-[340px] -translate-x-1/2 rounded-2xl border border-border bg-background p-3 shadow-2xl">
+                  <p className="px-1 pb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                    {language === "fr" ? "Choisir le dépôt" : "Choose repository"}
+                  </p>
+                  <div className="grid grid-cols-1 gap-2">
+                    <a
+                      href={project.githubUrls.front}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors hover:border-primary/30 hover:bg-primary/[0.04]"
+                      onClick={() => setGithubChoiceOpen(false)}
+                    >
+                      <span className="font-semibold">{language === "fr" ? "Front-end React" : "React front-end"}</span>
+                      <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground group-hover:text-foreground">GitHub</span>
+                    </a>
+                    <a
+                      href={project.githubUrls.back}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors hover:border-primary/30 hover:bg-primary/[0.04]"
+                      onClick={() => setGithubChoiceOpen(false)}
+                    >
+                      <span className="font-semibold">{language === "fr" ? "Back-end NestJS" : "NestJS back-end"}</span>
+                      <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground group-hover:text-foreground">GitHub</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
       </main>
 
