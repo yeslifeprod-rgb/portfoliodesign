@@ -76,14 +76,14 @@ const About: React.FC = () => {
           <div className="space-y-5">
             <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
-                ? "Développeur Full Stack basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés d'un fondateur et CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
-                : "Full Stack Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
+                ? "Concepteur Développeur d'Applications basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés d'un fondateur et CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
+                : "Application Designer & Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
-                ? "Je ne construis pas juste du code — je livre des applications en production. Next.js, TypeScript et Node.js sont mes outils du quotidien."
-                : "I don't just write code — I ship production applications. Next.js, TypeScript and Node.js are my daily tools."}
+                ? "Je ne construis pas juste du code — je livre des applications en production. TypeScript et Node.js sont mes outils du quotidien, sur des frameworks comme React, Next.js, Vue.js ou Nuxt selon le projet."
+                : "I don't just write code — I ship production applications. TypeScript and Node.js are my daily tools, across frameworks like React, Next.js, Vue.js or Nuxt depending on the project."}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
