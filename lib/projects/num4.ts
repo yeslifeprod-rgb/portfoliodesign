@@ -23,6 +23,7 @@ export function getNum4Project(language: string): Project {
       "Tailwind",
       "Vercel",
       "Prisma",
+      "PostgreSQL",
       "AWS",
       "Xcode",
       "RevenueCat",
