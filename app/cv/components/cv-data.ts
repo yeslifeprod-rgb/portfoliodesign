@@ -12,8 +12,8 @@ export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BL
 
 export const stackATS = [
   { cat: "Langages & Frameworks Front", items: "TypeScript - React - Next.js - Vue.js - Ionic" },
-  { cat: "Back-End & API", items: "Node.js - NestJS - Fastify - API REST - Merise" },
-  { cat: "Bases de données & ORM", items: "Prisma - MySQL - PostgreSQL - Supabase" },
+  { cat: "Back-End & API", items: "Node.js - NestJS - API REST - Merise" },
+  { cat: "Bases de données & ORM", items: "Prisma - MySQL - PostgreSQL - Supabase - MongoDB" },
   { cat: "Sécurité & Conformité", items: "JWT - bcrypt - RGPD - chiffrement" },
   { cat: "DevOps & Méthodologie", items: "Docker - Git - CI/CD - Jest - Cypress - Claude Code - Agile Scrum" }
 ];

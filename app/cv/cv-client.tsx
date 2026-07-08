@@ -160,7 +160,7 @@ export default function CVClient() {
               Développeur Fullstack TypeScript / Vue.js / Node.js
             </h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "0 0 8px" }}>
-              {["TypeScript","Vue.js","Node.js","Fastify","Docker","Electron","IA générative (Claude Code)"].map((kw) => (
+              {["TypeScript","Vue.js","Node.js","NestJS","API REST","Docker","IA générative (Claude Code)"].map((kw) => (
                 <span key={kw} data-cv-keyword style={{ background: "#eff6ff", color: "#1d4ed8", padding: "2px 8px", borderRadius: "999px", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.03em" }}>
                   {kw}
                 </span>
