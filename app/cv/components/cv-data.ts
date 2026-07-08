@@ -13,7 +13,7 @@ export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BL
 export const stackATS = [
   {
     cat: "Langages & Frameworks Front",
-    items: "TypeScript - React - Next.js - Vue.js - Ionic",
+    items: "TypeScript - React - Next.js - Vue.js - Pinia - Ionic",
   },
   { cat: "Back-End & API", items: "Node.js - NestJS - API REST" },
   {
