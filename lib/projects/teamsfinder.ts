@@ -16,8 +16,6 @@ export function getTeamsFinderProject(language: string): Project {
     stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase", "Ionic", "Stripe"],
     gallery: [
       "/assets/teamsfinder/teamsfinder.gif",
-      "/assets/teamsfinder/playstore/screenshot1.png",
-      "/assets/teamsfinder/playstore/screenshot2.png",
     ],
     playstoreImages: [
       "/assets/teamsfinder/playstore/screenshot1.png",
