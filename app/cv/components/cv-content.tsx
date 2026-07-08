@@ -20,17 +20,17 @@ export function CVContent() {
         </p>
       </section>
 
-      <section style={{ marginBottom: "0.9rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Expérience professionnelle</SectionTitle>
         {experiences.map((e, i) => <Entry key={i} {...e} />)}
       </section>
 
-      <section style={{ marginBottom: "0.9rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Projets personnels</SectionTitle>
         {projets.map((p, i) => <Entry key={i} {...p} />)}
       </section>
 
-      <section style={{ marginBottom: "0.9rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Compétences techniques</SectionTitle>
         <div data-cv-skills style={{ borderRadius: "6px", padding: "8px 10px", display: "flex", flexDirection: "column", gap: "4px" }}>
           {stackATS.map((s, i) => (

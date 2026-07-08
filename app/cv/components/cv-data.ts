@@ -15,7 +15,7 @@ export const stackATS = [
   { cat: "Back-End & API", items: "Node.js - NestJS - Fastify - API REST" },
   { cat: "Bases de données & ORM", items: "Prisma - MySQL - PostgreSQL - Supabase" },
   { cat: "Sécurité & Conformité", items: "JWT - bcrypt - RGPD - chiffrement" },
-  { cat: "DevOps & Méthodologie", items: "Docker - Git - CI/CD - Vercel - Railway - Jest - Cypress - Claude Code - Agile Scrum - Merise - YouTrack" }
+  { cat: "DevOps & Méthodologie", items: "Docker - Git - CI/CD - Jest - Cypress - Claude Code - Agile Scrum" }
 ];
 
 export const languages = [
@@ -62,8 +62,7 @@ export const projets = [
       "Développement et **refonte de plateforme web** et **back-office** avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
       "Conception et modélisation d’une base de données liée à un **catalogue produits** de +500 000 entrées (jeux, genres, plateformes).",
       "Mise en place et évolution d’**API REST** et de services **Node.js** pour supporter les briques produit : recherche, comptes, paiements et contenus.",
-      "Intégration de paiements et logique **e-commerce** avec **Stripe** — abonnements et achats in-app.",
-      "**SEO international** (i18n FR/EN/ES) et publication sur Google **Play Store** avec suivi des utilisateurs actifs.",
+      "Intégration de paiements **Stripe** (e-commerce) et **SEO international** (i18n FR/EN/ES) avec publication Google **Play Store**.",
     ],
   },
 ];
