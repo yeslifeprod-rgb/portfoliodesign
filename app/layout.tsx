@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Benhouss — Développeur Full Stack Lille | React, Next.js, Node.js",
-    template: "%s | Benhouss",
+    template: "%s",
   },
   description:
     "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niv. 6). Spécialisé React, Next.js, NestJS, Ionic, Node.js, TypeScript. Création d'applications web et mobile. Freelance & CDI — Lille ou remote.",
@@ -199,8 +199,8 @@ export default function RootLayout({
                   url: "https://www.benhouss.site",
                   image: "https://www.benhouss.site/assets/avatar.png",
                   sameAs: [
-                    "https://github.com/Yesdevjr",
-                    "https://linkedin.com/in/benhouss",
+                    "https://github.com/yeslifeprod-rgb",
+                    "https://www.linkedin.com/in/ilyes-g-46b0982b8/",
                     "https://gitlab.com/yeslife.prod",
                   ],
                   address: {

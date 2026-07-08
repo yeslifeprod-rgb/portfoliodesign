@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `${SITE_URL}/projets/${project.id}`;
   const description = stripHtml(project.quote ?? "").slice(0, 160);
   const image = project.srcs?.[0] ? toAbsoluteUrl(project.srcs[0]) : undefined;
-  const title = `${project.name} | Projet ${project.designation} | Benhouss`;
+  const title = `${project.name} | ${project.designation} | Benhouss`;
 
   return {
     title,
