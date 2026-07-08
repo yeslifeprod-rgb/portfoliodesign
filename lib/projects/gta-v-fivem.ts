@@ -17,7 +17,7 @@ export function getGtaProject(language: string): Project {
       "/assets/fivem/vue1.png",
       "/assets/fivem/vue2.png",
     ],
-    stack: ["Figma", "Vue", "Vite", "Lua", "Tailwind", "Mysql"],
+    stack: ["Figma", "Vue", "Pinia", "Vite", "Lua", "Tailwind", "Mysql"],
     gallery: [
       "/assets/gta/Gta.webp",
       "/assets/fivem/vue1.png",
