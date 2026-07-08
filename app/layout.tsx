@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   verification: {
-    google: "45cdcd59b8daf8eb",
+    google: "6luvCc6H63u8C_4ZNrCg9NYiObPwK5EHaZlI6prdDBU",
   },
   category: "technology",
 };
