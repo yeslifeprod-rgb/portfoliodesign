@@ -8,11 +8,15 @@ export function SocialLink({
   icon: Icon,
   label,
   index,
+  color,
+  iconClassName,
 }: {
   href: string;
   icon: React.ElementType;
   label: string;
   index: number;
+  color?: string;
+  iconClassName?: string;
 }) {
   return (
     <motion.a
@@ -31,7 +35,10 @@ export function SocialLink({
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.97 }}
     >
-      <Icon className="w-4 h-4 text-primary/80 group-hover:text-primary transition-colors" />
+      <Icon
+        className={`w-4 h-4 transition-colors ${iconClassName ?? (color ? "" : "text-primary/80 group-hover:text-primary")}`}
+        style={!iconClassName && color ? { color } : undefined}
+      />
       <span className="font-medium">{label}</span>
       <ArrowUpRight className="w-3 h-3 ml-auto opacity-0 -translate-x-1 group-hover:opacity-60 group-hover:translate-x-0 transition-all duration-200" />
     </motion.a>

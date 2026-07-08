@@ -38,16 +38,19 @@ const Contact = () => {
       label: "GitHub",
       href: "https://github.com/yeslifeprod-rgb",
       icon: Github,
+      iconClassName: "text-[#181717] dark:text-white",
     },
     {
       label: "GitLab",
       href: "https://gitlab.com/yeslife.prod",
       icon: Gitlab,
+      color: "#FC6D26",
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/ilyes-g-46b0982b8/",
       icon: Linkedin,
+      color: "#0A66C2",
     },
   ];
 

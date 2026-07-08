@@ -15,4 +15,6 @@ export type SocialItem = {
   label: string;
   href: string;
   icon: React.ElementType;
+  color?: string;
+  iconClassName?: string;
 };
