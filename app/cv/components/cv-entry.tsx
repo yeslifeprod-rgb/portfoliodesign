@@ -4,7 +4,7 @@ import { formatText } from "./cv-primitives";
 export function ProfileText() {
   return (
     <>
-      Développeur <strong style={{ color: TEXT_DARK }}>Fullstack TypeScript / Node.js</strong>, à l'aise sur <strong style={{ color: TEXT_DARK }}>Vue.js</strong> et <strong style={{ color: TEXT_DARK }}>React</strong>, de l'idée à la mise en production.{" "}
+      Développeur <strong style={{ color: TEXT_DARK }}>Fullstack TypeScript / Vue.js / Node.js</strong>, avec une expérience complémentaire en <strong style={{ color: TEXT_DARK }}>React</strong>, de l'idée à la mise en production.{" "}
       Expérience en <strong style={{ color: TEXT_DARK }}>API REST</strong>, <strong style={{ color: TEXT_DARK }}>NestJS</strong>, sécurisation des données (<strong style={{ color: TEXT_DARK }}>JWT</strong>, <strong style={{ color: TEXT_DARK }}>RGPD</strong>) et tests (<strong style={{ color: TEXT_DARK }}>Jest</strong>, <strong style={{ color: TEXT_DARK }}>Cypress</strong>).{" "}
       <strong style={{ color: TEXT_DARK }}>Autonome</strong> et <strong style={{ color: TEXT_DARK }}>pragmatique</strong>, à l'aise en petite équipe, j'utilise l'<strong style={{ color: TEXT_DARK }}>IA générative</strong> (<strong style={{ color: TEXT_DARK }}>Claude Code</strong>) au quotidien.{" "}
       Recherche un CDI <strong style={{ color: TEXT_DARK }}>Fullstack TypeScript / Vue.js / Node.js</strong>.
