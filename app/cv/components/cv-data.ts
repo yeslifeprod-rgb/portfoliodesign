@@ -11,20 +11,11 @@ export const BLUE_3 = "#0ea5e9";
 export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BLUE_3} 100%)`;
 
 export const stackATS = [
-  {
-    cat: "Langages & Frameworks Front",
-    items: "TypeScript - React - Next.js - Vue.js - Pinia - Ionic",
-  },
-  { cat: "Back-End & API", items: "Node.js - NestJS - API REST" },
-  {
-    cat: "Bases de données & ORM",
-    items: "Prisma - MySQL - PostgreSQL - Supabase - MongoDB - Merise",
-  },
-  { cat: "Sécurité & Conformité", items: "JWT - bcrypt - RGPD - chiffrement" },
-  {
-    cat: "DevOps & Méthodologie",
-    items: "Docker - Git - CI/CD - Jest - Cypress - Claude Code - Agile Scrum",
-  },
+  { cat: "Back-End & API", items: "Node.js - NestJS - API REST - TypeScript" },
+  { cat: "Front-End", items: "Vue.js - React - Next.js - Ionic" },
+  { cat: "Bases de données & ORM", items: "Prisma - MySQL - PostgreSQL - Supabase - Merise" },
+  { cat: "Sécurité & DevOps", items: "JWT - bcrypt - RGPD - chiffrement - Docker - CI/CD - Vercel - Railway" },
+  { cat: "Outils & Méthodologie", items: "Git - Jest - Cypress - Agile Scrum - YouTrack - Claude Code" }
 ];
 
 export const languages = [
