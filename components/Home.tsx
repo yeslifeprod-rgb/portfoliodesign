@@ -149,8 +149,8 @@ const Hero = () => {
               animateOnHover={false}
             >
               {language === "fr"
-                ? "Next.js · TypeScript · Node.js"
-                : "Next.js · TypeScript · Node.js"}
+                ? "React · Vue.js · TypeScript · Node.js · Docker"
+                : "React · Vue.js · TypeScript · Node.js · Docker"}
             </HyperText>
           </BlurFade>
 
