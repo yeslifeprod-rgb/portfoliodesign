@@ -3,7 +3,7 @@ import {
   SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiFigma, SiIonic,
   SiVercel, SiVuedotjs, SiLua, SiFlutter, SiGithub, SiNotion,
-  SiHtml5, SiCss, SiJavascript, SiWordpress, SiXcode, SiGraphql,
+  SiHtml5, SiCss, SiJavascript, SiWordpress, SiXcode,
   SiNetlify, SiRailway,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
@@ -50,6 +50,5 @@ export const stackIcons: Record<string, { Icon: IconType; color: string }> = {
   "Railway.com": { Icon: SiRailway,      color: "#0B0D0E" },
   "railway.com": { Icon: SiRailway,      color: "#0B0D0E" },
   "vercel":      { Icon: SiVercel,       color: "currentColor" },
-  "GraphQL":     { Icon: SiGraphql,      color: "#E10098" },
   "REST API":    { Icon: SiNodedotjs,    color: "#339933" },
 };

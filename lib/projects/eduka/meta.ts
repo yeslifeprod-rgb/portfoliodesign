@@ -18,7 +18,7 @@ export function getEdukaMeta(language: string) {
     stack: [
       "Figma", "React", "Tailwind", "TypeScript", "Nest", "Git",
       "Vercel", "Prisma", "Mysql", "Cypress", "Jest", "Ionic", "MongoDB", "Docker",
-      "REST API", "GraphQL",
+      "REST API",
     ],
     gallery: [
       "/assets/eduka/Eduka.webp",

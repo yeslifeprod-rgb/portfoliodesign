@@ -7,7 +7,7 @@ import {
   SiNodedotjs, SiNestjs, SiPrisma, SiMongodb, SiMysql,
   SiDocker, SiGit, SiJest, SiCypress, SiFigma, SiIonic,
   SiVercel, SiShadcnui, SiVuedotjs, SiNuxt, SiStripe,
-  SiNotion, SiTrello, SiJetbrains, SiGraphql,
+  SiNotion, SiTrello, SiJetbrains,
   SiNetlify, SiRailway,
 } from "react-icons/si";
 import { FaPenFancy, FaAws } from "react-icons/fa";
@@ -50,7 +50,6 @@ const stack: Category[] = [
     items: [
       { Icon: SiNodedotjs,    name: "Node.js",  color: "#339933" },
       { Icon: SiNestjs,       name: "NestJS",   color: "#E0234E" },
-      { Icon: SiGraphql,      name: "GraphQL",  color: "#E10098" },
       { Icon: SiPrisma,       name: "Prisma",   color: "#5A67D8" },
       { Icon: SiMysql,        name: "MySQL",    color: "#4479A1" },
       { Icon: SiMongodb,      name: "MongoDB",  color: "#47A248" },
