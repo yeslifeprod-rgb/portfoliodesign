@@ -4,8 +4,8 @@ import { formatText } from "./cv-primitives";
 export function ProfileText() {
   return (
     <>
-      Développeur <strong style={{ color: TEXT_DARK }}>fullstack JavaScript / TypeScript</strong>, je conçois des interfaces <strong style={{ color: TEXT_DARK }}>React et Vue.js</strong> ainsi que des services <strong style={{ color: TEXT_DARK }}>Node.js / NestJS</strong>. Chez <strong style={{ color: TEXT_DARK }}>ALT Incubateur</strong>, j'ai développé EDUKA en équipe de 4, avec <strong style={{ color: TEXT_DARK }}>JWT</strong>, <strong style={{ color: TEXT_DARK }}>MySQL</strong>, <strong style={{ color: TEXT_DARK }}>Docker</strong>, <strong style={{ color: TEXT_DARK }}>Jest/Cypress</strong>, RGPD et recommandations <strong style={{ color: TEXT_DARK }}>OWASP</strong>.{" "}
-      Sur mon temps libre, je développe <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, un SaaS en production basé sur <strong style={{ color: TEXT_DARK }}>React, GraphQL, Supabase et Stripe</strong>. Disponible pour un <strong style={{ color: TEXT_DARK }}>CDI à Lille</strong>, je souhaite mettre cette expérience au service de projets bancaires fiables et sécurisés.
+      <strong style={{ color: TEXT_DARK }}>Concepteur-développeur d'applications</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et un SaaS personnel en production. Je conçois, développe, teste et déploie des applications avec JavaScript, Node.js, React et SQL.{" "}
+      Curieux, motivé et attentif aux détails, j'aime comprendre un besoin, corriger les problèmes et faire évoluer une application dans le temps. Je développe notamment <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, une application en production utilisée par plus de 50 personnes.
     </>
   );
 }

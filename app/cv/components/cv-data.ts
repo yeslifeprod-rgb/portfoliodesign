@@ -11,18 +11,17 @@ export const BLUE_3 = "#0ea5e9";
 export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BLUE_3} 100%)`;
 
 export const stackATS = [
-  { cat: "Front-End", items: "JavaScript - React - Vue.js - Next.js - TypeScript" },
-  { cat: "Back-End & API", items: "Node.js - NestJS - GraphQL - API REST - Prisma" },
-  { cat: "Mobile", items: "Ionic" },
-  { cat: "Bases de données & Sécurité", items: "MySQL - PostgreSQL - MongoDB - Supabase - JWT - bcrypt - RGPD - OWASP - chiffrement - Merise" },
-  { cat: "DevOps & Outils", items: "Docker - AWS - Git - CI/CD - Vercel - Railway" },
-  { cat: "Qualité & Méthodes", items: "Jest - Cypress - Agile Scrum - YouTrack" }
+  { cat: "Développement", items: "JavaScript - SQL - Node.js - NestJS - Express - React - Next.js - Vue.js - Nuxt.js - Ionic" },
+  { cat: "API & Données", items: "API REST - Prisma - SQL - MySQL - PostgreSQL - MongoDB - Supabase" },
+  { cat: "Qualité & Livraison", items: "Jest - Cypress - tests d'intégration - debugging - code review - mise en production - Docker - Git - CI/CD" },
+  { cat: "Conception & Méthodes", items: "Merise - UML - Agile Scrum - YouTrack - évolution d'applications" },
+  { cat: "Sécurité", items: "JWT - bcrypt - RGPD - chiffrement" }
 ];
 
 export const languages = [
   {
     label: "Anglais",
-    level: "B2",
+    level: "B1",
   },
 ];
 
@@ -37,9 +36,9 @@ export const experiences = [
     companyLink: "https://num4-lp.vercel.app",
     type: "",
     bullets: [
-      "Conçu et optimisé une interface web **Next.js** performante avec une forte attention **UX/UI** et conversion.",
-      "Travail direct avec le **CEO/CTO** pour arbitrer les priorités produit, les choix d’interface et la livraison des fonctionnalités.",
-      "Déployé l'intégration de **RevenueCat** avec **Xcode** pour sécuriser et fluidifier les achats in-app et les abonnements sur iOS.",
+      "Développé et optimisé une interface **Next.js** responsive, avec un **score Lighthouse supérieur à 80**, pour améliorer l'acquisition.",
+      "Échangé directement avec le **CEO/CTO** pour définir les priorités produit et les choix d'interface.",
+      "Intégré **RevenueCat** et testé les achats in-app avec **Xcode** pour les abonnements iOS.",
     ],
   },
   {
@@ -49,10 +48,10 @@ export const experiences = [
       "EDUKA — App web/mobile de gestion d’activités pour enfants (sorties scolaires, extra-scolaires, cours privés). Équipe de 4 développeurs fullstack, travail à distance.",
     type: "",
     bullets: [
-      "Conception maquette, développement **Front-end** (**React**) et mobile (**Ionic**) avec attention portée à l’**UX/UI**.",
-      "Modélisation **MySQL**, développement **Back-end** : **Node.js**, **Prisma**, **API REST**, **JWT**, **bcrypt**, **DTO**, système de rôles (professeurs / parents).",
-      "Architecture **microservices** avec **NestJS** et **Docker** ; **CRUD** complet ; sécurisation, chiffrement, conformité **RGPD** et prise en compte des recommandations **OWASP**.",
-      "Rédaction de **documentation technique**, **revues de code** et tests automatisés (**Cypress**, **Jest**) au sein d'une **équipe de 4 développeurs** en **Agile** (**YouTrack**).",
+      "Conçu la maquette puis développé le front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
+      "Développé le back-end **Node.js** avec **Prisma**, **MySQL**, **API REST**, **JWT**, **bcrypt** et gestion des rôles.",
+      "Travaillé sur une architecture **multicouche** avec **NestJS**, conteneurisée avec **Docker**, avec prise en compte du **RGPD**.",
+      "Écrit des tests **Cypress/Jest**, corrigé des anomalies et participé aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
     ],
   },
 ];
@@ -66,10 +65,10 @@ export const projets = [
     companyLink: "https://theteamsfinder.com/en",
     type: "",
     bullets: [
-      "Développement et **refonte de plateforme web** et **back-office** avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
-      "Conception et modélisation d’une base de données liée à un **catalogue produits** de +500 000 entrées (jeux, genres, plateformes).",
-      "Mise en place et évolution d’une **API GraphQL** et de services **Node.js** pour supporter les briques produit : recherche, comptes, paiements et contenus.",
-      "Intégration de paiements **Stripe** (e-commerce) et **SEO international** (i18n FR/EN/ES) avec publication Google **Play Store**.",
+      "Fais évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
+      "Conçu la base de données et intégré un catalogue de plus de **500 000 jeux** via une API.",
+      "Mis en place un **webhook Discord** et une tâche planifiée pour envoyer automatiquement les annonces du site vers un salon dédié.",
+      "Intégré les paiements **Stripe** et le **SEO international** en français, anglais et espagnol.",
     ],
   },
 ];
