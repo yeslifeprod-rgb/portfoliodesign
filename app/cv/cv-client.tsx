@@ -157,10 +157,10 @@ export default function CVClient() {
               Ilyes Ghardi
             </h1>
             <h2 style={{ fontSize: "14px", fontWeight: 800, color: TEXT_DARK, margin: "0 0 4px", letterSpacing: "-0.015em", textTransform: "uppercase" }}>
-              Concepteur-Développeur d'applications
+              Développeur Fullstack Node.js — React — Vue.js
             </h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "0 0 8px" }}>
-              {["JavaScript", "SQL", "Node.js", "NestJS", "React", "Docker"].map((kw) => (
+              {["Node.js", "React", "Vue.js", "NestJS", "TypeScript", "Docker"].map((kw) => (
                 <span key={kw} data-cv-keyword style={{ background: "#eff6ff", color: "#1d4ed8", padding: "2px 8px", borderRadius: "999px", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.03em" }}>
                   {kw}
                 </span>
@@ -169,7 +169,7 @@ export default function CVClient() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: "3px 0", fontSize: "10px", color: TEXT_MID, fontWeight: 400 }}>
               {[
                 { label: "Tél :", text: "07 67 50 72 04", href: "tel:+33767507204" },
-                { label: "Lieu :", text: "Lille, France" },
+                { label: "Lieu :", text: "Valenciennes — mobile sur Lille" },
                 { label: "Email :", text: "ilyesghardi@outlook.com", href: "mailto:ilyesghardi@outlook.com" },
                 { label: "LinkedIn :", text: "linkedin.com/in/ilyes-g-46b0982b8", href: "https://www.linkedin.com/in/ilyes-g-46b0982b8/" },
                 { label: "GitHub :", text: "github.com/yeslifeprod-rgb", href: "https://github.com/yeslifeprod-rgb" },

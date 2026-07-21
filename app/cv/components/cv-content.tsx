@@ -26,7 +26,7 @@ export function CVContent() {
       </section>
 
       <section style={{ marginBottom: "0.7rem" }}>
-        <SectionTitle>Projet SaaS</SectionTitle>
+        <SectionTitle>Projets personnels</SectionTitle>
         {projets.map((p, i) => <Entry key={i} {...p} />)}
       </section>
 

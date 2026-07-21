@@ -4,8 +4,8 @@ import { formatText } from "./cv-primitives";
 export function ProfileText() {
   return (
     <>
-      <strong style={{ color: TEXT_DARK }}>Concepteur-développeur d'applications</strong>, avec <strong style={{ color: TEXT_DARK }}>2 ans d'expérience</strong> en développement web et mobile. Je conçois, développe, teste et déploie des applications avec JavaScript, Node.js, React et SQL.{" "}
-      Curieux, motivé et attentif aux détails, j'aime comprendre les besoins et produire un code fiable. Chez ALT Incubateur, j'ai développé EDUKA en équipe de 4. Je développe aussi <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, un SaaS utilisé par plus de 50 personnes.
+      <strong style={{ color: TEXT_DARK }}>Concepteur-développeur d'applications</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et un SaaS personnel en production. Je conçois, développe, teste et déploie des applications avec JavaScript, Node.js, React et SQL.{" "}
+      Curieux, motivé et attentif aux détails, j'aime comprendre un besoin, corriger les problèmes et faire évoluer une application dans le temps. Je développe notamment <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, une application en production utilisée par plus de 50 personnes.
     </>
   );
 }

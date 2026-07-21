@@ -11,10 +11,10 @@ export const BLUE_3 = "#0ea5e9";
 export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BLUE_3} 100%)`;
 
 export const stackATS = [
-  { cat: "Développement", items: "JavaScript - TypeScript - Node.js - NestJS - Express - React - Next.js - Ionic" },
+  { cat: "Développement", items: "JavaScript - SQL - Node.js - NestJS - Express - React - Next.js - Vue.js - Nuxt.js - Ionic" },
   { cat: "API & Données", items: "API REST - Prisma - SQL - MySQL - PostgreSQL - MongoDB - Supabase" },
-  { cat: "Qualité & Livraison", items: "Jest - Cypress - tests d'intégration - debugging - code review - Docker - Git - CI/CD" },
-  { cat: "Conception & Méthodes", items: "Merise - UML - Agile Scrum - YouTrack - tests fonctionnels - corrections d'anomalies - évolution d'applications" },
+  { cat: "Qualité & Livraison", items: "Jest - Cypress - tests d'intégration - debugging - code review - mise en production - Docker - Git - CI/CD" },
+  { cat: "Conception & Méthodes", items: "Merise - UML - Agile Scrum - YouTrack - évolution d'applications" },
   { cat: "Sécurité", items: "JWT - bcrypt - RGPD - chiffrement" }
 ];
 
@@ -50,7 +50,7 @@ export const experiences = [
     bullets: [
       "Conçu la maquette puis développé le front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
       "Développé le back-end **Node.js** avec **Prisma**, **MySQL**, **API REST**, **JWT**, **bcrypt** et gestion des rôles.",
-      "Travaillé sur une architecture **NestJS** en microservices, conteneurisée avec **Docker**, avec prise en compte du **RGPD**.",
+      "Travaillé sur une architecture **multicouche** avec **NestJS**, conteneurisée avec **Docker**, avec prise en compte du **RGPD**.",
       "Écrit des tests **Cypress/Jest**, corrigé des anomalies et participé aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
     ],
   },
@@ -65,9 +65,9 @@ export const projets = [
     companyLink: "https://theteamsfinder.com/en",
     type: "",
     bullets: [
-      "Fais évoluer la plateforme web et le **back-office** avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
-      "Modélisé une base de données reliée à un catalogue de plus de **500 000 jeux**.",
-      "Développé une **API** et des services **Node.js** pour la recherche.",
+      "Fais évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
+      "Conçu la base de données et intégré un catalogue de plus de **500 000 jeux** via une API.",
+      "Mis en place un **webhook Discord** et une tâche planifiée pour envoyer automatiquement les annonces du site vers un salon dédié.",
       "Intégré les paiements **Stripe** et le **SEO international** en français, anglais et espagnol.",
     ],
   },

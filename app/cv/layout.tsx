@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CV — GHARDI ILYES | Concepteur-Développeur d'applications Lille",
+  title: "CV — GHARDI ILYES | Développeur Full Stack Lille",
   description:
-    "CV de Ghardi Ilyes, concepteur-développeur d'applications web et mobiles à Lille. Expérience React, Node.js, NestJS, API REST, Docker, Cypress et Jest. Disponible en CDI.",
+    "CV de Ghardi Ilyes, développeur full stack à Lille. Expérience Next.js, TypeScript, Ionic, Prisma, Supabase, Node.js, NestJS, Docker, Cypress et Jest. Disponible en CDI.",
   keywords: [
-    "CV concepteur développeur applications Lille",
-    "CV React Node.js NestJS TypeScript",
-    "concepteur développeur CDI Lille",
-    "développeur API REST PostgreSQL Docker Lille",
-    "développeur web SaaS Node.js React Lille",
+    "CV développeur full stack Lille",
+    "CV Next.js TypeScript Ionic NestJS",
+    "développeur full stack CDI Lille",
+    "CV React Node.js Prisma Supabase",
+    "développeur web mobile SaaS Lille",
     "RNCP Niveau 6 développeur",
   ],
   robots: {
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     googleBot: { index: false, follow: false },
   },
   openGraph: {
-    title: "CV GHARDI ILYES — Concepteur-Développeur d'applications Lille",
+    title: "CV GHARDI ILYES — Développeur Full Stack Lille",
     description:
-      "CV de Ghardi Ilyes. React, Node.js, NestJS, TypeScript, API REST, MySQL, Docker et tests. Disponible en CDI dans la métropole lilloise.",
+      "CV de Ghardi Ilyes. Next.js, TypeScript, Ionic, Prisma, Supabase, React, Node.js, NestJS. Disponible en CDI à Lille.",
     url: "https://www.benhouss.site/cv",
     type: "profile",
   },
