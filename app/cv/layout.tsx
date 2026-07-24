@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CV — GHARDI ILYES | Développeur Full Stack Lille",
+  title: "CV — GHARDI ILYES | Concepteur développeur Fullstack",
   description:
-    "CV de Ghardi Ilyes, développeur full stack à Lille. Expérience Next.js, TypeScript, Ionic, Prisma, Supabase, Node.js, NestJS, Docker, Cypress et Jest. Disponible en CDI.",
+    "CV de Ghardi Ilyes, concepteur développeur fullstack à Lille. Expérience React, TypeScript, Node.js, SQL, Docker, CI/CD, Jest et Cypress. Disponible en CDI.",
   keywords: [
-    "CV développeur full stack Lille",
-    "CV Next.js TypeScript Ionic NestJS",
-    "développeur full stack CDI Lille",
-    "CV React Node.js Prisma Supabase",
+    "CV concepteur développeur fullstack Lille",
+    "CV React TypeScript Node.js Docker CI/CD",
+    "développeur fullstack CDI industrie",
+    "architecture logicielle frontend backend",
     "développeur web mobile SaaS Lille",
     "RNCP Niveau 6 développeur",
   ],
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     googleBot: { index: false, follow: false },
   },
   openGraph: {
-    title: "CV GHARDI ILYES — Développeur Full Stack Lille",
+    title: "CV GHARDI ILYES — Concepteur développeur Fullstack",
     description:
-      "CV de Ghardi Ilyes. Next.js, TypeScript, Ionic, Prisma, Supabase, React, Node.js, NestJS. Disponible en CDI à Lille.",
+      "CV de Ghardi Ilyes. React, TypeScript, Node.js, Docker, CI/CD, SQL, Cypress et Jest. Disponible en CDI à Lille.",
     url: "https://www.benhouss.site/cv",
     type: "profile",
   },

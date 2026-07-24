@@ -4,8 +4,8 @@ import { formatText } from "./cv-primitives";
 export function ProfileText() {
   return (
     <>
-      <strong style={{ color: TEXT_DARK }}>Concepteur-développeur d'applications</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et un SaaS personnel en production. Je conçois, développe, teste et déploie des applications avec JavaScript, Node.js, React et SQL.{" "}
-      Curieux, motivé et attentif aux détails, j'aime comprendre un besoin, corriger les problèmes et faire évoluer une application dans le temps. Je développe notamment <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, une application en production utilisée par plus de 50 personnes.
+      <strong style={{ color: TEXT_DARK }}>Concepteur développeur fullstack</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, un SaaS personnel en production utilisé par plus de 50 personnes. Je travaille avec <strong style={{ color: TEXT_DARK }}>React, TypeScript, Node.js et Docker</strong>, de la conception des données à la mise en production.{" "}
+      Je souhaite développer mes compétences en architecture logicielle.
     </>
   );
 }
@@ -26,7 +26,7 @@ export function Entry({
   bullets: string[];
 }) {
   return (
-    <div style={{ marginBottom: "9px" }}>
+    <div style={{ marginBottom: "6px" }}>
       <div data-cv-entry-header style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderRadius: "4px", padding: "3px 7px", marginBottom: "4px" }}>
         <h4 style={{ fontSize: "12px", fontWeight: 800, color: TEXT_DARK, margin: 0 }}>{title}</h4>
         <span style={{ fontSize: "10px", fontWeight: 600, color: BLUE_2, whiteSpace: "nowrap", marginLeft: "8px" }}>
@@ -51,9 +51,9 @@ export function Entry({
             </>
           )}
         </div>
-        <ul style={{ margin: 0, padding: 0, listStyle: "none", color: TEXT_MID, fontSize: "10px", lineHeight: 1.52, fontWeight: 400 }}>
+        <ul style={{ margin: 0, padding: 0, listStyle: "none", color: TEXT_MID, fontSize: "10px", lineHeight: 1.4, fontWeight: 400 }}>
           {bullets.map((b, i) => (
-            <li key={i} style={{ marginBottom: "2px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+            <li key={i} style={{ marginBottom: "1px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
               <span aria-hidden style={{ width: "4px", height: "4px", borderRadius: "50%", background: GRAD_H, marginTop: "6.5px", flexShrink: 0 }} />
               <span style={{ flex: 1 }}>{formatText(b)}</span>
             </li>
