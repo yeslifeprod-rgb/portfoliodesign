@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CV — GHARDI ILYES | Développeur Full Stack Lille",
+  title: "CV — GHARDI ILYES | Technicien Helpdesk",
   description:
-    "CV de Ghardi Ilyes, développeur full stack à Lille. Expérience Next.js, TypeScript, Ionic, Prisma, Supabase, Node.js, NestJS, Docker, Cypress et Jest. Disponible en CDI.",
+    "CV de Ghardi Ilyes ciblé pour un poste de Technicien Helpdesk à Valenciennes / Onnaing. Support, diagnostic, tests, documentation et environnements techniques.",
   keywords: [
-    "CV développeur full stack Lille",
-    "CV Next.js TypeScript Ionic NestJS",
-    "développeur full stack CDI Lille",
-    "CV React Node.js Prisma Supabase",
-    "développeur web mobile SaaS Lille",
-    "RNCP Niveau 6 développeur",
+    "CV technicien helpdesk Valenciennes Onnaing",
+    "support informatique diagnostic incidents",
+    "Toyota Valenciennes technicien helpdesk",
+    "déploiement réseau postes téléphonie imprimantes",
   ],
   robots: {
     index: false,
@@ -18,9 +16,9 @@ export const metadata: Metadata = {
     googleBot: { index: false, follow: false },
   },
   openGraph: {
-    title: "CV GHARDI ILYES — Développeur Full Stack Lille",
+    title: "CV GHARDI ILYES — Technicien Helpdesk",
     description:
-      "CV de Ghardi Ilyes. Next.js, TypeScript, Ionic, Prisma, Supabase, React, Node.js, NestJS. Disponible en CDI à Lille.",
+      "CV de Ghardi Ilyes ciblé pour le support informatique à Valenciennes / Onnaing.",
     url: "https://www.benhouss.site/cv",
     type: "profile",
   },

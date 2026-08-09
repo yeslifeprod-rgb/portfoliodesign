@@ -22,7 +22,7 @@ const Hero = () => {
     <div className="relative">
       {/* SEO — h1 indexable, visuellement masqué car BenhoussHandwriting le remplace */}
       <h1 id="hero-heading" className="sr-only">
-        Benhouss — Développeur Full Stack Web &amp; Mobile, Lille
+        Benhouss — Développeur Node.js, NestJS et Full Stack Web &amp; Mobile à Lille
       </h1>
 
       <div className="group/hero relative min-h-screen overflow-hidden bg-background">
@@ -122,7 +122,7 @@ const Hero = () => {
           {/* Subtitle — word-by-word stagger */}
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 max-w-md">
             {(language === "fr"
-              ? ["Développeur", "Full Stack", "d'applications web et mobiles"]
+              ? ["Développeur", "Node.js & Full Stack", "web et mobile"]
               : ["Full Stack", "Web", "Developer"]
             ).map((word, i) => (
               <BlurFade key={word + i} delay={0.25 + i * 0.07} inView>
@@ -149,8 +149,8 @@ const Hero = () => {
               animateOnHover={false}
             >
               {language === "fr"
-                ? "Next.js · TypeScript · Node.js"
-                : "Next.js · TypeScript · Node.js"}
+                ? "Node.js · NestJS · API REST · Docker · React · Next.js"
+                : "Node.js · NestJS · REST APIs · Docker · React · Next.js"}
             </HyperText>
           </BlurFade>
 
@@ -158,8 +158,8 @@ const Hero = () => {
           <BlurFade delay={0.65} inView>
             <p className="text-sm sm:text-base text-muted-foreground/60 text-center max-w-sm">
               {language === "fr"
-                ? "Je transforme des idées en applications déployées et utilisées."
-                : "I turn ideas into deployed, production-ready applications."}
+                ? "Je construis des APIs et des applications déployées en production, de la base de données jusqu'à l'interface."
+                : "I build production applications and APIs, from the database to the interface."}
             </p>
           </BlurFade>
 

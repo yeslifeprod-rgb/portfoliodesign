@@ -11,11 +11,12 @@ export const BLUE_3 = "#0ea5e9";
 export const GRAD_H = `linear-gradient(135deg, ${BLUE_1} 0%, ${BLUE_2} 55%, ${BLUE_3} 100%)`;
 
 export const stackATS = [
-  { cat: "Développement", items: "JavaScript - SQL - Node.js - NestJS - Express - React - Next.js - Vue.js - Nuxt.js - Ionic" },
-  { cat: "API & Données", items: "API REST - Prisma - SQL - MySQL - PostgreSQL - MongoDB - Supabase" },
-  { cat: "Qualité & Livraison", items: "Jest - Cypress - tests d'intégration - debugging - code review - mise en production - Docker - Git - CI/CD" },
-  { cat: "Conception & Méthodes", items: "Merise - UML - Agile Scrum - YouTrack - évolution d'applications" },
-  { cat: "Sécurité", items: "JWT - bcrypt - RGPD - chiffrement" }
+  { cat: "Front-end", items: "React - Next.js - Vue.js - TypeScript - Ionic - Tailwind CSS" },
+  { cat: "Back-end", items: "Node.js - NestJS - Express - API REST - Prisma" },
+  { cat: "Bases de données", items: "MySQL - PostgreSQL - MongoDB - Supabase - Merise" },
+  { cat: "DevOps & Cloud", items: "Docker - AWS EC2 - Git - CI/CD" },
+  { cat: "Qualité & IA", items: "Jest - Cypress - Claude Code - Codex" },
+  { cat: "Sécurité & Méthodes", items: "JWT - bcrypt - RGPD - OWASP - Agile Scrum - YouTrack" }
 ];
 
 export const languages = [
@@ -36,7 +37,7 @@ export const experiences = [
     companyLink: "https://num4-lp.vercel.app",
     type: "",
     bullets: [
-      "Développé et optimisé une interface **Next.js** responsive, avec un **score Lighthouse supérieur à 80**, pour améliorer l'acquisition.",
+      "Développé et optimisé une interface **Next.js**, avec un **score Lighthouse supérieur à 80**, pour améliorer l'acquisition.",
       "Échangé directement avec le **CEO/CTO** pour définir les priorités produit et les choix d'interface.",
       "Intégré **RevenueCat** et testé les achats in-app avec **Xcode** pour les abonnements iOS.",
     ],
@@ -48,10 +49,11 @@ export const experiences = [
       "EDUKA — App web/mobile de gestion d’activités pour enfants (sorties scolaires, extra-scolaires, cours privés). Équipe de 4 développeurs fullstack, travail à distance.",
     type: "",
     bullets: [
-      "Conçu la maquette puis développé le front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
+      "Conçu la maquette puis développé des composants front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
       "Développé le back-end **Node.js** avec **Prisma**, **MySQL**, **API REST**, **JWT**, **bcrypt** et gestion des rôles.",
-      "Travaillé sur une architecture **multicouche** avec **NestJS**, conteneurisée avec **Docker**, avec prise en compte du **RGPD**.",
-      "Écrit des tests **Cypress/Jest**, corrigé des anomalies et participé aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
+      "Participé à la conception d'une architecture **multicouche** frontend/backend avec **NestJS**, conteneurisée avec **Docker** et déployée sur **AWS EC2**.",
+      "Conçu des bases de données avec la méthode **Merise** et ses modèles **MCD, MLD et MPD**, à partir des besoins fonctionnels et techniques.",
+      "Écrit des tests **Cypress/Jest**, contribué à la **CI/CD**, à la documentation technique et aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
     ],
   },
 ];
@@ -65,7 +67,7 @@ export const projets = [
     companyLink: "https://theteamsfinder.com/en",
     type: "",
     bullets: [
-      "Fais évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
+      "Fait évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
       "Conçu la base de données et intégré un catalogue de plus de **500 000 jeux** via une API.",
       "Mis en place un **webhook Discord** et une tâche planifiée pour envoyer automatiquement les annonces du site vers un salon dédié.",
       "Intégré les paiements **Stripe** et le **SEO international** en français, anglais et espagnol.",

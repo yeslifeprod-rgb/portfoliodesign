@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-// Renders the clean 1-column ATS layout by default and hides the layout toggle
-const CVClient = dynamic(() => import("./cv-client"), { ssr: false });
+// Version ciblée pour l'offre Technicien Helpdesk — Toyota Valenciennes.
+const CVClient = dynamic(() => import("./toyota-helpdesk/toyota-helpdesk-client"), { ssr: false });
 
 export default function CVPage() {
   return <CVClient />;
