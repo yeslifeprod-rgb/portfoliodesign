@@ -43,11 +43,11 @@ const SITE_NAME = "Benhouss";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
     title: {
-    default: "Développeur Node.js/NestJS | API REST, PostgreSQL et Docker",
+    default: "Benhouss — Développeur Node.js, NestJS & Full Stack à Lille",
     template: "%s",
   },
   description:
-    "Développeur Node.js et NestJS spécialisé dans la correction d’API REST, PostgreSQL, Prisma, authentification et déploiement Docker pour SaaS et applications web.",
+    "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille. APIs Node.js/NestJS, applications React/Next.js, bases de données, Docker et déploiement en production. Freelance & CDI — Lille ou remote.",
   keywords: [
     // ── Identité & localisation ──
     "développeur Lille",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "développeur Docker Lille",
     "développeur web lille",
     "développeur freelance lille",
-    "développeur backend freelance Lille",
+    "développeur full stack freelance",
     "développeur CDI Lille",
     "développeur full stack CDI Lille",
     "recruter développeur Lille",
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     "développeur node.js",
     "développeur node.js Lille",
     "développeur prisma",
-    "développeur PostgreSQL",
+    "développeur mysql",
     "développeur mongodb",
     "développeur supabase",
     "intégration stripe développeur",
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
     // ── Noms bruts (recherches directes) ──
     "react", "next.js", "nestjs", "ionic", "nuxt.js", "vue.js",
     "node.js", "typescript", "tailwind css", "prisma",
-    "postgresql", "mysql", "mongodb", "supabase", "stripe", "docker",
+    "mysql", "mongodb", "supabase", "stripe", "docker",
     "vercel", "jest", "cypress", "figma", "shadcn/ui",
   ],
   authors: [{ name: "Benhouss", url: SITE_URL }],
@@ -147,9 +147,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Développeur Node.js/NestJS | API REST, PostgreSQL et Docker",
+    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
     description:
-      "Correction d’API REST, authentification, PostgreSQL/Prisma et déploiement Docker pour SaaS et applications web.",
+      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, React, Next.js, Docker et bases de données. Freelance & CDI.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "fr_FR",
@@ -158,9 +158,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Développeur Node.js/NestJS | API REST, PostgreSQL et Docker",
+    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
     description:
-      "Développeur Node.js/NestJS à Lille : bugs REST, authentification, PostgreSQL/Prisma, tests et Docker.",
+      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, Docker, React et Next.js. RNCP Niv. 6. Freelance & CDI.",
     // Pas d'images statiques — l'OG est générée par opengraph-image.tsx
   },
   alternates: {
@@ -198,9 +198,9 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://www.benhouss.site/#person",
                   name: "Benhouss",
-                  jobTitle: "Développeur Node.js et NestJS",
+                  jobTitle: "Développeur Node.js, NestJS et Full Stack",
                   description:
-                    "Développeur Node.js/NestJS basé à Lille. J’interviens sur les API REST, l’authentification, PostgreSQL/Prisma, les tests et les environnements Docker.",
+                    "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Je conçois des APIs Node.js/NestJS, des applications React/Next.js et des environnements Docker déployés en production.",
                   url: "https://www.benhouss.site",
                   image: "https://www.benhouss.site/assets/avatar.png",
                   sameAs: [
@@ -221,15 +221,18 @@ export default function RootLayout({
                     credentialCategory: "degree",
                   },
                   knowsAbout: [
-                    "Node.js", "NestJS", "TypeScript", "REST API", "PostgreSQL",
-                    "Prisma", "Supabase", "Docker", "Docker Compose", "Jest",
-                    "Cypress", "Swagger", "Git", "React", "Next.js",
+                    "React", "Next.js", "TypeScript", "Tailwind CSS",
+                    "Ionic", "shadcn/ui", "Vue.js", "Nuxt.js",
+                    "Node.js", "NestJS", "Prisma", "MySQL",
+                    "MongoDB", "Supabase", "Stripe",
+                    "Git", "Vercel", "Docker", "Jest", "Cypress",
+                    "Figma", "Excalidraw", "Agile Scrum", "Microservices", "REST API",
                   ],
                 },
                 {
                   "@type": "LocalBusiness",
                   "@id": "https://www.benhouss.site/#business",
-                  name: "Benhouss — Développeur Node.js/NestJS Lille",
+                  name: "Benhouss — Développeur Full Stack Lille",
                   url: "https://www.benhouss.site",
                   image: "https://www.benhouss.site/assets/avatar.png",
                   priceRange: "€€",
@@ -248,23 +251,23 @@ export default function RootLayout({
                   founder: { "@id": "https://www.benhouss.site/#person" },
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
-                    name: "Services backend Node.js/NestJS",
+                    name: "Services de développement web & mobile",
                     itemListElement: [
-                      { "@type": "Offer", name: "Correction d’API REST Node.js/NestJS" },
-                      { "@type": "Offer", name: "Authentification et autorisation" },
-                      { "@type": "Offer", name: "PostgreSQL et Prisma" },
-                      { "@type": "Offer", name: "Dockerisation et déploiement" },
-                      { "@type": "Offer", name: "Tests et documentation backend" },
+                      { "@type": "Offer", name: "Développement Next.js à Lille", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Développement NestJS — APIs REST & Microservices" },
+                      { "@type": "Offer", name: "Développement Application Mobile Ionic", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Conception et développement d'applications Full Stack", areaServed: "Lille" },
+                      { "@type": "Offer", name: "Développement Front End React/Next.js", areaServed: "Lille" },
                     ],
                   },
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://www.benhouss.site/#website",
-                  name: "Benhouss — Développeur Node.js/NestJS Lille",
+                  name: "Benhouss — Développeur Full Stack Lille",
                   url: "https://www.benhouss.site",
                   inLanguage: "fr-FR",
-                  description: "Portfolio de Benhouss, développeur Node.js/NestJS à Lille. API REST, PostgreSQL, Prisma, authentification et Docker.",
+                  description: "Portfolio de Benhouss, développeur Node.js, NestJS et Full Stack à Lille. APIs REST, Docker, bases de données et applications web/mobile.",
                   author: { "@id": "https://www.benhouss.site/#person" },
                 },
               ],

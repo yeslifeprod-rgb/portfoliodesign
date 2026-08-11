@@ -1,16 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-function escapeHtml(value: string) {
-  return value.replace(/[&<>'"]/g, (character) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    "'": "&#39;",
-    '"': "&quot;",
-  })[character] ?? character);
-}
-
 export async function POST(req: Request) {
   let body;
 
@@ -21,10 +11,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "Requête invalide" }, { status: 400 });
   }
 
-  const { name, email, need, message } = body;
+  const { name, email, message } = body;
 
   // Vérification des champs
-  if (!name || !email || !need || !message) {
+  if (!name || !email || !message) {
     return NextResponse.json({ message: "Champs manquants" }, { status: 400 });
   }
 
@@ -48,15 +38,14 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: `"${escapeHtml(name)}" <${EMAIL_FROM}>`,
+      from: `"${name}" <${EMAIL_FROM}>`,
       to: EMAIL_TO,
       replyTo: email,
-      subject: `📬 Demande backend — ${need}`,
+      subject: "📬 Nouveau message depuis le portfolio",
       html: `
-        <p><strong>Nom :</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email :</strong> ${escapeHtml(email)}</p>
-        <p><strong>Type de besoin :</strong> ${escapeHtml(need)}</p>
-        <p><strong>Message :</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
+        <p><strong>Nom :</strong> ${name}</p>
+        <p><strong>Email :</strong> ${email}</p>
+        <p><strong>Message :</strong><br>${message}</p>
       `,
     });
 

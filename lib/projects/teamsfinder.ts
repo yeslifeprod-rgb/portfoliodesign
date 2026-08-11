@@ -34,14 +34,24 @@ export function getTeamsFinderProject(language: string): Project {
       "Advanced filters (availability, language, rank)",
       "Built-in messaging",
     ],
+    metrics: language === "fr" ? [
+      { label: "Utilisateurs", value: "+50 inscrits" },
+      { label: "Revenu", value: " 2 ventes" },
+      { label: "Matchmaking", value: "Algorithmique" },
+
+    ] : [
+      { label: "Users", value: "+50 registered" },
+      { label: "Revenue", value: "2 sales" },
+      { label: "Matchmaking", value: "Algorithmic" },
+    ],
     businessCase: language === "fr" ? {
       problem: "Les joueurs manquaient d'un outil fiable pour trouver des coéquipiers de leur niveau.",
       role: "Créateur et développeur full stack du projet (Web & Mobile).",
-      result: "Plateforme avec matchmaking algorithmique, événements, blog, annonces, game review et intégration Discord.",
+      result: "Plateforme live avec matchmaking algorithmique, événements (calendrier d’appels, notifications), blog, annonces et game review. Intégration Discord (accès aux channels exclusifs, webhooks d'annonces). Déjà +50 utilisateurs.",
     } : {
       problem: "Gamers lacked a reliable tool to find teammates of their skill level.",
       role: "Creator and full stack developer of the project (Web & Mobile).",
-      result: "Platform with algorithmic matchmaking, events, blog, announcements, game review and Discord integration.",
+      result: "Live platform with algorithmic matchmaking, events (call calendar, notifications), blog, announcements, and game review. Discord integration (exclusive channel access, announcement webhooks). Already +50 users.",
     },
     architecture: {
       description:
