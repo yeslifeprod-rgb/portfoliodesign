@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { User, Mail, MessageSquare, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { User, Mail, MessageSquare, Send, CheckCircle2, AlertCircle, Loader2, ListFilter } from "lucide-react";
 
 /* ─── Animated Field ─────────────────────────────────── */
 interface FieldProps {
@@ -93,7 +93,7 @@ const SubmitButton: React.FC<{ status: Status; lang: string }> = ({ status, lang
   const idleHoverShadow = "0 14px 36px rgba(29, 78, 216, 0.3)";
 
   const labels = {
-    idle:    lang === "fr" ? "Envoyer le message" : "Send message",
+    idle:    lang === "fr" ? "Envoyer ma demande" : "Send my request",
     loading: lang === "fr" ? "Envoi en cours…"  : "Sending…",
     success: lang === "fr" ? "Message envoyé !" : "Message sent!",
     error:   lang === "fr" ? "Erreur, réessayer" : "Error, retry",
@@ -182,10 +182,11 @@ const ContactForm: React.FC = () => {
   }, [confettiLib]);
 
   const formik = useFormik({
-    initialValues: { name: "", email: "", message: "" },
+    initialValues: { name: "", email: "", need: "", message: "" },
     validationSchema: Yup.object({
       name:    Yup.string().required(language === "fr" ? "Nom requis" : "Name required"),
       email:   Yup.string().email(language === "fr" ? "Email invalide" : "Invalid email").required(language === "fr" ? "Email requis" : "Email required"),
+      need:    Yup.string().required(language === "fr" ? "Type de besoin requis" : "Type of need required"),
       message: Yup.string().min(10, language === "fr" ? "Message trop court" : "Message too short").required(language === "fr" ? "Message requis" : "Message required"),
     }),
     onSubmit: async (values, { resetForm }) => {
@@ -224,6 +225,8 @@ const ContactForm: React.FC = () => {
           <input
             type="text"
             name="name"
+            id="contact-name"
+            aria-label={language === "fr" ? "Nom" : "Name"}
             placeholder={language === "fr" ? "Jean Dupont" : "John Doe"}
             value={formik.values.name}
             onChange={formik.handleChange}
@@ -235,6 +238,8 @@ const ContactForm: React.FC = () => {
           <input
             type="email"
             name="email"
+            id="contact-email"
+            aria-label="Email"
             placeholder="hello@example.com"
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -242,9 +247,22 @@ const ContactForm: React.FC = () => {
           />
         </Field>
 
-        <Field icon={MessageSquare} label={language === "fr" ? "Message" : "Message"} error={formik.errors.message} touched={formik.touched.message} index={2}>
+        <Field icon={ListFilter} label={language === "fr" ? "Type de besoin" : "Type of need"} error={formik.errors.need} touched={formik.touched.need} index={2}>
+          <select name="need" id="contact-need" aria-label={language === "fr" ? "Type de besoin" : "Type of need"} value={formik.values.need} onChange={formik.handleChange} onBlur={formik.handleBlur} className="w-full bg-transparent text-sm text-foreground outline-none">
+            <option value="">{language === "fr" ? "Choisir une intervention" : "Choose an intervention"}</option>
+            <option value="Correction d’API">{language === "fr" ? "Correction d’API" : "API fix"}</option>
+            <option value="Authentification">{language === "fr" ? "Authentification / autorisation" : "Authentication / authorization"}</option>
+            <option value="PostgreSQL / Prisma">PostgreSQL / Prisma</option>
+            <option value="Docker / déploiement">Docker / {language === "fr" ? "déploiement" : "deployment"}</option>
+            <option value="Autre">{language === "fr" ? "Autre besoin backend" : "Other backend need"}</option>
+          </select>
+        </Field>
+
+        <Field icon={MessageSquare} label={language === "fr" ? "Description" : "Description"} error={formik.errors.message} touched={formik.touched.message} index={3}>
           <textarea
             name="message"
+            id="contact-message"
+            aria-label={language === "fr" ? "Description" : "Description"}
             placeholder={language === "fr" ? "Décrivez votre projet…" : "Tell me about your project…"}
             value={formik.values.message}
             onChange={formik.handleChange}

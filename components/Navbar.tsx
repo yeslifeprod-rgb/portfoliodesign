@@ -6,17 +6,16 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { Home, User, FolderOpen, Layers, Briefcase, Mail } from "lucide-react";
+import { Home, FolderOpen, Settings2, Mail, Wrench } from "lucide-react";
 import { navLinks } from "@/lib/navigation";
 
-const SECTION_IDS = ["home", "about", "projets", "stack", "experience", "contact"];
+const SECTION_IDS = ["home", "services", "projets", "methode", "contact"];
 
 const NAV_ICONS: Record<string, React.ElementType> = {
   "#home": Home,
-  "#about": User,
+  "#services": Wrench,
   "#projets": FolderOpen,
-  "#stack": Layers,
-  "#experience": Briefcase,
+  "#methode": Settings2,
   "#contact": Mail,
 };
 

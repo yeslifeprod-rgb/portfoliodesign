@@ -5,9 +5,8 @@ export interface NavItem {
 
 export const navLinks: NavItem[] = [
   { label: { fr: "Accueil", en: "Home" }, href: "#home" },
-  { label: { fr: "À propos", en: "About" }, href: "#about" },
+  { label: { fr: "Services", en: "Services" }, href: "#services" },
   { label: { fr: "Projets", en: "Projects" }, href: "#projets" },
-  { label: { fr: "Stack", en: "Stack" }, href: "#stack" },
-  { label: { fr: "Expérience", en: "Experience" }, href: "#experience" },
+  { label: { fr: "Méthode", en: "Method" }, href: "#methode" },
   { label: { fr: "Contact", en: "Contact" }, href: "#contact" },
 ];

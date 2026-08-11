@@ -51,31 +51,17 @@ export function getEdukaMeta(language: string) {
             "Admin dashboard to manage users and events",
             "Automated tests with Cypress and Jest to ensure quality",
           ],
-    metrics:
-      language === "fr"
-        ? [
-            { label: "Microservices NestJS", value: "4" },
-            { label: "Score Lighthouse", value: "95+" },
-            { label: "Tests Cypress + Jest", value: "E2E & Unit" },
-            { label: "Conteneurisation", value: "Docker" },
-          ]
-        : [
-            { label: "NestJS Microservices", value: "4" },
-            { label: "Lighthouse Score", value: "95+" },
-            { label: "Cypress + Jest Tests", value: "E2E & Unit" },
-            { label: "Containerization", value: "Docker" },
-          ],
     businessCase:
       language === "fr"
         ? {
             problem: "Professeurs et parents sans outil centralisé pour créer et gérer les activités scolaires et extra-scolaires des enfants",
             role: "Développeur frontend React + mobile Ionic + API REST NestJS + tests E2E (Cypress/Jest)",
-            result: "Application web et mobile complète avec système de rôles, RGPD, API REST et tests automatisés. Titre CDA Bac+4 obtenu.",
+            result: "Application web et mobile avec système de rôles, API REST, règles métier et tests automatisés.",
           }
         : {
             problem: "Teachers and parents lacking a centralized tool to create and manage children's school and extracurricular activities",
             role: "Frontend React + mobile Ionic developer + NestJS REST API + E2E testing (Cypress/Jest)",
-            result: "Full web and mobile app with role system, GDPR compliance, REST API and automated tests. CDA Bachelor+4 certification earned.",
+            result: "Web and mobile app with role system, REST API, business rules and automated tests.",
           },
     githubUrls: {
       front: "https://github.com/yeslifeprod-rgb/Eduka-front",

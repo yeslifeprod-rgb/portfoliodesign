@@ -84,11 +84,19 @@ export function ContactIntro({
           {t.connectLabel}
         </p>
         <div className="flex flex-wrap gap-2">
+          <a href="mailto:ilyesghardi@outlook.com" className="rounded-full border border-border px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary">
+            {t.email}
+          </a>
           {socials.map((s, i) => (
             <SocialLink key={s.label} {...s} index={i} />
           ))}
         </div>
       </BlurFade>
+      <p className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm leading-6 text-foreground">
+        {t.availabilityValue === "Missions courtes"
+          ? "Disponible pour des missions courtes de correction API, backend NestJS et Docker."
+          : "Available for short API fixes, NestJS backend and Docker missions."}
+      </p>
     </div>
   );
 }
