@@ -4,8 +4,8 @@ import { formatText } from "./cv-primitives";
 export function ProfileText() {
   return (
     <>
-      <strong style={{ color: TEXT_DARK }}>Concepteur développeur fullstack</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, un SaaS personnel en production utilisé par plus de 50 personnes. Je travaille avec <strong style={{ color: TEXT_DARK }}>React, TypeScript, Node.js et Docker</strong>, de la conception des données à la mise en production.{" "}
-      Je souhaite développer mes compétences en architecture logicielle.
+      <strong style={{ color: TEXT_DARK }}>Développeur fullstack</strong> avec <strong style={{ color: TEXT_DARK }}>2 ans de pratique</strong> en développement web et mobile, dont 8 mois chez ALT Incubateur et <strong style={{ color: TEXT_DARK }}>Teamsfinder</strong>, un SaaS personnel en production utilisé par plus de 50 personnes. Je travaille avec <strong style={{ color: TEXT_DARK }}>React, TypeScript, Node.js, API REST, SQL, Docker et AWS EC2</strong>, de la conception des données à la mise en production.{" "}
+      Déjà intégré à plusieurs équipes Agile, je porte une attention particulière aux tests, à la qualité du code et à la maintenabilité des applications. Je suis prêt à contribuer dès mon arrivée dans une équipe technique, à prendre en charge des tâches fullstack et à progresser sur l'environnement du projet.
     </>
   );
 }

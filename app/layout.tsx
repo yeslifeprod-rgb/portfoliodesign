@@ -42,16 +42,21 @@ const SITE_NAME = "Benhouss";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Benhouss — Développeur Full Stack Lille | React, Next.js, Node.js",
+    title: {
+    default: "Benhouss — Développeur Node.js, NestJS & Full Stack à Lille",
     template: "%s",
   },
   description:
-    "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niv. 6). Spécialisé React, Next.js, NestJS, Ionic, Node.js, TypeScript. Création d'applications web et mobile. Freelance & CDI — Lille ou remote.",
+    "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille. APIs Node.js/NestJS, applications React/Next.js, bases de données, Docker et déploiement en production. Freelance & CDI — Lille ou remote.",
   keywords: [
     // ── Identité & localisation ──
     "développeur Lille",
     "développeur full stack lille",
+    "développeur Node.js Lille",
+    "développeur NestJS Lille",
+    "développeur backend Lille",
+    "développeur API REST Lille",
+    "développeur Docker Lille",
     "développeur web lille",
     "développeur freelance lille",
     "développeur full stack freelance",
@@ -142,9 +147,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Benhouss — Concepteur Développeur d'Applications Full Stack Lille",
+    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
     description:
-      "Développeur Full Stack à Lille. React, Next.js, NestJS, Ionic, Node.js, TypeScript. RNCP Niv. 6. Freelance & CDI.",
+      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, React, Next.js, Docker et bases de données. Freelance & CDI.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "fr_FR",
@@ -153,9 +158,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benhouss — Concepteur Développeur d'Applications Full Stack Lille",
+    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
     description:
-      "Développeur Full Stack à Lille. Next.js, NestJS, Ionic, React, TypeScript. RNCP Niv. 6. Freelance & CDI.",
+      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, Docker, React et Next.js. RNCP Niv. 6. Freelance & CDI.",
     // Pas d'images statiques — l'OG est générée par opengraph-image.tsx
   },
   alternates: {
@@ -193,9 +198,9 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://www.benhouss.site/#person",
                   name: "Benhouss",
-                  jobTitle: "Concepteur Développeur d'Applications Full Stack",
+                  jobTitle: "Développeur Node.js, NestJS et Full Stack",
                   description:
-                    "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Spécialisé Next.js, NestJS, Ionic, React, Node.js, TypeScript. Disponible en freelance et CDI.",
+                    "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Je conçois des APIs Node.js/NestJS, des applications React/Next.js et des environnements Docker déployés en production.",
                   url: "https://www.benhouss.site",
                   image: "https://www.benhouss.site/assets/avatar.png",
                   sameAs: [
@@ -262,7 +267,7 @@ export default function RootLayout({
                   name: "Benhouss — Développeur Full Stack Lille",
                   url: "https://www.benhouss.site",
                   inLanguage: "fr-FR",
-                  description: "Portfolio de Benhouss, concepteur développeur d'applications Full Stack à Lille.",
+                  description: "Portfolio de Benhouss, développeur Node.js, NestJS et Full Stack à Lille. APIs REST, Docker, bases de données et applications web/mobile.",
                   author: { "@id": "https://www.benhouss.site/#person" },
                 },
               ],
@@ -287,4 +292,3 @@ export default function RootLayout({
     </html>
   );
 }
-

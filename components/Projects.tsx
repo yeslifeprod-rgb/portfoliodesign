@@ -10,7 +10,9 @@ import { MobileProjectCard } from "@/components/projects/MobileProjectCard";
 
 export function Projects() {
   const { language } = useLang();
-  const projects = getAllProjects(language);
+  const projects = getAllProjects(language).filter((project) =>
+    ["eduka", "teamsfinder", "num4"].includes(project.id),
+  );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const handleHover = useCallback((id: string | null) => {
@@ -47,8 +49,8 @@ export function Projects() {
 
             <p className="mt-4 text-muted-foreground text-sm sm:text-base max-w-md leading-relaxed">
               {language === "fr"
-                ? "De la conception au deploiement, chaque projet raconte une histoire."
-                : "From concept to deployment, every project tells a story."}
+                ? "Trois projets réels, avec mon rôle et les choix techniques que je peux expliquer."
+                : "Three real projects, with my role and the technical choices I can explain."}
             </p>
           </div>
         </BlurFade>
@@ -74,7 +76,7 @@ export function Projects() {
                 {String(projects.length).padStart(2, "0")}
               </span>
               <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                {language === "fr" ? "projets livrés" : "projects shipped"}
+                {language === "fr" ? "projets présentés" : "projects shown"}
               </span>
             </div>
           </BlurFade>

@@ -13,13 +13,13 @@ const stats = [
   {
     icon: Briefcase,
     label: {
-      fr: "2+ ans d'expériences ",
-      en: "2+ years experiences",
+      fr: "Node.js · NestJS · API REST",
+      en: "Node.js · NestJS · REST API",
     },
   },
   {
     icon: Rocket,
-    label: { fr: "Apps en production", en: "Apps in production" },
+    label: { fr: "PostgreSQL · Prisma · Docker", en: "PostgreSQL · Prisma · Docker" },
   },
   {
     icon: CheckCircle,
@@ -76,14 +76,14 @@ const About: React.FC = () => {
           <div className="space-y-5">
             <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
-                ? "Concepteur Développeur d'Applications basé à Lille, titulaire d'un Titre RNCP Niveau 6 (équivalent Bac+4). J'ai travaillé en startup aux côtés d'un fondateur et CTO, ce qui m'a appris à livrer vite, bien, et avec un vrai impact business."
-                : "Application Designer & Developer based in Lille, France, holding an RNCP Level 6 degree (Bachelor+4 equivalent). I worked at a startup alongside the founder and CTO, which taught me to ship fast, ship well, and deliver real business impact."}
+                ? "Concepteur Développeur d'Applications basé à Lille, titulaire d'un Titre RNCP Niveau 6. J'interviens sur des besoins backend précis : comprendre un bug, le reproduire et livrer un correctif propre."
+                : "Application Designer & Developer based in Lille, France, holding an RNCP Level 6 degree. I help with focused backend needs: understand an issue, reproduce it and deliver a clean fix."}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-foreground">
               {language === "fr"
-                ? "Je ne construis pas juste du code — je livre des applications en production. TypeScript et Node.js sont mes outils du quotidien, sur des frameworks comme React, Next.js, Vue.js ou Nuxt selon le projet."
-                : "I don't just write code — I ship production applications. TypeScript and Node.js are my daily tools, across frameworks like React, Next.js, Vue.js or Nuxt depending on the project."}
+                ? "Node.js, TypeScript et NestJS sont mes outils principaux côté backend, avec les API REST, l'authentification, Prisma et les bases de données. Docker, Git et les tests m'aident à garder un environnement reproductible et maintenable."
+                : "Node.js, TypeScript and NestJS are my main backend tools, alongside REST APIs, authentication, Prisma and databases. Docker, Git and tests help keep environments reproducible and maintainable."}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">

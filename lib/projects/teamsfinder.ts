@@ -32,16 +32,6 @@ export function getTeamsFinderProject(language: string): Project {
       "Advanced filters (availability, language, rank)",
       "Built-in messaging",
     ],
-    metrics: language === "fr" ? [
-      { label: "Utilisateurs", value: "+50 inscrits" },
-      { label: "Revenu", value: " 2 ventes" },
-      { label: "Matchmaking", value: "Algorithmique" },
-
-    ] : [
-      { label: "Users", value: "+50 registered" },
-      { label: "Revenue", value: "2 sales" },
-      { label: "Matchmaking", value: "Algorithmic" },
-    ],
     businessCase: language === "fr" ? {
       problem: "Les joueurs manquaient d'un outil fiable pour trouver des coéquipiers de leur niveau.",
       role: "Créateur et développeur full stack du projet (Web & Mobile).",

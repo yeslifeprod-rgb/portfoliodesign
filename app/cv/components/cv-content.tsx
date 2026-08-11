@@ -1,40 +1,40 @@
 import { Entry, ProfileText } from "./cv-entry";
 import { SectionTitle } from "./cv-primitives";
-import { experiences, languages, stackATS, TEXT_DARK, TEXT_LIGHT, TEXT_MID, projets } from "./cv-data";
+import { experiences, hobbies, languages, stackATS, TEXT_DARK, TEXT_LIGHT, TEXT_MID, projets } from "./cv-data";
 
 export function CVContent() {
   return (
     <div
       style={{
         flex: 1,
-        padding: "1rem 3.8rem 0.65rem",
+        padding: "1.2rem 3.8rem 1.05rem",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
       }}
     >
-      <section style={{ marginBottom: "0.65rem" }}>
+      <section style={{ marginBottom: "0.85rem" }}>
         <SectionTitle>Profil</SectionTitle>
-        <p style={{ fontSize: "10px", lineHeight: 1.48, color: TEXT_MID, margin: 0, textAlign: "justify", fontWeight: 400, borderLeft: "3px solid #2563eb", paddingLeft: "10px" }}>
+        <p style={{ fontSize: "10px", lineHeight: 1.56, color: TEXT_MID, margin: 0, textAlign: "justify", fontWeight: 400, borderLeft: "3px solid #2563eb", paddingLeft: "10px" }}>
           <ProfileText />
         </p>
       </section>
 
-      <section style={{ marginBottom: "0.55rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Expérience professionnelle</SectionTitle>
         {experiences.map((e, i) => <Entry key={i} {...e} />)}
       </section>
 
-      <section style={{ marginBottom: "0.55rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Projets personnels</SectionTitle>
         {projets.map((p, i) => <Entry key={i} {...p} />)}
       </section>
 
-      <section style={{ marginBottom: "0.55rem" }}>
+      <section style={{ marginBottom: "0.7rem" }}>
         <SectionTitle>Compétences techniques</SectionTitle>
-        <div data-cv-skills style={{ borderRadius: "6px", padding: "6px 10px", display: "flex", flexDirection: "column", gap: "3px" }}>
+        <div data-cv-skills style={{ borderRadius: "6px", padding: "8px 10px", display: "flex", flexDirection: "column", gap: "4px" }}>
           {stackATS.map((s, i) => (
-            <div key={i} style={{ fontSize: "10px", color: TEXT_MID, lineHeight: 1.32, fontWeight: 400 }}>
+            <div key={i} style={{ fontSize: "10px", color: TEXT_MID, lineHeight: 1.42, fontWeight: 400 }}>
               <strong style={{ color: TEXT_DARK, marginRight: "5px" }}>{s.cat} :</strong>
               {s.items}
             </div>
@@ -42,7 +42,7 @@ export function CVContent() {
         </div>
       </section>
 
-      <section style={{ marginBottom: "0.65rem" }}>
+      <section style={{ marginBottom: "0.85rem" }}>
         <SectionTitle>Diplôme</SectionTitle>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>
@@ -65,8 +65,8 @@ export function CVContent() {
       </section>
 
       <section style={{ marginBottom: 0 }}>
-        <SectionTitle>Langues & qualités</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "0.75fr 2.15fr", gap: "10px", alignItems: "start" }}>
+        <SectionTitle>Langues & loisirs</SectionTitle>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
             {languages.map((item) => (
               <div key={item.label} style={{ fontSize: "10px", color: TEXT_MID, lineHeight: 1.42, fontWeight: 400 }}>
@@ -76,8 +76,8 @@ export function CVContent() {
             ))}
           </div>
           <div style={{ fontSize: "10px", color: TEXT_MID, lineHeight: 1.42, fontWeight: 400 }}>
-            <strong style={{ color: TEXT_DARK, marginRight: "5px" }}>Qualités :</strong>
-            Rigoureux, curieux, esprit d'équipe
+            <strong style={{ color: TEXT_DARK, marginRight: "5px" }}>Loisirs :</strong>
+            {hobbies.join(" - ")}
           </div>
         </div>
       </section>

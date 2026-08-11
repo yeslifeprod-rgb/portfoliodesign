@@ -14,7 +14,8 @@ export const stackATS = [
   { cat: "Front-end", items: "React - Next.js - Vue.js - TypeScript - Ionic - Tailwind CSS" },
   { cat: "Back-end", items: "Node.js - NestJS - Express - API REST - Prisma" },
   { cat: "Bases de données", items: "MySQL - PostgreSQL - MongoDB - Supabase - Merise" },
-  { cat: "DevOps & Qualité", items: "Docker - Git - CI/CD - Jest - Cypress" },
+  { cat: "DevOps & Cloud", items: "Docker - AWS EC2 - Git - CI/CD" },
+  { cat: "Qualité & IA", items: "Jest - Cypress - Claude Code - Codex" },
   { cat: "Sécurité & Méthodes", items: "JWT - bcrypt - RGPD - OWASP - Agile Scrum - YouTrack" }
 ];
 
@@ -50,7 +51,7 @@ export const experiences = [
     bullets: [
       "Conçu la maquette puis développé des composants front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
       "Développé le back-end **Node.js** avec **Prisma**, **MySQL**, **API REST**, **JWT**, **bcrypt** et gestion des rôles.",
-      "Participé à la conception d'une architecture **multicouche** frontend/backend avec **NestJS**, conteneurisée avec **Docker**.",
+      "Participé à la conception d'une architecture **multicouche** frontend/backend avec **NestJS**, conteneurisée avec **Docker** et déployée sur **AWS EC2**.",
       "Conçu des bases de données avec la méthode **Merise** et ses modèles **MCD, MLD et MPD**, à partir des besoins fonctionnels et techniques.",
       "Écrit des tests **Cypress/Jest**, contribué à la **CI/CD**, à la documentation technique et aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
     ],

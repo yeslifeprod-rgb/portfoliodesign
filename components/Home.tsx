@@ -22,7 +22,7 @@ const Hero = () => {
     <div className="relative">
       {/* SEO — h1 indexable, visuellement masqué car BenhoussHandwriting le remplace */}
       <h1 id="hero-heading" className="sr-only">
-        Benhouss — Développeur Full Stack Web &amp; Mobile, Lille
+        Benhouss — Développeur Node.js/NestJS spécialisé en API REST à Lille
       </h1>
 
       <div className="group/hero relative min-h-screen overflow-hidden bg-background">
@@ -100,7 +100,7 @@ const Hero = () => {
             >
               <Image
                 src="/assets/avatar.png"
-                alt="Benhouss — Développeur Full Stack Lille"
+                alt="Benhouss — Développeur Node.js et NestJS à Lille"
                 width={280}
                 height={280}
                 className="w-44 h-44 sm:w-56 sm:h-56 object-contain"
@@ -122,13 +122,13 @@ const Hero = () => {
           {/* Subtitle — word-by-word stagger */}
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 max-w-md">
             {(language === "fr"
-              ? ["Développeur", "Full Stack", "d'applications web et mobiles"]
+              ? ["Développeur backend", "Node.js & NestJS", "API REST"]
               : ["Full Stack", "Web", "Developer"]
             ).map((word, i) => (
               <BlurFade key={word + i} delay={0.25 + i * 0.07} inView>
                 <span
                   className={`text-base sm:text-lg leading-relaxed ${
-                    word === "Full Stack"
+                    word === "Node.js & NestJS"
                       ? "text-primary font-semibold"
                       : "text-muted-foreground"
                   }`}
@@ -149,8 +149,8 @@ const Hero = () => {
               animateOnHover={false}
             >
               {language === "fr"
-                ? "React · Vue.js · TypeScript · Node.js · Docker"
-                : "React · Vue.js · TypeScript · Node.js · Docker"}
+                ? "Node.js · NestJS · TypeScript · PostgreSQL · Prisma · Docker"
+                : "Node.js · NestJS · REST APIs · Docker · React · Next.js"}
             </HyperText>
           </BlurFade>
 
@@ -158,8 +158,8 @@ const Hero = () => {
           <BlurFade delay={0.65} inView>
             <p className="text-sm sm:text-base text-muted-foreground/60 text-center max-w-sm">
               {language === "fr"
-                ? "Je transforme des idées en applications déployées et utilisées."
-                : "I turn ideas into deployed, production-ready applications."}
+                ? "Je corrige les bugs d’API, sécurise les accès et prépare des déploiements Docker pour des applications SaaS."
+                : "I fix API bugs, secure access and prepare Docker deployments for SaaS applications."}
             </p>
           </BlurFade>
 
@@ -211,7 +211,7 @@ const Hero = () => {
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
                   <span className="relative z-10">
                     {language === "fr"
-                      ? "Découvrir mes projets"
+                      ? "Voir mes projets"
                       : "Explore my work"}
                   </span>
                   <ArrowRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

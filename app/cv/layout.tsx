@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CV — GHARDI ILYES | Concepteur développeur Fullstack",
+  title: "CV — GHARDI ILYES | Technicien Helpdesk",
   description:
-    "CV de Ghardi Ilyes, concepteur développeur fullstack à Lille. Expérience React, TypeScript, Node.js, SQL, Docker, CI/CD, Jest et Cypress. Disponible en CDI.",
+    "CV de Ghardi Ilyes ciblé pour un poste de Technicien Helpdesk à Valenciennes / Onnaing. Support, diagnostic, tests, documentation et environnements techniques.",
   keywords: [
-    "CV concepteur développeur fullstack Lille",
-    "CV React TypeScript Node.js Docker CI/CD",
-    "développeur fullstack CDI industrie",
-    "architecture logicielle frontend backend",
-    "développeur web mobile SaaS Lille",
-    "RNCP Niveau 6 développeur",
+    "CV technicien helpdesk Valenciennes Onnaing",
+    "support informatique diagnostic incidents",
+    "Toyota Valenciennes technicien helpdesk",
+    "déploiement réseau postes téléphonie imprimantes",
   ],
   robots: {
     index: false,
@@ -18,9 +16,9 @@ export const metadata: Metadata = {
     googleBot: { index: false, follow: false },
   },
   openGraph: {
-    title: "CV GHARDI ILYES — Concepteur développeur Fullstack",
+    title: "CV GHARDI ILYES — Technicien Helpdesk",
     description:
-      "CV de Ghardi Ilyes. React, TypeScript, Node.js, Docker, CI/CD, SQL, Cypress et Jest. Disponible en CDI à Lille.",
+      "CV de Ghardi Ilyes ciblé pour le support informatique à Valenciennes / Onnaing.",
     url: "https://www.benhouss.site/cv",
     type: "profile",
   },

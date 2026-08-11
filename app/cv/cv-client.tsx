@@ -1,18 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download, Printer } from "lucide-react";
+import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { A4_H, A4_W, BORDER, GRAD_H, TEXT_DARK, TEXT_MID } from "./components/cv-data";
 import { CVContent } from "./components/cv-content";
 
 export default function CVClient() {
   const [scale, setScale] = useState(1);
-
-  const handleExportPDF = async () => {
-    await new Promise((resolve) => requestAnimationFrame(resolve));
-    window.print();
-  };
 
   useEffect(() => {
     const nav = document.querySelector("nav");
@@ -109,27 +104,16 @@ export default function CVClient() {
       />
 
       <div data-cv-hidden className="absolute right-6 top-6 z-30 flex flex-col items-end gap-1.5">
-        <div className="flex items-center gap-2">
-          <a
-            href="/assets/CV/CV-Ghardi-Ilyes-Concepteur-Developpeur-Fullstack.pdf"
-            download="CV-Ghardi-Ilyes.pdf"
-            className="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 text-[11px] font-semibold text-gray-600 shadow-sm hover:border-blue-400 hover:text-blue-600 transition-colors"
-          >
-            <Download className="w-3.5 h-3.5 mr-1.5" />
-            Télécharger
-          </a>
-          <Button
-            onClick={handleExportPDF}
-            variant="gradient"
-            size="sm"
-            className="rounded-full text-[11px] font-semibold shadow-2xl px-4 py-2"
-          >
-            <Printer className="w-3.5 h-3.5 mr-1.5" />
-            Imprimer / PDF
-          </Button>
-        </div>
+        <a
+          href="/assets/CV/CV-Ghardi-Ilyes-Concepteur-Developpeur-Fullstack.pdf"
+          download="CV-Ghardi-Ilyes.pdf"
+          className="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 text-[11px] font-semibold text-gray-600 shadow-sm hover:border-blue-400 hover:text-blue-600 transition-colors"
+        >
+          <Download className="w-3.5 h-3.5 mr-1.5" />
+          Télécharger
+        </a>
         <p className="text-[10px] text-gray-400 text-right leading-tight max-w-[200px]">
-          Pour les liens cliquables, choisir <span className="font-semibold text-gray-500">« Enregistrer en PDF »</span> dans Chrome (pas le dialogue système)
+          Télécharger le CV au format PDF
         </p>
       </div>
 
@@ -167,10 +151,10 @@ export default function CVClient() {
               Ilyes Ghardi
             </h1>
             <h2 style={{ fontSize: "14px", fontWeight: 800, color: TEXT_DARK, margin: "0 0 4px", letterSpacing: "-0.015em", textTransform: "uppercase" }}>
-              Concepteur développeur Fullstack — React — Node.js
+              Développeur Fullstack — React — Node.js
             </h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "0 0 8px" }}>
-              {["React", "Node.js", "Docker"].map((kw) => (
+              {["React", "TypeScript", "Node.js", "API REST", "Docker", "CI/CD"].map((kw) => (
                 <span key={kw} data-cv-keyword style={{ background: "#eff6ff", color: "#1d4ed8", padding: "2px 8px", borderRadius: "999px", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.03em" }}>
                   {kw}
                 </span>
@@ -179,7 +163,7 @@ export default function CVClient() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: "3px 0", fontSize: "10px", color: TEXT_MID, fontWeight: 400 }}>
               {[
                 { label: "Tél :", text: "07 67 50 72 04", href: "tel:+33767507204" },
-                { label: "Lieu :", text: "Bruay-sur-l’Escaut" },
+                { label: "Lieu :", text: "Valenciennes" },
                 { label: "Email :", text: "ilyesghardi@outlook.com", href: "mailto:ilyesghardi@outlook.com" },
                 { label: "LinkedIn :", text: "linkedin.com/in/ilyes-g-46b0982b8", href: "https://www.linkedin.com/in/ilyes-g-46b0982b8/" },
                 { label: "GitHub :", text: "github.com/yeslifeprod-rgb", href: "https://github.com/yeslifeprod-rgb" },
