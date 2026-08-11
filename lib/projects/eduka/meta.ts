@@ -51,20 +51,6 @@ export function getEdukaMeta(language: string) {
             "Admin dashboard to manage users and events",
             "Automated tests with Cypress and Jest to ensure quality",
           ],
-    metrics:
-      language === "fr"
-        ? [
-            { label: "Microservices NestJS", value: "4" },
-            { label: "Score Lighthouse", value: "95+" },
-            { label: "Tests Cypress + Jest", value: "E2E & Unit" },
-            { label: "Conteneurisation", value: "Docker" },
-          ]
-        : [
-            { label: "NestJS Microservices", value: "4" },
-            { label: "Lighthouse Score", value: "95+" },
-            { label: "Cypress + Jest Tests", value: "E2E & Unit" },
-            { label: "Containerization", value: "Docker" },
-          ],
     businessCase:
       language === "fr"
         ? {

@@ -46,20 +46,6 @@ export function getNum4Project(language: string): Project {
             "Next.js frontend/backend development",
             "Direct collaboration with founder and CTO",
           ],
-    metrics:
-      language === "fr"
-        ? [
-            { label: "Artistes actifs", value: "350+" },
-            { label: "Reversés aux créateurs", value: "€2.5M" },
-            { label: "Morceaux monétisés", value: "15K+" },
-            { label: "Collaboration", value: "CTO direct" },
-          ]
-        : [
-            { label: "Active artists", value: "350+" },
-            { label: "Paid to creators", value: "€2.5M" },
-            { label: "Monetized tracks", value: "15K+" },
-            { label: "Collaboration", value: "Direct CTO" },
-          ],
     businessCase:
       language === "fr"
         ? {
