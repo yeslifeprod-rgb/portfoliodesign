@@ -146,7 +146,7 @@ export default function DeveloppeurFreelanceLillePage() {
 
         <div className="flex gap-4 flex-wrap">
           <Link href="/#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-primary-foreground text-sm"
             style={{ background: "var(--primary)", boxShadow: "0 4px 20px color-mix(in srgb, var(--primary) 30%, transparent)" }}>
             Me contacter
           </Link>

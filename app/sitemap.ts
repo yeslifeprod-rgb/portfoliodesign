@@ -18,6 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/cv`,
+      lastModified: new Date("2026-08-24"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/mentions-legales`,
+      lastModified: new Date("2026-08-24"),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
     // Pages services dédiées par keyword
     {
       url: `${SITE_URL}/services/nextjs-lille`,

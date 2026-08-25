@@ -56,12 +56,12 @@ export function getEdukaMeta(language: string) {
         ? {
             problem: "Professeurs et parents sans outil centralisé pour créer et gérer les activités scolaires et extra-scolaires des enfants",
             role: "Développeur frontend React + mobile Ionic + API REST NestJS + tests E2E (Cypress/Jest)",
-            result: "Application web et mobile complète avec système de rôles, RGPD, API REST et tests automatisés. Titre CDA Bac+4 obtenu.",
+            result: "Application web et mobile complète avec système de rôles, gestion RGPD, API REST et suite de tests automatisés, livrée par une équipe de 4 développeurs en remote.",
           }
         : {
             problem: "Teachers and parents lacking a centralized tool to create and manage children's school and extracurricular activities",
             role: "Frontend React + mobile Ionic developer + NestJS REST API + E2E testing (Cypress/Jest)",
-            result: "Full web and mobile app with role system, GDPR compliance, REST API and automated tests. CDA Bachelor+4 certification earned.",
+            result: "Full web and mobile app with role system, GDPR compliance, REST API and an automated test suite, delivered by a remote team of 4 developers.",
           },
     githubUrls: {
       front: "https://github.com/yeslifeprod-rgb/Eduka-front",

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   IconDeviceMobile, IconBrandApple, IconServer, IconArrowRight, IconCreditCard, IconPlayerPlay, IconDatabase, IconCoins, IconCreditCardPay
 } from "@tabler/icons-react";
@@ -53,11 +53,11 @@ export function IAPBridgeSchema({ language }: { language: string }) {
   };
 
   return (
-    <div className="relative rounded-3xl border border-border bg-background p-8 md:p-12 overflow-hidden mb-12 shadow-sm font-sans">
+    <div className="relative rounded-2xl border border-border bg-background p-8 md:p-12 overflow-hidden mb-12 shadow-sm font-sans">
       
       {/* Title */}
       <div className="mb-12 text-center">
-        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/40 mb-2">
+        <h3 className="text-caption font-black uppercase tracking-[0.2em] text-muted-foreground/40 mb-2">
             {language === "fr" ? "Système d'achat intégré" : "Integrated Purchase System"}
         </h3>
         <p className="text-sm text-muted-foreground font-medium max-w-sm mx-auto leading-relaxed">
@@ -88,8 +88,8 @@ export function IAPBridgeSchema({ language }: { language: string }) {
                 `}>
                     {step.icon}
                 </div>
-                <h6 className="text-[13px] font-bold text-foreground mb-1 tracking-tight">{step.title}</h6>
-                <p className="text-[10px] text-muted-foreground font-semibold uppercase tracking-widest">{step.desc}</p>
+                <h6 className="text-small font-bold text-foreground mb-1 tracking-tight">{step.title}</h6>
+                <p className="text-caption text-muted-foreground font-semibold uppercase tracking-widest">{step.desc}</p>
 
                 {/* Animated Indicator */}
                 <AnimatePresence>
@@ -100,7 +100,7 @@ export function IAPBridgeSchema({ language }: { language: string }) {
                       exit={{ scale: 0, opacity: 0 }}
                       className="absolute top-0 right-3 w-5 h-5 rounded-full bg-primary border-[3px] border-background shadow-lg shadow-primary/40 flex items-center justify-center"
                     >
-                        <div className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                        <div className="w-1 h-1 rounded-full bg-primary-foreground animate-pulse" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -121,20 +121,20 @@ export function IAPBridgeSchema({ language }: { language: string }) {
         <div className="flex items-center gap-8">
             <div className="flex items-center gap-3">
                 <IconCoins size={16} className="text-primary" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">Points System</span>
+                <span className="text-caption font-black uppercase tracking-widest text-muted-foreground/60">Points System</span>
             </div>
             <div className="flex items-center gap-3">
                 <IconCreditCard size={16} className="text-primary" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">Achat Natif</span>
+                <span className="text-caption font-black uppercase tracking-widest text-muted-foreground/60">Achat Natif</span>
             </div>
         </div>
 
         <Button 
             onClick={triggerSimulation}
             disabled={isAnimating}
-            variant="primary"
+            variant="default"
             className={`
-                rounded-full px-12 py-7 h-auto transition-all duration-500 font-bold text-[11px] uppercase tracking-[0.2em] shadow-lg
+                rounded-full px-12 py-7 h-auto transition-all duration-500 font-bold text-caption uppercase tracking-[0.2em] shadow-lg
                 ${isAnimating 
                     ? 'opacity-50 grayscale cursor-not-allowed' 
                     : 'hover:scale-105 active:scale-95 shadow-primary/20'}

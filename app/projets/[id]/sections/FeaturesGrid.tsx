@@ -16,7 +16,7 @@ export function FeaturesGrid({ features, language }: Props) {
           {features.map((feature, i) => (
             <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card border border-border">
               <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-              <p className="text-[12px] text-muted-foreground dark:text-white">{feature}</p>
+              <p className="text-caption text-muted-foreground">{feature}</p>
             </div>
           ))}
         </div>

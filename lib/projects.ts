@@ -2,6 +2,7 @@
 // Each project lives in lib/projects/<name>.ts for easy editing.
 export type { Project } from "./projects/types";
 export {
+  getHomeProjects,
   getAllProjects,
   getProjectById,
   getTeamsFinderProject,

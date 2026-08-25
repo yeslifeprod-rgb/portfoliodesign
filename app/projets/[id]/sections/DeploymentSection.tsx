@@ -25,7 +25,7 @@ export function DeploymentSection({ deployment, language }: Props) {
         <div className="max-w-3xl mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-5">
             <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
+            <span className="text-caption font-semibold uppercase tracking-[0.22em] text-primary">
               Docker & AWS
             </span>
           </div>
@@ -41,7 +41,7 @@ export function DeploymentSection({ deployment, language }: Props) {
             <div key={step.title} className="rounded-2xl border border-border/50 bg-card/40 p-5 shadow-sm">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">
+                  <p className="text-caption font-black uppercase tracking-[0.2em] text-primary mb-2">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   <h4 className="text-base font-bold text-foreground leading-tight">

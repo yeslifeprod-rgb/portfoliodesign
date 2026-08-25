@@ -23,11 +23,11 @@ export function DesignSection({ design, language, onZoom }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
           {design.methods.map((method, i) => (
             <div key={i} className="flex flex-col gap-3">
-              <span className="text-[10px] font-black uppercase tracking-[0.35em] text-primary dark:text-white">
+              <span className="text-caption font-black uppercase tracking-[0.2em] text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h4 className="text-base font-black text-foreground">{method.name}</h4>
-              <p className="text-[13px] text-muted-foreground dark:text-white leading-relaxed">{method.description}</p>
+              <p className="text-small text-muted-foreground leading-relaxed">{method.description}</p>
               {method.image && (
                 <div
                   className="relative aspect-video rounded-2xl overflow-hidden shadow-sm border border-border/40 mt-4"

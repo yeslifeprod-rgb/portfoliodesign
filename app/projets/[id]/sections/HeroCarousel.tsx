@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 interface Props {
@@ -75,7 +75,7 @@ export function HeroCarousel({ images, onZoom }: Props) {
             >
               <IconChevronRight size={14} className="text-foreground" />
             </button>
-            <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-[10px] font-black tracking-widest pointer-events-none">
+            <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-caption font-black tracking-widest pointer-events-none">
               {index + 1} / {images.length}
             </span>
           </>

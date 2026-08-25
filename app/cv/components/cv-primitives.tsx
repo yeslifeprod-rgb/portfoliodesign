@@ -52,6 +52,5 @@ export function formatText(text: string) {
   });
 }
 
-export const ACCENT_TEXT: React.CSSProperties = { color: BLUE_2 };
 export { GRAD_H };
 

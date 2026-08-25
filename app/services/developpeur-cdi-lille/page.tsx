@@ -141,7 +141,7 @@ export default function DeveloppeurCDILillePage() {
 
           <div className="flex gap-3 flex-wrap">
             <Link href="/#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-primary-foreground text-sm transition-all"
               style={{
                 background: "var(--primary)",
                 boxShadow: "0 4px 20px color-mix(in srgb, var(--primary) 35%, transparent)",
@@ -282,7 +282,7 @@ export default function DeveloppeurCDILillePage() {
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <Link href="/#contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-primary-foreground"
               style={{
                 background: "var(--primary)",
                 boxShadow: "0 4px 20px color-mix(in srgb, var(--primary) 35%, transparent)",

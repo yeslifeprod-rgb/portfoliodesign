@@ -17,7 +17,7 @@ export function MetricsGrid({ metrics, language }: Props) {
           {metrics.map(m => (
             <div key={m.label} className="p-6 rounded-2xl bg-card border border-border flex flex-col gap-2">
               <span className="text-3xl font-black tracking-tighter text-foreground">{m.value}</span>
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">{m.label}</span>
+              <span className="text-caption font-black uppercase tracking-[0.2em] text-muted-foreground">{m.label}</span>
             </div>
           ))}
         </div>

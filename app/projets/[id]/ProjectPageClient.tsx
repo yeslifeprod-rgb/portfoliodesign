@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ import { ProjectSnippetList } from "./ProjectSnippet";
 import {
   HeroCarousel,
   QuoteSection,
+  StorySection,
   BusinessCaseSection,
   MetricsGrid,
   ArchitectureSection,
@@ -33,7 +34,8 @@ export default function ProjectPageClient({ id }: Props) {
   const project = getProjectById(id, language);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [githubChoiceOpen, setGithubChoiceOpen] = useState(false);
-  const projectGradient = "linear-gradient(148deg, #0b05e7 0%, #1d4ed8 40%, #4bdfff 100%)";
+  // Accent plein du thème : --brand-accent n'existe plus dans globals.css.
+  const projectGradient = "var(--primary)";
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -69,7 +71,7 @@ export default function ProjectPageClient({ id }: Props) {
       <nav className="fixed top-8 left-8 z-50">
         <Link
           href="/#projets"
-          className="group relative overflow-hidden flex items-center gap-2.5 px-4 py-2 rounded-full text-white text-[10px] font-black uppercase tracking-widest shadow-[0_4px_16px_rgba(11,5,231,0.3)] hover:shadow-[0_6px_24px_rgba(75,223,255,0.4)] transition-all duration-300"
+          className="group relative overflow-hidden flex items-center gap-2.5 px-4 py-2 rounded-full text-primary-foreground text-caption font-black uppercase tracking-widest shadow-md hover:shadow-lg transition-all duration-300"
           style={{ background: projectGradient }}
         >
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
@@ -99,7 +101,7 @@ export default function ProjectPageClient({ id }: Props) {
                 alt="Zoomed"
                 width={1600}
                 height={900}
-                className="rounded-lg object-contain shadow-2xl"
+                className="rounded-lg object-contain shadow-xl"
               />
             </motion.div>
           </motion.div>
@@ -115,7 +117,7 @@ export default function ProjectPageClient({ id }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground mb-4">
+            <p className="text-caption font-black uppercase tracking-[0.2em] text-muted-foreground mb-4">
               {project.designation}
             </p>
             <h1 className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12 text-foreground">
@@ -130,7 +132,7 @@ export default function ProjectPageClient({ id }: Props) {
                     <Badge
                       key={tech}
                       variant="secondary"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-[11px] font-bold tracking-tight"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-caption font-bold tracking-tight"
                     >
                       {icon && <icon.Icon size={13} style={{ color: icon.color }} />}
                       {tech}
@@ -149,6 +151,10 @@ export default function ProjectPageClient({ id }: Props) {
 
         {/* ── Content sections ── */}
         {project.quote && <QuoteSection quote={project.quote} />}
+
+        {project.story && (
+          <StorySection story={project.story} language={language} />
+        )}
 
         {project.businessCase && (
           <BusinessCaseSection businessCase={project.businessCase} language={language} />
@@ -178,7 +184,7 @@ export default function ProjectPageClient({ id }: Props) {
         {project.codeSnippets && project.codeSnippets.length > 0 && (
           <div className="mb-32">
             <div className="flex items-center gap-8 mb-12">
-              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-foreground">
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-foreground">
                 {language === "fr" ? "Implémentation technique" : "Technical Implementation"}
               </h2>
               <div className="flex-1 h-[1px] bg-border" />
@@ -192,9 +198,9 @@ export default function ProjectPageClient({ id }: Props) {
                       <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`group relative overflow-hidden rounded-full text-[10px] font-black uppercase tracking-widest px-6 py-2 whitespace-nowrap transition-all duration-300 ${
+                        className={`group relative overflow-hidden rounded-full text-caption font-black uppercase tracking-widest px-6 py-2 whitespace-nowrap transition-all duration-300 ${
                           activeTab === tab.id
-                            ? "text-white shadow-[0_4px_16px_rgba(4,3,231,0.3)]"
+                            ? "text-primary-foreground shadow-md"
                             : "text-muted-foreground hover:text-foreground"
                         }`}
                         style={activeTab === tab.id ? { background: projectGradient } : {}}
@@ -257,8 +263,8 @@ export default function ProjectPageClient({ id }: Props) {
                 <span className="text-sm font-medium">{language === "fr" ? "Voir sur GitHub" : "View on GitHub"}</span>
               </button>
               {githubChoiceOpen && (
-                <div className="absolute left-1/2 top-full z-20 mt-3 w-[340px] -translate-x-1/2 rounded-2xl border border-border bg-background p-3 shadow-2xl">
-                  <p className="px-1 pb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                <div className="absolute left-1/2 top-full z-20 mt-3 w-[340px] -translate-x-1/2 rounded-2xl border border-border bg-background p-3 shadow-xl">
+                  <p className="px-1 pb-3 text-caption font-semibold uppercase tracking-[0.28em] text-muted-foreground">
                     {language === "fr" ? "Choisir le dépôt" : "Choose repository"}
                   </p>
                   <div className="grid grid-cols-1 gap-2">

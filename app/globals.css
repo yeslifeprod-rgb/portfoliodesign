@@ -155,3 +155,65 @@
     animation: pulse-slow 4s ease-in-out infinite;
   }
 }
+
+/* ============================================================
+   COMPLÉMENTS
+   Ajouts uniquement — aucune valeur de la palette ci-dessus
+   n'est modifiée. Ce bloc fournit ce que les composants
+   consomment et que le thème généré ne déclare pas.
+   ============================================================ */
+@layer base {
+  :root {
+    /* Bouton « disponible » du hero et messages de succès du formulaire. */
+    --success: #16a34a;
+
+    /* Récupéré via `git show HEAD:app/globals.css.bak` — le dégradé
+       --gradient-btn de la version précédente du portfolio. Réservé au
+       mot mis en avant dans le titre. */
+    --gradient-blue: linear-gradient(
+      130deg,
+      #0b05e7 2%,
+      #1d4ed8 40%,
+      #4bdfff 100%
+    );
+  }
+
+  .dark {
+    --success: #22c55e;
+    --gradient-blue: linear-gradient(
+      120deg,
+      #0b05e7 2%,
+      #38bdf8 50%,
+      #4bdfff 100%
+    );
+  }
+}
+
+@layer components {
+  /* Filet de séparation entre les sections. */
+  .rule {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--border) 20%,
+      var(--border) 80%,
+      transparent
+    );
+  }
+}
+
+@layer base {
+  /* Coupe les animations CSS pour qui a demandé moins de mouvement.
+     Le pendant JavaScript est géré par `useReducedMotion` dans
+     components/ui/section.tsx. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

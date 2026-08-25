@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { IconMaximize, IconCheck, IconCopy } from "@tabler/icons-react";
@@ -79,7 +79,7 @@ function SnippetDetail({ snippet, onZoom, language }: {
           <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-sm">
               <IconMaximize size={12} className="text-muted-foreground" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+              <span className="text-caption font-black uppercase tracking-widest text-muted-foreground">
                 {language === "fr" ? "Agrandir" : "Expand"}
               </span>
             </div>
@@ -95,7 +95,7 @@ function SnippetDetail({ snippet, onZoom, language }: {
             <div
               className="text-[15px] text-foreground leading-[2]
                 [&>strong]:block [&>strong]:font-black [&>strong]:text-foreground
-                [&>strong]:text-[11px] [&>strong]:uppercase [&>strong]:tracking-[0.2em]
+                [&>strong]:text-caption [&>strong]:uppercase [&>strong]:tracking-[0.2em]
                 [&>strong]:mt-6 [&>strong]:mb-1 first:[&>strong]:mt-0
                 [&>em]:not-italic [&>em]:font-semibold [&>em]:text-foreground"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -105,7 +105,7 @@ function SnippetDetail({ snippet, onZoom, language }: {
             /* ── Bloc code ── */
             <>
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-muted-foreground/40">
+              <span className="text-caption font-black uppercase tracking-[0.2em] text-muted-foreground/40">
                 {language === "fr" ? "Code source" : "Source code"}
               </span>
               <button
@@ -116,7 +116,7 @@ function SnippetDetail({ snippet, onZoom, language }: {
                   ? <IconCheck size={10} className="text-primary" />
                   : <IconCopy size={10} className="text-muted-foreground group-hover:text-foreground transition-colors" />
                 }
-                <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
+                <span className="text-caption font-black uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
                   {copied
                     ? (language === "fr" ? "Copié !" : "Copied!")
                     : (language === "fr" ? "Copier" : "Copy")}
@@ -174,7 +174,7 @@ export function ProjectSnippetList({ snippets, onZoom, language }: SnippetsListP
       <div className="w-[240px] shrink-0 border-r border-border bg-muted/20 overflow-y-auto">
         {/* Header */}
         <div className="px-5 py-4 border-b border-border">
-          <p className="text-[9px] font-black uppercase tracking-[0.3em] text-muted-foreground/50">
+          <p className="text-caption font-black uppercase tracking-[0.2em] text-muted-foreground/50">
             {language === "fr" ? "Sections" : "Sections"}
           </p>
         </div>
@@ -194,18 +194,18 @@ export function ProjectSnippetList({ snippets, onZoom, language }: SnippetsListP
           >
             <span className={`
               flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center
-              text-[9px] font-black tabular-nums transition-all duration-200
+              text-caption font-black tabular-nums transition-all duration-200
               ${activeIndex === i
-                ? "bg-primary-foreground text-primary dark:bg-white"
+                ? "bg-primary-foreground text-primary"
                 : "bg-border text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
               }
             `}>
               {i + 1}
             </span>
             <span className={`
-              text-[11px] font-semibold leading-snug transition-colors duration-200 whitespace-normal
+              text-caption font-semibold leading-snug transition-colors duration-200 whitespace-normal
               ${activeIndex === i
-                ? "text-primary-foreground dark:text-white"
+                ? "text-primary-foreground"
                 : "text-muted-foreground group-hover:text-foreground"
               }
             `}>

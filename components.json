@@ -4,7 +4,7 @@
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
+    "config": "tailwind.config.js",
     "css": "app/globals.css",
     "baseColor": "slate",
     "cssVariables": true,
@@ -20,6 +20,7 @@
   },
   "registries": {
     "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
-    "@magicui": "https://magicui.design/r/{name}"
+    "@magicui": "https://magicui.design/r/{name}",
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
   }
 }

@@ -10,7 +10,7 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #020817 0%, #0a1326 50%, #020817 100%)",
+          background: "linear-gradient(135deg, #0a0a0a 0%, #18181b 50%, #0a0a0a 100%)",
           width: 1200,
           height: 630,
           display: "flex",
@@ -32,7 +32,7 @@ export default function OGImage() {
             height: 480,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(29,78,216,0.28) 0%, rgba(13,162,231,0.10) 55%, transparent 100%)",
+              "radial-gradient(circle, rgba(251,44,54,0.26) 0%, rgba(251,44,54,0.08) 55%, transparent 100%)",
           }}
         />
         {/* Background orb bottom-left */}
@@ -45,7 +45,7 @@ export default function OGImage() {
             height: 380,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(29,78,216,0.08) 55%, transparent 100%)",
+              "radial-gradient(circle, rgba(251,44,54,0.18) 0%, rgba(251,44,54,0.06) 55%, transparent 100%)",
           }}
         />
 
@@ -55,8 +55,8 @@ export default function OGImage() {
             display: "flex",
             alignItems: "center",
             gap: 8,
-            background: "rgba(59,130,246,0.12)",
-            border: "1px solid rgba(59,130,246,0.25)",
+            background: "rgba(251,44,54,0.12)",
+            border: "1px solid rgba(251,44,54,0.28)",
             borderRadius: 999,
             padding: "8px 20px",
             marginBottom: 32,
@@ -67,14 +67,14 @@ export default function OGImage() {
               width: 8,
               height: 8,
               borderRadius: "50%",
-              background: "#0da2e7",
+              background: "#fb2c36",
             }}
           />
           <span
             style={{
               fontSize: 18,
               fontWeight: 600,
-              color: "rgba(148,163,184,0.9)",
+              color: "rgba(163,163,175,0.9)",
               letterSpacing: "0.05em",
             }}
           >
@@ -87,7 +87,7 @@ export default function OGImage() {
           style={{
             fontSize: 88,
             fontWeight: 900,
-            color: "#f8fafc",
+            color: "#fafafa",
             lineHeight: 1,
             letterSpacing: "-0.03em",
             marginBottom: 16,
@@ -101,7 +101,7 @@ export default function OGImage() {
           style={{
             fontSize: 30,
             fontWeight: 600,
-            color: "rgba(148,163,184,0.85)",
+            color: "rgba(163,163,175,0.85)",
             marginBottom: 44,
             letterSpacing: "-0.01em",
           }}
@@ -116,13 +116,13 @@ export default function OGImage() {
               <div
                 key={tech}
                 style={{
-                  background: "rgba(30,41,59,0.9)",
-                  border: "1px solid rgba(30,41,59,1)",
+                  background: "rgba(24,24,27,0.95)",
+                  border: "1px solid #404040",
                   borderRadius: 8,
                   padding: "10px 22px",
                   fontSize: 20,
                   fontWeight: 600,
-                  color: "#94a3b8",
+                  color: "#a3a3af",
                 }}
               >
                 {tech}
@@ -140,7 +140,7 @@ export default function OGImage() {
             right: 0,
             height: 4,
             background:
-              "linear-gradient(90deg, #1d4ed8 0%, #3b82f6 40%, #0da2e7 70%, #3b82f6 100%)",
+              "linear-gradient(90deg, #fb2c36 0%, #fb2c36 60%, rgba(251,44,54,0.35) 100%)",
           }}
         />
 
@@ -152,7 +152,7 @@ export default function OGImage() {
             right: 88,
             fontSize: 18,
             fontWeight: 500,
-            color: "rgba(148,163,184,0.45)",
+            color: "rgba(163,163,175,0.45)",
             letterSpacing: "0.04em",
           }}
         >

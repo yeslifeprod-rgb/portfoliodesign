@@ -13,6 +13,13 @@ export function getNum4Project(language: string): Project {
         ? "Startup musicale — Plaine Images, Roubaix"
         : "Music startup — Plaine Images, Lille",
     srcs: ["/assets/num4/num4.gif"],
+    video: "/assets/num4/num4.mp4",
+    testimonial: {
+      quote:
+        "T'as bien fait avancer le projet. T'as fait du très bon taf. Et si t'as besoin d'une reco n'hésite pas.",
+      name: "Mathis",
+      role: "CTO / Co-fondateur, Num4",
+    },
     gallery: ["/assets/num4/num4.gif"],
     liveUrl: "https://num4-lp.vercel.app/",
     stack: [
@@ -53,14 +60,14 @@ export function getNum4Project(language: string): Project {
               "Refonte complète de la landing page d'une startup musicale et intégration des paiements sur application mobile iOS.",
             role: "Refonte UX/UI, développement Next.js, intégration des paiements iOS (RevenueCat) et tests sur Xcode.",
             result:
-              "Plateforme utilisée par 350+ artistes actifs, €2.5M reversés aux créateurs, 15 000+ morceaux monétisés.",
+              "Landing page d'acquisition, développement Next.js et intégration du paiement iOS.",
           }
         : {
             problem:
               "Complete redesign of a music startup's landing page and integration of payments on iOS mobile application.",
             role: "UX/UI redesign, Next.js development, iOS payment integration (RevenueCat) and Xcode testing.",
             result:
-              "Platform used by 350+ active artists, €2.5M paid to creators, 15K+ monetized tracks.",
+              "Acquisition landing page, Next.js development and iOS payment integration.",
           },
     architecture:
       language === "fr"

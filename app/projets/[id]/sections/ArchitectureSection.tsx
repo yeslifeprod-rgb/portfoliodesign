@@ -31,7 +31,7 @@ export function ArchitectureSection({ architecture, language, onZoom }: Props) {
 
         {architecture.image && (
           <div
-            className="relative aspect-video rounded-3xl overflow-hidden bg-card border border-border cursor-zoom-in group mb-12"
+            className="relative aspect-video rounded-2xl overflow-hidden bg-card border border-border cursor-zoom-in group mb-12"
             onClick={() => onZoom(architecture.image!)}
           >
             <Image
@@ -47,10 +47,10 @@ export function ArchitectureSection({ architecture, language, onZoom }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {architecture.points.map((point, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
-                <span className="w-5 h-5 rounded-full bg-primary text-white flex-shrink-0 flex items-center justify-center text-[10px] font-black">
+                <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex-shrink-0 flex items-center justify-center text-caption font-black">
                   {i + 1}
                 </span>
-                <p className="text-[12px] text-muted-foreground dark:text-white leading-relaxed">{point}</p>
+                <p className="text-caption text-muted-foreground leading-relaxed">{point}</p>
               </div>
             ))}
           </div>

@@ -1,38 +1,46 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { LangProvider } from "@/context/LangContext";
-import Navbar from "@/components/Navbar";
-import HtmlLangUpdater from "@/components/HtmlLangUpdater";
-import { KonamiEasterEgg } from "@/components/KonamiEasterEgg";
-import { Inter, Roboto, Azeret_Mono, DM_Sans } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
+import HtmlLangUpdater from "@/components/layout/HtmlLangUpdater";
+import { KonamiEasterEgg } from "@/components/layout/KonamiEasterEgg";
+import {
+  DM_Sans,
+  Inter,
+  JetBrains_Mono,
+  Noto_Serif_Georgian,
+} from "next/font/google";
+import { faqItems } from "@/lib/content/faq";
+// Mesure d'audience sans cookie : aucune bannière de consentement requise.
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// Polices alignées sur les déclarations de app/globals.css.
+// Auparavant next/font chargeait Poppins / Instrument Serif / Azeret Mono
+// et écrasait --font-sans / --font-serif / --font-mono sur <body>,
+// rendant les valeurs du thème inopérantes.
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-sans",
 });
 
+// Police d'affichage déclarée par app/globals.css (--font-display).
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-display",
 });
 
-const roboto = Roboto({
+const notoSerifGeorgian = Noto_Serif_Georgian({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-serif",
 });
 
-const azeretMono = Azeret_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
   variable: "--font-mono",
 });
@@ -43,94 +51,22 @@ const SITE_NAME = "Benhouss";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
     title: {
-    default: "Benhouss — Développeur Node.js, NestJS & Full Stack à Lille",
+    default: "Développeur full stack web & mobile à Lille — Benhouss",
     template: "%s",
   },
   description:
-    "Benhouss — Concepteur Développeur d'Applications Full Stack basé à Lille. APIs Node.js/NestJS, applications React/Next.js, bases de données, Docker et déploiement en production. Freelance & CDI — Lille ou remote.",
+    "Je développe les fonctionnalités qui bloquent votre application web ou mobile. React, Next.js, NestJS, Ionic. Premier échange gratuit, réponse sous 24 h.",
+  // Google ignore cette balise depuis 2009. Conservée en version courte
+  // pour les moteurs qui la lisent encore (Bing, Qwant), sans accumulation.
   keywords: [
-    // ── Identité & localisation ──
-    "développeur Lille",
-    "développeur full stack lille",
-    "développeur Node.js Lille",
-    "développeur NestJS Lille",
-    "développeur backend Lille",
-    "développeur API REST Lille",
-    "développeur Docker Lille",
-    "développeur web lille",
-    "développeur freelance lille",
-    "développeur full stack freelance",
-    "développeur CDI Lille",
-    "développeur full stack CDI Lille",
-    "recruter développeur Lille",
-    "développeur disponible CDI Hauts-de-France",
-    "développeur web freelance Lille",
-    "applications web et mobile Lille",
-    "RNCP niveau 6 développeur",
-    "concepteur développeur d'applications",
-    "concepteur développeur d'applications Lille",
-    // ── Grandes villes — freelance remote ──
-    "développeur freelance Paris",
-    "développeur freelance Lyon",
-    "développeur freelance Marseille",
-    "développeur freelance Toulouse",
-    "développeur freelance Bordeaux",
-    "développeur freelance Nantes",
-    "développeur freelance Strasbourg",
-    "développeur freelance Montpellier",
-    "développeur freelance Nice",
-    "développeur freelance Rennes",
-    "développeur freelance Grenoble",
-    "développeur freelance Toulon",
-    "développeur freelance Dijon",
-    "développeur freelance Reims",
-    "développeur freelance Rouen",
-    "développeur freelance Nancy",
-    "développeur remote France",
-    "développeur full stack remote France",
-    "développeur next.js remote France",
-    "développeur freelance remote France",
-    // ── Frontend ──
-    "développeur react lille",
-    "développeur react",
-    "développeur next.js",
-    "développeur next.js lille",
-    "développeur typescript",
-    "développeur TypeScript Lille",
-    "développeur tailwind css",
-    "développeur Ionic",
-    "développeur Ionic Lille",
-    "développeur mobile Lille",
-    "développeur application mobile",
-    "développeur front end Lille",
-    "développeur frontend Lille",
-    "développeur vue.js",
-    "développeur nuxt",
-    "développeur shadcn/ui",
-    // ── Backend & BDD ──
+    "développeur full stack Lille",
+    "développeur freelance Lille",
+    "développeur React Next.js",
     "développeur NestJS",
-    "développeur NestJS Lille",
-    "développeur node.js",
-    "développeur node.js Lille",
-    "développeur prisma",
-    "développeur mysql",
-    "développeur mongodb",
-    "développeur supabase",
-    "intégration stripe développeur",
-    "développeur backend Lille",
-    // ── DevOps & Outils ──
-    "développeur docker",
-    "déploiement vercel",
-    "tests jest cypress développeur",
-    "développeur git github",
-    // ── Design & Gestion ──
-    "intégration figma développeur",
-    "méthode agile scrum développeur",
-    // ── Noms bruts (recherches directes) ──
-    "react", "next.js", "nestjs", "ionic", "nuxt.js", "vue.js",
-    "node.js", "typescript", "tailwind css", "prisma",
-    "mysql", "mongodb", "supabase", "stripe", "docker",
-    "vercel", "jest", "cypress", "figma", "shadcn/ui",
+    "développeur application mobile Ionic",
+    "développeur web remote France",
+    "création application web sur mesure",
+    "développeur API REST",
   ],
   authors: [{ name: "Benhouss", url: SITE_URL }],
   creator: "Benhouss",
@@ -147,9 +83,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
+    title: "Développeur full stack web & mobile à Lille — Benhouss",
     description:
-      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, React, Next.js, Docker et bases de données. Freelance & CDI.",
+      "Je développe les fonctionnalités qui bloquent votre application. React, Next.js, NestJS, Ionic. Premier échange gratuit.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "fr_FR",
@@ -158,9 +94,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benhouss — Développeur Node.js, NestJS & Full Stack Lille",
+    title: "Développeur full stack web & mobile à Lille — Benhouss",
     description:
-      "Développeur Full Stack à Lille. Node.js, NestJS, APIs REST, Docker, React et Next.js. RNCP Niv. 6. Freelance & CDI.",
+      "Je développe les fonctionnalités qui bloquent votre application. Premier échange gratuit.",
     // Pas d'images statiques — l'OG est générée par opengraph-image.tsx
   },
   alternates: {
@@ -180,15 +116,21 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
-        <script
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`,
+            // Choix explicite s'il existe, sinon la préférence système.
+            // Avant : tout visiteur arrivait en clair, même en mode sombre OS,
+            // alors que <meta name="theme-color"> annonçait l'inverse.
+            __html: `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})()`,
           }}
         />
         {/* JSON-LD: @graph — Person, LocalBusiness, WebSite, FAQPage */}
-        <script
+        <Script
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -198,9 +140,9 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://www.benhouss.site/#person",
                   name: "Benhouss",
-                  jobTitle: "Développeur Node.js, NestJS et Full Stack",
+                  jobTitle: "Développeur Full Stack React, Vue, Next.js et Node.js/NestJS",
                   description:
-                    "Concepteur Développeur d'Applications Full Stack basé à Lille (RNCP Niveau 6). Je conçois des APIs Node.js/NestJS, des applications React/Next.js et des environnements Docker déployés en production.",
+                    "Concepteur Développeur d'Applications full stack basé à Lille (RNCP Niveau 6). Je conçois des interfaces React/Vue/Next.js, des APIs Node.js/NestJS et des environnements Docker.",
                   url: "https://www.benhouss.site",
                   image: "https://www.benhouss.site/assets/avatar.png",
                   sameAs: [
@@ -221,9 +163,8 @@ export default function RootLayout({
                     credentialCategory: "degree",
                   },
                   knowsAbout: [
-                    "React", "Next.js", "TypeScript", "Tailwind CSS",
-                    "Ionic", "shadcn/ui", "Vue.js", "Nuxt.js",
-                    "Node.js", "NestJS", "Prisma", "MySQL",
+                    "React", "Vue.js", "Next.js", "TypeScript", "Node.js", "NestJS",
+                    "Prisma", "PostgreSQL", "MySQL", "Docker", "REST API",
                     "MongoDB", "Supabase", "Stripe",
                     "Git", "Vercel", "Docker", "Jest", "Cypress",
                     "Figma", "Excalidraw", "Agile Scrum", "Microservices", "REST API",
@@ -251,7 +192,7 @@ export default function RootLayout({
                   founder: { "@id": "https://www.benhouss.site/#person" },
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
-                    name: "Services de développement web & mobile",
+                    name: "Services de développement full stack web & mobile",
                     itemListElement: [
                       { "@type": "Offer", name: "Développement Next.js à Lille", areaServed: "Lille" },
                       { "@type": "Offer", name: "Développement NestJS — APIs REST & Microservices" },
@@ -267,15 +208,30 @@ export default function RootLayout({
                   name: "Benhouss — Développeur Full Stack Lille",
                   url: "https://www.benhouss.site",
                   inLanguage: "fr-FR",
-                  description: "Portfolio de Benhouss, développeur Node.js, NestJS et Full Stack à Lille. APIs REST, Docker, bases de données et applications web/mobile.",
+                  description: "Portfolio de Benhouss, développeur full stack React, Vue, Next.js et Node.js/NestJS à Lille. API REST, Docker et applications web/mobile.",
                   author: { "@id": "https://www.benhouss.site/#person" },
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://www.benhouss.site/#faq",
+                  // Généré depuis lib/faq.ts, la même source que la FAQ affichée.
+                  mainEntity: faqItems.map((item) => ({
+                    "@type": "Question",
+                    name: item.question,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: item.answer,
+                    },
+                  })),
                 },
               ],
             }),
           }}
         />
       </head>
-      <body className={`${inter.variable} ${roboto.variable} ${azeretMono.variable} ${dmSans.variable} ${inter.className}`}>
+      <body
+        className={`${inter.variable} ${notoSerifGeorgian.variable} ${dmSans.variable} ${jetBrainsMono.variable} font-sans`}
+      >
         <LangProvider>
           <HtmlLangUpdater />
           <a
@@ -287,6 +243,8 @@ export default function RootLayout({
           <KonamiEasterEgg />
           <Navbar />
           {children}
+          <Analytics />
+          <SpeedInsights />
         </LangProvider>
       </body>
     </html>

@@ -11,14 +11,35 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        // Auparavant : serif -> var(--font-sans).
+        // Tous les `font-serif` du site rendaient donc du Poppins.
         serif: ["var(--font-serif)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
+
+      /* ── Échelle typographique ──────────────────────────────
+         Remplace les text-[9px] / [10px] / [1.65rem] arbitraires.
+         Plancher de lisibilité : 12px.                        */
+      fontSize: {
+        eyebrow: ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.12em", fontWeight: "600" }],
+        caption: ["0.75rem", { lineHeight: "1.125rem" }],
+        small: ["0.875rem", { lineHeight: "1.375rem" }],
+        body: ["1rem", { lineHeight: "1.65" }],
+        lead: ["1.0625rem", { lineHeight: "1.7" }],
+        h3: ["1.125rem", { lineHeight: "1.4", letterSpacing: "-0.015em", fontWeight: "600" }],
+        h2: ["clamp(1.5rem, 3.2vw, 2rem)", { lineHeight: "1.2", letterSpacing: "-0.025em", fontWeight: "600" }],
+        h1: ["clamp(2rem, 5.5vw, 3.25rem)", { lineHeight: "1.06", letterSpacing: "-0.035em", fontWeight: "600" }],
+        stat: ["clamp(1.75rem, 4vw, 2.25rem)", { lineHeight: "1", letterSpacing: "-0.03em", fontWeight: "600" }],
+      },
+
       colors: {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        success: "var(--success)",
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
@@ -48,64 +69,49 @@ module.exports = {
           foreground: "var(--card-foreground)",
         },
       },
+
+      /* Tout dérive de --radius. Plus de rounded-3xl à côté de rounded-md. */
       borderRadius: {
+        sm: "calc(var(--radius) - 6px)",
+        md: "calc(var(--radius) - 3px)",
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 10px)",
       },
+
+      boxShadow: {
+        xs: "var(--shadow-xs)",
+        sm: "var(--shadow-sm)",
+        DEFAULT: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-xl)",
+      },
+
+      /* Largeur de contenu unique. 42rem = le max-w-2xl du portfolio de
+         référence : c'est cette contrainte qui rend les sections discrètes,
+         pas la taille des titres. */
+      maxWidth: {
+        content: "42rem",
+      },
+
       animation: {
-        aurora: "aurora 60s linear infinite",
-        orbit: "orbit calc(var(--duration)*1s) linear infinite",
-        "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
-        "spin-around": "spin-around calc(var(--speed)*2) infinite linear",
         marquee: "marquee var(--duration) infinite linear",
-        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
-        ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
-        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
-        meteor: "meteor var(--duration, 6s) var(--delay, 0s) linear infinite",
+        "pulse-dot": "pulse-dot 2.4s ease-in-out infinite",
+        "pulse-ring": "pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
-        aurora: {
-          from: { backgroundPosition: "50% 50%, 50% 50%" },
-          to: { backgroundPosition: "350% 50%, 350% 50%" },
-        },
-        orbit: {
-          "0%": {
-            transform: "rotate(calc(var(--angle)*1deg)) translateY(calc(var(--radius)*1px)) rotate(calc(var(--angle)*-1deg))",
-          },
-          "100%": {
-            transform: "rotate(calc(var(--angle)*1deg + 360deg)) translateY(calc(var(--radius)*1px)) rotate(calc((var(--angle)*-1deg) - 360deg))",
-          },
-        },
-        "shimmer-slide": {
-          to: { transform: "translate(calc(100cqw - 100%), 0)" },
-        },
-        "spin-around": {
-          "0%": { transform: "translateZ(0) rotate(0)" },
-          "15%, 35%": { transform: "translateZ(0) rotate(90deg)" },
-          "65%, 85%": { transform: "translateZ(0) rotate(270deg)" },
-          "100%": { transform: "translateZ(0) rotate(360deg)" },
-        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
         },
-        "marquee-vertical": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        "pulse-dot": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.45", transform: "scale(0.85)" },
         },
-        ripple: {
-          "0%, 100%": { transform: "translate(-50%, -50%) scale(1)" },
-          "50%": { transform: "translate(-50%, -50%) scale(0.9)" },
-        },
-        "pulse-slow": {
-          "0%, 100%": { opacity: "0.15", transform: "scale(1)" },
-          "50%": { opacity: "0.25", transform: "scale(1.05)" },
-        },
-        meteor: {
-          "0%": { transform: "rotate(var(--angle)) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": { transform: "rotate(var(--angle)) translateX(-500px)", opacity: "0" },
+        "pulse-ring": {
+          "0%": { transform: "scale(1)", opacity: "0.55" },
+          "70%, 100%": { transform: "scale(1.9)", opacity: "0" },
         },
       },
     },

@@ -13,6 +13,7 @@ export function getTeamsFinderProject(language: string): Project {
         ? "Projet personnel — Plateforme de matchmaking gaming"
         : "Personal project — Gaming matchmaking platform",
     srcs: ["/assets/teamsfinder/teamsfinder.gif"],
+    video: "/assets/teamsfinder/teamsfinder.mp4",
     stack: ["React", "Next.js", "TypeScript", "Tailwind", "Supabase", "Ionic", "Stripe"],
     gallery: [
       "/assets/teamsfinder/teamsfinder.gif",

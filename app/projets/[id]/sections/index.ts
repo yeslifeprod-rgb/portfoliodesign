@@ -1,5 +1,6 @@
 export { HeroCarousel }        from "./HeroCarousel";
 export { QuoteSection }        from "./QuoteSection";
+export { StorySection }        from "./StorySection";
 export { BusinessCaseSection } from "./BusinessCase";
 export { MetricsGrid }         from "./MetricsGrid";
 export { ArchitectureSection } from "./ArchitectureSection";
