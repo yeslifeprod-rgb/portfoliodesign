@@ -37,9 +37,9 @@ export const experiences = [
     companyLink: "https://num4-lp.vercel.app",
     type: "",
     bullets: [
-      "Développé et optimisé une interface **Next.js**, avec un **score Lighthouse supérieur à 80**, pour améliorer l'acquisition.",
-      "Échangé directement avec le **CEO/CTO** pour définir les priorités produit et les choix d'interface.",
-      "Intégré **RevenueCat** et testé les achats in-app avec **Xcode** pour les abonnements iOS.",
+      "Concevoir le wireframe et la maquette, puis refondre et développer la landing page avec **Next.js** en l’optimisant pour la performance, le référencement et la présentation du produit.",
+      "Échanger directement avec le **CEO/CTO** pour définir les priorités produit et les choix d'interface.",
+      "Intégrer **RevenueCat** et tester les achats in-app avec **Xcode** pour les abonnements iOS.",
     ],
   },
   {
@@ -49,11 +49,11 @@ export const experiences = [
       "EDUKA — App web/mobile de gestion d’activités pour enfants (sorties scolaires, extra-scolaires, cours privés). Équipe de 4 développeurs fullstack, travail à distance.",
     type: "",
     bullets: [
-      "Conçu la maquette puis développé des composants front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
-      "Développé le back-end **Node.js** avec **Prisma**, **MySQL**, **API REST**, **JWT**, **bcrypt** et gestion des rôles.",
-      "Participé à la conception d'une architecture **multicouche** frontend/backend avec **NestJS**, conteneurisée avec **Docker** et déployée sur **AWS EC2**.",
-      "Conçu des bases de données avec la méthode **Merise** et ses modèles **MCD, MLD et MPD**, à partir des besoins fonctionnels et techniques.",
-      "Écrit des tests **Cypress/Jest**, contribué à la **CI/CD**, à la documentation technique et aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
+      "Concevoir la maquette puis développer des composants front **React** et l'application mobile **Ionic** au sein d'une équipe de 4 développeurs.",
+      "Développer le back-end **Node.js** avec **Prisma**, **MySQL** et **API REST**, en intégrant l’authentification **JWT/bcrypt** et la gestion des rôles.",
+      "Appliquer les principes **RGPD** et les bonnes pratiques **OWASP**, puis participer à la conception d’une architecture **multicouche** frontend/backend avec **NestJS**, conteneurisée avec **Docker** et déployée sur **AWS EC2**.",
+      "Concevoir des bases de données avec la méthode **Merise** et ses modèles **MCD, MLD et MPD**, à partir des besoins fonctionnels et techniques.",
+      "Écrire des tests **Cypress/Jest**, contribuer à la **CI/CD**, à la documentation technique et aux **code reviews** dans un cadre **Agile** suivi avec **YouTrack**.",
     ],
   },
 ];
@@ -67,10 +67,10 @@ export const projets = [
     companyLink: "https://theteamsfinder.com/en",
     type: "",
     bullets: [
-      "Fait évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
-      "Conçu la base de données et intégré un catalogue de plus de **500 000 jeux** via une API.",
-      "Mis en place un **webhook Discord** et une tâche planifiée pour envoyer automatiquement les annonces du site vers un salon dédié.",
-      "Intégré les paiements **Stripe** et le **SEO international** en français, anglais et espagnol.",
+      "Faire évoluer la plateforme web et le **back-office** en production avec **Next.js**, **React**, **TypeScript** et **Supabase**.",
+      "Concevoir la base de données et intégrer un catalogue de plus de **500 000 jeux** via une API.",
+      "Mettre en place un **webhook Discord** et une tâche planifiée pour envoyer automatiquement les annonces du site vers un salon dédié.",
+      "Intégrer les paiements **Stripe** et le **SEO international** en français, anglais et espagnol.",
     ],
   },
 ];

@@ -1,21 +1,8 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Timeline, type TimelineEntry } from "@/components/ui/timeline";
 import { ArrowRight } from "lucide-react";
-
-/**
- * Types de missions, réduits à une ligne : l'essentiel de la section est
- * désormais la méthode, pas le catalogue.
- */
-const scope = [
-  "une fonctionnalité bloquée",
-  "un MVP à tester",
-  "une présence en ligne",
-  "un déploiement",
-];
 
 /**
  * Déroulé d'une mission.
@@ -31,12 +18,11 @@ const steps: TimelineEntry[] = [
     content: (
       <>
         <p className="text-pretty text-caption leading-relaxed text-muted-foreground">
-          Vous décrivez ce qui bloque : le contexte, l&apos;objectif, la stack
-          existante. Gratuit, sans engagement.
+          Vous décrivez le contexte, l&apos;objectif et ce qui existe déjà. Nous
+          vérifions ensemble si le besoin entre dans mon périmètre.
         </p>
         <p className="mt-1.5 text-caption font-medium text-foreground">
-          → Une réponse sous 24&nbsp;h, et un avis franc si ce n&apos;est pas
-          pour moi.
+          → Une première lecture claire de votre situation.
         </p>
       </>
     ),
@@ -47,11 +33,11 @@ const steps: TimelineEntry[] = [
     content: (
       <>
         <p className="text-pretty text-caption leading-relaxed text-muted-foreground">
-          On délimite le périmètre. Forfait quand il est défini, journée quand
-          la mission reste ouverte.
+          On délimite ce qui doit être livré et ce qui peut attendre. Le format
+          de la mission est choisi à partir de ce périmètre.
         </p>
         <p className="mt-1.5 text-caption font-medium text-foreground">
-          → Un périmètre écrit et un montant fixé avant de commencer.
+          → Vous savez ce qui est prévu avant de commencer.
         </p>
       </>
     ),
@@ -62,11 +48,11 @@ const steps: TimelineEntry[] = [
     content: (
       <>
         <p className="text-pretty text-caption leading-relaxed text-muted-foreground">
-          Plutôt que de disparaître plusieurs semaines, je livre d&apos;abord un
-          morceau que vous pouvez ouvrir et juger.
+          Je commence par une partie que vous pouvez ouvrir, tester et
+          commenter. Cela permet d&apos;ajuster la direction sur du concret.
         </p>
         <p className="mt-1.5 text-caption font-medium text-foreground">
-          → De quoi confirmer la direction avant d&apos;engager la suite.
+          → Une première livraison pour décider de la suite.
         </p>
       </>
     ),
@@ -77,11 +63,11 @@ const steps: TimelineEntry[] = [
     content: (
       <>
         <p className="text-pretty text-caption leading-relaxed text-muted-foreground">
-          Livraisons par étapes, avec un point à chacune. Vous voyez le produit
-          avancer au lieu d&apos;attendre une livraison finale.
+          Les livraisons restent découpées et lisibles. Vous pouvez suivre les
+          choix et donner votre retour au bon moment.
         </p>
         <p className="mt-1.5 text-caption font-medium text-foreground">
-          → La fonctionnalité, testée et documentée.
+          → Une fonctionnalité utilisable et compréhensible.
         </p>
       </>
     ),
@@ -92,11 +78,12 @@ const steps: TimelineEntry[] = [
     content: (
       <>
         <p className="text-pretty text-caption leading-relaxed text-muted-foreground">
-          Déploiement, correction des points sensibles, et une base saine pour
-          les évolutions suivantes. Le suivi continu est optionnel.
+          Je mets en ligne ce qui a été validé et je corrige les points qui
+          empêchent le projet de continuer. Le suivi peut ensuite s&apos;arrêter
+          ou se poursuivre selon votre besoin.
         </p>
         <p className="mt-1.5 text-caption font-medium text-foreground">
-          → En production, entre vos mains.
+          → Un projet livré et prêt pour l&apos;étape suivante.
         </p>
       </>
     ),
@@ -123,7 +110,7 @@ export default function Services() {
         href="#contact"
         className="group mt-8 inline-flex items-center gap-1.5 text-small font-semibold text-primary"
       >
-        Démarrer par le premier échange
+        Décrire votre besoin
         <ArrowRight
           className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
           aria-hidden="true"

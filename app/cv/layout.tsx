@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CV — GHARDI ILYES | Technicien Helpdesk",
+  title: "CV — GHARDI ILYES · Technicien Helpdesk",
   description:
-    "CV de Ghardi Ilyes ciblé pour un poste de Technicien Helpdesk à Valenciennes / Onnaing. Support, diagnostic, tests, documentation et environnements techniques.",
+    "CV de Ghardi Ilyes ciblé pour un poste de Technicien Helpdesk à Onnaing. Support, diagnostic, tests, documentation et bases réseaux.",
   keywords: [
-    "CV technicien helpdesk Valenciennes Onnaing",
+    "CV technicien helpdesk Onnaing Bruay-sur-l’Escaut",
     "support informatique diagnostic incidents",
     "Toyota Valenciennes technicien helpdesk",
     "déploiement réseau postes téléphonie imprimantes",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CV GHARDI ILYES — Technicien Helpdesk",
     description:
-      "CV de Ghardi Ilyes ciblé pour le support informatique à Valenciennes / Onnaing.",
+      "CV de Ghardi Ilyes ciblé pour le support informatique à Onnaing.",
     url: "https://www.benhouss.site/cv",
     type: "profile",
   },

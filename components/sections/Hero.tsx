@@ -61,21 +61,19 @@ export default function Hero() {
         <div className="mt-7 flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-10">
           <div className="max-w-xl">
             <h1 className="text-h1 text-balance text-foreground">
-              Je développe les fonctionnalités qui{" "}
+              Je développe ce qui fait avancer{" "}
               <span
                 className="bg-clip-text font-display font-semibold text-transparent [-webkit-background-clip:text]"
                 style={{ backgroundImage: "var(--gradient-blue)" }}
               >
-                bloquent
-              </span>{" "}
-              votre application.
+                votre produit
+              </span>.
             </h1>
 
             <p className="mt-5 text-pretty text-small text-muted-foreground sm:text-lead">
-              Benhouss, développeur full stack web et mobile à Lille.
-              React, Next.js, NestJS, Ionic. Vous décrivez le blocage, je
-              livre une première étape vérifiable — sans multiplier les
-              interlocuteurs.
+              Développeur full stack web et mobile à Lille. Vous arrivez avec
+              un besoin précis, un projet à reprendre ou une idée à tester ;
+              je vous aide à transformer cela en prochaine étape concrète.
             </p>
           </div>
 
@@ -102,7 +100,7 @@ export default function Hero() {
               className={BUTTON_PRIMARY}
             >
               <CalendarDays className="h-4 w-4" />
-              Premier échange gratuit
+              Parler du projet
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           )}
@@ -138,9 +136,9 @@ export default function Hero() {
           id="about"
           className="mt-8 scroll-mt-24 max-w-2xl text-pretty text-small text-muted-foreground"
         >
-          Je transforme un besoin réel en produit clair, utile et maintenable :
-          je conçois, je développe, et je garde le fil rouge jusqu&apos;à la
-          mise en ligne.
+          Un projet avance mieux quand le besoin, les choix techniques et la
+          prochaine livraison restent lisibles. C&apos;est le fil que je garde,
+          de la première idée à la mise en ligne.
         </p>
       </div>
     </section>

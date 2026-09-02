@@ -6,10 +6,11 @@ export function Divider() {
     <div
       aria-hidden
       style={{
-        height: "3px",
+        width: "72px",
+        height: "2px",
         background: `linear-gradient(to right, ${BLUE_1}, ${BLUE_2} 55%, ${BLUE_3})`,
         borderRadius: "999px",
-        margin: "6px 0 10px",
+        margin: "6px 0 11px",
       }}
     />
   );
@@ -17,10 +18,10 @@ export function Divider() {
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
       <h3
         style={{
-          fontSize: "11px",
+          fontSize: "11.5px",
           fontWeight: 700,
           textTransform: "uppercase",
           letterSpacing: "0.14em",
@@ -32,7 +33,7 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
         {children}
       </h3>
       <Divider />
-    </>
+    </div>
   );
 }
 
@@ -53,4 +54,3 @@ export function formatText(text: string) {
 }
 
 export { GRAD_H };
-

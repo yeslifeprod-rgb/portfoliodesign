@@ -4,7 +4,7 @@ export function getEdukaMeta(language: string) {
     name: "EDUKA",
     quote:
       language === "fr"
-        ? "EDUKA est une application web et mobile conçue pour faciliter la création et la gestion d'activités pour les enfants, dans un cadre scolaire ou privé. Professeurs et parents peuvent créer, gérer et publier des annonces liées à des sorties scolaires, activités extra-scolaires, anniversaires ou cours privés. L'application repose sur un système d'école référente pour limiter l'accès aux utilisateurs concernés, et permet aussi des annonces privées indépendantes de tout établissement. Développée à distance par une équipe de 4 développeurs fullstack, avec une forte attention portée à la protection des données et au respect du RGPD."
+        ? "EDUKA réunit les activités scolaires et extrascolaires au même endroit. Parents et enseignants peuvent publier une activité, organiser les trajets et échanger dans un cadre clair."
         : "EDUKA is a web and mobile application designed to facilitate the creation and management of activities for children, in school or private settings. Teachers and parents can create, manage and publish announcements for school trips, extracurricular activities, birthdays or private lessons. The app relies on a reference school system to restrict access to relevant users, and also supports private announcements independent of any institution. Developed remotely by a team of 4 fullstack developers, with a strong focus on data protection and GDPR compliance.",
     designation:
       language === "fr"
@@ -20,6 +20,23 @@ export function getEdukaMeta(language: string) {
       "Vercel", "Prisma", "Mysql", "Cypress", "Jest", "Ionic", "MongoDB", "Docker",
       "REST API",
     ],
+    story: language === "fr"
+      ? {
+          title: "Organiser les activités au même endroit",
+          paragraphs: [
+            "Les activités et les échanges passaient par plusieurs canaux. Il fallait un espace partagé, mais aussi des règles simples pour savoir qui peut voir et rejoindre une activité.",
+            "Dans une équipe distante de quatre développeurs, j'ai travaillé sur l'interface React, l'application Ionic, l'API NestJS et les tests. Les rôles et les accès ont été traités comme des règles du produit, pas comme un détail ajouté à la fin.",
+            "EDUKA permet ainsi de publier une activité, créer un groupe et suivre les échanges sur web et mobile, avec une base testée.",
+          ],
+        }
+      : {
+          title: "Giving children's activities a shared framework",
+          paragraphs: [
+            "Parents and teachers needed a shared space for trips, activities and communication. The product had to stay simple while enforcing access rules and data protection.",
+            "As part of a remote team of four full-stack developers, I worked on the React interface, Ionic mobile app, NestJS API and tests.",
+            "EDUKA provides one entry point on web and mobile to publish activities, create groups and follow conversations on a tested foundation.",
+        ],
+      },
     gallery: [
       "/assets/eduka/Eduka.webp",
       "/assets/eduka/eduka1.png",
@@ -37,7 +54,7 @@ export function getEdukaMeta(language: string) {
             "Interface responsive adaptée mobile et desktop",
             "Système de messagerie intégré entre parents",
             "Dashboard admin pour gérer les utilisateurs et les événements",
-            "Tests automatisés avec Cypress et Jest pour garantir la qualité",
+            "Tests automatisés avec Cypress et Jest pour vérifier les parcours",
           ]
         : [
             "Secure authentication system with email verification",
@@ -54,9 +71,9 @@ export function getEdukaMeta(language: string) {
     businessCase:
       language === "fr"
         ? {
-            problem: "Professeurs et parents sans outil centralisé pour créer et gérer les activités scolaires et extra-scolaires des enfants",
-            role: "Développeur frontend React + mobile Ionic + API REST NestJS + tests E2E (Cypress/Jest)",
-            result: "Application web et mobile complète avec système de rôles, gestion RGPD, API REST et suite de tests automatisés, livrée par une équipe de 4 développeurs en remote.",
+            problem: "Les activités et les échanges étaient répartis entre plusieurs canaux.",
+            role: "Interface React, application Ionic, API NestJS et tests au sein d'une équipe de quatre.",
+            result: "Un espace web et mobile pour publier, organiser et suivre les activités avec des accès définis.",
           }
         : {
             problem: "Teachers and parents lacking a centralized tool to create and manage children's school and extracurricular activities",

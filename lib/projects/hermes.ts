@@ -6,7 +6,7 @@ export function getHermesProject(language: string): Project {
   return {
     id: "hermes",
     quote: isFrench
-      ? "Un espace de travail personnel, installé sur un VPS Ubuntu pour avancer avec Hermes, Obsidian et mes cours."
+      ? "Un VPS Ubuntu pour regrouper Hermes, Obsidian et la préparation de cours dans un même espace de travail."
       : "An Ubuntu VPS workspace for Hermes, Obsidian and course preparation.",
     name: "Hermes Agent",
     designation: isFrench
@@ -18,11 +18,11 @@ export function getHermesProject(language: string): Project {
     stack: ["Ubuntu", "VPS", "Hermes Agent", "Obsidian"],
     story: isFrench
       ? {
-          title: "Un environnement qui suit le projet",
+          title: "Réunir le travail au même endroit",
           paragraphs: [
-            "Le point de départ était simple : ne plus disperser le travail entre plusieurs outils et plusieurs machines. J'avais besoin d'un espace accessible, stable et suffisamment clair pour retrouver mes ressources et continuer à avancer.",
-            "J'ai installé Hermes sur un VPS Ubuntu, puis organisé l'environnement autour d'Obsidian et de la création de cours. Le serveur devient ainsi un point de travail unique : les idées sont structurées, les contenus préparés et les tâches peuvent reprendre sans repartir de zéro.",
-            "Le résultat n'est pas seulement une installation technique. C'est une base de travail durable, pensée pour accompagner les prochaines étapes du projet et garder une continuité entre préparation, documentation et mise en œuvre.",
+            "Le travail était réparti entre plusieurs outils et plusieurs machines. Retrouver une ressource ou reprendre une tâche demandait trop d'allers-retours.",
+            "J'ai installé Hermes sur un VPS Ubuntu et organisé l'espace autour d'Obsidian et de la création de cours. Les notes, les ressources et les préparations sont maintenant regroupées au même endroit.",
+            "Le VPS sert de base de travail : il permet de documenter, préparer les cours et reprendre le projet sans réorganiser l'ensemble à chaque session.",
           ],
         }
       : {
@@ -78,8 +78,8 @@ export function getHermesProject(language: string): Project {
     businessCase: isFrench
       ? {
           problem: "Un travail réparti entre plusieurs outils, difficile à retrouver et à reprendre.",
-          role: "Installer Hermes sur Ubuntu, structurer le VPS et organiser les ressources dans Obsidian.",
-          result: "Un environnement unique pour documenter, créer des cours et faire avancer le projet sereinement.",
+          role: "Installer Hermes sur Ubuntu et organiser les ressources dans Obsidian.",
+          result: "Un espace unique pour documenter, préparer des cours et reprendre le travail plus simplement.",
         }
       : {
           problem: "Work was spread across several tools, making it difficult to find and resume.",

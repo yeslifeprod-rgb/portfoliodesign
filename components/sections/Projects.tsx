@@ -187,8 +187,8 @@ export default function Projects() {
     <Section id="projets">
       <SectionHeader
         eyebrow="Mes projets"
-        title="Ce qui bloquait, ce que ça a donné"
-        description="Quatre projets, racontés simplement : le problème, puis le résultat."
+        title="Des projets partis d'un besoin concret"
+        description="Chaque projet raconte un point de départ, un choix et ce qui a été livré."
         framed
       />
 

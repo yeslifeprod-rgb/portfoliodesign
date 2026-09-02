@@ -26,24 +26,22 @@ export function Entry({
   bullets: string[];
 }) {
   return (
-    <div style={{ marginBottom: "6px" }}>
-      <div data-cv-entry-header style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderRadius: "4px", padding: "3px 7px", marginBottom: "4px" }}>
-        <h4 style={{ fontSize: "12px", fontWeight: 800, color: TEXT_DARK, margin: 0 }}>{title}</h4>
-        <span style={{ fontSize: "10px", fontWeight: 600, color: BLUE_2, whiteSpace: "nowrap", marginLeft: "8px" }}>
+    <div style={{ marginBottom: "10px" }}>
+      <div data-cv-entry-header style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderRadius: "4px", padding: "3px 7px", marginBottom: "5px" }}>
+        <h4 style={{ fontSize: "12.5px", fontWeight: 800, color: TEXT_DARK, margin: 0 }}>
+          {companyLink ? (
+            <a href={companyLink} data-cv-link target="_blank" rel="noopener noreferrer" style={{ color: BLUE_2, textDecoration: "none" }}>
+              {title}
+            </a>
+          ) : title}
+        </h4>
+        <span style={{ fontSize: "10.5px", fontWeight: 600, color: BLUE_2, whiteSpace: "nowrap", marginLeft: "8px", fontStyle: "italic" }}>
           {period}
         </span>
       </div>
-      <div style={{ borderLeft: "2px solid #bfdbfe", paddingLeft: "8px" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", alignItems: "baseline", fontSize: "10px", margin: "0 0 4px", fontWeight: 400 }}>
+      <div style={{ borderLeft: "2px solid #bfdbfe", paddingLeft: "9px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", alignItems: "baseline", fontSize: "10.5px", margin: "0 0 5px", fontWeight: 400 }}>
           <span style={{ color: TEXT_LIGHT, fontStyle: "italic" }}>{company}</span>
-          {companyLink && (
-            <>
-              <span style={{ color: TEXT_LIGHT }}>-</span>
-              <a href={companyLink} data-cv-link target="_blank" rel="noopener noreferrer" style={{ color: BLUE_2, textDecoration: "underline", fontWeight: 400 }}>
-                {companyLink}
-              </a>
-            </>
-          )}
           {type && (
             <>
               <span style={{ color: "#d1d5db", marginLeft: "2px", marginRight: "2px" }}>—</span>
@@ -51,10 +49,10 @@ export function Entry({
             </>
           )}
         </div>
-        <ul style={{ margin: 0, padding: 0, listStyle: "none", color: TEXT_MID, fontSize: "10px", lineHeight: 1.4, fontWeight: 400 }}>
+        <ul style={{ margin: 0, padding: 0, listStyle: "none", color: TEXT_MID, fontSize: "10.5px", lineHeight: 1.55, fontWeight: 400 }}>
           {bullets.map((b, i) => (
-            <li key={i} style={{ marginBottom: "1px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
-              <span aria-hidden style={{ width: "4px", height: "4px", borderRadius: "50%", background: GRAD_H, marginTop: "6.5px", flexShrink: 0 }} />
+            <li key={i} style={{ marginBottom: "3px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+              <span aria-hidden style={{ width: "4px", height: "4px", borderRadius: "50%", background: GRAD_H, marginTop: "7px", flexShrink: 0 }} />
               <span style={{ flex: 1 }}>{formatText(b)}</span>
             </li>
           ))}

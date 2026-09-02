@@ -2,15 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
-import { A4_H, A4_W, BORDER, TEXT_DARK } from "../components/cv-data";
+import { A4_H, A4_W, BORDER, BLUE_2, TEXT_DARK } from "../components/cv-data";
 import { ToyotaHelpdeskCVContent } from "./toyota-helpdesk-content";
 
 export default function ToyotaHelpdeskCV() {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const nav = document.querySelector("nav");
-    if (nav) (nav as HTMLElement).style.display = "none";
+    // Le Navbar global rend deux <nav> distincts (dock desktop + barre
+    // mobile) : il faut les masquer tous les deux, sinon celle qui n'est
+    // pas la première reste dans le DOM et le focus clavier sur /cv.
+    const navs = document.querySelectorAll("nav");
+    navs.forEach((n) => {
+      (n as HTMLElement).style.display = "none";
+    });
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
@@ -24,8 +29,9 @@ export default function ToyotaHelpdeskCV() {
     window.addEventListener("resize", resize);
     return () => {
       window.removeEventListener("resize", resize);
-      const n = document.querySelector("nav");
-      if (n) (n as HTMLElement).style.display = "";
+      navs.forEach((n) => {
+        (n as HTMLElement).style.display = "";
+      });
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     };
@@ -54,7 +60,7 @@ export default function ToyotaHelpdeskCV() {
           <Download className="w-3.5 h-3.5 mr-1.5" />
           Imprimer / PDF
         </button>
-        <p className="text-[10px] text-gray-400 text-right leading-tight max-w-[210px]">Version ciblée Toyota Valenciennes — Technicien Helpdesk</p>
+        <p className="text-[10px] text-gray-400 text-right leading-tight max-w-[210px]">Version ciblée Toyota — Technicien Helpdesk</p>
       </div>
 
       <div className="relative z-10 shrink-0" style={{ width: A4_W * scale, height: A4_H * scale }}>
@@ -68,21 +74,21 @@ export default function ToyotaHelpdeskCV() {
             display: "flex", flexDirection: "column",
           }}
         >
-          <header style={{ padding: "1.7rem 3.8rem 1rem", borderBottom: `1px solid ${BORDER}`, flexShrink: 0 }}>
-            <h1 style={{ fontSize: "30px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.15, margin: "0 0 4px" }}>Ilyes Ghardi</h1>
-            <h2 style={{ fontSize: "14px", fontWeight: 800, margin: "0 0 5px", letterSpacing: "-0.015em", textTransform: "uppercase" }}>
-              Technicien Helpdesk — Profil développeur web & mobile
+          <header style={{ padding: "1.6rem 3.8rem 1rem", flexShrink: 0 }}>
+            <h1 style={{ fontSize: "31px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.1, margin: "0 0 4px" }}>Ilyes Ghardi</h1>
+            <h2 style={{ fontSize: "14px", fontWeight: 800, margin: "0 0 6px", letterSpacing: "-0.015em", textTransform: "uppercase" }}>
+              Technicien support — Systèmes & réseaux
             </h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "0 0 8px" }}>
-              {["Diagnostic d’incidents", "Support utilisateurs", "Déploiement", "Réseaux", "Documentation", "Anglais technique"].map((kw) => (
-                <span key={kw} style={{ background: "#eff6ff", color: "#1d4ed8", padding: "2px 8px", borderRadius: "999px", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.03em" }}>{kw}</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", margin: "0 0 9px" }}>
+              {["Support informatique", "Diagnostic & réseaux", "Linux & systèmes"].map((kw) => (
+                <span key={kw} style={{ background: "#eff6ff", color: "#1d4ed8", padding: "3px 8px", borderRadius: "999px", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.02em" }}>{kw}</span>
               ))}
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "3px 0", fontSize: "10px", color: "#374151" }}>
-              <span><strong>Tél :</strong> 07 67 50 72 04</span><span style={{ margin: "0 8px", color: "#d1d5db" }}>|</span>
-              <span><strong>Lieu :</strong> Valenciennes</span><span style={{ margin: "0 8px", color: "#d1d5db" }}>|</span>
-              <span><strong>Email :</strong> ilyesghardi@outlook.com</span><span style={{ margin: "0 8px", color: "#d1d5db" }}>|</span>
-              <span><strong>LinkedIn :</strong> linkedin.com/in/ilyes-g-46b0982b8</span>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: "18px", rowGap: "3px", fontSize: "10px", lineHeight: 1.3, color: "#374151" }}>
+              <span style={{ whiteSpace: "nowrap" }}><strong>Tél :</strong> <a href="tel:+33767507204" style={{ color: BLUE_2, textDecoration: "none", fontStyle: "italic" }}>07 67 50 72 04</a></span>
+              <span style={{ whiteSpace: "nowrap" }}><strong>Adresse :</strong> Bruay-sur-l’Escaut</span>
+              <span style={{ whiteSpace: "nowrap" }}><strong>Email :</strong> <a href="mailto:ilyesghardi@outlook.com" style={{ color: BLUE_2, textDecoration: "none", fontStyle: "italic" }}>ilyesghardi@outlook.com</a></span>
+              <span style={{ whiteSpace: "nowrap" }}><strong>LinkedIn :</strong> <a href="https://linkedin.com/in/ilyes-g-46b0982b8" target="_blank" rel="noopener noreferrer" style={{ color: BLUE_2, textDecoration: "none", fontStyle: "italic" }}>linkedin.com/in/ilyes-g-46b0982b8</a></span>
             </div>
           </header>
           <ToyotaHelpdeskCVContent />

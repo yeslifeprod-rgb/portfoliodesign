@@ -5,7 +5,7 @@ export function getNum4Project(language: string): Project {
     id: "num4",
     quote:
       language === "fr"
-        ? "Num4 est une plateforme musicale développée en startup à Plaine Images (Roubaix). J'ai travaillé en collaboration directe avec le fondateur et le CTO sur le développement frontend/backend Next.js, l'intégration des paiements iOS avec RevenueCat, et l'optimisation d'une landing page d'acquisition."
+        ? "Num4 devait expliquer son offre musicale plus clairement et permettre un abonnement iOS sans détour. J'ai travaillé directement avec le fondateur et le CTO sur ces deux points."
         : "Num4 is a music platform developed in a startup at Plaine Images (Roubaix). I worked in direct collaboration with the founder and CTO on Next.js frontend/backend development, iOS payment integration with RevenueCat, and optimization of an acquisition landing page.",
     name: "Num4",
     designation:
@@ -37,6 +37,23 @@ export function getNum4Project(language: string): Project {
       "Figma",
       "i18n",
     ],
+    story: language === "fr"
+      ? {
+          title: "Clarifier l'offre et sécuriser l'abonnement",
+          paragraphs: [
+            "La page d'acquisition ne rendait pas encore l'offre assez évidente, et le parcours d'abonnement iOS devait être relié au produit.",
+            "Avec le fondateur et le CTO, j'ai repris l'interface, développé les parties Next.js et intégré RevenueCat. Chaque choix est resté lié à un usage réel, pas seulement à la maquette.",
+            "La proposition est plus facile à comprendre et le paiement iOS suit maintenant le parcours de la plateforme.",
+          ],
+        }
+      : {
+          title: "Making a music offer easier to understand",
+          paragraphs: [
+            "Num4 needed to explain its offer more clearly and give iOS users a reliable subscription path. The work covered both acquisition and in-app payments.",
+            "Working directly with the founder and CTO, I redesigned the interface, developed the Next.js parts and connected the purchase flow to RevenueCat.",
+            "The landing page became clearer and iOS payments were integrated into the product flow.",
+          ],
+        },
     features:
       language === "fr"
         ? [
@@ -57,10 +74,10 @@ export function getNum4Project(language: string): Project {
       language === "fr"
         ? {
             problem:
-              "Refonte complète de la landing page d'une startup musicale et intégration des paiements sur application mobile iOS.",
-            role: "Refonte UX/UI, développement Next.js, intégration des paiements iOS (RevenueCat) et tests sur Xcode.",
+              "La landing page devait mieux présenter le produit et le parcours de paiement iOS devait être intégré.",
+            role: "Refonte UX/UI, développement Next.js et intégration RevenueCat testée sur Xcode.",
             result:
-              "Landing page d'acquisition, développement Next.js et intégration du paiement iOS.",
+              "Une page d'acquisition plus claire et un parcours de paiement iOS relié au produit.",
           }
         : {
             problem:

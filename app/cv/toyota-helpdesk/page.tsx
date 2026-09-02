@@ -1,8 +1,4 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const ToyotaHelpdeskCV = dynamic(() => import("./toyota-helpdesk-client"), { ssr: false });
+import ToyotaHelpdeskCV from "./toyota-helpdesk-client";
 
 export default function ToyotaHelpdeskCVPage() {
   return <ToyotaHelpdeskCV />;

@@ -70,13 +70,13 @@ export default function Contact() {
           </div>
 
           <h2 className="text-h2 text-balance text-card-foreground">
-            Décrivez-moi ce qui bloque
+            Parlons de ce qu&apos;il faut faire avancer
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-pretty text-small text-muted-foreground sm:text-body">
-            Le contexte, l&apos;objectif et la stack existante suffisent pour
-            démarrer. Je vous réponds sous 24&nbsp;h avec une première étape
-            concrète — ou je vous dis franchement si ce n&apos;est pas pour moi.
+            Quelques lignes sur le contexte, l&apos;objectif et ce qui existe
+            déjà suffisent. Nous verrons ensuite s&apos;il y a une première étape
+            claire à prendre.
           </p>
 
           <div className="mx-auto mt-7 flex w-full max-w-md flex-col gap-3 sm:flex-row">
@@ -87,7 +87,7 @@ export default function Contact() {
                 className={`${BUTTON_PRIMARY} flex-1`}
               >
                 <CalendarDays className="h-4 w-4" />
-                Rendez-vous
+                Prendre rendez-vous
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             )}
